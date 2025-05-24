@@ -171,7 +171,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
     pulses_into_year = kai_pulse_eternal % HARMONIC_YEAR_PULSES
     year_percent     = round((pulses_into_year / HARMONIC_YEAR_PULSES) * 100, 2)
     days_into_year   = harmonic_day_count % HARMONIC_YEAR_DAYS
-    solar_seal = f"Solar Kai Step (UTC-aligned): {solar_step_string}"
+    solar_seal = f"Solar Kairos (UTC-aligned): {solar_step_string}"
     percent_whole = round(percent_to_next)
     eternal_seal = (
         "Eternal Seal: "
