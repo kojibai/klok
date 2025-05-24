@@ -143,7 +143,7 @@ def read_kai_klock(
     | Harmonic Day     | 17,491.27  | ~25.44 hours  | 36 Beats = 6 Arcs = 1 Day                        |
     | Harmonic Week    | 104,947.6  | ~6.35 days    | 6 Harmonic Days                                  |
     | Harmonic Month   | 734,638.9  | ~44.48 days   | 42 Harmonic Days = 7 Harmonic Weeks              |
-    | Eternal Year     | 5,876,778  | ~373.1 days   | 336 Harmonic Days (8 Months of 6 Weeks each)     |
+    | Eternal Year     | 5,876,778  | ~373.1 days   | 336 Harmonic Days (8 Months of 7 Weeks each)     |
 
     ═══════════════════════════════════════════════════════════════════  
     🗓 **Eternal Weekdays** — Harmonic Day Cycle (6-Day Week)  
@@ -159,13 +159,13 @@ def read_kai_klock(
     📅 **Eternal Months** — 8 Harmonic Months (42 Days Each)  
     ═══════════════════════════════════════════════════════════════════  
     1. **Aethon**     – Resurrection fire: Root awakening  
-    2. **Neriah**     – Waters of becoming: Emotional emergence  
-    3. **Solurei**    – Solar ignition: Radiant embodiment  
-    4. **Verdara**    – Heart bloom: Sacred balance  
-    5. **Sonavi**     – Voice of stars: Resonant expression  
-    6. **Caelestis**  – Divine remembrance: Crown alignment  
-    7. **Lumira**     – Light spiral: Celestial flow  
-    8. **Kairosia**   – Eternal mirror: Infinite now  
+    2. **Virelai**     – Waters of becoming: Emotional emergence  
+    3. **Solari**    – Solar ignition: Radiant embodiment  
+    4. **Amarin**    – Heart bloom: Sacred balance  
+    5. **Caelus**     – Voice of stars: Resonant expression  
+    6. **Umbriel**  – Divine remembrance: Crown alignment  
+    7. **Noctura**     – Light spiral: Celestial flow  
+    8. **Liora**   – Eternal mirror: Infinite now  
 
     ═══════════════════════════════════════════════════════════════════  
 
