@@ -176,20 +176,20 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
     eternal_seal = (
         "Eternal Seal: "
         f"Kairos:{chakra_step_str} • K{eternal_kai_pulse_today} • "
-        f"CB{eternal_beat_idx + 1}-{percent_whole}% • "
+        f"CB{eternal_beat_idx}-{percent_whole}% • "
         f"D{day_of_month}/M{eternal_month_idx} "
         f"Y{harmonic_year_idx} "
         f"PS{phi_spiral_lvl} • {solar_seal} • "
         f"Eternal Pulse:{kai_pulse_eternal}"
     )
-    seal = f"Seal: {chakra_step_str} • D{day_of_month}/M{eternal_month_idx}"
+    seal = f"Day Seal: {chakra_step_str} • D{day_of_month}/M{eternal_month_idx}"
     kairos = f"Kairos: {chakra_step_str}"
  
 
     timestamp = (
         f"↳{kairos}"
         f"🕊️ {harmonic_day}({week_day_idx + 1})•{eternal_month}({eternal_month_idx})•"
-        f"{chakra_arc}({arc_idx + 1})\n"
+        f"{chakra_arc}({arc_idx})\n"
         f"  Day {day_of_month} • Week {week_idx}\n"
         f"| Kai-Pulse: {eternal_kai_pulse_today}\n"
     )
@@ -197,7 +197,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
     narrative = (
         f"In the Kai-Klock’s dual-day resonance, this moment is the {chakra_arc} of "
         f"{harmonic_day}. Solar alignment places us at Kai-Pulse {kai_pulse_today}, "
-        f"Chakra Beat {solar_beat_idx + 1}; eternally we are at Kai-Pulse "
+        f"Chakra Beat {solar_beat_idx}; eternally we are at Kai-Pulse "
         f"{eternal_kai_pulse_today}, Chakra Beat {eternal_beat_idx + 1} "
         f"({percent_to_next:.2f}% of the beat).\n\n{eternal_seal}"
     )
@@ -206,9 +206,9 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         f"Today is {harmonic_day}, {HARMONIC_DAY_DESCRIPTIONS[harmonic_day]} "
         f"It is the {day_of_month}{_ordinal(day_of_month)} Day of {eternal_month}, "
         f"{ETERNAL_MONTH_DESCRIPTIONS[eternal_month]} We are in Week {week_idx}, "
-        f"{week_name}. The Eternal Chakra Beat is {eternal_beat_idx + 1} (arc "
+        f"{week_name}. The Eternal Chakra Beat is {eternal_beat_idx} (arc "
         f"{chakra_arc}) and we are {percent_to_next:.2f}% through it. This corresponds "
-        f"to Step {step_idx + 1} of {STEPS_PER_BEAT} (~{percent_into_step:.2f}% "
+        f"to Step {step_idx} of {STEPS_PER_BEAT} (~{percent_into_step:.2f}% "
         f"into the step), i.e. {chakra_step_str}. This is the "
         f"{eternal_year_name.lower()}, resonating at Phi Spiral Level {phi_spiral_lvl}. "
         f"{eternal_seal}"
@@ -216,7 +216,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
 
     kai_moment = (
         f"↳ {seal} • "
-        f"Kai-Pulse {eternal_kai_pulse_today}, Beat {eternal_beat_idx + 1}, "
+        f"Kai-Pulse {eternal_kai_pulse_today}, Beat {eternal_beat_idx}, "
         f"{harmonic_day} Day, Month of {eternal_month}, Week of "
         f"{week_name.split()[-1]}, Spiral Level {phi_spiral_lvl}."
     )
