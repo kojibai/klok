@@ -183,10 +183,11 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         f"Eternal Pulse:{kai_pulse_eternal}"
     )
     seal = f"Seal: {chakra_step_str} • D{day_of_month}/M{eternal_month_idx}"
+    kairos = f"Kairos: {chakra_step_str}"
  
 
     timestamp = (
-        f"↳Kairos:{seal}"
+        f"↳{kairos}"
         f"🕊️ {harmonic_day}({week_day_idx + 1})•{eternal_month}({eternal_month_idx})•"
         f"{chakra_arc}({arc_idx + 1})\n"
         f"  Day {day_of_month} • Week {week_idx}\n"
