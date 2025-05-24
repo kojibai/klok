@@ -186,12 +186,11 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
  
 
     timestamp = (
+        f"↳Kairos:{seal}"
         f"🕊️ {harmonic_day}({week_day_idx + 1})•{eternal_month}({eternal_month_idx})•"
         f"{chakra_arc}({arc_idx + 1})\n"
         f"  Day {day_of_month} • Week {week_idx}\n"
         f"| Kai-Pulse: {eternal_kai_pulse_today}\n"
-        f"↳ {seal}"
-        f"↳ {solar_seal}"
     )
 
     narrative = (
