@@ -190,7 +190,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         f"↳{kairos}"
         f"🕊️ {harmonic_day}({week_day_idx})•{eternal_month}({eternal_month_idx})•"
         f"{chakra_arc}({arc_idx})\n"
-        f"  Day {day_of_month} • Week {week_idx}\n"
+        f" • Day {day_of_month} • Week {week_idx}\n"
         f"| Kai-Pulse: {eternal_kai_pulse_today}\n"
     )
 
