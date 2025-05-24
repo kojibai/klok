@@ -188,7 +188,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
 
     timestamp = (
         f"↳{kairos}"
-        f"🕊️ {harmonic_day}({week_day_idx + 1})•{eternal_month}({eternal_month_idx})•"
+        f"🕊️ {harmonic_day}({week_day_idx})•{eternal_month}({eternal_month_idx})•"
         f"{chakra_arc}({arc_idx})\n"
         f"  Day {day_of_month} • Week {week_idx}\n"
         f"| Kai-Pulse: {eternal_kai_pulse_today}\n"
@@ -198,7 +198,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         f"In the Kai-Klock’s dual-day resonance, this moment is the {chakra_arc} of "
         f"{harmonic_day}. Solar alignment places us at Kai-Pulse {kai_pulse_today}, "
         f"Chakra Beat {solar_beat_idx}; eternally we are at Kai-Pulse "
-        f"{eternal_kai_pulse_today}, Chakra Beat {eternal_beat_idx + 1} "
+        f"{eternal_kai_pulse_today}, Chakra Beat {eternal_beat_idx} "
         f"({percent_to_next:.2f}% of the beat).\n\n{eternal_seal}"
     )
 
