@@ -134,16 +134,17 @@ def read_kai_klock(
     📐 **Harmonic Time Breakdown**  
     ═══════════════════════════════════════════════════════════════════  
 
-    | Unit             | Kai Pulses | Duration      | Description                                      |
-    |------------------|------------|---------------|--------------------------------------------------|
-    | Kai Pulse        | 1          | ~5.236 sec    | Fundamental breath-time                          |
-    | Chakra Step      | 11         | ~57.6 sec     | 1 of 44 per Chakra Beat (Kai-Minute)             |
-    | Chakra Beat      | ~485.87    | ~42.4 min     | 1 of 36 per Harmonic Day                         |
-    | Chakra Arc       | ~2,915.2   | ~4.24 hours   | 1 of 6 per Harmonic Day                          |
-    | Harmonic Day     | 17,491.27  | ~25.44 hours  | 36 Beats = 6 Arcs = 1 Day                        |
-    | Harmonic Week    | 104,947.6  | ~6.35 days    | 6 Harmonic Days                                  |
-    | Harmonic Month   | 734,638.9  | ~44.48 days   | 42 Harmonic Days = 7 Harmonic Weeks              |
-    | Eternal Year     | 5,876,778  | ~373.1 days   | 336 Harmonic Days (8 Months of 7 Weeks each)     |
+    | Unit               | Kai Pulses | Duration       | Description                                       |
+    |--------------------|------------|----------------|---------------------------------------------------|
+    | Quarter Breath     | 0.25       | ~1.309 sec     | One-fourth of a Kai Pulse — smallest time unit    |
+    | Kai Pulse          | 1          | ~5.236 sec     | Fundamental breath-time                           |
+    | Chakra Step        | 11         | ~57.6 sec      | 1 of 44 per Chakra Beat (Kai-Minute)              |
+    | Chakra Beat        | ~485.87    | ~42.4 min      | 1 of 36 per Harmonic Day                          |
+    | Chakra Arc         | ~2,915.2   | ~4.24 hours    | 1 of 6 per Harmonic Day                           |
+    | Harmonic Day       | 17,491.27  | ~25.44 hours   | 36 Beats = 6 Arcs = 1 Day                         |
+    | Harmonic Week      | 104,947.6  | ~6.35 days     | 6 Harmonic Days                                   |
+    | Harmonic Month     | 734,638.9  | ~44.48 days    | 42 Harmonic Days = 7 Harmonic Weeks               |
+    | Eternal Year       | 5,876,778  | ~373.1 days    | 336 Harmonic Days (8 Months of 6 Weeks each)      |
 
     ═══════════════════════════════════════════════════════════════════  
     🗓 **Eternal Weekdays** — Harmonic Day Cycle (6-Day Week)  
