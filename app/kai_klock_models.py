@@ -1,8 +1,8 @@
+# kai_klock_models.py  •  v2.4 “Step Resonance”
 from pydantic import BaseModel
-from typing import Optional
 
 
-# ── Small primitives ───────────────────────────────────────────
+# ── Primitive blocks ────────────────────────────────────────────
 class HarmonicCycle(BaseModel):
     pulseInCycle: float
     cycleLength: float
@@ -28,14 +28,6 @@ class HarmonicYearProgress(BaseModel):
     percent: float
 
 
-# ── Nested level groups ────────────────────────────────────────
-class HarmonicLevels(BaseModel):
-    arcBeat: HarmonicCycle
-    microCycle: HarmonicCycle
-    chakraLoop: HarmonicCycle
-    harmonicDay: HarmonicCycle
-
-
 class ChakraBeat(BaseModel):
     beatIndex: int
     pulsesIntoBeat: float
@@ -44,50 +36,68 @@ class ChakraBeat(BaseModel):
 
 
 class EternalChakraBeat(ChakraBeat):
-    """Adds the % progress metric that’s unique to the eternal-aligned beat."""
     percentToNext: float
 
 
-# ── Top-level Kai-Klock payload ────────────────────────────────
+# ‼️ NEW – step detail
+class ChakraStep(BaseModel):
+    stepIndex: int
+    percentIntoStep: float
+    stepsPerBeat: int
+
+
+# ── Harmonic level aggregates ──────────────────────────────────
+class HarmonicLevels(BaseModel):
+    arcBeat: HarmonicCycle
+    microCycle: HarmonicCycle
+    chakraLoop: HarmonicCycle
+    harmonicDay: HarmonicCycle
+
+
+# ── Top-level Kai-Klock response ───────────────────────────────
 class KaiKlockResponse(BaseModel):
-    # — Narrative & seal —
+    # Narrative & seals
     eternalSeal: str
+    seal: str
     harmonicNarrative: str
 
-    # — Epochal identifiers —
+    # Calendar identifiers
     eternalMonth: str
     eternalMonthIndex: int
     eternalMonthDescription: str
-
     harmonicDay: str
     harmonicDayDescription: str
-
     chakraArc: str
 
-    # — Pulse counts —
-    kaiPulseToday: int                # solar-aligned pulses since UTC midnight
-    eternalKaiPulseToday: int         # pulses into the current eternal Kai-Day
-    kaiPulseEternal: int              # total pulses since Genesis
+    # Pulse counts
+    kaiPulseToday: int
+    eternalKaiPulseToday: int
+    kaiPulseEternal: int
 
-    # — Beat breakdowns —
-    chakraBeat: ChakraBeat            # solar-aligned
-    eternalChakraBeat: EternalChakraBeat  # eternal-aligned
+    # Beat & step breakdowns
+    chakraBeat: ChakraBeat
+    eternalChakraBeat: EternalChakraBeat
+    chakraStep: ChakraStep
+    chakraStepString: str
+    solarChakraStep: ChakraStep
+    solarChakraStepString: str
 
-    # — Annual & cyclic indices —
+    # Spiral / phrase / year
     phiSpiralLevel: int
     kaiTurahPhrase: str
     eternalYearName: str
 
-    # — Calendar position within month/year —
+    # Position in month / week
     weekIndex: int
     weekName: str
     dayOfMonth: int
 
-    # — Composite strings —
+    # Composite text
     timestamp: str
     harmonicTimestampDescription: str
+    kaiMomentSummary: str
 
-    # — Progress & cycle structures —
+    # Progress & cycles
     harmonicLevels: HarmonicLevels
     harmonicWeekProgress: HarmonicWeekProgress
     eternalMonthProgress: EternalMonthProgress

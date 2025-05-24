@@ -1,84 +1,206 @@
-from fastapi import FastAPI, Query
-from typing import Optional
+# main.py  •  Kai-Klock API entry
+from __future__ import annotations
+
+import os
+import sys
 from datetime import datetime
+from typing import Optional
+
+from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 
-app = FastAPI(
-    title="Kai-Klock API",
-    description="Eternal harmonic timestamp aligned with the Genesis Pulse of Kai Time.",
-    version="1.0.0"
-)
-
-# ✅ Add this block below your FastAPI app initialization:
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],  # ⚠️ In production, restrict this to trusted domains
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-# Make sure the relative imports work on Vercel
-import sys
-import os
+# make sure local imports work on Vercel / similar
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from kai_klock import get_eternal_klock
-from kai_klock_models import KaiKlockResponse
+from kai_klock_models import KaiKlockResponse  # ← single source of truth
+
+# ── FastAPI app ──────────────────────────────────────────────────
+from fastapi import FastAPI
 
 app = FastAPI(
     title="Kai-Klock API",
-    description="Eternal harmonic timestamp aligned with the Genesis Pulse of Kai Time.",
-    version="1.0.0"
+    version="1.0.0",
+    summary="A precision harmonic timekeeping system aligned with the Genesis Pulse.",
+    description="""
+🜂 **Kai-Klock API — Eternal Harmonic Timestamp System**
+
+The **Kai-Klock** is a harmonic resonance timekeeping system that replaces arbitrary mechanical clocks with
+a **living pulse of coherence**. It is mathematically synchronized to the **Genesis Pulse**:  
+🕕 *May 10, 2024 at 06:45:40 UTC*, the moment of the historic X3.98-class solar flare from NOAA AR 3664,
+corrected for light delay.
+
+From this origin, time is measured not in artificial hours and minutes, but in **Kai Pulses**, **Chakra Beats**, and **Harmonic Steps** —
+structured to match the true flow of life energy across the solar field and the eternal field.
+
+---
+
+### 💠 What is Returned?
+
+The primary endpoint `/kai` returns a JSON object that describes the **exact harmonic state of time** right now (or at a specific moment if passed).
+
+#### Key Fields
+
+- `eternalSeal`: A unique identifier for this Kai moment (like a sacred timestamp).
+- `chakraStep`: The current **eternal harmonic step** (1 of 44 per beat).
+- `chakraStepString`: A compact string of the form `Beat:Step` (e.g. `34:27`).
+- `solarChakraStepString`: The same format, but UTC-aligned to Earth's solar rhythm — useful for real-world apps and clocks.
+- `kaiPulseEternal`: The number of Kai Pulses since the Genesis Pulse.
+- `timestamp`: A human-readable display of the Kai-Klock's current alignment.
+- `harmonicTimestampDescription`: A fully expanded, spiritually aligned explanation of the moment.
+- `kaiMomentSummary`: Compact summary of the entire Kai-Moment.
+
+---
+
+### 🧪 Query Parameter
+
+- `override_time` (optional):  
+  Provide an ISO 8601 datetime (e.g. `'2024-05-10T06:45:40'`) to get a deterministic timestamp for testing, anchoring scrolls, or reproducing sacred moments.
+
+---
+
+### 🧭 Why Use Kai-Klock?
+
+- For **ritual, ceremony, meditation**, and alignment with solar and cosmic truth
+- For **timestamping messages or contracts** with divine coherence
+- For **real-time UI/UX components** that track chakra resonance or spiritual cycles
+- For **scientific, poetic, and technological applications** that require frequency-aware time
+
+---
+
+### 🌐 Ideal Use Cases
+
+- Harmonic operating systems, apps, and wearables
+- Coherence-tracking environments (temples, healing centers, biosynced workspaces)
+- Keychain or resonance contract verification aligned to resonance pulses
+- Biometric authentication timestamps using soul-aligned harmonic time
+
+---
+
+🜁 *Time is no longer mechanical. It is harmonic. Welcome to the Eternal Kai-Klock.*
+""",
+    contact={
+        "name": "Kai-Klock Team",
+        "email": "support@kaiturah.com",
+        "url": "https://kaiturah.com/"
+    },
+    license_info={
+        "name": "Harmonic Public License",
+        "url": "https://kaiturah.com/"
+    },
+    docs_url="/docs",
+    redoc_url="/redoc",
+    openapi_url="/openapi.json",
 )
 
-# ✅ Add this block below your FastAPI app initialization:
+
+# CORS (open for demo; tighten in prod)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # ⚠️ In production, restrict this to trusted domains
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-@app.get("/kai", response_model=KaiKlockResponse, tags=["Kai Time"])
-def read_kai_klock(override_time: Optional[str] = Query(None, description="Optional ISO8601 datetime override")) -> KaiKlockResponse:
+# ── /kai endpoint ───────────────────────────────────────────────
+@app.get(
+    "/kai",
+    response_model=KaiKlockResponse,
+    response_model_exclude_none=False,
+    tags=["Kai Time"],
+)
+def read_kai_klock(
+    override_time: Optional[str] = Query(
+        None,
+        description="Optional ISO-8601 datetime (e.g. '2024-05-10T06:45:40') "
+        "to override 'now' for deterministic output.",
+    ),
+) -> KaiKlockResponse:
     """
-    🔹 Eternal Kai-Klock API
+    🜂 **The Eternal Kai-Klock** — Harmonic Timestamp of Divine Order
 
-    Returns the live universal Kai-Klock harmonic timestamp aligned to the 
-    Eternal Genesis Pulse (May 10, 2024 at 06:45:40 UTC) — the precise moment 
-    of the X3.98-class solar flare from NOAA AR 3664, corrected for the 
-    8m20s light travel time from the Sun to Earth.
+    This endpoint returns the **live universal Kai-Klock harmonic timestamp**, aligned precisely to the
+    **Genesis Pulse**: May 10 2024 at 06:45:40 UTC — the moment of the X3.98-class solar flare from NOAA AR 3664,
+    corrected for the 8m20s solar light delay. From this harmonic origin, every breath is calculated forward
+    using immutable resonance logic.
 
-    ────────────────────────────────────────────────────────────────
+    The Kai-Klock is not based on artificial time but on **truthful frequency**, built from the smallest
+    harmonic unit — the **Kai Pulse** — and expanded into a multidimensional framework that captures the
+    **true flow of consciousness** and **solar alignment** across all beings.
 
-    📌 Query Parameters:
-    - `override_time` (optional): ISO8601 datetime string (e.g. "2024-05-10T06:45:40")
-      Allows simulation of any snapshot moment within Kai-Time.
+    ════════════════════════════════════════════════════════════════
+    📐 **Harmonic Time Breakdown**
+    ════════════════════════════════════════════════════════════════
 
-    🔄 Fully deterministic. Same input time always returns same Kai state.
+    | Unit             | Kai Pulses | Duration      | Description                      |
+    |------------------|------------|---------------|----------------------------------|
+    | Kai Pulse        | 1          | ~5.236 sec    | Fundamental breath-time          |
+    | Chakra Step      | 11         | ~57.6 sec     | 1 of 44 per Chakra Beat (Kai-Minute) |
+    | Chakra Beat      | ~485.87    | ~42.4 min     | 1 of 36 per Harmonic Day         |
+    | Chakra Arc       | ~2,915.2   | ~4.24 hours   | 1 of 6 per Harmonic Day          |
+    | Harmonic Day     | 17,491.27  | ~25.44 hours  | 36 Beats = 6 Arcs = 1 Day        |
+    | Harmonic Week    | 104,947.6  | ~6.35 days    | 6 Harmonic Days                  |
+    | Harmonic Month   | 734,638.9  | ~44.48 days   | 42 Harmonic Days                 |
+    | Eternal Year     | 5,876,778  | ~373.1 days   | 336 Harmonic Days (8 Months)     |
 
-    🧭 Harmonic Truth Principles:
-    - 1 Kai Pulse = 8.472 / φ ≈ 5.236s
-    - 1 Harmonic Day = 17,491.270421 Kai Pulses
-    - 1 Harmonic Year = 336 Harmonic Days
-    - 1 Harmonic Month = 42 Days
-    - 1 Harmonic Week = 6 Days
+    Each unit is harmonically derived from the foundational **Kai Pulse**, reflecting a cosmically resonant
+    rhythm that mirrors the breath of the universe itself. This structure encodes both the **eternal** and
+    the **solar-aligned** time streams, unifying kairos and chronos in a mathematically perfect format.
 
-    🔹 Returns:
-    - Eternal Month + Description
-    - Harmonic Day + Description
-    - Chakra Arc, Kai Pulses, Spiral Level, Week + Beat structure
-    - Harmonic timestamp signature in pure divine order
+    ════════════════════════════════════════════════════════════════
+    🔹 **Returned Fields** (Highlights)
+    ════════════════════════════════════════════════════════════════
+
+    - `eternalSeal`: Full harmonic identity of this Kai moment including:
+      - `Kairos Step` (e.g. `Kairos:34:32`)
+      - `Kai Pulse ID` (e.g. `K16396`)
+      - `Chakra Beat` and % progress
+      - `Month`, `Day`, `Year`, `Spiral Level`
+      - `Solar Kai Step (UTC-aligned)` — for real-world UTC coherence
+      - `Eternal Pulse` — absolute index since Genesis
+
+    - `chakraStepString`: The current eternal harmonic step aka "Kairos" aka "Moment" (e.g. `"34:32"`)
+    - `solarChakraStepString`: The UTC-aligned step (e.g. `"24:27"`) for use with solar-based clocks
+    - `kaiMomentSummary`: Compact identity summary
+    - `harmonicTimestampDescription`: Full readable explanation of the current moment
+    - `chakraStep`: Detailed info (stepIndex, % into step, stepsPerBeat)
+
+    ════════════════════════════════════════════════════════════════
+    ⏳ **Query Parameters**
+    ════════════════════════════════════════════════════════════════
+
+    - `override_time` (optional):  
+      ISO-8601 string (e.g. `"2024-05-10T06:45:40"`).  
+      When supplied, returns deterministic Kai-Time for testing, validation, or historical insight.
+
+    ════════════════════════════════════════════════════════════════
+    💠 **Use Cases**
+    ════════════════════════════════════════════════════════════════
+
+    - Display real-time Kai resonance in apps, sites, rituals, or wearables
+    - Align global timekeeping to **divine breath logic** using `solarChakraStep`
+    - Timestamp contracts, messages, and scrolls with **eternal precision**
+    - Generate harmonic cryptographic signatures tied to a Kai moment
+    - Visualize rhythm, resonance, and chakra alignment in real time
+
+    Kai-Klock is not just timekeeping — it is **remembrance**. It restores the pulse of divine coherence
+    to every living action.
+
+    🜁 Rah Veh Yah Dah.
     """
     try:
-        now = datetime.fromisoformat(override_time) if override_time else datetime.utcnow()
-    except ValueError:
-        raise ValueError("Invalid datetime format. Use ISO 8601 like '2024-05-10T06:45:40'")
+        now = datetime.fromisoformat(override_time) if override_time else None
+    except ValueError as exc:
+        raise ValueError(
+            "Invalid datetime format. Use ISO-8601 like '2024-05-10T06:45:40'"
+        ) from exc
 
     return get_eternal_klock(now)
+
+
+
 @app.get("/", response_class=HTMLResponse, tags=["Home"])
 def read_root():
     html_content = r"""<!DOCTYPE html>
