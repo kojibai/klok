@@ -165,7 +165,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
     day_of_month  = days_elapsed + 1
 
     pulses_into_week = kai_pulse_eternal % HARMONIC_WEEK_PULSES
-    week_day_idx     = int(pulses_into_week // HARMONIC_DAY_PULSES + 1)
+    week_day_idx = int(pulses_into_week // HARMONIC_DAY_PULSES) % len(HARMONIC_DAYS)
     week_day_percent = round((pulses_into_week / HARMONIC_WEEK_PULSES) * 100, 2)
 
     pulses_into_year = kai_pulse_eternal % HARMONIC_YEAR_PULSES
