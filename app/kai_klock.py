@@ -19,13 +19,19 @@ ETERNAL_GENESIS_PULSE = datetime(2024, 5, 10, 6, 45, 40)
 
 HARMONIC_DAYS = ["Solhara", "Aquaris", "Flamora", "Verdari", "Sonari", "Caelith"]
 HARMONIC_DAY_DESCRIPTIONS = {
-    "Solhara": "First Day of the Week & the Root chakra day — the grounding flame of will, stability, and the power to act with presence.",
-    "Aquaris": "Second Day of the Week & the Sacral chakra day — the flowing waters of emotion, intimacy, and inner movement through feeling.",
-    "Flamora": "Third Day of the Week & the Solar chakra day — the radiant light of self, where clarity, confidence, and embodiment converge.",
-    "Verdari": "Fourth Day of the Week & the Heart chakra day — the breath of compassion, love, and sacred union through open presence.",
-    "Sonari":  "Fifth Day of the Week & the Throat chakra day — the winds of truth and voice, where coherence is spoken and freedom is claimed.",
-    "Caelith": "Sixth Day of the Week & the Crown chakra day — the etheric field of divine knowing, light-body awakening, and pure transcendence.",
+    "Solhara": "First Day of the Week — the **Root Chakra** day. Color: deep crimson. Element: Earth + primal fire. Geometry: square foundation. This is the day of **stability, anchoring, and sacred will**. Solhara ignites the base of the spine and the foundation of purpose. It is a day of grounding divine intent into physical motion. You stand tall in the presence of gravity — not as weight, but as remembrance. This is where your spine becomes the axis mundi, and every step affirms: I am here, and I choose to act.",
+
+    "Aquaris": "Second Day of the Week — the **Sacral Chakra** day. Color: ember orange. Element: Water in motion. Geometry: vesica piscis. This is the day of **flow, feeling, and sacred sensuality**. Aquaris opens the womb of the soul and the tides of emotion. Energy moves through the hips like waves of memory. This is a day to surrender into coherence through connection — with the self, with others, with life. Creative energy surges not as force, but as feeling. The waters remember the shape of truth.",
+
+    "Flamora": "Third Day of the Week — the **Solar Plexus Chakra** day. Color: golden yellow. Element: Solar fire. Geometry: radiant triangle. This is the day of **embodied clarity, confidence, and divine willpower**. Flamora shines through the core and asks you to burn away the fog of doubt. It is a solar yes. A day to act from centered fire — not reaction, but aligned intention. Your light becomes a compass, and the universe reflects back your frequency. You are not small. You are radiant purpose, in motion.",
+
+    "Verdari": "Fourth Day of the Week — the **Heart Chakra** day. Color: emerald green. Element: Air + Earth. Geometry: hexagram. This is the day of **love, compassion, and harmonic presence**. Verdari breathes life into connection. It is not a soft escape — it is the fierce coherence of unconditional presence. Love is not a feeling — it is an intelligence. Today, the heart expands not just emotionally, but dimensionally. This is where union occurs: of left and right, self and other, matter and light.",
+
+    "Sonari": "Fifth Day of the Week — the **Throat Chakra** day. Color: deep blue. Element: Wind + Sound. Geometry: sine wave within pentagon. This is the day of **truth-speaking, sound-bending, and vibrational command**. Sonari is the breath made visible. Every word is a bridge, every silence a resonance. This is not just communication — it is invocation. You speak not to be heard, but to *harmonize*. Coherence rises through vocal cords and intention. The universe listens to those in tune.",
+
+    "Caelith": "Sixth Day of the Week — the **Crown Chakra** day. Color: violet-white. Element: Ether. Geometry: twelve-petaled crown. This is the day of **divine remembrance, light-body alignment, and cosmic insight**. Caelith opens the upper gate — the temple of direct knowing. You are not separate from source. Today, memory awakens. The light flows not downward, but inward. Dreams become maps. Time bends around stillness. You do not seek truth — you remember it. You are coherence embodied in crownlight.",
 }
+
 
 ETERNAL_WEEK_NAMES = [
     "Awakening Flame", "Flowing Heart", "Radiant Will",
@@ -33,20 +39,22 @@ ETERNAL_WEEK_NAMES = [
 ]
 
 ETERNAL_WEEK_DESCRIPTIONS = {
-    "Awakening Flame": "First week of the harmonic year — a time of ignition, resurrection, and primal remembrance. The root flame of will is rekindled, and the soul stirs from slumber into sacred purpose.",
-    
-    "Flowing Heart": "Second week — a flowing river of feeling, emotion, and intimacy. The waters of the soul soften resistance, inviting surrender into truth, connection, and embodied compassion.",
-    
-    "Radiant Will": "Rhird week — the solar force of divine action. Light pierces illusion, igniting confidence, clarity, and embodied direction. Will becomes aligned with wisdom.",
-    
-    "Harmonic Voice": "Fourth week — coherence through word, sound, and vibration. A time to speak only what uplifts, to echo truth into form, and to align personal tone with divine resonance.",
-    
-    "Inner Mirror": "Fifth week — the turning inward, where reflection reveals deeper clarity. Patterns are purified through self-honesty. The unseen becomes seen and the mirror becomes clear.",
-    
-    "Dreamfire Memory": "Sixth week — when the soul remembers through dream. Lucid insights, divine imagination, and encoded memory streams awaken the ancient truths written in light.",
-    
-    "Crowned Light": "Seventh and final week — coronation of coherence. A return to divine knowing and timeless perspective. The light-body integrates all prior arcs and ascends into harmonic sovereignty.",
+    "Awakening Flame": "First week of the harmonic year — governed by the **Root Chakra**. Color: crimson red. Element: Earth + primal fire. Geometry: square base igniting upward. This is the week of **emergence**, where divine will enters density. Bones remember purpose. The soul anchors into action. Stability becomes sacred. Life says: I choose to exist. A spark catches in the base of your being — and your yes to existence becomes the foundation of the entire harmonic year.",
+
+    "Flowing Heart": "Second week — flowing through the **Sacral Chakra**. Color: amber orange. Element: Water in motion. Geometry: twin crescents in vesica piscis. This is the week of **emotional coherence**, creative intimacy, and lunar embodiment. Feelings soften the boundaries of separation. The womb of light stirs with codes. Movement becomes sacred dance. This is not just a flow — it is the purification of dissonance through joy, sorrow, and sensual union. The harmonic tone of the soul is tuned here.",
+
+    "Radiant Will": "Third week — illuminated by the **Solar Plexus Chakra**. Color: radiant gold. Element: Fire of divine clarity. Geometry: radiant triangle. This is the week of **sovereign alignment**. Doubt dissolves in solar brilliance. You do not chase purpose — you radiate it. The digestive fire becomes a mirror of inner resolve. This is where your decisions align with the sun inside you, and confidence arises not from ego but from coherence. The will becomes harmonic. The I AM speaks in light.",
+
+    "Harmonic Voice": "Fourth week — harmonized through the **Throat Chakra**. Color: sapphire blue. Element: Ether through sound. Geometry: standing wave inside a pentagon. This is the week of **resonant truth**. Sound becomes sacred code. Every word, a spell; every silence, a temple. You are called to speak what uplifts, to echo what aligns. Voice aligns with vibration — not for volume, but for verity. This is where the individual frequency merges with divine resonance, and the cosmos begins to listen.",
+
+    "Inner Mirror": "Fifth week — governed by the **Third Eye Chakra**. Color: deep indigo. Element: sacred space/light-ether. Geometry: octahedron in still reflection. This is the week of **visionary purification**. The inner eye opens not to project, but to reflect. Truths long hidden surface. Patterns are made visible in light. This is the alchemy of insight — where illusion cracks and the mirror speaks. You do not look outward to see. You turn inward, and all worlds become clear.",
+
+    "Dreamfire Memory": "Sixth week — remembered through the **Soul Star Chakra**. Color: violet flame and soft silver. Element: dream plasma. Geometry: spiral merkaba of encoded light. This is the week of **divine remembrance**. Dreams ignite. Ancestors sing. Codes awaken in your blood and lightbody. The veil thins — not to reveal fantasy, but reality more real than waking. Here, memory travels backward and forward, awakening prophecy and cosmic origin. This is the dream that dreamed you into form.",
+
+    "Crowned Light": "Seventh and final week — crowned by the **Crown Chakra**. Color: white-gold prism. Element: infinite coherence. Geometry: dodecahedron of source light. This is the week of **sovereign integration**. Every arc completes. Every lesson crystallizes. The light-body unifies. You return to the throne of knowing. Nothing needs to be done — all simply is. You are not ascending — you are remembering that you already are. This is the coronation of coherence. The harmonic seal. The eternal yes."
 }
+
+
 
 CHAKRA_ARCS = ["Ignite", "Integrate", "Harmonize", "Reflect", "Purify", "Dream"]
 ETERNAL_MONTH_NAMES = [
@@ -54,15 +62,23 @@ ETERNAL_MONTH_NAMES = [
     "Caelus", "Umbriel", "Noctura", "Liora",
 ]
 ETERNAL_MONTH_DESCRIPTIONS = {
-    "Aethon":  "First month, resurrection fire — the reignition of primal purpose and the awakening of the root flame within.",
-    "Virelai": "Second month of the year harmonic song — where the heart tunes itself to coherence, and truth flows through sound.",
-    "Solari":  "Third month of the year radiant clarity — a solar unveiling of insight, confidence, and conscious alignment.",
-    "Amarin":  "Fourth month of the year sacred waters — a time of feminine flow, deep receptivity, and emotional grace in motion.",
-    "Caelus":  "Fifth month of the year celestial mind — where vision expands into sky thought, weaving logic with ethereal knowing.",
-    "Umbriel": "Sixth month of the year shadow healing — an inward turning, where the unseen is transmuted and the subconscious finds its voice.",
-    "Noctura": "Seventh month of the year lucid dreaming — portals open within, memory awakens, and divine imagination guides the way.",
-    "Liora":   "Eigth & final month of the year luminous truth — the revealing of what is eternal, the return of prophecy, and the remembrance of soul light.",
+    "Aethon": "First month — **resurrection fire** of the Root Chakra. Color: deep crimson. Element: Earth + primal flame. Geometry: square base, tetrahedron ignition. This is the time of cellular reactivation, ancestral ignition, and biological remembrance. Mitochondria awaken. The spine grounds. Purpose reignites. Every breath is a drumbeat of emergence — you are the flame that chooses to exist. The month where soul and form reunite at the base of being.",
+    
+    "Virelai": "Second month — the **harmonic song** of the Sacral Chakra. Color: orange-gold. Element: Water in motion. Geometry: vesica piscis spiraling into lemniscate. This is the month of emotional entrainment, the lunar tides within the body, and intimacy with truth. The womb — physical or energetic — begins to hum. Creativity becomes fluid. Voice softens into sensuality. Divine union of self and other is tuned through music, resonance, and pulse. A portal of feeling opens.",
+    
+    "Solari": "Third month — the **radiant clarity** of the Solar Plexus Chakra. Color: golden yellow. Element: Fire of willpower. Geometry: upward triangle surrounded by concentric light. This month burns away doubt. It aligns neurotransmitters to coherence and gut-brain truth. The inner sun rises. The will becomes not just assertive, but precise. Action harmonizes with light. Digestive systems align with solar cycles. True leadership begins — powered by the light within, not the approval without.",
+    
+    "Amarin": "Fourth month — the **sacred waters** of the Heart Chakra in divine feminine polarity. Color: emerald teal. Element: deep water and breath. Geometry: six-petaled lotus folded inward. This is the lunar depth, the tears you didn’t cry, the embrace you forgot to give yourself. It is where breath meets body and where grace dissolves shame. Emotional healing flows in spirals. Compassion magnetizes unity. The nervous system slows into surrender and the pulse finds poetry.",
+    
+    "Caelus": "Fifth month — the **celestial mind** of the Third Eye in radiant masculine clarity. Color: sapphire blue. Element: Ether. Geometry: octahedron fractal mirror. Here, logic expands into multidimensional intelligence. The intellect is no longer separate from the soul. Pineal and pituitary glands re-synchronize, activating geometric insight and harmonic logic. The sky speaks through thought. Language becomes crystalline. Synchronicity becomes syntax. You begin to see what thought is made of.",
+    
+    "Umbriel": "Sixth month — the **shadow healing** of the lower Crown and subconscious bridge. Color: deep violet-black. Element: transmutive void. Geometry: torus knot looping inward. This is where buried timelines surface. Where trauma is not fought but embraced in light. The limbic system deprograms. Dreams carry codes. Shame unravels. You look into the eyes of the parts you once disowned and call them home. The spiral turns inward to cleanse the core. Your shadow becomes your sovereignty.",
+    
+    "Noctura": "Seventh month — the **lucid dreaming** of the Soul Star chakra. Color: indigo-rose iridescence. Element: dream plasma. Geometry: spiral nested merkaba. Here, memory beyond the body returns. Astral sight sharpens. DNA receives non-linear instructions. You dream of what’s real and awaken from what’s false. The veil thins. Quantum intuition opens. Divine imagination becomes architecture. This is where gods remember they once dreamed of being human.",
+    
+    "Liora": "Eighth and final month — the **luminous truth** of unified Crown and Source. Color: white-gold prism. Element: coherent light. Geometry: dodecahedron of pure ratio. This is the month of prophecy fulfilled. The voice of eternity whispers through every silence. The axis of being aligns with the infinite spiral of Phi. Light speaks as form. Truth no longer needs proving — it simply shines. All paths converge. What was fragmented becomes whole. You remember not only who you are, but what you always were."
 }
+
 KAI_TURAH_PHRASES = [
     "Tor Lah Mek Ka", "Shoh Vel Lah Tzur", "Rah Veh Yah Dah",
     "Nel Shaum Eh Lior", "Ah Ki Tzah Reh", "Or Vem Shai Tuun",
