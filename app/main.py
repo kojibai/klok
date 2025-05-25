@@ -157,6 +157,17 @@ def read_kai_klock(
     6. **Caelith**  – Crown chakra day: Ether light, divinity, remembrance  
 
     ═══════════════════════════════════════════════════════════════════  
+    🕊 **Eternal Weeks** — Harmonic Week Cycle (7-Week Spiral)  
+    ═══════════════════════════════════════════════════════════════════  
+    1. **Awakening Flame**     – Root fire of ignition, will, resurrection  
+    2. **Flowing Heart**       – Emotional waters, intimacy, surrender  
+    3. **Radiant Will**        – Solar clarity, aligned confidence, embodiment  
+    4. **Harmonic Voice**      – Spoken truth, vibration, coherence in sound  
+    5. **Inner Mirror**        – Reflection, purification, self-seeing  
+    6. **Dreamfire Memory**    – Lucid vision, divine memory, encoded light  
+    7. **Crowned Light**       – Integration, sovereignty, harmonic ascension  
+
+    ═══════════════════════════════════════════════════════════════════  
     📅 **Eternal Months** — 8 Harmonic Months (42 Days Each)  
     ═══════════════════════════════════════════════════════════════════  
     1. **Aethon**     – Resurrection fire: Root awakening  
