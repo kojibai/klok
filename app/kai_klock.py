@@ -180,8 +180,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
     percent_whole = round(percent_to_next)
     eternal_seal = (
         "Eternal Seal: "
-        f"Kairos:{chakra_step_str} • K{eternal_kai_pulse_today} • "
-        f"CB{eternal_beat_idx}-{percent_whole}% • "
+        f"Kairos:{chakra_step_str} • Chakra Beat:{eternal_beat_idx}/36 Step In Beat: {step_idx}/44 ({percent_to_next}%) Pulse(Today):{eternal_kai_pulse_today} • "
         f"D{day_of_month}/M{eternal_month_idx} "
         f"Y{harmonic_year_idx} "
         f"PS{phi_spiral_lvl} • {solar_seal} in the {solar_chakra_arc} Arc • "
