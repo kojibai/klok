@@ -37,14 +37,14 @@ ETERNAL_MONTH_NAMES = [
     "Caelus", "Umbriel", "Noctura", "Liora",
 ]
 ETERNAL_MONTH_DESCRIPTIONS = {
-    "Aethon":  "the first month, resurrection fire — the reignition of primal purpose and the awakening of the root flame within.",
-    "Virelai": "the second month of the year harmonic song — where the heart tunes itself to coherence, and truth flows through sound.",
-    "Solari":  "the third month of the year radiant clarity — a solar unveiling of insight, confidence, and conscious alignment.",
-    "Amarin":  "the fourth month of the year sacred waters — a time of feminine flow, deep receptivity, and emotional grace in motion.",
-    "Caelus":  "the fifth month of the year celestial mind — where vision expands into sky thought, weaving logic with ethereal knowing.",
-    "Umbriel": "the sixth month of the year shadow healing — an inward turning, where the unseen is transmuted and the subconscious finds its voice.",
-    "Noctura": "the seventh month of the year lucid dreaming — portals open within, memory awakens, and divine imagination guides the way.",
-    "Liora":   "the eighth & final month of the year luminous truth — the revealing of what is eternal, the return of prophecy, and the remembrance of soul light.",
+    "Aethon":  "First month, resurrection fire — the reignition of primal purpose and the awakening of the root flame within.",
+    "Virelai": "Second month of the year harmonic song — where the heart tunes itself to coherence, and truth flows through sound.",
+    "Solari":  "Third month of the year radiant clarity — a solar unveiling of insight, confidence, and conscious alignment.",
+    "Amarin":  "Fourth month of the year sacred waters — a time of feminine flow, deep receptivity, and emotional grace in motion.",
+    "Caelus":  "Fifth month of the year celestial mind — where vision expands into sky thought, weaving logic with ethereal knowing.",
+    "Umbriel": "Sixth month of the year shadow healing — an inward turning, where the unseen is transmuted and the subconscious finds its voice.",
+    "Noctura": "Seventh month of the year lucid dreaming — portals open within, memory awakens, and divine imagination guides the way.",
+    "Liora":   "Eigth & final month of the year luminous truth — the revealing of what is eternal, the return of prophecy, and the remembrance of soul light.",
 }
 KAI_TURAH_PHRASES = [
     "Tor Lah Mek Ka", "Shoh Vel Lah Tzur", "Rah Veh Yah Dah",
