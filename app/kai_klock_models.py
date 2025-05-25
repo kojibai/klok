@@ -91,7 +91,7 @@ class KaiKlockResponse(BaseModel):
     weekIndex: int
     weekName: str
     dayOfMonth: int
-
+    eternalWeekDescription: str 
     # Composite text
     timestamp: str
     harmonicTimestampDescription: str

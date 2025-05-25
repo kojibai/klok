@@ -184,6 +184,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
     week_idx_raw  = days_elapsed // 6
     week_idx      = week_idx_raw + 1
     week_name     = ETERNAL_WEEK_NAMES[week_idx_raw]
+    eternal_week_description = ETERNAL_WEEK_DESCRIPTIONS.get(week_name, "")
     day_of_month  = days_elapsed + 1
     
     pulses_into_week = kai_pulse_eternal % HARMONIC_WEEK_PULSES
@@ -282,11 +283,13 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
 
         weekIndex=week_idx,
         weekName=week_name,
+        eternalWeekDescription=eternal_week_description,
         dayOfMonth=day_of_month,
 
         timestamp=timestamp,
         harmonicTimestampDescription=harmonic_ts_desc,
         kaiMomentSummary=kai_moment,
+
 
         harmonicLevels={
             "arcBeat": {
@@ -315,6 +318,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
             "weekDayIndex": week_day_idx,
             "pulsesIntoWeek": pulses_into_week,
             "percent": week_day_percent,
+            
         },
         eternalMonthProgress={
             "daysElapsed": days_elapsed,
