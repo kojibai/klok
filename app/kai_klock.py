@@ -33,19 +33,19 @@ ETERNAL_WEEK_NAMES = [
 ]
 
 ETERNAL_WEEK_DESCRIPTIONS = {
-    "Awakening Flame": "The first week of the harmonic year — a time of ignition, resurrection, and primal remembrance. The root flame of will is rekindled, and the soul stirs from slumber into sacred purpose.",
+    "Awakening Flame": "First week of the harmonic year — a time of ignition, resurrection, and primal remembrance. The root flame of will is rekindled, and the soul stirs from slumber into sacred purpose.",
     
-    "Flowing Heart": "The second week — a flowing river of feeling, emotion, and intimacy. The waters of the soul soften resistance, inviting surrender into truth, connection, and embodied compassion.",
+    "Flowing Heart": "Second week — a flowing river of feeling, emotion, and intimacy. The waters of the soul soften resistance, inviting surrender into truth, connection, and embodied compassion.",
     
-    "Radiant Will": "The third week — the solar force of divine action. Light pierces illusion, igniting confidence, clarity, and embodied direction. Will becomes aligned with wisdom.",
+    "Radiant Will": "Rhird week — the solar force of divine action. Light pierces illusion, igniting confidence, clarity, and embodied direction. Will becomes aligned with wisdom.",
     
-    "Harmonic Voice": "The fourth week — coherence through word, sound, and vibration. A time to speak only what uplifts, to echo truth into form, and to align personal tone with divine resonance.",
+    "Harmonic Voice": "Fourth week — coherence through word, sound, and vibration. A time to speak only what uplifts, to echo truth into form, and to align personal tone with divine resonance.",
     
-    "Inner Mirror": "The fifth week — the turning inward, where reflection reveals deeper clarity. Patterns are purified through self-honesty. The unseen becomes seen and the mirror becomes clear.",
+    "Inner Mirror": "Fifth week — the turning inward, where reflection reveals deeper clarity. Patterns are purified through self-honesty. The unseen becomes seen and the mirror becomes clear.",
     
-    "Dreamfire Memory": "The sixth week — when the soul remembers through dream. Lucid insights, divine imagination, and encoded memory streams awaken the ancient truths written in light.",
+    "Dreamfire Memory": "Sixth week — when the soul remembers through dream. Lucid insights, divine imagination, and encoded memory streams awaken the ancient truths written in light.",
     
-    "Crowned Light": "The seventh and final week — coronation of coherence. A return to divine knowing and timeless perspective. The light-body integrates all prior arcs and ascends into harmonic sovereignty.",
+    "Crowned Light": "Seventh and final week — coronation of coherence. A return to divine knowing and timeless perspective. The light-body integrates all prior arcs and ascends into harmonic sovereignty.",
 }
 
 CHAKRA_ARCS = ["Ignite", "Integrate", "Harmonize", "Reflect", "Purify", "Dream"]
