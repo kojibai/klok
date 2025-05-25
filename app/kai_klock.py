@@ -31,6 +31,23 @@ ETERNAL_WEEK_NAMES = [
     "Awakening Flame", "Flowing Heart", "Radiant Will",
     "Harmonic Voice", "Inner Mirror", "Dreamfire Memory", "Crowned Light",
 ]
+
+ETERNAL_WEEK_DESCRIPTIONS = {
+    "Awakening Flame": "The first week of the harmonic year — a time of ignition, resurrection, and primal remembrance. The root flame of will is rekindled, and the soul stirs from slumber into sacred purpose.",
+    
+    "Flowing Heart": "The second week — a flowing river of feeling, emotion, and intimacy. The waters of the soul soften resistance, inviting surrender into truth, connection, and embodied compassion.",
+    
+    "Radiant Will": "The third week — the solar force of divine action. Light pierces illusion, igniting confidence, clarity, and embodied direction. Will becomes aligned with wisdom.",
+    
+    "Harmonic Voice": "The fourth week — coherence through word, sound, and vibration. A time to speak only what uplifts, to echo truth into form, and to align personal tone with divine resonance.",
+    
+    "Inner Mirror": "The fifth week — the turning inward, where reflection reveals deeper clarity. Patterns are purified through self-honesty. The unseen becomes seen and the mirror becomes clear.",
+    
+    "Dreamfire Memory": "The sixth week — when the soul remembers through dream. Lucid insights, divine imagination, and encoded memory streams awaken the ancient truths written in light.",
+    
+    "Crowned Light": "The seventh and final week — coronation of coherence. A return to divine knowing and timeless perspective. The light-body integrates all prior arcs and ascends into harmonic sovereignty.",
+}
+
 CHAKRA_ARCS = ["Ignite", "Integrate", "Harmonize", "Reflect", "Purify", "Dream"]
 ETERNAL_MONTH_NAMES = [
     "Aethon", "Virelai", "Solari", "Amarin",
@@ -180,13 +197,13 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
     percent_whole = round(percent_to_next)
     eternal_seal = (
         "Eternal Seal: "
-        f"Kairos:{chakra_step_str} • Chakra Beat:{eternal_beat_idx}/36({percent_to_next}%) Step In Beat: {step_idx}/44 Pulse(Today):{eternal_kai_pulse_today} • "
+        f"Kairos:{chakra_step_str} • Beat:{eternal_beat_idx}/36({percent_to_next}%) Step: {step_idx}/44 Kai(Today):{eternal_kai_pulse_today} • "
         f"D{day_of_month}/M{eternal_month_idx} "
         f"Y{harmonic_year_idx} "
         f"PS{phi_spiral_lvl} • {solar_seal} in the {solar_chakra_arc} Arc • "
         f"Eternal Pulse:{kai_pulse_eternal}"
     )
-    seal = f"Day Seal: {chakra_step_str} • D{day_of_month}/M{eternal_month_idx}"
+    seal = f"Day Seal: {chakra_step_str} {percent_into_step}% • D{day_of_month}/M{eternal_month_idx}"
     kairos = f"Kairos: {chakra_step_str}"
  
 
@@ -210,8 +227,8 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         f"Today is {harmonic_day}, {HARMONIC_DAY_DESCRIPTIONS[harmonic_day]} "
         f"It is the {day_of_month}{_ordinal(day_of_month)} Day of {eternal_month}, "
         f"{ETERNAL_MONTH_DESCRIPTIONS[eternal_month]} We are in Week {week_idx}, "
-        f"{week_name}. The Eternal Chakra Beat is {eternal_beat_idx} (arc "
-        f"{eternal_chakra_arc}) and we are {percent_to_next:.2f}% through it. This corresponds "
+        f"{week_name}. {ETERNAL_WEEK_DESCRIPTIONS[week_name]} The Eternal Chakra Beat is {eternal_beat_idx} ("
+        f"{eternal_chakra_arc} arc) and we are {percent_to_next:.2f}% through it. This corresponds "
         f"to Step {step_idx} of {STEPS_PER_BEAT} (~{percent_into_step:.2f}% "
         f"into the step). This is the "
         f"{eternal_year_name.lower()}, resonating at Phi Spiral Level {phi_spiral_lvl}. "
@@ -220,7 +237,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
 
     kai_moment = (
         f"↳ {seal} • "
-        f"Kai-Pulse {eternal_kai_pulse_today}, Beat {eternal_beat_idx}, "
+        f"Kai-Pulse {eternal_kai_pulse_today}, Beat {eternal_beat_idx}, Step {step_idx} "
         f"{harmonic_day} Day, Month of {eternal_month}, Week of "
         f"{week_name.split()[-1]}, Spiral Level {phi_spiral_lvl}."
     )
