@@ -209,7 +209,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         f"{week_name}. The Eternal Chakra Beat is {eternal_beat_idx} (arc "
         f"{chakra_arc}) and we are {percent_to_next:.2f}% through it. This corresponds "
         f"to Step {step_idx} of {STEPS_PER_BEAT} (~{percent_into_step:.2f}% "
-        f"into the step), i.e. {chakra_step_str}. This is the "
+        f"into the step). This is the "
         f"{eternal_year_name.lower()}, resonating at Phi Spiral Level {phi_spiral_lvl}. "
         f"{eternal_seal}"
     )
