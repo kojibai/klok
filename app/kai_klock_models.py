@@ -66,6 +66,10 @@ class KaiKlockResponse(BaseModel):
     eternalMonthIndex: int
     eternalMonthDescription: str
     harmonicDay: str
+    solarDayOfMonth: int
+    solarMonthIndex: int
+    solarHarmonicDay: str
+
     harmonicDayDescription: str
     chakraArc: str
 
@@ -81,7 +85,7 @@ class KaiKlockResponse(BaseModel):
     chakraStepString: str
     solarChakraStep: ChakraStep
     solarChakraStepString: str
-
+    
     # Spiral / phrase / year
     phiSpiralLevel: int
     kaiTurahPhrase: str

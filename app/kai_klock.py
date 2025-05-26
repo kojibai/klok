@@ -134,11 +134,24 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
     total_sec         = (now - ETERNAL_GENESIS_PULSE).total_seconds()
     kai_pulse_eternal = int(total_sec // KAI_PULSE_DURATION)
 
-    # ── Solar-aligned pulses (today) ───────────────────────────
-    kai_pulse_today = int(
-        (now - now.replace(hour=0, minute=0, second=0, microsecond=0)).total_seconds()
-        // KAI_PULSE_DURATION
-    )
+ # 🔁 Replace UTC-midnight anchoring with sunrise-based solar pulse alignment
+# Anchor to Genesis Sunrise (May 10, 2024 06:45:40 UTC) at Mahe, Seychelles
+# Each solar day is HARMONIC_DAY_PULSES * KAI_PULSE_DURATION seconds long
+    SECONDS_PER_HARMONIC_DAY = HARMONIC_DAY_PULSES * KAI_PULSE_DURATION  # ≈ 91,529.93 sec
+
+    # Use Genesis Pulse as starting solar sunrise
+    genesis_sunrise = ETERNAL_GENESIS_PULSE
+
+    # Compute solar-aligned day index from Genesis sunrise forward
+    solar_day_index = int((now - genesis_sunrise).total_seconds() // SECONDS_PER_HARMONIC_DAY)
+
+    # Now derive the solar-aligned calendar
+    solar_day_of_month = (solar_day_index % HARMONIC_MONTH_DAYS) + 1
+    solar_month_index = ((solar_day_index // HARMONIC_MONTH_DAYS) % 8) + 1
+    solar_harmonic_day = HARMONIC_DAYS[solar_day_index % len(HARMONIC_DAYS)]
+
+    # Update kai_pulse_today (from last solar sunrise to now)
+    kai_pulse_today = int((now - genesis_sunrise).total_seconds() % SECONDS_PER_HARMONIC_DAY // KAI_PULSE_DURATION)
 
     # ── Eternal-aligned pulses (within current eternal day) ───
     eternal_kai_pulse_today = int(kai_pulse_eternal % HARMONIC_DAY_PULSES)
@@ -288,7 +301,10 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         kaiPulseEternal=kai_pulse_eternal,
         eternalChakraArc=eternal_chakra_arc,
         solarChakraArc=solar_chakra_arc,
-        
+        solarDayOfMonth = solar_day_of_month,
+        solarMonthIndex = solar_month_index,
+        solarHarmonicDay = solar_harmonic_day,
+
 
         chakraBeat={
             "beatIndex": solar_beat_idx,
