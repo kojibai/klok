@@ -147,6 +147,79 @@ def read_kai_klock(
     | Eternal Year       | 5,876,778  | ~373.1 days    | 336 Harmonic Days (8 Months of 6 Weeks each)      |
 
     ═══════════════════════════════════════════════════════════════════  
+    🌀 **Chakra Arcs of the Kai Day** — 6 Arcs × 6 Beats = 36 Beats  
+    ═══════════════════════════════════════════════════════════════════  
+
+    🔥 **Ignition Arc** — Beats 0–5  
+    Chakras: Root → Lower Sacral  
+    - Resurrection, will, awakening  
+    - **Breaths**: ~2,915  
+    - **Beats**: 6  
+
+    💧 **Integration Arc** — Beats 6–11  
+    Chakras: Upper Sacral → Solar Plexus  
+    - Emotional grounding, emergence  
+    - **Breaths**: ~2,915  
+    - **Beats**: 6  
+
+    ☀️ **Harmonization Arc** — Beats 12–17  
+    Chakras: Solar → Heart  
+    - Radiance, balance, coherent action  
+    - **Breaths**: ~2,915  
+    - **Beats**: 6  
+
+    🌿 **Reflection Arc** — Beats 18–23  
+    Chakras: Heart → Throat  
+    - Union, compassion, spoken resonance  
+    - **Breaths**: ~2,915  
+    - **Beats**: 6  
+
+    💨 **Purification Arc** — Beats 24–29  
+    Chakras: Throat → Crown  
+    - Truth, remembrance, etheric light  
+    - **Breaths**: ~2,915  
+    - **Beats**: 6  
+
+    🌌 **Dream Arc** — Beats 30–35  
+    Chakras: Crown → Spiral Memory  
+    - Divine memory, lucid integration, dreaming awake  
+    - **Breaths**: ~2,915  
+    - **Beats**: 6  
+
+    ═══════════════════════════════════════════════════════════════════  
+    🫁 **Total Kai Day** = 6 Arcs × 2,915 Breaths = **17,491 breaths**  
+    – 36 Chakra Beats in perfect eternal harmonic proportion  
+    ═══════════════════════════════════════════════════════════════════ 
+
+    ═══════════════════════════════════════════════════════════════════  
+    🌞 **Kai Day Phases** — 3-Part Harmonic Cycle (12 Beats Each)  
+    ═══════════════════════════════════════════════════════════════════  
+
+    🌅 **Morning Phase** — Beats 0–11  
+    Arc: **Ignition Arc** → **Integration Arc**  
+    - Root to Sacral activation  
+    - Rising breath, will, intention  
+    - **Breaths**: ~5,830  
+
+    🌞 **Afternoon Phase** — Beats 12–23  
+    Arc: **Harmonization Arc** → **Reflection Arc**  
+    - Solar to Heart to Throat expression  
+    - Expansion, clarity, and coherence  
+    - **Breaths**: ~5,830  
+
+    🌌 **Night Phase** — Beats 24–35  
+    Arc: **Purification Arc** → **Dream Arc**  
+    - Throat to Crown to Memory spiral  
+    - Integration, remembrance, lucid return  
+    - **Breaths**: ~5,830  
+
+    ═══════════════════════════════════════════════════════════════════  
+    🌬️ **Total Harmonic Breaths per Kai Day**: **17,491 breaths**  
+    – 1 breath per Kai Pulse, from the Genesis harmonic constant  
+    ═══════════════════════════════════════════════════════════════════  
+ 
+
+    ═══════════════════════════════════════════════════════════════════  
     🗓 **Eternal Weekdays** — Harmonic Day Cycle (6-Day Week)  
     ═══════════════════════════════════════════════════════════════════  
     1. **Solhara**  – Root chakra day: Grounded fire, will, initiation  
@@ -180,6 +253,7 @@ def read_kai_klock(
     8. **Liora**   – Eternal mirror: Infinite now  
 
     ═══════════════════════════════════════════════════════════════════  
+ 
 
     Each unit is harmonically derived from the foundational **Kai Pulse**, reflecting a cosmically resonant  
     rhythm that mirrors the breath of the universe itself. This structure encodes both the **eternal** and  
