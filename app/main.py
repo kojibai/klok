@@ -64,7 +64,7 @@ The primary endpoint `/kai` returns a JSON object that describes the **exact har
 
 Kai-Klock is a deterministic, high-resolution timekeeping system designed to replace traditional mechanical time (Chronos) with a biologically and cosmologically coherent alternative (Kairos). Anchored to a fixed celestial event — the X3.98-class solar flare on May 10, 2024 at 06:45:40 UTC — the Kai-Klock defines time in terms of **Kai Pulses** (~5.236 seconds each), rather than arbitrary seconds or hours.
 
-Each Kai Pulse corresponds to a fundamental unit of breath, creating a unified structure of Beats, Arcs, and Harmonic Days that map more naturally to physical, cognitive, and environmental rhythms.
+Each Kai Pulse corresponds to a fundamental unit of breath, creating a unified structure of Steps(11), Beats(36), Arcs(6), and Harmonic Days (336) that map more naturally to physical, cognitive, and environmental rhythms.
 
 #### ⚙️ Technical Advantages
 
