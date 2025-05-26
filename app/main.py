@@ -75,7 +75,7 @@ Each Kai Pulse corresponds to a fundamental unit of breath, creating a unified s
 - **High-Resolution, Structured Time**
   - With 17,491.27 Kai Pulses per day, time is inherently granular and nested:
     - 1 Pulse ≈ 5.236s
-    - 1 Chakra Beat = 11 Pulses
+    - 1 Chakra Beat = 11 Steps
     - 1 Harmonic Day = 36 Beats = ~25.44 hours
   - Each unit is indexed in a deterministic hierarchy, enabling lossless encoding of time-based metadata.
 
