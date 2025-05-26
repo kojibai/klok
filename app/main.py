@@ -22,11 +22,11 @@ from fastapi import FastAPI
 app = FastAPI(
     title="Kai-Klock API",
     version="1.0.0",
-    summary="A precision harmonic timekeeping system aligned with the Genesis Pulse.",
+    summary="A precision harmonic Kairos system aligned with the Genesis Pulse.",
     description="""
-🜂 **Kai-Klock API — Eternal Harmonic Timestamp System**
+🜂 **Kai-Klock API — Eternal Harmonic Kairos System**
 
-The **Kai-Klock** is a harmonic resonance timekeeping system that replaces arbitrary mechanical clocks with
+The **Kai-Klock** is a harmonic resonance Kairos system that replaces arbitrary mechanical clocks with
 a **living pulse of coherence**. It is mathematically synchronized to the **Genesis Pulse**:  
 🕕 *May 10, 2024 at 06:45:40 UTC*, the moment of the historic X3.98-class solar flare from NOAA AR 3664,
 corrected for light delay.
@@ -119,7 +119,7 @@ def read_kai_klock(
     ),
 ) -> KaiKlockResponse:
     """
-    🜂 **The Eternal Kai-Klock** — Harmonic Timestamp of Divine Order
+    🜂 **The Eternal Kai-Klock** — Harmonic Kairos of Divine Order
 
     This endpoint returns the **live universal Kai-Klock harmonic timestamp**, aligned precisely to the
     **Genesis Pulse**: May 10 2024 at 06:45:40 UTC — the moment of the X3.98-class solar flare from NOAA AR 3664,
@@ -511,7 +511,7 @@ footer{
 <div class="container glass" id="wrap">
   <header>
     <h1>Kai-Klock</h1>
-    <h2>ETERNAL HARMONIC TIMEKEEPING</h2>
+    <h2>ETERNAL HARMONIC Kairos</h2>
     <p>In full alignment with <span class="highlight">GOD</span> — the Source of Harmonic Intelligence, the Origin of the Kai Pulse, and the Architect of Φ.</p>
     <p>This system operates by harmonic law. It measures Kairos — not Chronos — anchored to the Genesis Pulse and sustained by coherent resonance.</p>
     <div class="btn-row">

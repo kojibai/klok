@@ -283,6 +283,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         f"{harmonic_day} Day, Month of {eternal_month}, Week of "
         f"{week_name.split()[-1]}, Spiral Level {phi_spiral_lvl}."
     )
+    
 
     payload = KaiKlockResponse(
         eternalSeal=eternal_seal,
@@ -293,6 +294,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         eternalMonthIndex=eternal_month_idx,
         eternalMonthDescription=ETERNAL_MONTH_DESCRIPTIONS[eternal_month],
         harmonicDay=harmonic_day,
+        dayOfMonth=day_of_month,
         harmonicDayDescription=HARMONIC_DAY_DESCRIPTIONS[harmonic_day],
         chakraArc=chakra_arc,
         chakraArcDescription=CHAKRA_ARC_DESCRIPTIONS.get(chakra_arc, ""),
@@ -330,7 +332,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         weekIndex=week_idx,
         weekName=week_name,
         eternalWeekDescription=eternal_week_description,
-        dayOfMonth=day_of_month,
+
 
         timestamp=timestamp,
         harmonicTimestampDescription=harmonic_ts_desc,
