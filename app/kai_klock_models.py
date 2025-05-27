@@ -1,6 +1,7 @@
 # kai_klock_models.py  •  v2.5 “Eternal Spheres”
 
 from pydantic import BaseModel
+from typing import Optional
 
 
 # ════════════════════════════════════════════════════════════════
@@ -74,6 +75,14 @@ class HarmonicLevels(BaseModel):
 class KaiKlockResponse(BaseModel):
 
     # ── 1. Divine Narrative & Seals ─────────────────────────────
+    kairos_seal: Optional[str] = None
+    kairos_seal_percent_step: Optional[str] = None
+    kairos_seal_percent_step_solar: Optional[str] = None
+    kairos_seal_solar: Optional[str] = None
+    kairos_seal_day_month: Optional[str] = None
+    kairos_seal_day_month_percent: Optional[str] = None
+    kairos_seal_solar_day_month: Optional[str] = None
+    kairos_seal_solar_day_month_percent: Optional[str] = None
     eternalSeal: str
     seal: str
     harmonicNarrative: str
@@ -133,3 +142,4 @@ class KaiKlockResponse(BaseModel):
     timestamp: str
     harmonicTimestampDescription: str
     kaiMomentSummary: str
+    compressed_summary: str

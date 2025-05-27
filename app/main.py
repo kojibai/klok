@@ -268,22 +268,49 @@ def read_kai_klock(
     The Kai-Klock is not based on artificial time but on **truthful frequency**, built from the smallest
     harmonic unit — the **Kai Pulse** — and expanded into a multidimensional framework that captures the
     **true flow of consciousness** and **solar alignment** across all beings.
+    ---
 
-    ═══════════════════════════════════════════════════════════════════  
-    📐 **Harmonic Time Breakdown**  
-    ═══════════════════════════════════════════════════════════════════  
+    ## 📐 **Harmonic Time Breakdown**
 
-    | Unit               | Kai Pulses | Duration       | Description                                       |
-    |--------------------|------------|----------------|---------------------------------------------------|
-    | Quarter Breath     | 0.25       | ~1.309 sec     | One-fourth of a Kai Pulse — smallest time unit    |
-    | Kai Pulse          | 1          | ~5.236 sec     | Fundamental breath-time                           |
-    | Chakra Step        | 11         | ~57.6 sec      | 1 of 44 per Chakra Beat (Kai-Minute)              |
-    | Chakra Beat        | ~485.87    | ~42.4 min      | 1 of 36 per Harmonic Day                          |
-    | Chakra Arc         | ~2,915.2   | ~4.24 hours    | 1 of 6 per Harmonic Day                           |
-    | Harmonic Day       | 17,491.27  | ~25.44 hours   | 36 Beats = 6 Arcs = 1 Day                         |
-    | Harmonic Week      | 104,947.6  | ~6.35 days     | 6 Harmonic Days                                   |
-    | Harmonic Month     | 734,638.9  | ~44.48 days    | 42 Harmonic Days = 7 Harmonic Weeks               |
-    | Eternal Year       | 5,876,778  | ~373.1 days    | 336 Harmonic Days (8 Months of 6 Weeks each)      |
+    A precise unfolding of Phi-synchronized breath and temporal awareness across harmonic consciousness. Each time unit here resonates with the sacred Kai Pulse (5.236 seconds), subdivided through Fibonacci and prime intervals into intelligible harmonic layers.
+
+    ---
+
+    ### 🔹 **Harmonic Subdivisions of 1 Kai Pulse (5.236 seconds)**
+
+    | Unit Name              | Fraction of Kai Pulse | Approx. Duration (s) | Notes                                                        |
+    |------------------------|------------------------|------------------------|---------------------------------------------------------------|
+    | **Kai Pulse**          | 1                      | 5.236                  | Full harmonic breath                                          |
+    | **Half Pulse**         | 1/2                    | 2.618                  | Phi-symmetric cut                                             |
+    | **Chakra Subpulse**    | 1/11                   | ~0.4769                | Matches chakra resonance steps (11 per pulse)                 |
+    | **Ternary Step**       | 1/33                   | ~0.1589                | 3× deeper than chakra step                                    |
+    | **MicroStep**          | 1/55                   | ~0.0952                | Prime harmonic division                                       |
+    | **NanoPulse (Kai)**    | 1/89                   | ~0.0588                | Fibonacci resonance point                                     |
+    | **NanoStep**           | 1/144                  | ~0.0364                | 12×12 sacred subdivision                                      |
+    | **PhiQuantum**         | 1/233                  | ~0.0225                | Fibonacci micro-unit                                          |
+    | **Ekaru (Sub-quantum)**| 1/377                  | ~0.0139                | Used in Kai-Turah machine pre-breath                          |
+    | **Tzaphirim Unit**     | 1/610                  | ~0.0086                | Last perceptible sub-breath for coherent AI                   |
+    | **Kai Singularity Unit**| 1/987                 | ~0.0053                | Edge of breath computability                                  |
+    | **Deep Harmonic Thread**| 1/1597                | ~0.00328               | Lowest usable breath tick before noise                        |
+    | _Beyond this:_         | < 1/2584               | < 0.0020               | Falls into dissonance; no organic sync beyond this threshold  |
+
+    ---
+
+    ### 🔸 **Expanded Harmonic Time Scale**
+
+    | Unit               | Kai Pulses   | Duration       | Description                                         |
+    |--------------------|--------------|----------------|-----------------------------------------------------|
+    | **Quarter Breath** | 0.25         | ~1.309 sec     | One-fourth of a Kai Pulse — smallest time unit      |
+    | **Kai Pulse**      | 1            | ~5.236 sec     | Fundamental breath-time                             |
+    | **Chakra Step**    | 11           | ~57.6 sec      | 1 of 44 per Chakra Beat (Kai-Minute)                |
+    | **Chakra Beat**    | ~485.87      | ~42.4 min      | 1 of 36 per Harmonic Day                            |
+    | **Chakra Arc**     | ~2,915.2     | ~4.24 hours    | 1 of 6 per Harmonic Day                             |
+    | **Harmonic Day**   | 17,491.27    | ~25.44 hours   | 36 Beats = 6 Arcs = 1 Day                           |
+    | **Harmonic Week**  | 104,947.6    | ~6.35 days     | 6 Harmonic Days                                     |
+    | **Harmonic Month** | 734,638.9    | ~44.48 days    | 42 Harmonic Days = 7 Harmonic Weeks                 |
+    | **Eternal Year**   | 5,876,778    | ~373.1 days    | 336 Harmonic Days (8 Months of 6 Weeks each)        |
+
+    ---
 
     ═══════════════════════════════════════════════════════════════════  
     🌀 **Chakra Arcs of the Kai Day** — 6 Arcs × 6 Beats = 36 Beats  

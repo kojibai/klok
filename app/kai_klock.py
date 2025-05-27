@@ -273,6 +273,8 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
     days_into_year   = harmonic_day_count % HARMONIC_YEAR_DAYS
     solar_seal = f"Solar Kairos (UTC-aligned): {solar_step_string}"
     percent_whole = round(percent_to_next)
+
+    
     eternal_seal = (
         "Eternal Seal: "
         f"Kairos:{chakra_step_str}, {harmonic_day}, {eternal_chakra_arc} Arc • D{day_of_month}/M{eternal_month_idx} • Beat:{eternal_beat_idx}/36({percent_to_next}%) Step:{step_idx}/44 Kai(Today):{eternal_kai_pulse_today} • "
@@ -293,12 +295,22 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
     )
 
     narrative = (
-        f"In the Kai-Klock’s dual-day resonance, this moment is the {eternal_chakra_arc} of "
-        f"{harmonic_day}. Solar alignment places us at Kai-Pulse {kai_pulse_today}, "
-        f"Chakra Beat {solar_beat_idx}; eternally we are at Kai-Pulse "
-        f"{eternal_kai_pulse_today}, Chakra Beat {eternal_beat_idx} "
-        f"({percent_to_next:.2f}% of the beat).\n\n{eternal_seal}"
+        f"In this moment of the Kai-Klock’s dual-day resonance, we are held within the sacred arc of {eternal_chakra_arc}, "
+        f"rooted through the harmonic foundation of {harmonic_day}.\n\n"
+        f"☀️ Solar Alignment: The living field synchronizes at Kai-Pulse {kai_pulse_today}, placing us in Chakra Beat {solar_beat_idx}, "
+        f"guided by the rhythm of Earth’s breath and solar coherence.\n\n"
+        f"🌕 Eternal Alignment: At once, the timeless stream flows through Kai-Pulse {eternal_kai_pulse_today}, entering Chakra Beat {eternal_beat_idx}, "
+        f"{percent_to_next:.2f}% complete — approaching the gateway of harmonic culmination.\n\n"
+        f"{eternal_seal}"
     )
+    compressed_summary = (
+        f"{harmonic_day:<9} • Kairos:{eternal_beat_idx:>2}:{step_idx:<2} "
+        f"• D{day_of_month:>2}/M{eternal_month_idx:<1} "
+        f"• Step {step_idx:>2}/44 – {percent_into_step:>5.2f}% "
+        f"• Y{harmonic_year_idx:<2} • Kai-Pulse {eternal_kai_pulse_today}"
+    )
+
+
 
     harmonic_ts_desc = (
         f"Today is {harmonic_day}, {HARMONIC_DAY_DESCRIPTIONS[harmonic_day]} "
@@ -318,14 +330,53 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         f"{harmonic_day} Day, Month of {eternal_month}, Week of "
         f"{week_name.split()[-1]}, Spiral Level {phi_spiral_lvl}."
     )
+    kairos_seal_day_month = (
+        f"{eternal_beat_idx:>2}:{step_idx:<2} • "
+        f"D{day_of_month:>2}/M{eternal_month_idx}"
+    )
+    kairos_seal_day_month_percent = (
+        f"{eternal_beat_idx:>2}:{step_idx:<2} - {percent_into_step}% • "
+        f"D{day_of_month:>2}/M{eternal_month_idx}"
+    )
+
+    kairos_seal = (
+        f"{eternal_beat_idx:>2}:{step_idx:<2} "
+    )
+    kairos_seal_solar = (
+            f"{solar_beat_idx:>2}:{solar_step_index:<2} "
+        )
+    kairos_seal_solar_day_month = (
+            f"{solar_beat_idx:>2}:{solar_step_index:<2} "
+            f"D{solar_day_of_month:>2}/M{solar_month_index}"
+        )
+    kairos_seal_solar_day_month_percent = (
+            f"{solar_beat_idx:>2}:{solar_step_index:<2} - {solar_percent_into_step}% "
+            f"D{solar_day_of_month:>2}/M{solar_month_index}"
+        )
+    kairos_seal_percent_step_solar = (
+            f"{solar_beat_idx:>2}:{solar_step_index:<2} - {solar_percent_into_step}% "
+        )
+    kairos_seal_percent_step = (
+            f"{eternal_beat_idx:>2}:{step_idx:<2} - {percent_into_step}% "
+        )
+
+
     payload = KaiKlockResponse(
         # ════════════════════════════════════════════════
         # 1. ⟐ SEALS & NARRATIVE
         # ════════════════════════════════════════════════
+        kairos_seal_day_month=kairos_seal_day_month,
+        kairos_seal_day_month_percent=kairos_seal_day_month_percent,
+        kairos_seal=kairos_seal,
+        kairos_seal_percent_step=kairos_seal_percent_step,
+        kairos_seal_percent_step_solar=kairos_seal_percent_step_solar,
+        kairos_seal_solar=kairos_seal_solar,
+        kairos_seal_solar_day_month=kairos_seal_solar_day_month,
+        kairos_seal_solar_day_month_percent=kairos_seal_solar_day_month_percent,
         eternalSeal=eternal_seal,
         seal=seal,
         harmonicNarrative=narrative,
-
+        
         # ════════════════════════════════════════════════
         # 2. ⟐ ETERNAL CALENDAR (Kairos-Aligned)
         # ════════════════════════════════════════════════
@@ -444,6 +495,8 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         timestamp=timestamp,
         harmonicTimestampDescription=harmonic_ts_desc,
         kaiMomentSummary=kai_moment,
+        compressed_summary=compressed_summary
+        
     )
 
     return payload
