@@ -69,7 +69,8 @@ class KaiKlockResponse(BaseModel):
     solarDayOfMonth: int
     solarMonthIndex: int
     solarHarmonicDay: str
-
+    solar_week_name: str
+    solar_week_description: str
     harmonicDayDescription: str
     chakraArc: str
 

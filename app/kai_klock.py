@@ -18,6 +18,22 @@ KAI_PULSE_DURATION = 8.472 / PHI                       # seconds / Kai-Pulse
 ETERNAL_GENESIS_PULSE = datetime(2024, 5, 10, 6, 45, 40)
 genesis_sunrise = datetime(2024, 5, 11, 4, 30, 0)  # London sunrise post-flare
 
+SUBDIVISIONS: dict[str, float] = {
+    "halfPulse": KAI_PULSE_DURATION / 2,
+    "chakraSubpulse": KAI_PULSE_DURATION / 11,
+    "ternaryStep": KAI_PULSE_DURATION / 33,
+    "microStep": KAI_PULSE_DURATION / 55,
+    "nanoPulse": KAI_PULSE_DURATION / 89,
+    "nanoStep": KAI_PULSE_DURATION / 144,
+    "phiQuantum": KAI_PULSE_DURATION / 233,
+    "ekaru": KAI_PULSE_DURATION / 377,
+    "tzaphirimUnit": KAI_PULSE_DURATION / 610,
+    "kaiSingularity": KAI_PULSE_DURATION / 987,
+    "deepThread": KAI_PULSE_DURATION / 1597,
+}
+
+
+
 HARMONIC_DAYS = ["Solhara", "Aquaris", "Flamora", "Verdari", "Sonari", "Caelith"]
 HARMONIC_DAY_DESCRIPTIONS = {
     "Solhara": "First Day of the Week — the Root Chakra day. Color: deep crimson. Element: Earth and primal fire. Geometry: square foundation. This is the day of stability, anchoring, and sacred will. Solhara ignites the base of the spine and the foundation of purpose. It is a day of grounding divine intent into physical motion. You stand tall in the presence of gravity — not as weight, but as remembrance. This is where your spine becomes the axis mundi, and every step affirms: I am here, and I choose to act.",
@@ -152,6 +168,9 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
     solar_day_of_month = (solar_day_index % HARMONIC_MONTH_DAYS) + 1
     solar_month_index = ((solar_day_index // HARMONIC_MONTH_DAYS) % 8) + 1
     solar_harmonic_day = HARMONIC_DAYS[solar_day_index % len(HARMONIC_DAYS)]
+    solar_week_index = ((solar_day_index // 6) % 7) + 1
+    solar_week_name = ETERNAL_WEEK_NAMES[(solar_day_index // 6) % 7]
+    solar_week_description = ETERNAL_WEEK_DESCRIPTIONS[solar_week_name]
 
     # Compute today's solar-aligned Kai-Pulse (since the most recent solar sunrise)
     kai_pulse_today = int((now - last_solar_sunrise).total_seconds() // KAI_PULSE_DURATION)
@@ -250,7 +269,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
     )
     seal = f"Day Seal: {chakra_step_str} {percent_into_step}% • D{day_of_month}/M{eternal_month_idx}"
     kairos = f"Kairos: {chakra_step_str}"
- 
+    solar_week_index = f"Solar Week: {solar_week_index}"
 
     timestamp = (
         f"↳{kairos}"
@@ -309,7 +328,9 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         solarDayOfMonth = solar_day_of_month,
         solarMonthIndex = solar_month_index,
         solarHarmonicDay = solar_harmonic_day,
-
+        solar_week_index=solar_week_index,
+        solar_week_name=solar_week_name,
+        solar_week_description=solar_week_description,
 
         chakraBeat={
             "beatIndex": solar_beat_idx,
@@ -340,9 +361,12 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         timestamp=timestamp,
         harmonicTimestampDescription=harmonic_ts_desc,
         kaiMomentSummary=kai_moment,
-
+        
 
         harmonicLevels={
+            "subdivisions": {
+                "subdivisions": SUBDIVISIONS
+            },
             "arcBeat": {
                 "pulseInCycle": arc_pos,
                 "cycleLength": ARC_BEAT_PULSES,
