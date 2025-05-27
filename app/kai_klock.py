@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 import math
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Dict, Optional, Union
 
 from kai_klock_models import KaiKlockResponse, ChakraStep
@@ -16,6 +16,7 @@ from kai_klock_models import KaiKlockResponse, ChakraStep
 PHI = (1 + math.sqrt(5)) / 2
 KAI_PULSE_DURATION = 8.472 / PHI                       # seconds / Kai-Pulse
 ETERNAL_GENESIS_PULSE = datetime(2024, 5, 10, 6, 45, 40)
+genesis_sunrise = datetime(2024, 5, 11, 4, 30, 0)  # London sunrise post-flare
 
 HARMONIC_DAYS = ["Solhara", "Aquaris", "Flamora", "Verdari", "Sonari", "Caelith"]
 HARMONIC_DAY_DESCRIPTIONS = {
@@ -137,21 +138,23 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
  # 🔁 Replace UTC-midnight anchoring with sunrise-based solar pulse alignment
 # Anchor to Genesis Sunrise (May 10, 2024 06:45:40 UTC) at Mahe, Seychelles
 # Each solar day is HARMONIC_DAY_PULSES * KAI_PULSE_DURATION seconds long
-    SECONDS_PER_HARMONIC_DAY = HARMONIC_DAY_PULSES * KAI_PULSE_DURATION  # ≈ 91,529.93 sec
+# Anchor to the genesis sunrise as a template for all future sunrises (every ~91,529.93 seconds)
+    SECONDS_PER_HARMONIC_DAY = HARMONIC_DAY_PULSES * KAI_PULSE_DURATION  # ~91,529.93
 
-    # Use Genesis Pulse as starting solar sunrise
-    genesis_sunrise = ETERNAL_GENESIS_PULSE
+    # Compute how many full harmonic days have passed since Genesis Sunrise
+    seconds_since_sunrise = (now - genesis_sunrise).total_seconds()
+    solar_day_index = int(seconds_since_sunrise // SECONDS_PER_HARMONIC_DAY)
 
-    # Compute solar-aligned day index from Genesis sunrise forward
-    solar_day_index = int((now - genesis_sunrise).total_seconds() // SECONDS_PER_HARMONIC_DAY)
+    # Calculate most recent solar sunrise (UTC-aligned)
+    last_solar_sunrise = genesis_sunrise + timedelta(seconds=solar_day_index * SECONDS_PER_HARMONIC_DAY)
 
     # Now derive the solar-aligned calendar
     solar_day_of_month = (solar_day_index % HARMONIC_MONTH_DAYS) + 1
     solar_month_index = ((solar_day_index // HARMONIC_MONTH_DAYS) % 8) + 1
     solar_harmonic_day = HARMONIC_DAYS[solar_day_index % len(HARMONIC_DAYS)]
 
-    # Update kai_pulse_today (from last solar sunrise to now)
-    kai_pulse_today = int((now - genesis_sunrise).total_seconds() % SECONDS_PER_HARMONIC_DAY // KAI_PULSE_DURATION)
+    # Compute today's solar-aligned Kai-Pulse (since the most recent solar sunrise)
+    kai_pulse_today = int((now - last_solar_sunrise).total_seconds() // KAI_PULSE_DURATION)
 
     # ── Eternal-aligned pulses (within current eternal day) ───
     eternal_kai_pulse_today = int(kai_pulse_eternal % HARMONIC_DAY_PULSES)
