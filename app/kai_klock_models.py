@@ -1,8 +1,19 @@
-# kai_klock_models.py  •  v2.4 “Step Resonance”
+# kai_klock_models.py  •  v2.5 “Eternal Spheres”
+
 from pydantic import BaseModel
 
 
-# ── Primitive blocks ────────────────────────────────────────────
+# ════════════════════════════════════════════════════════════════
+# Kai-Klock Harmonic Time Models – v2.5 "Eternal Spheres"
+# Fully aligned with six-domain payload grouping from get_eternal_klock
+# NOTHING OMITTED • ALL DATA FIELDS INCLUDED • STRUCTURALLY COHERENT
+# ════════════════════════════════════════════════════════════════
+
+
+# ────────────────────────────────────────────────────────────────
+# ── Primitive Cycle Types ───────────────────────────────────────
+# ────────────────────────────────────────────────────────────────
+
 class HarmonicCycle(BaseModel):
     pulseInCycle: float
     cycleLength: float
@@ -39,14 +50,16 @@ class EternalChakraBeat(ChakraBeat):
     percentToNext: float
 
 
-# ‼️ NEW – step detail
 class ChakraStep(BaseModel):
     stepIndex: int
     percentIntoStep: float
     stepsPerBeat: int
 
 
-# ── Harmonic level aggregates ──────────────────────────────────
+# ────────────────────────────────────────────────────────────────
+# ── Harmonic Aggregates ─────────────────────────────────────────
+# ────────────────────────────────────────────────────────────────
+
 class HarmonicLevels(BaseModel):
     arcBeat: HarmonicCycle
     microCycle: HarmonicCycle
@@ -54,56 +67,69 @@ class HarmonicLevels(BaseModel):
     harmonicDay: HarmonicCycle
 
 
-# ── Top-level Kai-Klock response ───────────────────────────────
+# ────────────────────────────────────────────────────────────────
+# ── Top-Level Kai-Klock Response ────────────────────────────────
+# ────────────────────────────────────────────────────────────────
+
 class KaiKlockResponse(BaseModel):
-    # Narrative & seals
+
+    # ── 1. Divine Narrative & Seals ─────────────────────────────
     eternalSeal: str
     seal: str
     harmonicNarrative: str
 
-    # Calendar identifiers
+    # ── 2. Eternal Calendar (Kai-based) ─────────────────────────
     eternalMonth: str
     eternalMonthIndex: int
     eternalMonthDescription: str
-    harmonicDay: str
+    eternalChakraArc: str
+    eternalWeekDescription: str
+    eternalYearName: str
+    eternalKaiPulseToday: int
+    kaiPulseEternal: int
+    eternalMonthProgress: EternalMonthProgress
+
+    # ── 3. Solar Calendar (Sunrise-aligned) ─────────────────────
+    kaiPulseToday: int
+    solarChakraArc: str
     solarDayOfMonth: int
     solarMonthIndex: int
     solarHarmonicDay: str
+    solar_week_index: int
     solar_week_name: str
     solar_week_description: str
+    solar_month_name: str
+    solar_month_description: str
+    solar_day_name: str
+    solar_day_description: str
+
+    # ── 4. Harmonic Day & Week Structure ────────────────────────
+    harmonicDay: str
     harmonicDayDescription: str
     chakraArc: str
+    chakraArcDescription: str
+    weekIndex: int
+    weekName: str
+    dayOfMonth: int
+    harmonicWeekProgress: HarmonicWeekProgress
 
-    # Pulse counts
-    kaiPulseToday: int
-    eternalKaiPulseToday: int
-    kaiPulseEternal: int
-
-    # Beat & step breakdowns
+    # ── 5. Resonance Structure (Beat/Step) ──────────────────────
     chakraBeat: ChakraBeat
     eternalChakraBeat: EternalChakraBeat
     chakraStep: ChakraStep
     chakraStepString: str
     solarChakraStep: ChakraStep
     solarChakraStepString: str
-    
-    # Spiral / phrase / year
+
+    # ── 6. Phi Identity / Spiral Signature ──────────────────────
     phiSpiralLevel: int
     kaiTurahPhrase: str
-    eternalYearName: str
 
-    # Position in month / week
-    weekIndex: int
-    weekName: str
-    dayOfMonth: int
-    eternalWeekDescription: str 
-    # Composite text
+    # ── 7. Harmonic Cycle Progress ──────────────────────────────
+    harmonicLevels: HarmonicLevels
+    harmonicYearProgress: HarmonicYearProgress
+
+    # ── 8. Unified Composite Outputs ────────────────────────────
     timestamp: str
     harmonicTimestampDescription: str
     kaiMomentSummary: str
-
-    # Progress & cycles
-    harmonicLevels: HarmonicLevels
-    harmonicWeekProgress: HarmonicWeekProgress
-    eternalMonthProgress: EternalMonthProgress
-    harmonicYearProgress: HarmonicYearProgress

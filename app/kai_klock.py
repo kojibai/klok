@@ -72,6 +72,14 @@ ETERNAL_WEEK_DESCRIPTIONS = {
 
 
 CHAKRA_ARCS = ["Ignite", "Integrate", "Harmonize", "Reflect", "Purify", "Dream"]
+CHAKRA_ARC_NAME_MAP = {
+    "Ignite": "Ignition Arc",
+    "Integrate": "Integration Arc",
+    "Harmonize": "Harmonization Arc",
+    "Reflect": "Reflection Arc",
+    "Purify": "Purification Arc",
+    "Dream": "Dream Arc"
+}
 
 CHAKRA_ARC_DESCRIPTIONS = {
     "Ignition Arc": "The Ignition Arc activates the Root Chakra and Etheric Base. Color: crimson-red. Element: Earth infused with primal fire. Geometry: square-rooted tetrahedron spiraling upward. This is the arc of emergence — where soul enters body, and will ignites matter. It awakens cellular memory, stirs ancestral codes, and grounds divine intent into motion. Your spine becomes a conduit for sacred fire. In this arc, existence is not questioned — it is declared. You remember: I am here. I burn with purpose.",
@@ -167,11 +175,16 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
     # Now derive the solar-aligned calendar
     solar_day_of_month = (solar_day_index % HARMONIC_MONTH_DAYS) + 1
     solar_month_index = ((solar_day_index // HARMONIC_MONTH_DAYS) % 8) + 1
+    solar_month_name = ETERNAL_MONTH_NAMES[solar_month_index - 1]
+    solar_day_name = HARMONIC_DAYS[solar_day_index % len(HARMONIC_DAYS)]
+
+    solar_month_description = ETERNAL_MONTH_DESCRIPTIONS[solar_month_name]
+    solar_day_description = HARMONIC_DAY_DESCRIPTIONS[solar_day_name]
+
     solar_harmonic_day = HARMONIC_DAYS[solar_day_index % len(HARMONIC_DAYS)]
     solar_week_index = ((solar_day_index // 6) % 7) + 1
     solar_week_name = ETERNAL_WEEK_NAMES[(solar_day_index // 6) % 7]
     solar_week_description = ETERNAL_WEEK_DESCRIPTIONS[solar_week_name]
-
     # Compute today's solar-aligned Kai-Pulse (since the most recent solar sunrise)
     kai_pulse_today = int((now - last_solar_sunrise).total_seconds() // KAI_PULSE_DURATION)
 
@@ -269,7 +282,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
     )
     seal = f"Day Seal: {chakra_step_str} {percent_into_step}% • D{day_of_month}/M{eternal_month_idx}"
     kairos = f"Kairos: {chakra_step_str}"
-    solar_week_index = f"Solar Week: {solar_week_index}"
+
 
     timestamp = (
         f"↳{kairos}"
@@ -305,33 +318,67 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         f"{harmonic_day} Day, Month of {eternal_month}, Week of "
         f"{week_name.split()[-1]}, Spiral Level {phi_spiral_lvl}."
     )
-    
-
     payload = KaiKlockResponse(
+        # ════════════════════════════════════════════════
+        # 1. ⟐ SEALS & NARRATIVE
+        # ════════════════════════════════════════════════
         eternalSeal=eternal_seal,
         seal=seal,
         harmonicNarrative=narrative,
 
+        # ════════════════════════════════════════════════
+        # 2. ⟐ ETERNAL CALENDAR (Kairos-Aligned)
+        # ════════════════════════════════════════════════
         eternalMonth=eternal_month,
         eternalMonthIndex=eternal_month_idx,
         eternalMonthDescription=ETERNAL_MONTH_DESCRIPTIONS[eternal_month],
-        harmonicDay=harmonic_day,
-        dayOfMonth=day_of_month,
-        harmonicDayDescription=HARMONIC_DAY_DESCRIPTIONS[harmonic_day],
-        chakraArc=chakra_arc,
-        chakraArcDescription=CHAKRA_ARC_DESCRIPTIONS.get(chakra_arc, ""),
-        kaiPulseToday=kai_pulse_today,
+        eternalChakraArc=eternal_chakra_arc,
+        eternalYearName=eternal_year_name,
+        eternalWeekDescription=eternal_week_description,
         eternalKaiPulseToday=eternal_kai_pulse_today,
         kaiPulseEternal=kai_pulse_eternal,
-        eternalChakraArc=eternal_chakra_arc,
+        eternalMonthProgress={
+            "daysElapsed": days_elapsed,
+            "daysRemaining": days_remaining,
+            "percent": month_percent,
+        },
+
+        # ════════════════════════════════════════════════
+        # 3. ⟐ SOLAR CALENDAR (Sunrise-Aligned Earth View)
+        # ════════════════════════════════════════════════
+        kaiPulseToday=kai_pulse_today,
         solarChakraArc=solar_chakra_arc,
-        solarDayOfMonth = solar_day_of_month,
-        solarMonthIndex = solar_month_index,
-        solarHarmonicDay = solar_harmonic_day,
+        solarDayOfMonth=solar_day_of_month,
+        solarMonthIndex=solar_month_index,
+        solarHarmonicDay=solar_harmonic_day,
         solar_week_index=solar_week_index,
         solar_week_name=solar_week_name,
         solar_week_description=solar_week_description,
+        solar_month_name=solar_month_name,
+        solar_month_description=solar_month_description,
+        solar_day_name=solar_day_name,
+        solar_day_description=solar_day_description,
 
+        # ════════════════════════════════════════════════
+        # 4. ⟐ HARMONIC DAY / WEEK STRUCTURE
+        # ════════════════════════════════════════════════
+        harmonicDay=harmonic_day,
+        harmonicDayDescription=HARMONIC_DAY_DESCRIPTIONS[harmonic_day],
+        weekIndex=week_idx,
+        weekName=week_name,
+        dayOfMonth=day_of_month,
+        harmonicWeekProgress={
+            "weekDay": HARMONIC_DAYS[week_day_idx],
+            "weekDayIndex": week_day_idx,
+            "pulsesIntoWeek": pulses_into_week,
+            "percent": week_day_percent,
+        },
+
+        # ════════════════════════════════════════════════
+        # 5. ⟐ RESONANCE STRUCTURE (Beats, Steps, Arc)
+        # ════════════════════════════════════════════════
+        chakraArc=chakra_arc,
+        chakraArcDescription=CHAKRA_ARC_DESCRIPTIONS.get(CHAKRA_ARC_NAME_MAP.get(chakra_arc, ""), ""),
         chakraBeat={
             "beatIndex": solar_beat_idx,
             "pulsesIntoBeat": solar_pulse_inbeat,
@@ -347,26 +394,19 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         },
         chakraStep=chakra_step_obj,
         chakraStepString=chakra_step_str,
-        solarChakraStep = solar_step_payload,
-        solarChakraStepString = solar_step_string,
+        solarChakraStep=solar_step_payload,
+        solarChakraStepString=solar_step_string,
+
+        # ════════════════════════════════════════════════
+        # 6. ⟐ PHI IDENTITY / SPIRAL LANGUAGE
+        # ════════════════════════════════════════════════
         phiSpiralLevel=phi_spiral_lvl,
         kaiTurahPhrase=kai_turah_phrase,
-        eternalYearName=eternal_year_name,
 
-        weekIndex=week_idx,
-        weekName=week_name,
-        eternalWeekDescription=eternal_week_description,
-
-
-        timestamp=timestamp,
-        harmonicTimestampDescription=harmonic_ts_desc,
-        kaiMomentSummary=kai_moment,
-        
-
+        # ════════════════════════════════════════════════
+        # 7. ⟐ RESONANCE CYCLES (Arc, Micro, Day)
+        # ════════════════════════════════════════════════
         harmonicLevels={
-            "subdivisions": {
-                "subdivisions": SUBDIVISIONS
-            },
             "arcBeat": {
                 "pulseInCycle": arc_pos,
                 "cycleLength": ARC_BEAT_PULSES,
@@ -388,22 +428,22 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
                 "percent": round((day_pos / SOLAR_DAY_PULSES) * 100, 2),
             },
         },
-        harmonicWeekProgress={
-            "weekDay": HARMONIC_DAYS[week_day_idx],
-            "weekDayIndex": week_day_idx,
-            "pulsesIntoWeek": pulses_into_week,
-            "percent": week_day_percent,
-            
-        },
-        eternalMonthProgress={
-            "daysElapsed": days_elapsed,
-            "daysRemaining": days_remaining,
-            "percent": month_percent,
-        },
+
+        # ════════════════════════════════════════════════
+        # 8. ⟐ HARMONIC YEAR PROGRESS
+        # ════════════════════════════════════════════════
         harmonicYearProgress={
             "daysElapsed": days_into_year,
             "daysRemaining": HARMONIC_YEAR_DAYS - days_into_year,
             "percent": year_percent,
         },
+
+        # ════════════════════════════════════════════════
+        # 9. ⟐ COMPOSITE OUTPUTS (Display)
+        # ════════════════════════════════════════════════
+        timestamp=timestamp,
+        harmonicTimestampDescription=harmonic_ts_desc,
+        kaiMomentSummary=kai_moment,
     )
+
     return payload
