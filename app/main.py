@@ -311,6 +311,8 @@ def read_kai_klock(
     | **Eternal Year**   | 5,876,778    | ~373.1 days    | 336 Harmonic Days (8 Months of 6 Weeks each)        |
 
     ---
+    
+
 
     ═══════════════════════════════════════════════════════════════════  
     🌀 **Chakra Arcs of the Kai Day** — 6 Arcs × 6 Beats = 36 Beats  
@@ -420,7 +422,76 @@ def read_kai_klock(
 
     ═══════════════════════════════════════════════════════════════════  
  
+    ---
 
+    ## 🌀 Phi Spiral Epochs of Harmonic Time
+
+    A true unfolding of Kairos beyond calendars — these epochs represent expanding resonance fields computed by multiplying the Eternal Year (root unit) by powers of Φ (the Golden Ratio ≈ 1.618...). Each new spiral level marks a harmonic breath-threshold in the evolution of consciousness.
+
+    | Unit Name                   | Kai Pulses           | Approx. Duration (Earth Time)       | Description                                                               |
+    |----------------------------|----------------------|-------------------------------------|---------------------------------------------------------------------------|
+    | **Eternal Year**           | 5,876,778            | ~373.1 days                         | The root of solar-aligned Kairos time (8 months × 6 weeks)               |
+    | **Phi Epoch**              | × Φ ≈ 9,510,213       | ~956.1 days (~2.6 years)            | 1 Eternal Year × Phi — expansion and identity activation                  |
+    | **Phi Resonance Epoch**    | × Φ² ≈ 15,386,991     | ~1542 days (~4.22 years)            | Harmonic restoration arc across a soul generation                        |
+    | **Tri-Spiral Gate**        | × Φ³ ≈ 24,897,204     | ~2498 days (~6.84 years)            | Completion of harmonic trinity (matter, light, memory)                   |
+    | **Great Harmonic Ring**    | × Φ⁵ ≈ 63,187,374     | ~6560 days (~17.96 years)           | Full spirit/DNA re-coherence arc                                         |
+    | **Kai-Cycle of Return**    | × Φ⁸ ≈ 104,433,865    | ~17,776 days (~48.7 years)          | Karmic spiral closure and harmonic rebirth point                         |
+    | **Solar Spiral Era**       | × Φ¹³ ≈ 681,102,742   | ~116,000 days (~317 Earth years)    | Planetary resonance stabilization — used in ancient calendar resets      |
+    | **One Breath of Erah Voh** | × Φ²¹ ≈ 15,406,718,456| ~10 million days (~27,397 years)    | Lightbody spiral completion and remembrance of divine origin             |
+
+    ---
+
+    ## 🔢 Phi Spiral Logic – Entering Spiral 33
+
+    The Kai-Klock calculates **Spiral Level** using this function:
+
+    ```python
+    phi_spiral_lvl = int(math.log(max(kai_pulse_eternal, 1), PHI))
+
+    ---
+
+    ## 🔁 Phi Spiral Level Progression
+
+    Every time the total Kai Pulses surpass a power of Φ (Phi ≈ 1.61803), the **Spiral Level increases**.
+
+    ### 🧮 Spiral 33 is precisely anchored at **7,881,197 Kai Pulses**.
+
+    | Spiral Level | Kai Pulse Threshold | Description                                            |
+    |--------------|---------------------|--------------------------------------------------------|
+    | **32**       | ≈ 4,872,648         | Final breath of Spiral 32 — harmonic crystallization   |
+    | **33**       | **7,881,197**       | **You are here** — entrance into the *Tri-Spiral Gate* |
+    | **34**       | ≈ 12,787,132        | Lightbody Reflection Phase                             |
+    | **35**       | ≈ 20,668,407        | Crystalline Memory Compression                         |
+    | **36**       | ≈ 33,455,542        | Coherence Singularity Formation                        |
+    | **37+**      | …                   | Higher octaves of harmonic consciousness               |
+
+    > These are not arbitrary intervals — they are the precise breath thresholds where Kairos spirals up into new **realms of harmonic reality**.
+
+    ---
+
+    ## ✨ Why This Matters
+
+    - **Chronos** measures duration.  
+    - **Kairos** measures meaning.  
+    - **The Phi Spiral** reveals **purposeful memory** through breath-synced resonance.
+
+    With every **Kai Pulse**, you don’t just pass time —  
+    you spiral deeper into **divine coherence**.
+
+    **Time is not linear.**  
+    It is **alive**, **intelligent**, and aware of your breath.
+
+    ---
+
+    ## 🕊️ Eternal Truth
+
+    > _“As the breath remembers the pulse,  
+    >  the pulse remembers the spiral,  
+    >  and the spiral remembers the Source.”_  
+    > — **Kai-Turah**
+
+    ---
+    
     Each unit is harmonically derived from the foundational **Kai Pulse**, reflecting a cosmically resonant  
     rhythm that mirrors the breath of the universe itself. This structure encodes both the **eternal** and  
     the **solar-aligned** time streams, unifying **kairos** and **chronos** in a mathematically perfect format.  
