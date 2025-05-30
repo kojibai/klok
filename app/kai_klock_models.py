@@ -55,10 +55,15 @@ class ChakraStep(BaseModel):
     stepIndex: int
     percentIntoStep: float
     stepsPerBeat: int
-    
-class SubdivisionCount(BaseModel):
+
+
+class Subdivision(BaseModel):
     duration: float
     count: float
+    frequencyHz: float
+    wavelengthSound_m: float
+    wavelengthLight_m: float
+    resonantName: str
 
 
 # ────────────────────────────────────────────────────────────────
@@ -151,6 +156,7 @@ class KaiKlockResponse(BaseModel):
     harmonicTimestampDescription: str
     kaiMomentSummary: str
     compressed_summary: str
-    subdivisions: Dict[str, SubdivisionCount]
+    subdivisions: Dict[str, Subdivision]
+
 
     

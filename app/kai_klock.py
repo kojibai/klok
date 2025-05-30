@@ -46,6 +46,35 @@ def compute_subdivision_counts(kai_pulse_eternal: int) -> dict[str, dict[str, fl
         }
 
     return results
+def compute_subdivision_metadata(name: str, duration: float, count: float, resonant_name: str):
+    frequency = 1 / duration
+    wavelength_sound = 343 / frequency
+    wavelength_light = 299_792_458 / frequency
+    return {
+        "duration": duration,
+        "count": count,
+        "frequencyHz": frequency,
+        "wavelengthSound_m": wavelength_sound,
+        "wavelengthLight_m": wavelength_light,
+        "resonantName": resonant_name
+    }
+
+subdivisions_data = {
+    "halfPulse": compute_subdivision_metadata("halfPulse", 2.61799198, 12696722, "Pulse Divider"),
+    "chakraSubpulse": compute_subdivision_metadata("chakraSubpulse", 0.47599854, 69831971, "Chakra Tuning"),
+    "ternaryStep": compute_subdivision_metadata("ternaryStep", 0.15866618, 209495913, "Tri-Light Step"),
+    "microStep": compute_subdivision_metadata("microStep", 0.09519971, 349159855, "Resonant Breath"),
+    "nanoPulse": compute_subdivision_metadata("nanoPulse", 0.05883128, 565004129, "First Spark"),
+    "nanoStep": compute_subdivision_metadata("nanoStep", 0.036361, 914163984, "Nano Arc"),
+    "phiQuantum": compute_subdivision_metadata("phiQuantum", 0.02247203, 1479168113, "Phi Quantum"),
+    "ekaru": compute_subdivision_metadata("ekaru", 0.01388855, 2393332097, "Ekaru Initiation"),
+    "tzaphirimUnit": compute_subdivision_metadata("tzaphirimUnit", 0.00858358, 3872536200, "Tzaphirim Crystal"),  # ✅ FIXED
+    "kaiSingularity": compute_subdivision_metadata("kaiSingularity", 0.00530495, 6265890540, "Kai Singularity"),  # ✅ FIXED
+    "deepThread": compute_subdivision_metadata("deepThread", 0.00327864, 10138426740, "Deep Thread")  # ✅ FIXED
+}
+
+
+
 
 
 # Each epoch is Eternal Year × Phi^n
@@ -531,7 +560,8 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         phiSpiralLevel=phi_spiral_lvl,
         kaiTurahPhrase=kai_turah_phrase,
         phiSpiralEpochs = generate_phi_spiral_epochs(kai_pulse_eternal),
-        subdivisions=compute_subdivision_counts(kai_pulse_eternal),
+        subdivisions=subdivisions_data,
+
 
 
 
