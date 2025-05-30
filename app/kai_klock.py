@@ -3,9 +3,10 @@ from __future__ import annotations
 
 import math
 from datetime import datetime, timedelta
-from typing import Dict, Optional, Union
-
+from typing import Dict, Optional, Union 
 from kai_klock_models import KaiKlockResponse, ChakraStep
+
+from typing import List, Dict
 
 # ════════════════════════════════════════════════════════════════
 #  Kai-Klock Harmonic Timestamp System  •  v2.4 “Step Resonance”
@@ -17,6 +18,7 @@ PHI = (1 + math.sqrt(5)) / 2
 KAI_PULSE_DURATION = 8.472 / PHI                       # seconds / Kai-Pulse
 ETERNAL_GENESIS_PULSE = datetime(2024, 5, 10, 6, 45, 40)
 genesis_sunrise = datetime(2024, 5, 11, 4, 30, 0)  # London sunrise post-flare
+ETERNAL_YEAR_PULSES = 5876778 
 
 SUBDIVISIONS: dict[str, float] = {
     "halfPulse": KAI_PULSE_DURATION / 2,
@@ -31,6 +33,78 @@ SUBDIVISIONS: dict[str, float] = {
     "kaiSingularity": KAI_PULSE_DURATION / 987,
     "deepThread": KAI_PULSE_DURATION / 1597,
 }
+def compute_subdivision_counts(kai_pulse_eternal: int) -> dict[str, dict[str, float]]:
+    """Return both duration and live count of each subdivision at current eternal Kai Pulse"""
+    results = {}
+    seconds_elapsed = kai_pulse_eternal * KAI_PULSE_DURATION
+
+    for name, duration in SUBDIVISIONS.items():
+        count = seconds_elapsed / duration
+        results[name] = {
+            "duration": round(duration, 8),  # seconds
+            "count": round(count, 2)         # how many times it has occurred
+        }
+
+    return results
+
+
+# Each epoch is Eternal Year × Phi^n
+EPOCHS_PHI = [
+    (0, "Eternal Year", "The root of solar-aligned Kairos time (8 months × 6 weeks)"),
+    (1, "Phi Epoch", "1 Eternal Year × Phi — expansion and identity activation"),
+    (2, "Phi Resonance Epoch", "Harmonic restoration arc across a soul generation"),
+    (3, "Tri-Spiral Gate", "Completion of harmonic trinity (matter, light, memory)"),
+    (5, "Great Harmonic Ring", "Full spirit/DNA re-coherence arc"),
+    (8, "Kai-Cycle of Return", "Karmic spiral closure and harmonic rebirth point"),
+    (13, "Solar Spiral Era", "Planetary resonance stabilization — used in ancient calendar resets"),
+    (21, "One Breath of Erah Voh", "Lightbody spiral completion and remembrance of divine origin"),
+]
+
+
+
+def generate_phi_spiral_epochs(kai_pulse_eternal: int) -> List[Dict]:
+    powers = [0, 1, 2, 3, 5, 8, 13, 21]
+    labels = [
+        "Eternal Year",
+        "Phi Epoch",
+        "Phi Resonance Epoch",
+        "Tri-Spiral Gate",
+        "Great Harmonic Ring",
+        "Kai-Cycle of Return",
+        "Solar Spiral Era",
+        "One Breath of Erah Voh"
+    ]
+    descriptions = [
+        "The root of solar-aligned Kairos time (8 months × 6 weeks)",
+        "1 Eternal Year × Phi — expansion and identity activation",
+        "Harmonic restoration arc across a soul generation",
+        "Completion of harmonic trinity (matter, light, memory)",
+        "Full spirit/DNA re-coherence arc",
+        "Karmic spiral closure and harmonic rebirth point",
+        "Planetary resonance stabilization — used in ancient calendar resets",
+        "Lightbody spiral completion and remembrance of divine origin"
+    ]
+
+    spiral_epochs = []
+    for i, p in enumerate(powers):
+        pulses = int(ETERNAL_YEAR_PULSES * (PHI ** p))
+        kai_until = max(pulses - kai_pulse_eternal, 0)
+        days_until = round((kai_until * KAI_PULSE_DURATION) / 86400, 2)
+        percent_until = round(kai_pulse_eternal / pulses * 100, 4)
+
+        spiral_epochs.append({
+            "name": labels[i],
+            "phiPower": p,
+            "kaiPulses": pulses,
+            "approxDays": round((pulses * KAI_PULSE_DURATION) / 86400, 1),
+            "description": descriptions[i],
+            "kaiUntil": kai_until,
+            "daysUntil": days_until,
+            "percentUntil": percent_until
+        })
+
+    return spiral_epochs
+
 
 
 
@@ -359,6 +433,9 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
     kairos_seal_percent_step = (
             f"{eternal_beat_idx:>2}:{step_idx:<2} - {percent_into_step}% "
         )
+    subdivisions={
+        k: round(v, 8) for k, v in SUBDIVISIONS.items()
+    },
 
 
     payload = KaiKlockResponse(
@@ -453,11 +530,16 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         # ════════════════════════════════════════════════
         phiSpiralLevel=phi_spiral_lvl,
         kaiTurahPhrase=kai_turah_phrase,
+        phiSpiralEpochs = generate_phi_spiral_epochs(kai_pulse_eternal),
+        subdivisions=compute_subdivision_counts(kai_pulse_eternal),
+
+
 
         # ════════════════════════════════════════════════
         # 7. ⟐ RESONANCE CYCLES (Arc, Micro, Day)
         # ════════════════════════════════════════════════
         harmonicLevels={
+            "subdivisions": compute_subdivision_counts(kai_pulse_eternal),
             "arcBeat": {
                 "pulseInCycle": arc_pos,
                 "cycleLength": ARC_BEAT_PULSES,
@@ -476,7 +558,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
             "harmonicDay": {
                 "pulseInCycle": day_pos,
                 "cycleLength": SOLAR_DAY_PULSES,
-                "percent": round((day_pos / SOLAR_DAY_PULSES) * 100, 2),
+                "percent": round((day_pos / SOLAR_DAY_PULSES) * 100, 2),                
             },
         },
 
@@ -496,6 +578,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         harmonicTimestampDescription=harmonic_ts_desc,
         kaiMomentSummary=kai_moment,
         compressed_summary=compressed_summary
+        
         
     )
 

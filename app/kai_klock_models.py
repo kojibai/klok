@@ -1,7 +1,7 @@
 # kai_klock_models.py  •  v2.5 “Eternal Spheres”
 
 from pydantic import BaseModel
-from typing import Optional
+from typing import List, Dict, Union, Optional
 
 
 # ════════════════════════════════════════════════════════════════
@@ -55,6 +55,10 @@ class ChakraStep(BaseModel):
     stepIndex: int
     percentIntoStep: float
     stepsPerBeat: int
+    
+class SubdivisionCount(BaseModel):
+    duration: float
+    count: float
 
 
 # ────────────────────────────────────────────────────────────────
@@ -86,7 +90,7 @@ class KaiKlockResponse(BaseModel):
     eternalSeal: str
     seal: str
     harmonicNarrative: str
-
+    
     # ── 2. Eternal Calendar (Kai-based) ─────────────────────────
     eternalMonth: str
     eternalMonthIndex: int
@@ -97,6 +101,8 @@ class KaiKlockResponse(BaseModel):
     eternalKaiPulseToday: int
     kaiPulseEternal: int
     eternalMonthProgress: EternalMonthProgress
+
+
 
     # ── 3. Solar Calendar (Sunrise-aligned) ─────────────────────
     kaiPulseToday: int
@@ -133,13 +139,18 @@ class KaiKlockResponse(BaseModel):
     # ── 6. Phi Identity / Spiral Signature ──────────────────────
     phiSpiralLevel: int
     kaiTurahPhrase: str
+    phiSpiralEpochs: List[Dict[str, Union[str, int, float]]]
 
     # ── 7. Harmonic Cycle Progress ──────────────────────────────
     harmonicLevels: HarmonicLevels
     harmonicYearProgress: HarmonicYearProgress
+
 
     # ── 8. Unified Composite Outputs ────────────────────────────
     timestamp: str
     harmonicTimestampDescription: str
     kaiMomentSummary: str
     compressed_summary: str
+    subdivisions: Dict[str, SubdivisionCount]
+
+    
