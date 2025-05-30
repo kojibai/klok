@@ -9,6 +9,8 @@ from typing import Optional
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
+from app.routes.sigil_data_api import router as sigil_data_api_router
+from app.routes.sigil_api import router as sigil_api_router
 
 # make sure local imports work on Vercel / similar
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
@@ -871,6 +873,8 @@ Kai-Klock’s architecture is modular, deterministic, and universally computable
     openapi_url="/openapi.json",
 )
 
+app.include_router(sigil_data_api_router)
+app.include_router(sigil_api_router)
 
 # CORS (open for demo; tighten in prod)
 app.add_middleware(
