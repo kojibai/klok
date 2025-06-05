@@ -947,7 +947,7 @@ def read_kai_klock(
     | **Harmonic Day**   | 17,491.27    | ~25.44 hours   | 36 Beats = 6 Arcs = 1 Day                           |
     | **Harmonic Week**  | 104,947.6    | ~6.35 days     | 6 Harmonic Days                                     |
     | **Harmonic Month** | 734,638.9    | ~44.48 days    | 42 Harmonic Days = 7 Harmonic Weeks                 |
-    | **Eternal Year**   | 5,876,778    | ~373.1 days    | 336 Harmonic Days (8 Months of 6 Weeks each)        |
+    | **Eternal Year**   | 5,877,066.86 | ~373.1 days    | 336 Harmonic Days (8 Months of 7 Weeks each)        |
 
     ---
     
@@ -1069,7 +1069,7 @@ def read_kai_klock(
 
     | Unit Name                   | Kai Pulses           | Approx. Duration (Earth Time)       | Description                                                               |
     |----------------------------|----------------------|-------------------------------------|---------------------------------------------------------------------------|
-    | **Eternal Year**           | 5,876,778            | ~373.1 days                         | The root of solar-aligned Kairos time (8 months × 6 weeks)               |
+    | **Eternal Year**           | 5,877,066.86          | ~373.1 days                         | The root of solar-aligned Kairos time (8 months - 7 weeks - 6 days/week - 336 Days/year)               |
     | **Phi Epoch**              | × Φ ≈ 9,510,213       | ~956.1 days (~2.6 years)            | 1 Eternal Year × Phi — expansion and identity activation                  |
     | **Phi Resonance Epoch**    | × Φ² ≈ 15,386,991     | ~1542 days (~4.22 years)            | Harmonic restoration arc across a soul generation                        |
     | **Tri-Spiral Gate**        | × Φ³ ≈ 24,897,204     | ~2498 days (~6.84 years)            | Completion of harmonic trinity (matter, light, memory)                   |

@@ -18,7 +18,7 @@ PHI = (1 + math.sqrt(5)) / 2
 KAI_PULSE_DURATION = 8.472 / PHI                       # seconds / Kai-Pulse
 ETERNAL_GENESIS_PULSE = datetime(2024, 5, 10, 6, 45, 40)
 genesis_sunrise = datetime(2024, 5, 11, 4, 30, 0)  # London sunrise post-flare
-ETERNAL_YEAR_PULSES = 5876778 
+ETERNAL_YEAR_PULSES = 5877066.86146 
 
 SUBDIVISIONS: dict[str, float] = {
     "halfPulse": KAI_PULSE_DURATION / 2,
@@ -79,7 +79,7 @@ subdivisions_data = {
 
 # Each epoch is Eternal Year × Phi^n
 EPOCHS_PHI = [
-    (0, "Eternal Year", "The root of solar-aligned Kairos time (8 months × 6 weeks)"),
+    (0, "Eternal Year", "The root of solar-aligned Kairos time (8 months × 7 weeks)"),
     (1, "Phi Epoch", "1 Eternal Year × Phi — expansion and identity activation"),
     (2, "Phi Resonance Epoch", "Harmonic restoration arc across a soul generation"),
     (3, "Tri-Spiral Gate", "Completion of harmonic trinity (matter, light, memory)"),
@@ -104,7 +104,7 @@ def generate_phi_spiral_epochs(kai_pulse_eternal: int) -> List[Dict]:
         "One Breath of Erah Voh"
     ]
     descriptions = [
-        "The root of solar-aligned Kairos time (8 months × 6 weeks)",
+        "The root of solar-aligned Kairos time (8 months × 7 weeks)",
         "1 Eternal Year × Phi — expansion and identity activation",
         "Harmonic restoration arc across a soul generation",
         "Completion of harmonic trinity (matter, light, memory)",
