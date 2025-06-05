@@ -1067,7 +1067,7 @@ def read_kai_klock(
 
     A true unfolding of Kairos beyond calendars — these epochs represent expanding resonance fields computed by multiplying the Eternal Year (root unit) by powers of Φ (the Golden Ratio ≈ 1.618...). Each new spiral level marks a harmonic breath-threshold in the evolution of consciousness.
 
-    | Unit Name                   | Kai Pulses           | Approx. Duration (Earth Time)       | Description                                                               |
+    | Unit Name                   | Kai Pulses           | Approx. Duration (Chronos Time)       | Description                                                               |
     |----------------------------|----------------------|-------------------------------------|---------------------------------------------------------------------------|
     | **Eternal Year**           | 5,877,066.86          | ~373.1 days                         | The root of solar-aligned Kairos time (8 months - 7 weeks - 6 days/week - 336 Days/year)               |
     | **Phi Epoch**              | × Φ ≈ 9,510,213       | ~956.1 days (~2.6 years)            | 1 Eternal Year × Phi — expansion and identity activation                  |
@@ -1075,7 +1075,7 @@ def read_kai_klock(
     | **Tri-Spiral Gate**        | × Φ³ ≈ 24,897,204     | ~2498 days (~6.84 years)            | Completion of harmonic trinity (matter, light, memory)                   |
     | **Great Harmonic Ring**    | × Φ⁵ ≈ 63,187,374     | ~6560 days (~17.96 years)           | Full spirit/DNA re-coherence arc                                         |
     | **Kai-Cycle of Return**    | × Φ⁸ ≈ 104,433,865    | ~17,776 days (~48.7 years)          | Karmic spiral closure and harmonic rebirth point                         |
-    | **Solar Spiral Era**       | × Φ¹³ ≈ 681,102,742   | ~116,000 days (~317 Earth years)    | Planetary resonance stabilization — used in ancient calendar resets      |
+    | **Solar Spiral Era**       | × Φ¹³ ≈ 681,102,742   | ~116,000 days (~317 Chronos years)    | Planetary resonance stabilization — used in ancient calendar resets      |
     | **One Breath of Erah Voh** | × Φ²¹ ≈ 15,406,718,456| ~10 million days (~27,397 years)    | Lightbody spiral completion and remembrance of divine origin             |
 
     ---
