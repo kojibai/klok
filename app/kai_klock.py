@@ -304,7 +304,8 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
     percent_to_next      = round((eternal_pulse_inbeat / CHAKRA_BEAT_PULSES) * 100, 2)
 
     # ── Chakra Step ───────────────────────────────────────────
-    step_idx = f"{int(eternal_pulse_inbeat // PULSES_PER_STEP):02d}"
+    step_idx = int(eternal_pulse_inbeat // PULSES_PER_STEP)
+    step_idx_str = f"{step_idx:02d}"
     step_pulse_prog   = eternal_pulse_inbeat % PULSES_PER_STEP
     percent_into_step = round((step_pulse_prog / PULSES_PER_STEP) * 100, 2)
     chakra_step_str   = f"{eternal_beat_idx}:{step_idx:02d}"
@@ -434,16 +435,16 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         f"{week_name.split()[-1]}, Spiral Level {phi_spiral_lvl}."
     )
     kairos_seal_day_month = (
-        f"{eternal_beat_idx:>2}:{step_idx:<2} • "
+        f"{eternal_beat_idx:>2}:{step_idx_str:<2} • "
         f"D{day_of_month:>2}/M{eternal_month_idx}"
     )
     kairos_seal_day_month_percent = (
-        f"{eternal_beat_idx:>2}:{step_idx:<2} - {percent_into_step}% • "
+        f"{eternal_beat_idx:>2}:{step_idx_str:<2} - {percent_into_step}% • "
         f"D{day_of_month:>2}/M{eternal_month_idx}"
     )
 
     kairos_seal = (
-        f"{eternal_beat_idx:>2}:{step_idx:<2} "
+        f"{eternal_beat_idx:>2}:{step_idx_str:<2} "
     )
     kairos_seal_solar = (
             f"{solar_beat_idx:>2}:{solar_step_index:<2} "
@@ -460,7 +461,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
             f"{solar_beat_idx:>2}:{solar_step_index:<2} - {solar_percent_into_step}% "
         )
     kairos_seal_percent_step = (
-            f"{eternal_beat_idx:>2}:{step_idx:<2} - {percent_into_step}% "
+            f"{eternal_beat_idx:>2}:{step_idx_str:<2} - {percent_into_step}% "
         )
     subdivisions={
         k: round(v, 8) for k, v in SUBDIVISIONS.items()
