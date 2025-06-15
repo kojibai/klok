@@ -157,7 +157,7 @@ ETERNAL_WEEK_NAMES = [
     "Harmonic Voice", "Inner Mirror", "Dreamfire Memory", "Crowned Light",
 ]
 ETERNAL_WEEK_DESCRIPTIONS = {
-    "Awakening Flame": "First week of the harmonic year — governed by the Root Chakra. Color: crimson red. Element: Earth + primal fire. Geometry: square base igniting upward. This is the week of emergence, where divine will enters density. Bones remember purpose. The soul anchors into action. Stability becomes sacred. Life says: I choose to exist. A spark catches in the base of your being — and your yes to existence becomes the foundation of the entire harmonic year.",
+    "Awakening Flame": "First week of the harmonic month — governed by the Root Chakra. Color: crimson red. Element: Earth + primal fire. Geometry: square base igniting upward. This is the week of emergence, where divine will enters density. Bones remember purpose. The soul anchors into action. Stability becomes sacred. Life says: I choose to exist. A spark catches in the base of your being — and your yes to existence becomes the foundation of the entire harmonic year.",
 
     "Flowing Heart": "Second week — flowing through the Sacral Chakra. Color: amber orange. Element: Water in motion. Geometry: twin crescents in vesica piscis. This is the week of emotional coherence, creative intimacy, and lunar embodiment. Feelings soften the boundaries of separation. The womb of light stirs with codes. Movement becomes sacred dance. This is not just a flow — it is the purification of dissonance through joy, sorrow, and sensual union. The harmonic tone of the soul is tuned here.",
 
