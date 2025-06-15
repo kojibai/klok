@@ -16,8 +16,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from kai_klock import get_eternal_klock
 from kai_klock_models import KaiKlockResponse  # ← single source of truth
-from routes import kairos_sigil 
-from routes import sigil_stamp
+
 
 app = FastAPI(
     title="Kai-Klock API",
@@ -1596,5 +1595,3 @@ rocket.onclick=()=>scrollTo({top:0,behavior:'smooth'});
 """
     return HTMLResponse(html_content)
 
-app.include_router(kairos_sigil.router)
-app.include_router(sigil_stamp.router)
