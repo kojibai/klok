@@ -304,7 +304,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
     percent_to_next      = round((eternal_pulse_inbeat / CHAKRA_BEAT_PULSES) * 100, 2)
 
     # ── Chakra Step ───────────────────────────────────────────
-    step_idx          = int(eternal_pulse_inbeat // PULSES_PER_STEP)
+    step_idx = f"{int(eternal_pulse_inbeat // PULSES_PER_STEP):02d}"
     step_pulse_prog   = eternal_pulse_inbeat % PULSES_PER_STEP
     percent_into_step = round((step_pulse_prog / PULSES_PER_STEP) * 100, 2)
     chakra_step_str   = f"{eternal_beat_idx}:{step_idx:02d}"
