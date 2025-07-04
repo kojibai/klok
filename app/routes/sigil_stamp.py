@@ -34,7 +34,7 @@ def chakra_background(month: str):
         "virelai": (5, 15, 28),
         "solari": (20, 10, 2),
         "amarin": (2, 20, 14),
-        "caelus": (4, 4, 25),
+        "kaelus": (4, 4, 25),
         "umbriel": (15, 6, 36),
         "noctura": (12, 0, 20),
         "liora": (0, 18, 18),

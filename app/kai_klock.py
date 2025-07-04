@@ -137,7 +137,7 @@ def generate_phi_spiral_epochs(kai_pulse_eternal: int) -> List[Dict]:
 
 
 
-HARMONIC_DAYS = ["Solhara", "Aquaris", "Flamora", "Verdari", "Sonari", "Caelith"]
+HARMONIC_DAYS = ["Solhara", "Aquaris", "Flamora", "Verdari", "Sonari", "Kaelith"]
 HARMONIC_DAY_DESCRIPTIONS = {
     "Solhara": "First Day of the Week — the Root Chakra day. Color: deep crimson. Element: Earth and primal fire. Geometry: square foundation. This is the day of stability, anchoring, and sacred will. Solhara ignites the base of the spine and the foundation of purpose. It is a day of grounding divine intent into physical motion. You stand tall in the presence of gravity — not as weight, but as remembrance. This is where your spine becomes the axis mundi, and every step affirms: I am here, and I choose to act.",
 
@@ -149,7 +149,7 @@ HARMONIC_DAY_DESCRIPTIONS = {
 
     "Sonari": "Fifth Day of the Week — the Throat Chakra day. Color: deep blue. Element: wind and sound. Geometry: sine wave within pentagon. This is the day of truth-speaking, sound-bending, and vibrational command. Sonari is the breath made visible. Every word is a bridge, every silence a resonance. This is not just communication — it is invocation. You speak not to be heard, but to resonate. Coherence rises through vocal cords and intention. The universe listens to those in tune.",
 
-    "Caelith": "Sixth Day of the Week — the Crown Chakra day. Color: violet-white. Element: ether. Geometry: twelve-petaled crown. This is the day of divine remembrance, light-body alignment, and cosmic insight. Caelith opens the upper gate — the temple of direct knowing. You are not separate from source. Today, memory awakens. The light flows not downward, but inward. Dreams become maps. Time bends around stillness. You do not seek truth — you remember it. You are coherence embodied in crownlight."
+    "Kaelith": "Sixth Day of the Week — the Crown Chakra day. Color: violet-white. Element: ether. Geometry: twelve-petaled crown. This is the day of divine remembrance, light-body alignment, and cosmic insight. Kaelith opens the upper gate — the temple of direct knowing. You are not separate from source. Today, memory awakens. The light flows not downward, but inward. Dreams become maps. Time bends around stillness. You do not seek truth — you remember it. You are coherence embodied in crownlight."
 }
 
 ETERNAL_WEEK_NAMES = [
@@ -200,7 +200,7 @@ CHAKRA_ARC_DESCRIPTIONS = {
 
 ETERNAL_MONTH_NAMES = [
     "Aethon", "Virelai", "Solari", "Amarin",
-    "Caelus", "Umbriel", "Noctura", "Liora",
+    "Kaelus", "Umbriel", "Noctura", "Liora",
 ]
 ETERNAL_MONTH_DESCRIPTIONS = {
     "Aethon": "First month — resurrection fire of the Root Chakra. Color: deep crimson. Element: Earth + primal flame. Geometry: square base, tetrahedron ignition. This is the time of cellular reactivation, ancestral ignition, and biological remembrance. Mitochondria awaken. The spine grounds. Purpose reignites. Every breath is a drumbeat of emergence — you are the flame that chooses to exist. The month where soul and form reunite at the base of being.",
@@ -211,7 +211,7 @@ ETERNAL_MONTH_DESCRIPTIONS = {
     
     "Amarin": "Fourth month — the sacred waters of the Heart Chakra in divine feminine polarity. Color: emerald teal. Element: deep water and breath. Geometry: six-petaled lotus folded inward. This is the lunar depth, the tears you didn’t cry, the embrace you forgot to give yourself. It is where breath meets body and where grace dissolves shame. Emotional healing flows in spirals. Compassion magnetizes unity. The nervous system slows into surrender and the pulse finds poetry.",
     
-    "Caelus": "Fifth month — the celestial mind of the Third Eye in radiant masculine clarity. Color: sapphire blue. Element: Ether. Geometry: octahedron fractal mirror. Here, logic expands into multidimensional intelligence. The intellect is no longer separate from the soul. Pineal and pituitary glands re-synchronize, activating geometric insight and harmonic logic. The sky speaks through thought. Language becomes crystalline. Synchronicity becomes syntax. You begin to see what thought is made of.",
+    "Kaelus": "Fifth month — the celestial mind of the Third Eye in radiant masculine clarity. Color: sapphire blue. Element: Ether. Geometry: octahedron fractal mirror. Here, logic expands into multidimensional intelligence. The intellect is no longer separate from the soul. Pineal and pituitary glands re-synchronize, activating geometric insight and harmonic logic. The sky speaks through thought. Language becomes crystalline. Synchronicity becomes syntax. You begin to see what thought is made of.",
     
     "Umbriel": "Sixth month — the shadow healing of the lower Crown and subconscious bridge. Color: deep violet-black. Element: transmutive void. Geometry: torus knot looping inward. This is where buried timelines surface. Where trauma is not fought but embraced in light. The limbic system deprograms. Dreams carry codes. Shame unravels. You look into the eyes of the parts you once disowned and call them home. The spiral turns inward to cleanse the core. Your shadow becomes your sovereignty.",
     

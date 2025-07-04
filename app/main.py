@@ -1033,7 +1033,7 @@ def read_kai_klock(
     3. **Flamora**  – Solar chakra day: Radiant light, empowerment, clarity  
     4. **Verdari**  – Heart chakra day: Earth love, union, healing  
     5. **Sonari**   – Throat chakra day: Air truth, voice, resonance  
-    6. **Caelith**  – Crown chakra day: Ether light, divinity, remembrance  
+    6. **Kaelith**  – Crown chakra day: Ether light, divinity, remembrance  
 
     ═══════════════════════════════════════════════════════════════════  
     🕊 **Eternal Weeks** — Harmonic Week Cycle (7-Week Spiral)  
@@ -1053,7 +1053,7 @@ def read_kai_klock(
     2. **Virelai**     – Waters of becoming: Emotional emergence  
     3. **Solari**    – Solar ignition: Radiant embodiment  
     4. **Amarin**    – Heart bloom: Sacred balance  
-    5. **Caelus**     – Voice of stars: Resonant expression  
+    5. **Kaelus**     – Voice of stars: Resonant expression  
     6. **Umbriel**  – Divine remembrance: Crown alignment  
     7. **Noctura**     – Light spiral: Celestial flow  
     8. **Liora**   – Eternal mirror: Infinite now  
