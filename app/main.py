@@ -1044,7 +1044,7 @@ def read_kai_klock(
     4. **Harmonic Voice**      – Spoken truth, vibration, coherence in sound  
     5. **Inner Mirror**        – Reflection, purification, self-seeing  
     6. **Dreamfire Memory**    – Lucid vision, divine memory, encoded light  
-    7. **Crowned Light**       – Integration, sovereignty, harmonic ascension  
+    7. **Krowned Light**       – Integration, sovereignty, harmonic ascension  
 
     ═══════════════════════════════════════════════════════════════════  
     📅 **Eternal Months** — 8 Harmonic Months (42 Days Each)  
