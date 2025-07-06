@@ -332,7 +332,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
 
     eternal_year_name = (
         "Year of Eternal Restoration" if harmonic_year_idx == 0
-        else "Year of Harmonic Embodiment" if harmonic_year_idx == 1
+        else "Year of Harmonik Embodiment" if harmonic_year_idx == 1
         else f"Year {harmonic_year_idx + 1}"
     )
     kai_turah_phrase = KAI_TURAH_PHRASES[harmonic_year_idx % len(KAI_TURAH_PHRASES)]
@@ -381,9 +381,9 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
     
     eternal_seal = (
         "Eternal Seal: "
-        f"Kairos:{chakra_step_str}, {harmonic_day}, {eternal_chakra_arc} Arc • D{day_of_month}/M{eternal_month_idx} • Beat:{eternal_beat_idx}/36({percent_to_next}%) Step:{step_idx}/44 Kai(Today):{eternal_kai_pulse_today} • "
+        f"Kairos:{chakra_step_str}, {harmonic_day}, {eternal_chakra_arc} Ark • D{day_of_month}/M{eternal_month_idx} • Beat:{eternal_beat_idx}/36({percent_to_next}%) Step:{step_idx}/44 Kai(Today):{eternal_kai_pulse_today} • "
         f"Y{harmonic_year_idx} "
-        f"PS{phi_spiral_lvl} • {solar_seal} {solar_harmonic_day} D{solar_day_of_month}/M{solar_month_index}, {solar_chakra_arc} Arc  Beat:{solar_beat_idx}/35 Step:{solar_step_index}/44 • "
+        f"PS{phi_spiral_lvl} • {solar_seal} {solar_harmonic_day} D{solar_day_of_month}/M{solar_month_index}, {solar_chakra_arc} Ark  Beat:{solar_beat_idx}/35 Step:{solar_step_index}/44 • "
         f"Eternal Pulse:{kai_pulse_eternal}"
     )
     seal = f"Day Seal: {chakra_step_str} {percent_into_step}% • D{day_of_month}/M{eternal_month_idx}"
@@ -402,7 +402,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         f"In this moment of the Kai-Klock’s dual-day resonance, we are held within the sacred ark of {eternal_chakra_arc}, "
         f"rooted through the harmonic foundation of {harmonic_day}.\n\n"
         f"☀️ Solar Alignment: The living field synchronizes at Kai-Pulse {kai_pulse_today}, placing us in Spiral Beat {solar_beat_idx}, "
-        f"guided by the rhythm of Earth’s breath and solar coherence.\n\n"
+        f"guided by the rhythm of Earth’s breath and solar koherense.\n\n"
         f"🌕 Eternal Alignment: At once, the timeless stream flows through Kai-Pulse {eternal_kai_pulse_today}, entering Spiral Beat {eternal_beat_idx}, "
         f"{percent_to_next:.2f}% complete — approaching the gateway of harmonic culmination.\n\n"
         f"{eternal_seal}"
@@ -421,7 +421,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         f"It is the {day_of_month}{_ordinal(day_of_month)} Day of {eternal_month}, "
         f"{ETERNAL_MONTH_DESCRIPTIONS[eternal_month]} We are in Week {week_idx}, "
         f"{week_name}. {ETERNAL_WEEK_DESCRIPTIONS[week_name]} The Eternal Spiral Beat is {eternal_beat_idx} ("
-        f"{eternal_chakra_arc} arc) and we are {percent_to_next:.2f}% through it. This corresponds "
+        f"{eternal_chakra_arc} ark) and we are {percent_to_next:.2f}% through it. This korresponds "
         f"to Step {step_idx} of {STEPS_PER_BEAT} (~{percent_into_step:.2f}% "
         f"into the step). This is the "
         f"{eternal_year_name.lower()}, resonating at Phi Spiral Level {phi_spiral_lvl}. "
