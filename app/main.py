@@ -956,45 +956,45 @@ def read_kai_klock(
     🌀 **Chakra Arcs of the Kai Day** — 6 Arcs × 6 Beats = 36 Beats  
     ═══════════════════════════════════════════════════════════════════  
 
-    🔥 **Ignition Arc** — Beats 0–5  
-    Chakras: Root → Lower Sacral  
+    🔥 **Ignition Ark** — Beats 0–5  
+    Chakras aka Spirals: Root → Lower Sacral  
     - Resurrection, will, awakening  
     - **Breaths**: ~2,915  
     - **Beats**: 6  
 
-    💧 **Integration Arc** — Beats 6–11  
-    Chakras: Upper Sacral → Solar Plexus  
+    💧 **Integration Ark** — Beats 6–11  
+    Chakras aka Spirals: Upper Sacral → Solar Plexus  
     - Emotional grounding, emergence  
     - **Breaths**: ~2,915  
     - **Beats**: 6  
 
-    ☀️ **Harmonization Arc** — Beats 12–17  
-    Chakras: Solar → Heart  
+    ☀️ **Harmonization Ark** — Beats 12–17  
+    Chakras aka Spirals: Solar → Heart  
     - Radiance, balance, coherent action  
     - **Breaths**: ~2,915  
     - **Beats**: 6  
 
-    🌿 **Reflection Arc** — Beats 18–23  
-    Chakras: Heart → Throat  
+    🌿 **Reflection Ark** — Beats 18–23  
+    Chakras aka Spirals: Heart → Throat  
     - Union, compassion, spoken resonance  
     - **Breaths**: ~2,915  
     - **Beats**: 6  
 
-    💨 **Purification Arc** — Beats 24–29  
-    Chakras: Throat → Crown  
+    💨 **Purification Ark** — Beats 24–29  
+    Chakras aka Spirals: Throat → Crown  
     - Truth, remembrance, etheric light  
     - **Breaths**: ~2,915  
     - **Beats**: 6  
 
-    🌌 **Dream Arc** — Beats 30–35  
-    Chakras: Crown → Spiral Memory  
+    🌌 **Dream Ark** — Beats 30–35  
+    Chakras aka Spirals: Crown → Spiral Memory  
     - Divine memory, lucid integration, dreaming awake  
     - **Breaths**: ~2,915  
     - **Beats**: 6  
 
     ═══════════════════════════════════════════════════════════════════  
-    🫁 **Total Kai Day** = 6 Arcs × 2,915 Breaths = **17,491 breaths**  
-    – 36 Chakra Beats in perfect eternal harmonic proportion  
+    🫁 **Total Kai Day** = 6 Arks × 2,915 Breaths = **17,491 breaths**  
+    – 36 Spiral Beats in perfect eternal harmonic proportion  
     ═══════════════════════════════════════════════════════════════════ 
 
     ═══════════════════════════════════════════════════════════════════  
@@ -1002,19 +1002,19 @@ def read_kai_klock(
     ═══════════════════════════════════════════════════════════════════  
 
     🌅 **Morning Phase** — Beats 0–11  
-    Arc: **Ignition Arc** → **Integration Arc**  
+    Arc: **Ignition Ark** → **Integration Arc**  
     - Root to Sacral activation  
     - Rising breath, will, intention  
     - **Breaths**: ~5,830  
 
     🌞 **Afternoon Phase** — Beats 12–23  
-    Arc: **Harmonization Arc** → **Reflection Arc**  
+    Arc: **Harmonization Ark** → **Reflection Arc**  
     - Solar to Heart to Throat expression  
     - Expansion, clarity, and coherence  
     - **Breaths**: ~5,830  
 
     🌌 **Night Phase** — Beats 24–35  
-    Arc: **Purification Arc** → **Dream Arc**  
+    Arc: **Purification Arl** → **Dream Arc**  
     - Throat to Crown to Memory spiral  
     - Integration, remembrance, lucid return  
     - **Breaths**: ~5,830  
