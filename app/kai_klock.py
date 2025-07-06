@@ -61,14 +61,14 @@ def compute_subdivision_metadata(name: str, duration: float, count: float, reson
 
 subdivisions_data = {
     "halfPulse": compute_subdivision_metadata("halfPulse", 2.61799198, 12696722, "Pulse Divider"),
-    "chakraSubpulse": compute_subdivision_metadata("chakraSubpulse", 0.47599854, 69831971, "Chakra Tuning"),
+    "chakraSubpulse": compute_subdivision_metadata("chakraSubpulse", 0.47599854, 69831971, "Brat Tuning"),
     "ternaryStep": compute_subdivision_metadata("ternaryStep", 0.15866618, 209495913, "Tri-Light Step"),
     "microStep": compute_subdivision_metadata("microStep", 0.09519971, 349159855, "Resonant Breath"),
     "nanoPulse": compute_subdivision_metadata("nanoPulse", 0.05883128, 565004129, "First Spark"),
-    "nanoStep": compute_subdivision_metadata("nanoStep", 0.036361, 914163984, "Nano Arc"),
+    "nanoStep": compute_subdivision_metadata("nanoStep", 0.036361, 914163984, "Nano Ark"),
     "phiQuantum": compute_subdivision_metadata("phiQuantum", 0.02247203, 1479168113, "Phi Quantum"),
     "ekaru": compute_subdivision_metadata("ekaru", 0.01388855, 2393332097, "Ekaru Initiation"),
-    "tzaphirimUnit": compute_subdivision_metadata("tzaphirimUnit", 0.00858358, 3872536200, "Tzaphirim Crystal"),  # ✅ FIXED
+    "tzaphirimUnit": compute_subdivision_metadata("tzaphirimUnit", 0.00858358, 3872536200, "Tzaphirim krystal"),  # ✅ FIXED
     "kaiSingularity": compute_subdivision_metadata("kaiSingularity", 0.00530495, 6265890540, "Kai Singularity"),  # ✅ FIXED
     "deepThread": compute_subdivision_metadata("deepThread", 0.00327864, 10138426740, "Deep Thread")  # ✅ FIXED
 }
@@ -80,10 +80,10 @@ subdivisions_data = {
 # Each epoch is Eternal Year × Phi^n
 EPOCHS_PHI = [
     (0, "Eternal Year", "The root of solar-aligned Kairos time (8 months × 7 weeks)"),
-    (1, "Phi Epoch", "1 Eternal Year × Phi — expansion and identity activation"),
-    (2, "Phi Resonance Epoch", "Harmonic restoration arc across a soul generation"),
+    (1, "Phi Epok", "1 Eternal Year × Phi — expansion and identity activation"),
+    (2, "Phi Resonanse Epok", "Harmonic restoration ark across a soul generation"),
     (3, "Tri-Spiral Gate", "Completion of harmonic trinity (matter, light, memory)"),
-    (5, "Great Harmonic Ring", "Full spirit/DNA re-coherence arc"),
+    (5, "Great Harmonic Ring", "Full spirit/DNA re-coherence ark"),
     (8, "Kai-Cycle of Return", "Karmic spiral closure and harmonic rebirth point"),
     (13, "Solar Spiral Era", "Planetary resonance stabilization — used in ancient calendar resets"),
     (21, "One Breath of Erah Voh", "Lightbody spiral completion and remembrance of divine origin"),
@@ -95,8 +95,8 @@ def generate_phi_spiral_epochs(kai_pulse_eternal: int) -> List[Dict]:
     powers = [0, 1, 2, 3, 5, 8, 13, 21]
     labels = [
         "Eternal Year",
-        "Phi Epoch",
-        "Phi Resonance Epoch",
+        "Phi Epok",
+        "Phi Resonanse Epok",
         "Tri-Spiral Gate",
         "Great Harmonic Ring",
         "Kai-Cycle of Return",
@@ -106,9 +106,9 @@ def generate_phi_spiral_epochs(kai_pulse_eternal: int) -> List[Dict]:
     descriptions = [
         "The root of solar-aligned Kairos time (8 months × 7 weeks)",
         "1 Eternal Year × Phi — expansion and identity activation",
-        "Harmonic restoration arc across a soul generation",
+        "Harmonic restoration ark across a soul generation",
         "Completion of harmonic trinity (matter, light, memory)",
-        "Full spirit/DNA re-coherence arc",
+        "Full spirit/DNA re-coherence ark",
         "Karmic spiral closure and harmonic rebirth point",
         "Planetary resonance stabilization — used in ancient calendar resets",
         "Lightbody spiral completion and remembrance of divine origin"
