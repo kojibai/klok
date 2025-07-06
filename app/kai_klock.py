@@ -61,7 +61,7 @@ def compute_subdivision_metadata(name: str, duration: float, count: float, reson
 
 subdivisions_data = {
     "halfPulse": compute_subdivision_metadata("halfPulse", 2.61799198, 12696722, "Pulse Divider"),
-    "chakraSubpulse": compute_subdivision_metadata("chakraSubpulse", 0.47599854, 69831971, "Brat Tuning"),
+    "chakraSubpulse": compute_subdivision_metadata("chakraSubpulse", 0.47599854, 69831971, "Beat Tuning"),
     "ternaryStep": compute_subdivision_metadata("ternaryStep", 0.15866618, 209495913, "Tri-Light Step"),
     "microStep": compute_subdivision_metadata("microStep", 0.09519971, 349159855, "Resonant Breath"),
     "nanoPulse": compute_subdivision_metadata("nanoPulse", 0.05883128, 565004129, "First Spark"),
@@ -324,7 +324,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         percentIntoStep=solar_percent_into_step,
         stepsPerBeat=STEPS_PER_BEAT,
     )
-
+    
     # ---------- (rest of calculations stay identical) ---------- #
     harmonic_day_count = int(kai_pulse_eternal // HARMONIC_DAY_PULSES)
     harmonic_year_idx  = int(kai_pulse_eternal // HARMONIC_YEAR_PULSES)
