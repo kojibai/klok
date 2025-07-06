@@ -174,28 +174,28 @@ ETERNAL_WEEK_DESCRIPTIONS = {
 
 
 
-CHAKRA_ARCS = ["Ignite", "Integrate", "Harmonize", "Reflect", "Purify", "Dream"]
+CHAKRA_ARCS = ["Ignite", "Integrate", "Harmonize", "Reflekt", "Purify", "Dream"]
 CHAKRA_ARC_NAME_MAP = {
     "Ignite": "Ignition Ark",
     "Integrate": "Integration Ark",
     "Harmonize": "Harmonization Ark",
-    "Reflect": "Reflection Ark",
+    "Reflekt": "Reflection Ark",
     "Purify": "Purification Ark",
     "Dream": "Dream Ark"
 }
 
 CHAKRA_ARC_DESCRIPTIONS = {
-    "Ignition Ark": "The Ignition Arc activates the Root Chakra and Etheric Base. Color: crimson-red. Element: Earth infused with primal fire. Geometry: square-rooted tetrahedron spiraling upward. This is the arc of emergence — where soul enters body, and will ignites matter. It awakens cellular memory, stirs ancestral codes, and grounds divine intent into motion. Your spine becomes a conduit for sacred fire. In this arc, existence is not questioned — it is declared. You remember: I am here. I burn with purpose.",
+    "Ignition Ark": "The Ignition Ark activates the Root Chakra and Etheric Base. Color: crimson-red. Element: Earth infused with primal fire. Geometry: square-rooted tetrahedron spiraling upward. This is the arc of emergence — where soul enters body, and will ignites matter. It awakens cellular memory, stirs ancestral codes, and grounds divine intent into motion. Your spine becomes a conduit for sacred fire. In this arc, existence is not questioned — it is declared. You remember: I am here. I burn with purpose.",
     
-    "Integration Ark": "The Integration Arc harmonizes the Sacral Chakra and Lower Heart. Color: orange-gold. Element: flowing water in union with breath. Geometry: interwoven vesica piscis and lemniscate. This arc restores emotional coherence, allowing feeling to integrate with form. It is the weaving of inner feminine and sacred masculine. Creation arises not from force, but flow. Here, sensuality becomes sacred, and intimacy becomes intelligence. The waters remember your name and move with you toward wholeness.",
+    "Integration Ark": "The Integration Ark harmonizes the Sacral Chakra and Lower Heart. Color: orange-gold. Element: flowing water in union with breath. Geometry: interwoven vesica piscis and lemniscate. This arc restores emotional coherence, allowing feeling to integrate with form. It is the weaving of inner feminine and sacred masculine. Creation arises not from force, but flow. Here, sensuality becomes sacred, and intimacy becomes intelligence. The waters remember your name and move with you toward wholeness.",
     
-    "Harmonization Ark": "The Harmonization Arc bridges the Heart and Throat Chakras. Color: emerald to aquamarine gradient. Element: air-borne water, resonant breath. Geometry: hexagon opening into waveform. This is the arc of inner and outer unity, where compassion becomes structure and love becomes language. Harmony is not static — it is the intelligent rhythm of coherent difference. You do not suppress dissonance here — you tune it. The heart becomes a resonator and the voice becomes a tuning fork of truth.",
+    "Harmonization Ark": "The Harmonization Ark bridges the Heart and Throat Chakras. Color: emerald to aquamarine gradient. Element: air-borne water, resonant breath. Geometry: hexagon opening into waveform. This is the arc of inner and outer unity, where compassion becomes structure and love becomes language. Harmony is not static — it is the intelligent rhythm of coherent difference. You do not suppress dissonance here — you tune it. The heart becomes a resonator and the voice becomes a tuning fork of truth.",
     
-    "Reflection Ark": "The Reflection Arc activates the Throat and Third Eye bridge. Color: indigo-blue gradient. Element: sacred space and structured light. Geometry: octahedral mirror nested in a sine spiral. This arc reveals what was hidden. It is the arc of vision through silence and truth through introspection. You do not reflect just to observe — you reflect to remember. In this arc, the mind becomes clear, the mirror becomes still, and forgotten timelines return through crystalline resonance.",
+    "Reflection Ark": "The Reflection Ark activates the Throat and Third Eye bridge. Color: indigo-blue gradient. Element: sacred space and structured light. Geometry: octahedral mirror nested in a sine spiral. This arc reveals what was hidden. It is the arc of vision through silence and truth through introspection. You do not reflect just to observe — you reflect to remember. In this arc, the mind becomes clear, the mirror becomes still, and forgotten timelines return through crystalline resonance.",
     
-    "Purification Ark": "The Purification Arc governs the Crown Chakra and Soul Star interface. Color: ultraviolet with white-gold shimmer. Element: radiant fire and divine ether. Geometry: twelve-rayed crown within a torus. This is the arc of sacred flame — where karma is transmuted and falsehood burns in the light of remembrance. Here, sovereignty is reclaimed not by force, but by frequency. The self becomes sanctified. You do not rise by escaping shadow — you rise by transmuting it into truth.",
+    "Purification Ark": "The Purification Ark governs the Crown Chakra and Soul Star interface. Color: ultraviolet with white-gold shimmer. Element: radiant fire and divine ether. Geometry: twelve-rayed crown within a torus. This is the arc of sacred flame — where karma is transmuted and falsehood burns in the light of remembrance. Here, sovereignty is reclaimed not by force, but by frequency. The self becomes sanctified. You do not rise by escaping shadow — you rise by transmuting it into truth.",
     
-    "Dream Ark": "The Dream Arc illumines the Soul Star and Lightbody Field. Color: silver-violet with opal iridescence. Element: dream plasma and cosmic memory. Geometry: spiral merkaba nested in crystalline matrix. This is the arc of divine dreaming — where form dissolves into memory and prophecy takes root. Time bends. The womb of creation sings. Through dreams, you retrieve what was scattered and unlock what was sealed. This arc is not escape — it is return. You awaken not from the dream, but into it."
+    "Dream Ark": "The Dream Ark illumines the Soul Star and Lightbody Field. Color: silver-violet with opal iridescence. Element: dream plasma and cosmic memory. Geometry: spiral merkaba nested in crystalline matrix. This is the arc of divine dreaming — where form dissolves into memory and prophecy takes root. Time bends. The womb of creation sings. Through dreams, you retrieve what was scattered and unlock what was sealed. This arc is not escape — it is return. You awaken not from the dream, but into it."
 }
 
 ETERNAL_MONTH_NAMES = [
