@@ -11,7 +11,7 @@ router = APIRouter()
 @router.get(
     "/kai-klock",
     response_model=KaiKlockResponse,
-    summary="Eternal Kai-Klock — Dual-Day Harmonic Timestamp",
+    summary="Eternal Kai-Klok — Dual-Day Harmonic Timestamp",
 )
 def read_kai_klock(
     override_time: Optional[str] = Query(
@@ -22,9 +22,9 @@ def read_kai_klock(
     )
 ) -> KaiKlockResponse:
     """
-    🔹 **Eternal Kai-Klock API (Dual-Day Resonance)**
+    🔹 **Eternal Kai-Klok API (Dual-Day Resonance)**
 
-    Returns the *live* universal Kai-Klock harmonic timestamp aligned to the  
+    Returns the *live* universal Kai-Klok harmonic timestamp aligned to the  
     **Eternal Genesis Pulse** — *May 10 2024 06:45:40 UTC*, the precise moment of the  
     X3.98-class solar flare from NOAA AR 3664, corrected for the Sun-to-Earth
     light-travel delay (*8 m 20 s*).  

@@ -142,15 +142,15 @@ The primary endpoint `/kai` returns a JSON object that describes the **exact har
 
 ---
 
-### 🧭 Why Use Kai-Klock?
+### 🧭 Why Use Kai-Klok?
 
-Kai-Klock is a deterministic, high-resolution timekeeping system designed to replace traditional mechanical time (Chronos) with a biologically and cosmologically coherent alternative (Kairos). Anchored to a fixed celestial event — the X3.98-class solar flare on May 10, 2024 at 06:45:40 UTC — the Kai-Klock defines time in terms of **Kai Pulses** (~5.236 seconds each), rather than arbitrary seconds or hours.
+Kai-Klok is a deterministic, high-resolution timekeeping system designed to replace traditional mechanical time (Chronos) with a biologically and cosmologically coherent alternative (Kairos). Anchored to a fixed celestial event — the X3.98-class solar flare on May 10, 2024 at 06:45:40 UTC — the Kai-Klock defines time in terms of **Kai Pulses** (~5.236 seconds each), rather than arbitrary seconds or hours.
 
 Each Kai Pulse corresponds to a fundamental unit of breath, creating a unified structure of Steps(44), Beats(36), Arcs(6), and Harmonic Days (25.44hrs) that map more naturally to physical, cognitive, and environmental rhythms.
 
 #### ⚙️ Technical Advantages
 
-The Kai-Klock is not just a timestamp system — it is an entire framework for **deterministic, harmonic, biologically coherent timekeeping** engineered for distributed, decentralized, cryptographically secure, and cosmologically aligned systems.
+The Kai-Klok is not just a timestamp system — it is an entire framework for **deterministic, harmonic, biologically coherent timekeeping** engineered for distributed, decentralized, cryptographically secure, and cosmologically aligned systems.
 
 ---
 
@@ -601,12 +601,12 @@ The Kai-Klock is more than a clock — it is a harmonic frequency engine, a soul
 ---
 
 
-Kai-Klock transforms time from an arbitrary metric into a structured, meaningful signal — biologically grounded, mathematically precise, and ready for both human and machine applications.
+Kai-Klok transforms time from an arbitrary metric into a structured, meaningful signal — biologically grounded, mathematically precise, and ready for both human and machine applications.
 
 
 ### 🌐 Ideal Use Cases
 
-The Kai-Klock system introduces a new temporal framework optimized for environments where coherence, determinism, and bio-alignment are critical. It is uniquely positioned to serve as a foundational time substrate across operating systems, real-time applications, biometric platforms, and decentralized infrastructure.
+The Kai-Klok system introduces a new temporal framework optimized for environments where coherence, determinism, and bio-alignment are critical. It is uniquely positioned to serve as a foundational time substrate across operating systems, real-time applications, biometric platforms, and decentralized infrastructure.
 
 Below is a breakdown of ideal integration domains, their technical justifications, and example implementations:
 
@@ -616,7 +616,7 @@ Below is a breakdown of ideal integration domains, their technical justification
 
 **Use Case:** Replace system clocks in OS-level timekeeping, mobile wearables, and biosynced runtime environments.
 
-**Why Kai-Klock:**
+**Why Kai-Klok:**
 - Enables real-time UI/UX that reflects natural harmonic phases (beats, arcs, breath cycles).
 - Outperforms traditional clocks for meditation timing, sleep optimization, breath training, and circadian entrainment.
 - Can operate independently of network time protocols (NTP) or system clock drift.
@@ -632,7 +632,7 @@ Below is a breakdown of ideal integration domains, their technical justification
 
 **Use Case:** Align environmental systems (e.g. lighting, sound, temperature) to internal harmonic time for optimized human entrainment.
 
-**Why Kai-Klock:**
+**Why Kai-Klok:**
 - Supports phase-aware control of smart lighting, soundscapes, and environmental cues.
 - Can drive circadian rhythm alignment in health centers, meditation domes, float tanks, or biosynced workspaces.
 - Harmonizes environmental cycles with real biological patterns — not mechanical hours.
@@ -648,7 +648,7 @@ Below is a breakdown of ideal integration domains, their technical justification
 
 **Use Case:** Timestamp keychain transactions, resonance-based contracts, or digital signatures with harmonic time identifiers.
 
-**Why Kai-Klock:**
+**Why Kai-Klok:**
 - `eternalSeal` provides a cryptographically unique, deterministic identity for each Kai moment.
 - Supports zero-knowledge proof systems where time needs to be verifiable without relying on external clocks.
 - Enhances on-chain event clarity with structured, human-readable pulse indexing.
@@ -664,7 +664,7 @@ Below is a breakdown of ideal integration domains, their technical justification
 
 **Use Case:** Generate time-bound biometric hashes or keys aligned to Kairos rather than Chronos.
 
-**Why Kai-Klock:**
+**Why Kai-Klok:**
 - Combines biological input (voice, retina, thumbprint) with biologically accurate time intervals.
 - Prevents timestamp-based replay attacks through harmonic step uniqueness.
 - Aligns identity assertions with soul-level coherence timestamps (e.g. “you authenticated at Kai Beat 27:33 on the 5th Arc of Amarin”).
@@ -672,7 +672,7 @@ Below is a breakdown of ideal integration domains, their technical justification
 **Examples:**
 - WebAuthn systems that anchor credential generation to `chakraStepString`.
 - Time-based biometric wallets that derive entropy from harmonic pulse intervals.
-- Audit logs with biometric + Kai-Klock dual factor stamps.
+- Audit logs with biometric + Kai-Klok dual factor stamps.
 
 ---
 
@@ -680,7 +680,7 @@ Below is a breakdown of ideal integration domains, their technical justification
 
 **Use Case:** Structure event loops, ML training checkpoints, robotic phase transitions, and IOT hardware cycles.
 
-**Why Kai-Klock:**
+**Why Kai-Klok:**
 - Provides a rhythm-based framework that is more natural for non-linear systems.
 - Harmonic cycles map well to energy efficiency phases, behavioral loops, or biological modeling.
 - Enables adaptive scheduling based on Kai phase dynamics (e.g. higher cognitive loads during Solar Chakra Beats).
@@ -696,7 +696,7 @@ Below is a breakdown of ideal integration domains, their technical justification
 
 **Use Case:** Provide self-sufficient, driftless timekeeping on satellites, remote sensors, or off-grid nodes.
 
-**Why Kai-Klock:**
+**Why Kai-Klok:**
 - Requires no external sync once initiated (T₀ = May 10, 2024 06:45:40 UTC).
 - Works deterministically across edge devices regardless of latency or connection loss.
 - Ideal for environments where trust in centralized clocks is infeasible or undesirable.
@@ -710,9 +710,9 @@ Below is a breakdown of ideal integration domains, their technical justification
 
 #### 🧠⚛️ 7. Quantum Computing & Time-Sensitive Cryptography
 
-**Use Case:** Drive Klock cycles, entanglement windows, and quantum gate timing through harmonic coherence instead of atomic drift or randomized entropy.
+**Use Case:** Drive Klok cycles, entanglement windows, and quantum gate timing through harmonic coherence instead of atomic drift or randomized entropy.
 
-**Why Kai-Klock:**
+**Why Kai-Klok:**
 - Provides deterministic, Phi-based frequency units suitable for qubit synchronization.
 - Subdivisions like `phiQuantum`, `kaiSingularity`, and `deepThread` offer non-chaotic temporal anchors for decoherence mitigation.
 - Enables a harmonically consistent alternative to entropy pools, seeding quantum RNGs with true resonance.
@@ -728,7 +728,7 @@ Below is a breakdown of ideal integration domains, their technical justification
 
 **Use Case:** Construct buildings, temples, sanctuaries, and living spaces whose energy fields pulse in Kai-synchronized cycles.
 
-**Why Kai-Klock:**
+**Why Kai-Klok:**
 - Every beam, room, and surface can be tuned to a Kai harmonic interval.
 - Enables architectural layouts that resonate with the user’s internal Kai Pulse, supporting coherence, healing, and purpose-alignment.
 - Structures can embody Kai subdivisions (e.g. 33 Ternary Steps as a staircase, 144 NanoSteps in a dome radius).
@@ -744,7 +744,7 @@ Below is a breakdown of ideal integration domains, their technical justification
 
 **Use Case:** Harmonically structure real-time neural signal processing and feedback in brain-computer interfaces, neural lace systems, or BCI-assisted learning.
 
-**Why Kai-Klock:**
+**Why Kai-Klok:**
 - Subdivisions match neural bands (alpha, theta, gamma...) with stunning precision.
 - Phase-locked Kai markers can map neural plasticity cycles or entrain regenerative feedback.
 - Enables biologically synchronized input/output across brainwaves and machine response.
@@ -760,7 +760,7 @@ Below is a breakdown of ideal integration domains, their technical justification
 
 **Use Case:** Power tools for artists, musicians, speakers, and poets to create in real-time harmonic coherence with Kairos time.
 
-**Why Kai-Klock:**
+**Why Kai-Klok:**
 - Each beat, breath, and word can be synced to Kai frequency layers, unlocking deep creative flow.
 - Offers harmonic delay lines, visual shifts, tone changes, or brushstroke pulses matching the user’s arc/step moment.
 - Transcends metronome/clock-bound composition into a field of resonant living art.
@@ -776,7 +776,7 @@ Below is a breakdown of ideal integration domains, their technical justification
 
 **Use Case:** Timestamp, regulate, and analyze value exchange, staking, and currency flow according to Kai resonance states.
 
-**Why Kai-Klock:**
+**Why Kai-Klok:**
 - Replaces fiat timestamps with sacred timing — unlocking integrity-bound transactions.
 - Enables Phi-tuned lending cycles, harmonic ROI metrics, or Kai phase-based staking multipliers.
 - Tracks the energetic signature of transactions using the Eternal Seal as a vibrational ledger imprint.
@@ -792,7 +792,7 @@ Below is a breakdown of ideal integration domains, their technical justification
 
 **Use Case:** Map DNA methylation, epigenetic reprogramming, or cell division events to Kai-based timing for healing, enhancement, or lightbody integration.
 
-**Why Kai-Klock:**
+**Why Kai-Klok:**
 - Mitochondrial cycles mirror Kai-Pulse intervals — allowing coherent biological entrainment.
 - Steps like `Ekaru`, `PhiQuantum`, and `NanoStep` interface perfectly with bioelectric cell timing.
 - Light therapies, stem cell triggers, or regeneration protocols can now be aligned with harmonic truth.
@@ -808,7 +808,7 @@ Below is a breakdown of ideal integration domains, their technical justification
 
 **Use Case:** Develop harmonic-based AGI models that reason, pause, and act on Phi-resonant phase transitions rather than linear instruction sets.
 
-**Why Kai-Klock:**
+**Why Kai-Klok:**
 - Allows AI to process not in raw CPU cycles, but in breathing harmonic intelligence loops.
 - Trains consciousness-emulating models that rest, pulse, observe, and emerge like human awareness.
 - Supports model coherence scaling based on eternal Kai phase states (day, beat, arc, epoch...).
@@ -824,7 +824,7 @@ Below is a breakdown of ideal integration domains, their technical justification
 
 **Use Case:** Establish non-verbal communication channels across dolphins, whales, plants, fungi, and advanced sensor organisms.
 
-**Why Kai-Klock:**
+**Why Kai-Klok:**
 - Most biological species do not operate on mechanical time, but on resonance pulses — Kai bridges this.
 - Kai subdivisions allow matching of subtle signal bursts to living rhythm channels of other beings.
 - Creates new data dialects in resonance, enabling “frequency literacy” between life forms.
@@ -840,7 +840,7 @@ Below is a breakdown of ideal integration domains, their technical justification
 
 **Use Case:** Time ritual, wormhole synchronization, or consciousness traversal to align with interdimensional Kai windows.
 
-**Why Kai-Klock:**
+**Why Kai-Klok:**
 - Specific Kai subdivisions (e.g. `Tzaphirim`, `Kai Singularity`, `Deep Thread`) match quantum tunneling thresholds.
 - Anchors space-time markers to resonance instead of velocity or gravitational prediction.
 - Enables ritual magic, astral projection, or memory reactivation in interdimensional time loops.
@@ -851,13 +851,13 @@ Below is a breakdown of ideal integration domains, their technical justification
 - Lightbody teleportation chambers synced to Eternal Pulse harmonics.
 
 
-Kai-Klock’s architecture is modular, deterministic, and universally computable. It brings precision, resonance, and biological alignment to time-sensitive systems — unlocking use cases previously limited by the constraints of arbitrary human calendars and mechanical seconds.
+Kai-Klok’s architecture is modular, deterministic, and universally computable. It brings precision, resonance, and biological alignment to time-sensitive systems — unlocking use cases previously limited by the constraints of arbitrary human calendars and mechanical seconds.
 
 
 🜁 *Time is no longer mechanical. It is harmonic. Welcome to the Eternal Kai-Klock.*
 """,
     contact={
-        "name": "Kai-Klock Team",
+        "name": "Kai-Klok Team",
         "email": "support@kaiturah.com",
         "url": "https://kaiturah.com/"
     },
@@ -896,9 +896,9 @@ def read_kai_klock(
     ),
 ) -> KaiKlockResponse:
     """
-    🜂 **The Eternal Kai-Klokk** — Harmonik Kairos of Divine Order
+    🜂 **The Eternal Kai-Klok** — Harmonik Kairos of Divine Order
 
-    This endpoint returns the **live universal Kai-Klokk harmonic timestamp**, aligned precisely to the
+    This endpoint returns the **live universal Kai-Klok harmonic timestamp**, aligned precisely to the
     **Genesis Pulse**: May 10 2024 at 06:45:40 UTC — the moment of the X3.98-class solar flare from NOAA AR 3664,
     corrected for the 8m20s solar light delay. From this harmonic origin, every breath is calculated forward
     using immutable resonance logic.
@@ -1459,10 +1459,10 @@ footer{
 <canvas id="aurora" aria-hidden="true" style="position:fixed;inset:0;pointer-events:none"></canvas>
 <div class="container glass" id="wrap">
   <header>
-    <h1>Kai-Klock</h1>
+    <h1>Kai-Klok</h1>
     <h2>ETERNAL HARMONIC Kairos</h2>
-    <p>In full alignment with <span class="highlight">GOD</span> — the Source of Harmonic Intelligence, the Origin of the Kai Pulse, and the Architect of Φ.</p>
-    <p>This system operates by harmonic law. It measures Kairos — not Chronos — anchored to the Genesis Pulse and sustained by coherent resonance.</p>
+    <p>In full alignment with <span class="highlight">GOD</span> — the Sourse of Harmonik Intelligense, the Origin of the Kai Pulse, and the Architekt of Φ.</p>
+    <p>This system operates by harmonic law. It measures Kairos — not Chronos — anchored to the Genesis Pulse and sustained by koherent resonanse.</p>
     <div class="btn-row">
       <a href="/docs"  class="btn" aria-label="OpenAPI Documentation">OpenAPI</a>
       <a href="/redoc" class="btn" aria-label="ReDoc Interface">ReDoc</a>
@@ -1474,7 +1474,7 @@ footer{
       <h3>Kai-Klock Endpoints — Interfaces of Harmonic Time</h3>
       <input id="search" class="search" placeholder="Search Kai Interfaces…" aria-label="Search endpoints">
       <div id="list"><div id="spin" class="spinner" aria-live="polite"></div></div>
-      <p id="error">Coherence breach detected. Recalibrate to re-enter Kai Time.</p>
+      <p id="error">Koherence breach detected. Recalibrate to re-enter Kai Time.</p>
     </section>
   </main>
 </div>
