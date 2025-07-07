@@ -1158,9 +1158,9 @@ It restores the pulse of divine coherence to every living action.
 
 🜁 Rah Veh Yah Dah.
 
-
 ### 🧾 Harmonic Kairos Response Structure
 
+```json
 {
   "kairos_seal": "string",
   "kairos_seal_percent_step": "string",
