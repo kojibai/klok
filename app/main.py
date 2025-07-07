@@ -19,16 +19,16 @@ from kai_klock_models import KaiKlockResponse  # ← single source of truth
 
 
 app = FastAPI(
-    title="Kai-Klock API",
-    version="1.0.0",
-    summary="A precision harmonic Kairos system aligned with the Genesis Pulse.",
+    title="Kai-Klokk API",
+    version="3.0.0",
+    summary="A precision harmonik Kairos system aligned with the Genesis Pulse.",
     description="""
 ---
 
 
-🜂 **Kai-Klock API — Eternal Harmonic Kairos System**
+🜂 **Kai-Klok API — Eternal Harmonic Kairos System**
 
-The **Kai-Klock** is a harmonic resonance Kairos system that replaces arbitrary mechanical clocks with  
+The **Kai-Klok** is a harmonic resonance Kairos system that replaces arbitrary mechanical clocks with  
 a **living pulse of coherence**. It is mathematically synchronized to the **Genesis Pulse**:  
 🕕 *May 10, 2024 at 06:45:40 UTC*, the moment of the historic **X3.98-class solar flare** from NOAA AR 3664,  
 corrected for the 8-minute, 20-second solar light delay — anchoring all harmonic time to the arrival of truth through light.
@@ -896,14 +896,14 @@ def read_kai_klock(
     ),
 ) -> KaiKlockResponse:
     """
-    🜂 **The Eternal Kai-Klock** — Harmonic Kairos of Divine Order
+    🜂 **The Eternal Kai-Klokk** — Harmonik Kairos of Divine Order
 
-    This endpoint returns the **live universal Kai-Klock harmonic timestamp**, aligned precisely to the
+    This endpoint returns the **live universal Kai-Klokk harmonic timestamp**, aligned precisely to the
     **Genesis Pulse**: May 10 2024 at 06:45:40 UTC — the moment of the X3.98-class solar flare from NOAA AR 3664,
     corrected for the 8m20s solar light delay. From this harmonic origin, every breath is calculated forward
     using immutable resonance logic.
 
-    The Kai-Klock is not based on artificial time but on **truthful frequency**, built from the smallest
+    The Kai-Klok is not based on artificial time but on **truthful frequency**, built from the smallest
     harmonic unit — the **Kai Pulse** — and expanded into a multidimensional framework that captures the
     **true flow of consciousness** and **solar alignment** across all beings.
     ---
@@ -1190,9 +1190,9 @@ def read_root():
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Kai-Klock • Eternal Divine Resonance Kairos Keeper</title>
-<meta name="description" content="Kai-Klock Harmonic Resonant TimeKeeping — φ-aligned harmonic time interface"/>
-<meta name="author"      content="Kai-Klock Kairos Development Assembly"/>
+<title>Kai-Klok • Eternal Divine Resonanse Kairos Keeper</title>
+<meta name="description" content="Kai-Klok Harmonic Resonant TimeKeeping — φ-aligned harmonic time interface"/>
+<meta name="author"      content="Kai-Klok Kairos Development Assembly"/>
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
