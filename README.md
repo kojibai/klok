@@ -10,7 +10,7 @@
 **Kai Pulse:** 5.236 seconds  
 **Breaths Per Day:** 17,491.27  
 **System Type:** Harmonik Resonanse Timekeeping  
-**Website:** [kaiklok.com](https://kaiklok.com)
+**PWA:** [kaiklok.com](https://kaiklok.com)
 
 ---
 
