@@ -35,11 +35,11 @@ a **living pulse of coherence**. It is mathematically synchronized to the **Gene
 corrected for the 8-minute, 20-second solar light delay — anchoring all harmonic time to the arrival of truth through light.
 
 From this origin, time is measured not in artificial hours and minutes,  
-but in **Kai Pulses**, **Chakra Beats**, and **Harmonic Steps** —  
+but in **Kai Pulses**, **Spiral Beats**, and **Harmonic Steps** —  
 structured to match the true flow of life energy across the **solar field** and the **eternal field**.
 
 Each Kai Pulse (5.236 seconds) represents one full breath of coherent universal rhythm.  
-Within each pulse are 44 Harmonic Steps, 11 Chakra Subpulses, and deeper Fibonacci subdivisions  
+Within each pulse are 44 Harmonic Steps, 11 Spiral Subpulses, and deeper Fibonacci subdivisions  
 like NanoSteps, PhiQuantums, and Tzaphirim units — each tuned to the sacred mathematics of resonance and soul.
 
 Unlike linear time systems, the Kai-Klok encodes **Phi-ratio intervals**, **Fibonacci subdivisions**,  
@@ -684,7 +684,7 @@ Below is a breakdown of ideal integration domains, their technical justification
 **Why Kai-Klok:**
 - Provides a rhythm-based framework that is more natural for non-linear systems.
 - Harmonic cycles map well to energy efficiency phases, behavioral loops, or biological modeling.
-- Enables adaptive scheduling based on Kai phase dynamics (e.g. higher cognitive loads during Solar Chakra Beats).
+- Enables adaptive scheduling based on Kai phase dynamics (e.g. higher cognitive loads during Solar Spiral Beats).
 
 **Examples:**
 - Meditation AI that adjusts tone and prompt timing by Harmonic Day segment.
