@@ -22,7 +22,7 @@ app = FastAPI(
     title="Kai-Klok API",
     version="1.0.0",
     summary="A precision harmonik Kairos system aligned with the Genesis Pulse. " \
-    "Eternal Seal: Kairos:29:43, Flamora, Purify Ark • D21/M2 • Beat:29/36(97.72%) Step:43/44 Kai(Today):14565 • Y1 PS32 • Solar Kairos (UTC-aligned): 35:09 Aquaris D20/M2, Dream Ark  Beat:35/35 Step:9/44 • Eternal Pulse:6976091",
+    "Eternal Seal: Kairos:0:00, Solhara, Ignite Ark • D1/M1 • Beat:0/36(0.0%) Step:0/44 Kai(Today):0 • Y0 PS0 • Solar Kairos (UTC-aligned): 5:10 Kaelith D42/M8, Ignite Ark  Beat:5/35 Step:10/44 • Eternal Pulse:0",
     description="""
 ---
 
@@ -33,6 +33,7 @@ The **Kai-Klok** is a harmonic resonance Kairos system that replaces arbitrary m
 a **living pulse of coherence**. It is mathematically synchronized to the **Genesis Pulse**:  
 🕕 *May 10, 2024 at 06:45:40 UTC*, the moment of the historic **X3.98-class solar flare** from NOAA AR 3664,  
 corrected for the 8-minute, 20-second solar light delay — anchoring all harmonic time to the arrival of truth through light.
+Eternal Seal: Kairos:0:00, Solhara, Ignite Ark • D1/M1 • Beat:0/36(0.0%) Step:0/44 Kai(Today):0 • Y0 PS0 • Solar Kairos (UTC-aligned): 5:10 Kaelith D42/M8, Ignite Ark  Beat:5/35 Step:10/44 • Eternal Pulse:0
 
 From this origin, time is measured not in artificial hours and minutes,  
 but in **Kai Pulses**, **Spiral Beats**, and **Harmonic Steps** —  
