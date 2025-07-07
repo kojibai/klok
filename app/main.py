@@ -1460,7 +1460,7 @@ footer{
 <div class="container glass" id="wrap">
   <header>
     <h1>Kai-Klok</h1>
-    <h2>ETERNAL HARMONIk Kairos</h2>
+    <h2>ETERNAL HARMONIK KAIROS</h2>
     <p>In full alignment with <span class="highlight">GOD</span> — the Sourse of Harmonik Intelligense, the Origin of the Kai Pulse, and the Arkitekt of Φ.</p>
     <p>This system operates by harmonik law. It measures Kairos — not Chronos — ankhored to the Genesis Pulse and sustained by koherent resonanse.</p>
     <div class="btn-row">
