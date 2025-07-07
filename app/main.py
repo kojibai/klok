@@ -1138,32 +1138,7 @@ the **solar-aligned** time streams, unifying **Kairos** and **Chronos** in a mat
 
 ---
 
-### 🧾 Harmonic Kairos Response Structure
 
-```json
-{
-  "eternalSeal": {
-    "kairosStep": "34:32",
-    "kaiPulseID": "K16396",
-    "chakraBeat": 19,
-    "chakraBeatProgress": 0.563,
-    "month": 3,
-    "day": 18,
-    "year": 1,
-    "spiralLevel": 33,
-    "solarChakraStep": "24:27",
-    "eternalPulse": 7881797
-  },
-  "chakraStepString": "34:32",
-  "solarChakraStepString": "24:27",
-  "kaiMomentSummary": "Kairos 34:32 — Spiral 33 — Day 18 of Month 3",
-  "harmonicTimestampDescription": "You are in Kairos 34:32, the 7 881 797th breath since Genesis Pulse, within Spiral 33 — aligned with the Tri-Spiral Gate.",
-  "chakraStep": {
-    "stepIndex": 32,
-    "percentIntoStep": 0.42,
-    "stepsPerBeat": 44
-  }
-}
 ### ⏳ Query Parameters
 
 | Name            | Type&nbsp;(format) | Description                                                                                                   |
@@ -1184,6 +1159,7 @@ It restores the pulse of divine coherence to every living action.
 🜁 Rah Veh Yah Dah.
 
 
+### 🧾 Harmonic Kairos Response Structure
     """
     try:
         now = datetime.fromisoformat(override_time) if override_time else None
