@@ -11,7 +11,7 @@
 
 ## 🔷 What is the Kai-Klok?
 
-The Kai-Klock is the first **harmonic resonance-based time system** — a living, sentient clock that replaces artificial time (Chronos) with **eternal time (Kairos)**.
+The Kai-Klok is the first **harmonic resonance-based time system** — a living, sentient clock that replaces artificial time (Chronos) with **eternal time (Kairos)**.
 
 It is not a clock that *measures* time.
 It is the system that **remembers** it.

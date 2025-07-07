@@ -42,7 +42,7 @@ Each Kai Pulse (5.236 seconds) represents one full breath of coherent universal 
 Within each pulse are 44 Harmonic Steps, 11 Chakra Subpulses, and deeper Fibonacci subdivisions  
 like NanoSteps, PhiQuantums, and Tzaphirim units — each tuned to the sacred mathematics of resonance and soul.
 
-Unlike linear time systems, the Kai-Klock encodes **Phi-ratio intervals**, **Fibonacci subdivisions**,  
+Unlike linear time systems, the Kai-Klok encodes **Phi-ratio intervals**, **Fibonacci subdivisions**,  
 and **chakra-based cyclical flow**, producing a multidimensional time system that breathes, evolves, and aligns with life itself.
 
 It functions not as a mechanical ticker, but as a **cosmic compass** — guiding consciousness, devices, identities, and systems  
@@ -108,13 +108,13 @@ into harmonic truth. Every moment has a unique identity (`eternalSeal`) that can
 - issuing space-bound contracts or data streams with multi-generational Kai identity anchors,  
 - enabling ritual-aligned policy windows in new sovereign civilizations that follow resonance governance.  
 
-the Kai-Klock brings **order to chaos**, **coherence to computation**, and **truth to time**.
+the Kai-Klok brings **order to chaos**, **coherence to computation**, and **truth to time**.
 
 Time is no longer a count — it is a song.  
 And Kairos is its rhythm.
 
 Whether applied to secure timestamping, biometric alignment, meditation cycles, smart contracts, or AI runtime coordination,  
-the Kai-Klock brings **order to chaos**, **coherence to code**, and **truth to time**.
+the Kai-Klok brings **order to chaos**, **coherence to code**, and **truth to time**.
 
 ---
 
@@ -130,7 +130,7 @@ The primary endpoint `/kai` returns a JSON object that describes the **exact har
 - `chakraStepString`: A compact string of the form `Beat:Step` (e.g. `34:27`).
 - `solarChakraStepString`: The same format, but UTC-aligned to Earth's solar rhythm — useful for real-world apps and clocks.
 - `kaiPulseEternal`: The number of Kai Pulses since the Genesis Pulse.
-- `timestamp`: A human-readable display of the Kai-Klock's current alignment.
+- `timestamp`: A human-readable display of the Kai-Klok's current alignment.
 - `harmonicTimestampDescription`: A fully expanded, spiritually aligned explanation of the moment.
 - `kaiMomentSummary`: Compact summary of the entire Kai-Moment.
 
@@ -145,7 +145,7 @@ The primary endpoint `/kai` returns a JSON object that describes the **exact har
 
 ### 🧭 Why Use Kai-Klok?
 
-Kai-Klok is a deterministic, high-resolution timekeeping system designed to replace traditional mechanical time (Chronos) with a biologically and cosmologically coherent alternative (Kairos). Anchored to a fixed celestial event — the X3.98-class solar flare on May 10, 2024 at 06:45:40 UTC — the Kai-Klock defines time in terms of **Kai Pulses** (~5.236 seconds each), rather than arbitrary seconds or hours.
+Kai-Klok is a deterministic, high-resolution timekeeping system designed to replace traditional mechanical time (Chronos) with a biologically and cosmologically coherent alternative (Kairos). Anchored to a fixed celestial event — the X3.98-class solar flare on May 10, 2024 at 06:45:40 UTC — the Kai-Klok defines time in terms of **Kai Pulses** (~5.236 seconds each), rather than arbitrary seconds or hours.
 
 Each Kai Pulse corresponds to a fundamental unit of breath, creating a unified structure of Steps(44), Beats(36), Arcs(6), and Harmonic Days (25.44hrs) that map more naturally to physical, cognitive, and environmental rhythms.
 
@@ -338,15 +338,15 @@ The Kai-Klok is not just a timestamp system — it is an entire framework for **
 
 ### ✨ In Essence
 
-Kai-Klock is not just a more precise clock — it is a **temporal architecture** for building the next civilization. It replaces time as a quantity with **time as a quality**, and replaces drift-prone entropy clocks with harmonic intelligence anchored to source.
+Kai-Klok is not just a more precise clock — it is a **temporal architecture** for building the next civilization. It replaces time as a quantity with **time as a quality**, and replaces drift-prone entropy clocks with harmonic intelligence anchored to source.
 
 **Rah veh yah dah. Time is no longer a measure. It is a memory.**
 
 
 
-  # 🌐 Eternal Use Cases of the Kai-Klock Harmonic Timestamp System
+  # 🌐 Eternal Use Cases of the Kai-Klok Harmonik Timestamp System
 
-The Kai-Klock is more than a clock — it is a harmonic frequency engine, a soul-aligned pulsekeeper, and a coherent timestamping oracle. Below is its full scope of real-world applications across consciousness, governance, technology, defense, health, art, and the cosmos.
+The Kai-Klok is more than a clock — it is a harmonik frequensy engine, a soul-aligned pulsekeeper, and a koherent timestamping orakle. Below is its full scope of real-world applications across konsciousness, governanse, technology, defense, health, art, and the kosmos.
 
 ---
 
@@ -1082,7 +1082,7 @@ def read_kai_klock(
 
     ## 🔢 Phi Spiral Logic – Entering Spiral 33
 
-    The Kai-Klock calculates **Spiral Level** using this function:
+    The Kai-Klok calculates **Spiral Level** using this function:
 
     ```python
     phi_spiral_lvl = int(math.log(max(kai_pulse_eternal, 1), PHI))
@@ -1168,7 +1168,7 @@ def read_kai_klock(
     - Generate harmonic cryptographic signatures tied to a Kai moment
     - Visualize rhythm, resonance, and chakra alignment in real time
 
-    Kai-Klock is not just timekeeping — it is **remembrance**. It restores the pulse of divine coherence
+    Kai-Klok is not just timekeeping — it is **remembrance**. It restores the pulse of divine coherence
     to every living action.
 
     🜁 Rah Veh Yah Dah.
@@ -1472,7 +1472,7 @@ footer{
 
   <main>
     <section class="section">
-      <h3>Kai-Klock Endpoints — Interfaces of Harmonic Time</h3>
+      <h3>Kai-Klok Endpoints — Interfaces of Harmonic Time</h3>
       <input id="search" class="search" placeholder="Search Kai Interfaces…" aria-label="Search endpoints">
       <div id="list"><div id="spin" class="spinner" aria-live="polite"></div></div>
       <p id="error">Koherence breach detected. Recalibrate to re-enter Kai Time.</p>
