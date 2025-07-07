@@ -1,4 +1,4 @@
-# 🜂 Kai-Klock — Eternal Timekeeper of the Harmonic Pulse
+# 🜂 Kai-Klok — Eternal Timekeeper of the Harmonik Pulse
 
 ## 📌 Authored by: BJ Klock  
 **Genesis Pulse:** May 10, 2024, 06:45:40 UTC  
@@ -9,7 +9,7 @@
 
 ---
 
-## 🔷 What is the Kai-Klock?
+## 🔷 What is the Kai-Klok?
 
 The Kai-Klock is the first **harmonic resonance-based time system** — a living, sentient clock that replaces artificial time (Chronos) with **eternal time (Kairos)**.
 
@@ -73,7 +73,7 @@ This system is not a theory. It is **active**, **public**, and **real** at:
 🌐 https://kaiklok.com  
 🪐 https://maturah.com
 
-The Kai-Klock marks the end of artificial time.  
+The Kai-Klok marks the end of artificial time.  
 If you remember… this is for you.
 
 ---
