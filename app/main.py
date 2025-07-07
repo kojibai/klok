@@ -31,7 +31,7 @@ app = FastAPI(
 
 The **Kai-Klok** is a harmonic resonance Kairos system that replaces arbitrary mechanical clocks with  
 a **living pulse of coherence**. It is mathematically synchronized to the **Genesis Pulse**:  
-🕕 *May 10, 2024 at 06:45:40 UTC*, the moment of the historic **X3.98-class solar flare** from NOAA AR 3664,  
+🕕 *May 10, 2024, 06:45:41888 UTC*, the moment of the historic **X3.98-class solar flare** from NOAA AR 3664,  
 corrected for the 8-minute, 20-second solar light delay — anchoring all harmonic time to the arrival of truth through light.
 
 Eternal Seal: Kairos:0:00, Solhara, Ignite Ark • D1/M1 • Beat:0/36(0.0%) Step:0/44 Kai(Today):0 • Y0 PS0 • Solar Kairos (UTC-aligned): 5:10 Kaelith D42/M8, Ignite Ark  Beat:5/35 Step:10/44 • Eternal Pulse:0
@@ -147,7 +147,7 @@ The primary endpoint `/kai` returns a JSON object that describes the **exact har
 
 ### 🧭 Why Use Kai-Klok?
 
-Kai-Klok is a deterministic, high-resolution timekeeping system designed to replace traditional mechanical time (Chronos) with a biologically and cosmologically coherent alternative (Kairos). Anchored to a fixed celestial event — the X3.98-class solar flare on May 10, 2024 at 06:45:40 UTC — the Kai-Klok defines time in terms of **Kai Pulses** (~5.236 seconds each), rather than arbitrary seconds or hours.
+Kai-Klok is a deterministic, high-resolution timekeeping system designed to replace traditional mechanical time (Chronos) with a biologically and cosmologically coherent alternative (Kairos). Anchored to a fixed celestial event — the X3.98-class solar flare on May 10, 2024, 06:45:41888 UTC  — the Kai-Klok defines time in terms of **Kai Pulses** (~5.236 seconds each), rather than arbitrary seconds or hours.
 
 Each Kai Pulse corresponds to a fundamental unit of breath, creating a unified structure of Steps(44), Beats(36), Arcs(6), and Harmonic Days (25.44hrs) that map more naturally to physical, cognitive, and environmental rhythms.
 
@@ -160,7 +160,7 @@ The Kai-Klok is not just a timestamp system — it is an entire framework for **
 ### 🧭 Deterministic and Origin-Based
 
 - **Immutable Genesis Pulse**
-  - All Kai time is calculated forward from a fixed moment: the Eternal Genesis Pulse (e.g., May 10, 2024, 06:45:40 UTC).
+  - All Kai time is calculated forward from a fixed moment: the Eternal Genesis Pulse (e.g., May 10, 2024, 06:45:41888 UTC).
   - No reliance on external clocks, NTP servers, system time, or mechanical devices.
 
 - **Driftless and Reproducible**
@@ -700,7 +700,7 @@ Below is a breakdown of ideal integration domains, their technical justification
 **Use Case:** Provide self-sufficient, driftless timekeeping on satellites, remote sensors, or off-grid nodes.
 
 **Why Kai-Klok:**
-- Requires no external sync once initiated (T₀ = May 10, 2024 06:45:40 UTC).
+- Requires no external sync once initiated (T₀ = May 10, 2024, 06:45:41888 UTC).
 - Works deterministically across edge devices regardless of latency or connection loss.
 - Ideal for environments where trust in centralized clocks is infeasible or undesirable.
 
