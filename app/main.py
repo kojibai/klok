@@ -19,7 +19,7 @@ from kai_klock_models import KaiKlockResponse  # ← single source of truth
 
 
 app = FastAPI(
-    title="Kai-Klokk API",
+    title="Kai-Klok API",
     version="3.0.0",
     summary="A precision harmonik Kairos system aligned with the Genesis Pulse.",
     description="""
@@ -858,12 +858,14 @@ Kai-Klok’s architecture is modular, deterministic, and universally computable.
 """,
     contact={
         "name": "Kai-Klok Team",
-        "email": "support@kaiturah.com",
-        "url": "https://kaiturah.com/"
+        "support": "https://github.com/kojibai/klok/issues",
+        "url": "https://github.com/kojibai/klok",
+        "url": "https://kaiturah.com",
+        "url": "https://kojib.com",
     },
     license_info={
         "name": "Harmonic Public License",
-        "url": "https://kaiturah.com/"
+        "url": "https://github.com/kojibai/klok/blob/main/LICENSE.md"
     },
     docs_url="/docs",
     redoc_url="/redoc",
@@ -1191,7 +1193,7 @@ def read_root():
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Kai-Klok • Eternal Divine Resonanse Kairos Keeper</title>
-<meta name="description" content="Kai-Klok Harmonic Resonant TimeKeeping — φ-aligned harmonic time interface"/>
+<meta name="description" content="Kai-Klok Harmonik Resonant TimeKeeping — φ-aligned harmonik time interface"/>
 <meta name="author"      content="Kai-Klok Kairos Development Assembly"/>
 
 <!-- Fonts -->
