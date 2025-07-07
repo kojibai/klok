@@ -894,7 +894,7 @@ app.add_middleware(
 def read_kai_klock(
     override_time: Optional[str] = Query(
         None,
-        description="Optional ISO-8601 datetime (e.g. '2024-05-10T06:45:40') "
+        description="Optional ISO-8601 datetime (e.g. '2024-05-10T06:45:41888') "
         "to override 'now' for deterministic output.",
     ),
 ) -> KaiKlockResponse:
