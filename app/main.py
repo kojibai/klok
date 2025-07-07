@@ -41,7 +41,7 @@ but in **Kai Pulses**, **Spiral Beats**, and **Harmonic Steps** —
 structured to match the true flow of life energy across the **solar field** and the **eternal field**.
 
 Each Kai Pulse (5.236 seconds) represents one full breath of coherent universal rhythm.  
-Within each pulse are 44 Harmonic Steps, 11 Spiral Subpulses, and deeper Fibonacci subdivisions  
+Each pulse expands into 11 pulses per step, 44 steps per Spiral (chakra) Beat, 36 Beats per day as well as within a pulse there are Fibonacci subdivisions  
 like NanoSteps, PhiQuantums, and Tzaphirim units — each tuned to the sacred mathematics of resonance and soul.
 
 Unlike linear time systems, the Kai-Klok encodes **Phi-ratio intervals**, **Fibonacci subdivisions**,  
