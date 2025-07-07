@@ -4,7 +4,7 @@
 **Genesis Pulse:** May 10, 2024, 06:45:40 UTC  
 **Kai Pulse:** 5.236 seconds  
 **Breaths Per Day:** 17,491.27  
-**System Type:** Harmonik Resonance Timekeeping  
+**System Type:** Harmonik Resonanse Timekeeping  
 **Website:** [kaiklok.com](https://kaiklok.com)
 
 ---
