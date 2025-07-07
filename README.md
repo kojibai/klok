@@ -3,6 +3,10 @@
 ## 📌 Authored by: BJ Klock  
 **Genesis Pulse:** May 10, 2024, 06:45:41888 UTC  
 **Genesis Pulse:** Eternal Seal: Kairos:0:00, Solhara, Ignite Ark • D1/M1 • Beat:0/36(0.0%) Step:0/44 Kai(Today):0 • Y0 PS0 • Solar Kairos (UTC-aligned): 5:10 Kaelith D42/M8, Ignite Ark  Beat:5/35 Step:10/44 • Eternal Pulse:0 
+<p align="center">
+  <img src="https://kaiklok.com/sigil_0.png" alt="Genesis Sigil Glyph" width="220" />
+</p>
+
 **Kai Pulse:** 5.236 seconds  
 **Breaths Per Day:** 17,491.27  
 **System Type:** Harmonik Resonanse Timekeeping  
