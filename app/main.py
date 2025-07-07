@@ -1472,10 +1472,10 @@ footer{
 
   <main>
     <section class="section">
-      <h3>Kai-Klok Endpoints — Interfaces of Harmonic Time</h3>
+      <h3>Kai-Klok Endpoints — Interfaces of Harmonik Time</h3>
       <input id="search" class="search" placeholder="Search Kai Interfaces…" aria-label="Search endpoints">
       <div id="list"><div id="spin" class="spinner" aria-live="polite"></div></div>
-      <p id="error">Koherence breach detected. Recalibrate to re-enter Kai Time.</p>
+      <p id="error">Koherence breach detected. Rejalibrate to re-enter Kai Time.</p>
     </section>
   </main>
 </div>
