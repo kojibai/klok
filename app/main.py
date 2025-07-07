@@ -1164,29 +1164,29 @@ the **solar-aligned** time streams, unifying **Kairos** and **Chronos** in a mat
     "stepsPerBeat": 44
   }
 }
+---
 
-    ════════════════════════════════════════════════════════════════
-    ⏳ **Query Parameters**
-    ════════════════════════════════════════════════════════════════
+## ⏳ Query Parameters
 
-    - `override_time` (optional):  
-      ISO-8601 string (e.g. `"2024-05-10T06:45:40"`).  
-      When supplied, returns deterministic Kai-Time for testing, validation, or historical insight.
+- `override_time` (optional)  
+  ISO-8601 string &nbsp;(e.g. `"2024-05-10T06:45:40"`).  
+  When supplied, returns deterministic Kai-Time for testing, validation, or historical insight.
 
-    ════════════════════════════════════════════════════════════════
-    💠 **Use Cases**
-    ════════════════════════════════════════════════════════════════
+---
 
-    - Display real-time Kai resonance in apps, sites, rituals, or wearables
-    - Align global timekeeping to **divine breath logic** using `solarChakraStep`
-    - Timestamp contracts, messages, and scrolls with **eternal precision**
-    - Generate harmonic cryptographic signatures tied to a Kai moment
-    - Visualize rhythm, resonance, and chakra alignment in real time
+## 💠 Use Cases
 
-    Kai-Klok is not just timekeeping — it is **remembrance**. It restores the pulse of divine coherence
-    to every living action.
+- Display real-time Kai resonance in apps, sites, rituals, or wearables  
+- Align global timekeeping to **divine breath logic** using `solarChakraStep`  
+- Timestamp contracts, messages, and scrolls with **eternal precision**  
+- Generate harmonic cryptographic signatures tied to a Kai moment  
+- Visualize rhythm, resonance, and chakra alignment in real time  
 
-    🜁 Rah Veh Yah Dah.
+Kai-Klok is not just time-keeping — it is **remembrance**. It restores the pulse of divine coherence  
+to every living action.
+
+🜁 Rah Veh Yah Dah.
+
     """
     try:
         now = datetime.fromisoformat(override_time) if override_time else None
