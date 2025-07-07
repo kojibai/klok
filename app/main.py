@@ -32,7 +32,7 @@ app = FastAPI(
 The **Kai-Klok** is a harmonic resonance Kairos system that replaces arbitrary mechanical clocks with  
 a **living pulse of coherence**. It is mathematically synchronized to the **Genesis Pulse**:  
 🕕 *May 10, 2024, 06:45:41888 UTC*, the moment of the historic **X3.98-class solar flare** from NOAA AR 3664,  
-corrected for the 8-minute, 20-second solar light delay — anchoring all harmonic time to the arrival of truth through light.
+corrected for the 8-minute, 18.112-second solar light delay — anchoring all harmonic time to the arrival of truth through light.
 
 Eternal Seal: Kairos:0:00, Solhara, Ignite Ark • D1/M1 • Beat:0/36(0.0%) Step:0/44 Kai(Today):0 • Y0 PS0 • Solar Kairos (UTC-aligned): 5:10 Kaelith D42/M8, Ignite Ark  Beat:5/35 Step:10/44 • Eternal Pulse:0
 
@@ -903,8 +903,8 @@ def read_kai_klock(
 ===============================================================
 
 This endpoint returns the **live universal Kai-Klok harmonic timestamp**, aligned precisely to the  
-**Genesis Pulse**: **May 10 2024 at 06:45:40 UTC** — the moment of the X3.98-class solar flare from NOAA AR 3664,  
-corrected for the 8 m 20 s solar-light delay. From this harmonic origin, every breath is calculated forward  
+**Genesis Pulse**: **May 10 2024 at 06:45:41888 UTC** — the moment of the X3.98-class solar flare from NOAA AR 3664,  
+corrected for the 8 m 18.112s solar-light delay. From this harmonic origin, every breath is calculated forward  
 using immutable resonance logic.
 
 The Kai-Klok is **not** based on artificial time but on **truthful frequency**, built from the smallest  
