@@ -1160,6 +1160,140 @@ It restores the pulse of divine coherence to every living action.
 
 
 ### 🧾 Harmonic Kairos Response Structure
+
+{
+  "kairos_seal": "string",
+  "kairos_seal_percent_step": "string",
+  "kairos_seal_percent_step_solar": "string",
+  "kairos_seal_solar": "string",
+  "kairos_seal_day_month": "string",
+  "kairos_seal_day_month_percent": "string",
+  "kairos_seal_solar_day_month": "string",
+  "kairos_seal_solar_day_month_percent": "string",
+  "eternalSeal": "string",
+  "seal": "string",
+  "harmonicNarrative": "string",
+  "eternalMonth": "string",
+  "eternalMonthIndex": 0,
+  "eternalMonthDescription": "string",
+  "eternalChakraArc": "string",
+  "eternalWeekDescription": "string",
+  "eternalYearName": "string",
+  "eternalKaiPulseToday": 0,
+  "kaiPulseEternal": 0,
+  "eternalMonthProgress": {
+    "daysElapsed": 0,
+    "daysRemaining": 0,
+    "percent": 0
+  },
+  "kaiPulseToday": 0,
+  "solarChakraArc": "string",
+  "solarDayOfMonth": 0,
+  "solarMonthIndex": 0,
+  "solarHarmonicDay": "string",
+  "solar_week_index": 0,
+  "solar_week_name": "string",
+  "solar_week_description": "string",
+  "solar_month_name": "string",
+  "solar_month_description": "string",
+  "solar_day_name": "string",
+  "solar_day_description": "string",
+  "harmonicDay": "string",
+  "harmonicDayDescription": "string",
+  "chakraArc": "string",
+  "chakraArcDescription": "string",
+  "weekIndex": 0,
+  "weekName": "string",
+  "dayOfMonth": 0,
+  "harmonicWeekProgress": {
+    "weekDay": "string",
+    "weekDayIndex": 0,
+    "pulsesIntoWeek": 0,
+    "percent": 0
+  },
+  "chakraBeat": {
+    "beatIndex": 0,
+    "pulsesIntoBeat": 0,
+    "beatPulseCount": 0,
+    "totalBeats": 0
+  },
+  "eternalChakraBeat": {
+    "beatIndex": 0,
+    "pulsesIntoBeat": 0,
+    "beatPulseCount": 0,
+    "totalBeats": 0,
+    "percentToNext": 0
+  },
+  "chakraStep": {
+    "stepIndex": 0,
+    "percentIntoStep": 0,
+    "stepsPerBeat": 0
+  },
+  "chakraStepString": "string",
+  "solarChakraStep": {
+    "stepIndex": 0,
+    "percentIntoStep": 0,
+    "stepsPerBeat": 0
+  },
+  "solarChakraStepString": "string",
+  "phiSpiralLevel": 0,
+  "kaiTurahPhrase": "string",
+  "phiSpiralEpochs": [
+    {
+      "property1": "string",
+      "property2": "string"
+    }
+  ],
+  "harmonicLevels": {
+    "arcBeat": {
+      "pulseInCycle": 0,
+      "cycleLength": 0,
+      "percent": 0
+    },
+    "microCycle": {
+      "pulseInCycle": 0,
+      "cycleLength": 0,
+      "percent": 0
+    },
+    "chakraLoop": {
+      "pulseInCycle": 0,
+      "cycleLength": 0,
+      "percent": 0
+    },
+    "harmonicDay": {
+      "pulseInCycle": 0,
+      "cycleLength": 0,
+      "percent": 0
+    }
+  },
+  "harmonicYearProgress": {
+    "daysElapsed": 0,
+    "daysRemaining": 0,
+    "percent": 0
+  },
+  "timestamp": "string",
+  "harmonicTimestampDescription": "string",
+  "kaiMomentSummary": "string",
+  "compressed_summary": "string",
+  "subdivisions": {
+    "property1": {
+      "duration": 0,
+      "count": 0,
+      "frequencyHz": 0,
+      "wavelengthSound_m": 0,
+      "wavelengthLight_m": 0,
+      "resonantName": "string"
+    },
+    "property2": {
+      "duration": 0,
+      "count": 0,
+      "frequencyHz": 0,
+      "wavelengthSound_m": 0,
+      "wavelengthLight_m": 0,
+      "resonantName": "string"
+    }
+  }
+}
     """
     try:
         now = datetime.fromisoformat(override_time) if override_time else None
