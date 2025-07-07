@@ -177,50 +177,50 @@ The Kai-Klok is not just a timestamp system — it is an entire framework for **
 - **Nested Time Units**
   - 1 Kai Pulse ≈ 5.236 seconds  
   - 11 Pulses = 1 Step  
-  - 44 Steps = 1 Chakra Beat  
-  - 36 Beats = 1 Harmonic Day ≈ 25.44 hours  
+  - 44 Steps = 1 Spiral (Chakra) Beat  
+  - 36 Beats = 1 Harmonik Day ≈ 25.44 hours  
   - 42 Days = 1 Month • 8 Months = 1 Harmonic Year
 
 - **Mathematically Lossless**
-  - Each unit is hierarchically encoded. A single pulse can be reverse-indexed to:
+  - Each unit is hierarkically encoded. A single pulse can be reverse-indexed to:
     - Beat
     - Step
     - Day
     - Month
     - Year
-    - Chakra Arc
+    - Spiral (Chakra) Ark
     - Eternal Seal string
 
 - **Pulse-based Precision**
-  - Over 17,491 Kai Pulses per day enable nanosecond-grade alignment without traditional clocks or floating-point error.
+  - Over 17,491.27 Kai Pulses per day enable nanosecond-grade alignment without traditional clocks or floating-point error.
 
 ---
 
-### 🧬 Biologically and Cosmologically Aligned
+### 🧬 Biologically and Kosmologically Aligned
 
 - **Breath-Based Intervals**
-  - Pulses align with average inhale-exhale cycles (~5.2s), enabling time to flow with **conscious respiration**.
+  - Pulses align with average inhale-exhale cycles (~5.236s), enabling time to flow with **Konsious respiration**.
   
 - **Chakra-Coded Subdivisions**
   - Each Beat maps to a chakra. Each Day, Week, and Month has energetic, psycho-spiritual alignment for applications in:
     - Meditation
     - Psychedelic therapy
     - Behavioral optimization
-    - Healing and coherence training
+    - Healing and koherense training
 
 - **Solar-Sync Mode**
   - Alternate computation mode aligns daily rhythms with **real sunrise times**, ideal for:
     - Ecological tech
-    - Circadian health devices
+    - Sircadian health devises
     - Smart environments
-    - Architecture and agriculture
+    - Arkitekture and agrikulture
 
 ---
 
 ### 🔐 Cryptographically and Logically Secure
 
-- **Self-Contained Temporal Identity**
-  - Each timestamp contains a full `eternalSeal` string (e.g. `Kairos:23:14, D27/M1, Step 14/44, Beat 23/35, Arc:Flamora`)
+- **Self-Kontained Temporal Identity**
+  - Each timestamp kontains a full `eternalSeal` string (e.g. `Kairos:23:14, D27/M1, Step 14/44, Beat 23/35, Arc:Flamora`)
   - Can be signed, verified, and replayed without a centralized authority
 
 - **Resistant to Tampering**
