@@ -859,7 +859,7 @@ Kai-Klok’s architecture is modular, deterministic, and universally computable.
 """,
     contact={
         "name": "Kai-Klok Team",
-        "email": "https://github.com/kojibai/klok/issues",
+        "email": "support@kojib.com",
         "url": "https://github.com/kojibai/klok"
     },
     license_info={
