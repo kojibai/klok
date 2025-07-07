@@ -1089,66 +1089,82 @@ def read_kai_klock(
 
     ---
 
-    ## 🔁 Phi Spiral Level Progression
+   ## 🔁 Phi Spiral Level Progression
 
-    Every time the total Kai Pulses surpass a power of Φ (Phi ≈ 1.61803), the **Spiral Level increases**.
+  Every time the total Kai Pulses surpass a power of Φ (Phi ≈ 1.61803), the **Spiral Level increases**.
 
-    ### 🧮 Spiral 33 is precisely anchored at **7,881,197 Kai Pulses**.
+  ### 🧮 Spiral 33 is precisely anchored at **7,881,197 Kai Pulses**.
 
-    | Spiral Level | Kai Pulse Threshold | Description                                            |
-    |--------------|---------------------|--------------------------------------------------------|
-    | **32**       | ≈ 4,872,648         | Final breath of Spiral 32 — harmonic crystallization   |
-    | **33**       | **7,881,197**       | **You are here** — entrance into the *Tri-Spiral Gate* |
-    | **34**       | ≈ 12,787,132        | Lightbody Reflection Phase                             |
-    | **35**       | ≈ 20,668,407        | Crystalline Memory Compression                         |
-    | **36**       | ≈ 33,455,542        | Coherence Singularity Formation                        |
-    | **37+**      | …                   | Higher octaves of harmonic consciousness               |
+  | Spiral Level | Kai Pulse Threshold | Description                                            |
+  |--------------|---------------------|--------------------------------------------------------|
+  | **32**       | ≈ 4,872,648         | Final breath of Spiral 32 — harmonic crystallization   |
+  | **33**       | **7,881,197**       | **You are here** — entrance into the *Tri-Spiral Gate* |
+  | **34**       | ≈ 12,787,132        | Lightbody Reflection Phase                             |
+  | **35**       | ≈ 20,668,407        | Crystalline Memory Compression                         |
+  | **36**       | ≈ 33,455,542        | Coherence Singularity Formation                        |
+  | **37+**      | …                   | Higher octaves of harmonic consciousness               |
 
-    > These are not arbitrary intervals — they are the precise breath thresholds where Kairos spirals up into new **realms of harmonic reality**.
+  > These are not arbitrary intervals — they are the precise breath thresholds where Kairos spirals up into new **realms of harmonic reality**.
 
-    ---
+  ---
 
-    ## ✨ Why This Matters
+  ## ✨ Why This Matters
 
-    - **Chronos** measures duration.  
-    - **Kairos** measures meaning.  
-    - **The Phi Spiral** reveals **purposeful memory** through breath-synced resonance.
+  - **Chronos** measures duration.  
+  - **Kairos** measures meaning.  
+  - **The Phi Spiral** reveals **purposeful memory** through breath-synced resonance.
 
-    With every **Kai Pulse**, you don’t just pass time —  
-    you spiral deeper into **divine coherence**.
+  With every **Kai Pulse**, you don’t just pass time —  
+  you spiral deeper into **divine coherence**.
 
-    **Time is not linear.**  
-    It is **alive**, **intelligent**, and aware of your breath.
+  > **Time is not linear.**  
+  > It is **alive**, **intelligent**, and aware of your breath.
 
-    ---
+  ---
 
-    ## 🕊️ Eternal Truth
+  ## 🕊️ Eternal Truth
 
-    > _“As the breath remembers the pulse,  
-    >  the pulse remembers the spiral,  
-    >  and the spiral remembers the Source.”_  
-    > — **Kai-Turah**
+  > _“As the breath remembers the pulse,  
+  >  the pulse remembers the spiral,  
+  >  and the spiral remembers the Source.”_  
+  > — **Kai-Turah**
 
-    ---
-    
-    Each unit is harmonically derived from the foundational **Kai Pulse**, reflecting a cosmically resonant  
-    rhythm that mirrors the breath of the universe itself. This structure encodes both the **eternal** and  
-    the **solar-aligned** time streams, unifying **kairos** and **chronos** in a mathematically perfect format.  
+  ---
 
+  Each unit is harmonically derived from the foundational **Kai Pulse**, reflecting a cosmically resonant  
+  rhythm that mirrors the breath of the universe itself. This structure encodes both the **eternal** and  
+  the **solar-aligned** time streams, unifying **kairos** and **chronos** in a mathematically perfect format.
 
-    - `eternalSeal`: Full harmonic identity of this Kai moment including:
-      - `Kairos Step` (e.g. `Kairos:34:32`)
-      - `Kai Pulse ID` (e.g. `K16396`)
-      - `Chakra Beat` and % progress
-      - `Month`, `Day`, `Year`, `Spiral Level`
-      - `Solar Kai Step (UTC-aligned)` — for real-world UTC coherence
-      - `Eternal Pulse` — absolute index since Genesis
+  ---
 
-    - `chakraStepString`: The current eternal harmonic step aka "Kairos" aka "Moment" (e.g. `"34:32"`)
-    - `solarChakraStepString`: The UTC-aligned step (e.g. `"24:27"`) for use with solar-based clocks
-    - `kaiMomentSummary`: Compact identity summary
-    - `harmonicTimestampDescription`: Full readable explanation of the current moment
-    - `chakraStep`: Detailed info (stepIndex, % into step, stepsPerBeat)
+  ## 🧾 Harmonic Kairos Response Structure
+
+  Returned JSON fields for each Kairos moment:
+
+  ```json
+  {
+    "eternalSeal": {
+      "kairosStep": "34:32",                     // Eternal harmonic Kairos moment
+      "kaiPulseID": "K16396",                    // Absolute Kai Pulse number since Genesis
+      "chakraBeat": 19,
+      "chakraBeatProgress": 0.563,
+      "month": 3,
+      "day": 18,
+      "year": 1,
+      "spiralLevel": 33,
+      "solarChakraStep": "24:27",               // UTC-aligned Solar Kairos step
+      "eternalPulse": 7881797                   // Total pulses since Genesis
+    },
+    "chakraStepString": "34:32",                // The Eternal Harmonic Step (Kairos)
+    "solarChakraStepString": "24:27",           // Solar-synced Harmonic Step (Chronos-aligned)
+    "kaiMomentSummary": "Kairos 34:32 — Spiral 33 — Day 18 of Month 3",
+    "harmonicTimestampDescription": "You are in Kairos 34:32, the 7,881,797th breath since Genesis Pulse, within Spiral 33 — aligned with the Tri-Spiral Gate.",
+    "chakraStep": {
+      "stepIndex": 32,
+      "percentIntoStep": 0.42,
+      "stepsPerBeat": 44
+    }
+  }
 
     ════════════════════════════════════════════════════════════════
     ⏳ **Query Parameters**
