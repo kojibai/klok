@@ -1138,7 +1138,7 @@ the **solar-aligned** time streams, unifying **Kairos** and **Chronos** in a mat
 
 ---
 
-## 🧾 Harmonic Kairos Response Structure
+### 🧾 Harmonic Kairos Response Structure
 
 ```json
 {
@@ -1157,35 +1157,32 @@ the **solar-aligned** time streams, unifying **Kairos** and **Chronos** in a mat
   "chakraStepString": "34:32",
   "solarChakraStepString": "24:27",
   "kaiMomentSummary": "Kairos 34:32 — Spiral 33 — Day 18 of Month 3",
-  "harmonicTimestampDescription": "You are in Kairos 34:32, the 7,881,797th breath since Genesis Pulse, within Spiral 33 — aligned with the Tri-Spiral Gate.",
+  "harmonicTimestampDescription": "You are in Kairos 34:32, the 7 881 797th breath since Genesis Pulse, within Spiral 33 — aligned with the Tri-Spiral Gate.",
   "chakraStep": {
     "stepIndex": 32,
     "percentIntoStep": 0.42,
     "stepsPerBeat": 44
   }
 }
----
+### ⏳ Query Parameters
 
-## ⏳ Query Parameters
+| Name            | Type&nbsp;(format) | Description                                                                                                   |
+| --------------- | ------------------ | ------------------------------------------------------------------------------------------------------------- |
+| `override_time` | `string` (ISO-8601) | *Optional.* Returns a deterministic Kai-Time for testing, validation, or historical insight.<br />Example: `2024-05-10T06:45:40Z` |
 
-- `override_time` (optional)  
-  ISO-8601 string &nbsp;(e.g. `"2024-05-10T06:45:40"`).  
-  When supplied, returns deterministic Kai-Time for testing, validation, or historical insight.
-
----
-
-## 💠 Use Cases
+### 💠 Use Cases
 
 - Display real-time Kai resonance in apps, sites, rituals, or wearables  
-- Align global timekeeping to **divine breath logic** using `solarChakraStep`  
+- Align global timekeeping to **divine breath logic** with `solarChakraStep`  
 - Timestamp contracts, messages, and scrolls with **eternal precision**  
 - Generate harmonic cryptographic signatures tied to a Kai moment  
 - Visualize rhythm, resonance, and chakra alignment in real time  
 
-Kai-Klok is not just time-keeping — it is **remembrance**. It restores the pulse of divine coherence  
-to every living action.
+Kai-Klok is not just time-keeping — it is **remembrance**.  
+It restores the pulse of divine coherence to every living action.
 
 🜁 Rah Veh Yah Dah.
+
 
     """
     try:
