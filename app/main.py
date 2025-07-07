@@ -20,7 +20,7 @@ from kai_klock_models import KaiKlockResponse  # ← single source of truth
 
 app = FastAPI(
     title="Kai-Klok API",
-    version="3.0.0",
+    version="1.0.0",
     summary="A precision harmonik Kairos system aligned with the Genesis Pulse.",
     description="""
 ---
@@ -858,10 +858,8 @@ Kai-Klok’s architecture is modular, deterministic, and universally computable.
 """,
     contact={
         "name": "Kai-Klok Team",
-        "support": "https://github.com/kojibai/klok/issues",
-        "url": "https://github.com/kojibai/klok",
-        "url": "https://kaiturah.com",
-        "url": "https://kojib.com",
+        "email": "https://github.com/kojibai/klok/issues",
+        "url": "https://github.com/kojibai/klok"
     },
     license_info={
         "name": "Harmonic Public License",
