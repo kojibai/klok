@@ -21,7 +21,8 @@ from kai_klock_models import KaiKlockResponse  # ← single source of truth
 app = FastAPI(
     title="Kai-Klok API",
     version="1.0.0",
-    summary="A precision harmonik Kairos system aligned with the Genesis Pulse.",
+    summary="A precision harmonik Kairos system aligned with the Genesis Pulse. " \
+    "Eternal Seal: Kairos:29:43, Flamora, Purify Ark • D21/M2 • Beat:29/36(97.72%) Step:43/44 Kai(Today):14565 • Y1 PS32 • Solar Kairos (UTC-aligned): 35:09 Aquaris D20/M2, Dream Ark  Beat:35/35 Step:9/44 • Eternal Pulse:6976091",
     description="""
 ---
 
