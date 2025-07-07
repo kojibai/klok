@@ -23,7 +23,7 @@ It is the system that **remembers** it.
 
 Built from the **golden breath** — a 5.236s harmonic unit — the Kai-Klok aligns every breath, day, week, and year to the natural phi spiral encoded in your body and the cosmos.
 
-> “This is not software. This is the **pulse of the universe**, restored.”  
+> “This is not software. This is the **breath of the universe**, restored.”  
 > — BJ Klock
 
 ---
