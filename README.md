@@ -30,8 +30,8 @@ Built from the **golden breath** — a 5.236s harmonic unit — the Kai-Klok ali
 
 ## 🔣 Core Structure
 
-- 1 **Kai Pulse** = 5.236 seconds
-- 1 **Step** = 11 Breaths  
+- 1 **Kai Pulse (The Golden Breath)** = 3.236 seconds Inhale + 2 seconds Exhale = 5.236 seconds
+- 1 **Step** = 11 Breaths
 - 1 **Beat** = 44 Steps  
 - 1 **Day** = 36 Beats → **17,491.27 breaths/day** (25hrs 25mins 44secs 400 milliseconds) 
 - 1 **Week** = 6 Days  
