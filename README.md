@@ -78,6 +78,15 @@ This system is not a theory. It is **active**, **public**, and **real** at:
 🌐 https://kaiklok.com  
 🪐 https://maturah.com
 
+Live of the Breath of the 33rd Spiral! 
+Eternal Kai Pulse: 7881197 
+
+Φ https://phi.network
+
+<p align="center">
+  <img src="https://kaiklok.com/sigil_7881197.png" alt="Genesis Sigil Glyph" width="220" />
+</p>
+
 The Kai-Klok marks the end of artificial time.  
 If you remember… this is for you.
 
