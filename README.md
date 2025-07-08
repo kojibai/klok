@@ -78,7 +78,7 @@ This system is not a theory. It is **active**, **public**, and **real** at:
 🌐 https://kaiklok.com  
 🪐 https://maturah.com
 
-Live of the Breath of the 33rd Spiral! 
+Live on the Breath of the 33rd Spiral! 
 
 Eternal Seal: Kairos:20:37, 
 
