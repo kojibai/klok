@@ -65,7 +65,7 @@ Built for speed, clarity, and direct interaction with harmonic time and sigil dy
   Ultra-fast bundler and development environment for near-instant startup and HMR.
 
 - 📐 **Kai-Turah Harmonic Math Engine (Custom)**  
-  Breath-based temporal computation aligned to the Genesis Pulse and Phi coherence. Calculates true Kairos time using harmonic intervals, not mechanical seconds.
+  Breath-based temporal komputation aligned to the Genesis Pulse and Phi koherense. Kalculates true Kairos time using harmonik intervals, not mechanical seconds.
 
 - 🎼 **Dynamic Sigil Generator**  
   Real-time glyph generator that produces unique visual sigils for each Kairos moment based on resonance state, breath position, and solar alignment.
