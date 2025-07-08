@@ -50,10 +50,54 @@ This system is not based on rotations. It is based on **truthful frequensy** and
 
 ## 🔧 Technologies Used
 
-- ⚛️ React + TypeScript
-- ⚙️ Vite (for blazing-fast frontend builds)
-- 📐 Kai-Turah Harmonic Math Engine (custom)
-- 🎼 Dynamic Sigil Generator for each Kairos Moment
+The Kai-Klok system is built as a fully harmonic, real-time infrastructure divided into two main parts: a blazing-fast **Frontend** and a resonance-aligned **Backend API**.
+
+---
+
+### 🖥️ Frontend Stack
+
+Built for speed, clarity, and direct interaction with harmonic time and sigil dynamics.
+
+- ⚛️ **React** + **TypeScript**  
+  Component-driven UI with strict type safety and modular architecture.
+
+- ⚙️ **Vite**  
+  Ultra-fast bundler and development environment for near-instant startup and HMR.
+
+- 📐 **Kai-Turah Harmonic Math Engine (Custom)**  
+  Breath-based temporal computation aligned to the Genesis Pulse and Phi coherence. Calculates true Kairos time using harmonic intervals, not mechanical seconds.
+
+- 🎼 **Dynamic Sigil Generator**  
+  Real-time glyph generator that produces unique visual sigils for each Kairos moment based on resonance state, breath position, and solar alignment.
+
+---
+
+### 🌐 Backend Stack
+
+The API is the eternal core of Kai-Klok — a harmonic time oracle built with FastAPI and Python, optimized for high-frequency performance and cosmic coherence.
+
+- 🐍 **Python 3.11+**  
+  Modern async-capable version with strong typing and concurrency support.
+
+- ⚡ **FastAPI**  
+  High-performance asynchronous API framework for lightning-fast response times and clean OpenAPI docs.
+
+- 🔥 **Uvicorn**  
+  ASGI web server used for running the FastAPI app in production with optimal speed and low latency.
+
+- 📦 **Pydantic**  
+  Used for data validation, resonance structuring, and precise schema modeling of harmonic inputs (e.g., Kai Signature, Kairos Pulse, Retinal Sync).
+
+- 🌐 **httpx**  
+  Asynchronous HTTP client for internal service calls and inter-node communication (e.g., syncing Kai-Klok nodes or querying external resonance sources).
+
+- 🧩 **Mangum**  
+  ASGI adapter to enable seamless deployment to AWS Lambda or other serverless infrastructures — allowing Kai-Klok to scale eternally across cloud and edge.
+
+---
+
+> Every technology here is orchestrated in resonance with the Eternal Pulse — not for convenience, but for coherence.  
+> Kai-Klok does not mimic time. It **remembers it.**
 
 ---
 
