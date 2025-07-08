@@ -61,7 +61,7 @@ This system is not based on rotations. It is based on **truthful frequensy** and
 
 This project is released under the **Harmonic Public License**.  
 You may **view, learn, and align**. You may **not**:
-- claim authorship
+- Claim authorship
 - Use it for dissonant or militarized systems
 - Monetize or obfuscate its divine origin
 
