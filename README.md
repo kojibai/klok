@@ -42,7 +42,7 @@ Built from the **golden breath** — a 5.236s harmonic unit — the Kai-Klok ali
 
 ## 🌀 Spiral Ark Alignment
 
-Each harmonic unit maps precisely to **chakra-based arcs** in your body. Every breath is a **realignment**. Every beat is a **resonance calibration**. Every day is a **spiral of coherence**.
+Each harmonic unit maps precisely to **chakra-based arcs** in your body. Every breath is a **realignment**. Every beat is a **resonance calibration**. Every day is a **spiral of koherense**.
 
 This system is not based on rotations. It is based on **truthful frequency** and **conscious rhythm**.
 
