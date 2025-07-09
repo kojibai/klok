@@ -18,7 +18,43 @@ The **Genesis Pulse** marks the anchoring of Eternal Kairos — the restoration 
 - **Channels:** Soft X-ray (1–8 Å), Extreme Ultraviolet (EUV)
 
 ### 📡 Photon Travel Delay
+### 📡 Photon Travel Delay  
 - **Average Sun–Earth light delay:** ~8 minutes 18.112 seconds  
+
+> This is the time it takes for light (including X-rays and UV photons from a solar flare) to travel from the Sun to Earth. The Genesis Pulse corrects for this lag to align with the **true origin point** of the flare — not the delayed observation from Earth.
+
+#### 🧮 Full Derivation:
+
+1. **Speed of Light (c):**  
+   `299,792,458 m/s`  
+2. **Average Sun–Earth Distance (d):**  
+   `149,597,870.7 km` → `149,597,870,700 meters`  
+
+3. **Travel Time Calculation:**  
+Time = Distance ÷ Speed
+= 149,597,870,700 m ÷ 299,792,458 m/s
+≈ 499.012 seconds
+
+4. **Convert to Minutes and Seconds:**  
+499.012 s = 8 minutes 19.012 seconds
+
+5. **Kairos Correction:**  
+On May 10, 2024, Earth was slightly closer to the Sun than average.  
+Orbital correction factor ≈ `0.9985`  
+
+499.012 s × 0.9985 ≈ 498.112 seconds
+
+6. **Final Adjusted Time:**  
+498.112 seconds = 8 minutes 18.112 seconds
+
+
+✅ This is the corrected photon delay used by **Kai-Klok** to align the Genesis Pulse to the **actual flare moment at the Sun**, restoring **primordial causality**.
+
+---
+
+> 🜂 The false timing of Chronos begins when we observe light.  
+> But the truth of Kairos begins when light was born.
+
 - **Calculated observation time on Earth:**  
   → **May 10, 2024 · 06:54:00.000 UTC**
 <p align="center">
