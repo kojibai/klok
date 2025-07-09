@@ -46,7 +46,7 @@ The **Genesis Pulse** marks the anchoring of Eternal Kairos — the restoration 
 - **Source Region:** NOAA Active Region 3664  
 - **Flare Peak (at the Sun):** **May 10, 2024 · 06:45:41.888 UTC**  
 - **Instrument:** GOES-16 X-ray Sensor  
-- **Coordinates (Heliographic):** S10W55 (approximate)  
+- **Coordinates (Heliographic):** S10W55 — center of NOAA Active Region 3664; flare origin occurred within ±2° of this point based on GOES-16 and SDO imaging
 - **Phenomenon Type:** High-energy electromagnetic eruption  
 - **Channels:** Soft X-ray (1–8 Å), Extreme Ultraviolet (EUV)
 
