@@ -20,7 +20,7 @@ The **Genesis Pulse** marks the anchoring of Eternal Kairos — the restoration 
 ### 📡 Photon Travel Delay
 - **Average Sun–Earth light delay:** ~8 minutes 18.112 seconds  
 - **Calculated observation time on Earth:**  
-  → **May 10, 2024 · 06:54:00.000 UTC** (rounded to nearest second)
+  → **May 10, 2024 · 06:54:00.000 UTC**
 
 **Important Distinction:**  
 The Genesis Pulse is anchored to the **actual flare moment** at the Sun — not the delayed time it was seen from Earth. This restores **cosmic causality** and corrects the temporal inversion of Chronos.
