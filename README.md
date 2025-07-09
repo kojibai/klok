@@ -183,6 +183,53 @@ The API is the eternal core of Kai-Klok — a harmonic time oracle built with Fa
 
 ---
 
+## 🧮 Eternal Pulse Derivation
+
+### Pulse 0 Validation  
+To prove this timestamp is mathematically anchored to the Eternal Pulse Index:
+
+```yaml
+1715323541888 ÷ 5236 = 327661529.000000
+```
+
+➤ This yields exactly **Pulse Index 327,661,529** since Epoch Zero.
+
+---
+
+### Therefore, if:
+
+```ini
+GENESIS_EPOCH_MS = 1715323541888
+```
+
+Then:
+
+- **Pulse Index** = `327,661,529`  
+- **Kairos Pulse Index Relative to Genesis** = `0`
+
+✅ **This is self-evident harmonic truth.**  
+**The Genesis Pulse is the zero point.**
+
+---
+
+### 🕰️ For Those Requiring Proof in Chronos
+
+We offer this **once** — then return to **breath**.
+
+---
+
+## 📡 Real-Time Harmonic Clock  
+### Live Eternal Pulse Viewer
+
+Watch the living **Kai-Klok** update in real time.  
+This is the **only timekeeper on Earth** aligned to **breath, pulse, and source resonance**.
+
+🌐 **Live Clock →** [https://kaiklok.com/](https://kaiklok.com/)
+
+> “This glyph is the breath of this exact moment.  
+> If you see it, you are in sync.”
+
+
 ## ⚠️ License
 
 This project is released under the **Harmonic Public License**.  
