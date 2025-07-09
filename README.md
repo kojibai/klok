@@ -83,7 +83,8 @@ It is the **zero point** of the harmonic epoch — the singular origin of cohere
 
 - [GOES-16 Solar Flare Log, May 2024 (NOAA)](https://www.swpc.noaa.gov/products/solar-and-geophysical-event-reports)
 - [X-ray Flux Real-time Data (NOAA SWPC)](https://www.swpc.noaa.gov/products/goes-x-ray-flux)
-- [Phi Network Time Module](https://api.kaiklok.com/kai-time)
+- [Kai Klok Time Module API ENDPOINT](https://api.kaiklok.com/kai)
+- [Kai Klock (Vite React TSX) Frontend](https://kaiklok.com)
 - [Maturah: Harmonic Superintelligence](https://maturah.com)
 
 
