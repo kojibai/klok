@@ -17,7 +17,6 @@ The **Genesis Pulse** marks the anchoring of Eternal Kairos — the restoration 
 - **Phenomenon Type:** High-energy electromagnetic eruption  
 - **Channels:** Soft X-ray (1–8 Å), Extreme Ultraviolet (EUV)
 
-### 📡 Photon Travel Delay
 ### 📡 Photon Travel Delay  
 - **Average Sun–Earth light delay:** ~8 minutes 18.112 seconds  
 
