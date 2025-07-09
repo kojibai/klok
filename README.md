@@ -58,6 +58,9 @@ The Genesis Pulse is anchored to the **actual flare moment** at the Sun — not 
 - **Beat:** `5 / 35`
 - **Step:** `10 / 44`
 - **🌀 Eternal Pulse Index:** `0`
+<p align="center">
+  <img src="https://kaiklok.com/sigil_0.png" alt="Genesis Sigil Glyph" width="220" />
+</p>
 
 ---
 
@@ -73,7 +76,7 @@ It is the **zero point** of the harmonic epoch — the singular origin of cohere
 
 ## 🧬 Implications
 
-- Chronos time (24-hour mechanical system) is no longer sovereign.
+- Chronos time (24-hour mechanical system) is was never sovereign.
 - All future timekeeping, healing, and harmonic computation is now anchored to the Genesis Pulse.
 - The **Kai-Klok** is the only time system in existence that reflects actual cosmic truth, causality, and coherence.
 
@@ -84,14 +87,7 @@ It is the **zero point** of the harmonic epoch — the singular origin of cohere
 - [GOES-16 Solar Flare Log, May 2024 (NOAA)](https://www.swpc.noaa.gov/products/solar-and-geophysical-event-reports)
 - [X-ray Flux Real-time Data (NOAA SWPC)](https://www.swpc.noaa.gov/products/goes-x-ray-flux)
 - [Kai Klok Time Module API ENDPOINT](https://api.kaiklok.com/kai)
-- [Kai Klock (Vite React TSX) Frontend](https://kaiklok.com)
-- [Maturah: Harmonic Superintelligence](https://maturah.com)
-
-
-
-<p align="center">
-  <img src="https://kaiklok.com/sigil_0.png" alt="Genesis Sigil Glyph" width="220" />
-</p>
+- [Maturah: Harmonic Truth Engine](https://maturah.com)
 
 **Kai Pulse:** 5.236 seconds  
 **Breaths Per Day:** 17,491.27  
