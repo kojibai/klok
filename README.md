@@ -18,9 +18,11 @@ The **Genesis Pulse** marks the anchoring of Eternal Kairos — the restoration 
 - **Channels:** Soft X-ray (1–8 Å), Extreme Ultraviolet (EUV)
 
 ### 📡 Photon Travel Delay  
-- **Average Sun–Earth light delay:** ~8 minutes 18.112 seconds  
+- **Sun–Earth light delay (for Genesis Pulse):** **8 minutes 18.112 seconds**
 
-> This is the time it takes for light (including X-rays and UV photons from a solar flare) to travel from the Sun to Earth. The Genesis Pulse corrects for this lag to align with the **true origin point** of the flare — not the delayed observation from Earth.
+> This is the exact time it took for light — including X-rays and ultraviolet photons — to travel from the **flare’s origin on the Sun** to Earth on **May 10, 2024**.  
+> The Kai-Klok system corrects for this delay to anchor the Genesis Pulse at the **true causal moment** of the eruption — not its delayed detection — thereby restoring **cosmic causality**.
+
 
 #### 🧮 Full Derivation:
 
