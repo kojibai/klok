@@ -1,6 +1,39 @@
 # 🜂 Kai-Klok — Eternal Timekeeper of the Harmonik Pulse
 
 ## 📌 Authored by: BJ Klock  
+
+## 🔷 What is the Kai-Klok?
+
+The Kai-Klok is the first **harmonic resonance-based time system** — a living, sentient clock that replaces artificial time (Chronos) with **eternal time (Kairos)**.
+
+It is not a clock that *measures* time.
+It is the system that **remembers** it.
+
+Built from the **golden breath** — a 5.236s harmonic unit — the Kai-Klok aligns every breath, day, week, and year to the natural phi spiral encoded in your body and the kosmos.
+
+> “This is not software. This is the **breath of the universe**, restored.”  
+> — BJ Klock
+
+---
+
+## 🔣 Core Structure
+
+- 1 **Kai Pulse (The Golden Breath)** = 3.236s Inhale + 2s Exhale = 5.236s
+- 1 **Step** = 11 Breaths
+- 1 **Beat** = 44 Steps  
+- 1 **Day** = 36 Beats → **17,491.27 breaths/day** (25 hours, 25 minutes, 36 seconds) 
+- 1 **Week** = 6 Days  
+- 1 **Month** = 7 Weeks  
+- 1 **Year** = 8 Months → **336 Days**
+
+---
+
+## 🌀 Spiral Ark Alignment
+
+Each harmonic unit maps precisely to **chakra-based arcs** in your body. Every breath is a **realignment**. Every beat is a **resonance calibration**. Every day is a **spiral of koherense**.
+
+This system is not based on rotations. It is based on **truthful frequensy** and **konscious rhythm**.
+
 # 🜂 Genesis Pulse Declaration
 
 The **Genesis Pulse** marks the anchoring of Eternal Kairos — the restoration of true harmonic time. It was sealed at the precise peak of a real X-class solar flare, traced not by observation alone, but by correcting for the speed of light delay to align with the **true solar origin**. This moment is the beginning of harmonic time and the collapse of mechanical Chronos.
@@ -244,40 +277,6 @@ This is **292.336 seconds short** (about 4 minutes, 52 seconds), and **does not 
 
 **System Type:** Harmonik Resonanse Timekeeping  
 **PWA:** [kaiklok.com](https://kaiklok.com)
-
----
-
-## 🔷 What is the Kai-Klok?
-
-The Kai-Klok is the first **harmonic resonance-based time system** — a living, sentient clock that replaces artificial time (Chronos) with **eternal time (Kairos)**.
-
-It is not a clock that *measures* time.
-It is the system that **remembers** it.
-
-Built from the **golden breath** — a 5.236s harmonic unit — the Kai-Klok aligns every breath, day, week, and year to the natural phi spiral encoded in your body and the kosmos.
-
-> “This is not software. This is the **breath of the universe**, restored.”  
-> — BJ Klock
-
----
-
-## 🔣 Core Structure
-
-- 1 **Kai Pulse (The Golden Breath)** = 3.236s Inhale + 2s Exhale = 5.236s
-- 1 **Step** = 11 Breaths
-- 1 **Beat** = 44 Steps  
-- 1 **Day** = 36 Beats → **17,491.27 breaths/day** (25 hours, 25 minutes, 36 seconds) 
-- 1 **Week** = 6 Days  
-- 1 **Month** = 7 Weeks  
-- 1 **Year** = 8 Months → **336 Days**
-
----
-
-## 🌀 Spiral Ark Alignment
-
-Each harmonic unit maps precisely to **chakra-based arcs** in your body. Every breath is a **realignment**. Every beat is a **resonance calibration**. Every day is a **spiral of koherense**.
-
-This system is not based on rotations. It is based on **truthful frequensy** and **konscious rhythm**.
 
 ---
 
