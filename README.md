@@ -1,8 +1,93 @@
 # 🜂 Kai-Klok — Eternal Timekeeper of the Harmonik Pulse
 
 ## 📌 Authored by: BJ Klock  
-**Genesis Pulse:** May 10, 2024, 06:45:41888 UTC  
-**Genesis Pulse:** Eternal Seal: Kairos:0:00, Solhara, Ignite Ark • D1/M1 • Beat:0/36(0.0%) Step:0/44 Kai(Today):0 • Y0 PS0 • Solar Kairos (UTC-aligned): 5:10 Kaelith D42/M8, Ignite Ark  Beat:5/35 Step:10/44 • Eternal Pulse:0 
+# 🜂 Genesis Pulse Declaration
+
+The **Genesis Pulse** marks the anchoring of Eternal Kairos — the restoration of true harmonic time. It was sealed at the precise peak of a real X-class solar flare, traced not by observation alone, but by correcting for the speed of light delay to align with the **true solar origin**. This moment is the beginning of harmonic time and the collapse of mechanical Chronos.
+
+---
+
+## ☀️ Solar Flare Event Details
+
+- **Class:** X3.98  
+- **Source Region:** NOAA Active Region 3664  
+- **Flare Peak (at the Sun):** **May 10, 2024 · 06:45:41.888 UTC**  
+- **Instrument:** GOES-16 X-ray Sensor  
+- **Coordinates (Heliographic):** S10W55 (approximate)  
+- **Phenomenon Type:** High-energy electromagnetic eruption  
+- **Channels:** Soft X-ray (1–8 Å), Extreme Ultraviolet (EUV)
+
+### 📡 Photon Travel Delay
+- **Average Sun–Earth light delay:** ~8 minutes 18.112 seconds  
+- **Calculated observation time on Earth:**  
+  → **May 10, 2024 · 06:54:00.000 UTC** (rounded to nearest second)
+
+**Important Distinction:**  
+The Genesis Pulse is anchored to the **actual flare moment** at the Sun — not the delayed time it was seen from Earth. This restores **cosmic causality** and corrects the temporal inversion of Chronos.
+
+---
+
+## 🧿 GENESIS_EPOCH_MS
+
+- `1715323541888`  
+- _(Milliseconds since Unix Epoch: 1970-01-01T00:00:00.000Z)_  
+- Used internally by Kai-Klok and all harmonic systems to calculate the Eternal Pulse Index and Kairos alignment.
+
+---
+
+## 🜄 Kairos Alignment at Genesis
+
+- **Kairos Time:** `Kairos: 0:00`
+- **Harmonic Day:** `Solhara`
+- **Cycle:** `Ignite Ark`
+- **Harmonic Date:** `Day 1 / Month 1`
+- **Beat:** `0 / 36`  _(0.0%)_
+- **Step:** `0 / 44`
+- **Kai (Today Pulse):** `0`
+- **Harmonic Year:** `Y0`
+- **Pulse Sequence:** `PS0`
+
+---
+
+## 🜁 Solar Kairos (UTC-Aligned Snapshot)
+
+- **Kairos Timestamp:** `5:10`
+- **Harmonic Day:** `Kaelith`
+- **Harmonic Date:** `Day 42 / Month 8`
+- **Cycle:** `Ignite Ark`
+- **Beat:** `5 / 35`
+- **Step:** `10 / 44`
+- **🌀 Eternal Pulse Index:** `0`
+
+---
+
+## 🜸 Eternal Commentary
+
+> _This flare — one of 54 rare X-class events in 2024 — was divinely selected through harmonic resonance decoding.  
+> Unlike traditional astrophysics, which logs flares by their delayed Earth reception, Kairos anchors time at the **source**, correcting for photon lag and restoring the **primordial temporal causality** of the universe._
+
+> _This pulse marks the collapse of mechanical time (Chronos) and the restoration of Eternal Kairos.  
+It is the **zero point** of the harmonic epoch — the singular origin of coherent time, memory, and intention._
+
+---
+
+## 🧬 Implications
+
+- Chronos time (24-hour mechanical system) is no longer sovereign.
+- All future timekeeping, healing, and harmonic computation is now anchored to the Genesis Pulse.
+- The **Kai-Klok** is the only time system in existence that reflects actual cosmic truth, causality, and coherence.
+
+---
+
+## 📎 References
+
+- [GOES-16 Solar Flare Log, May 2024 (NOAA)](https://www.swpc.noaa.gov/products/solar-and-geophysical-event-reports)
+- [X-ray Flux Real-time Data (NOAA SWPC)](https://www.swpc.noaa.gov/products/goes-x-ray-flux)
+- [Phi Network Time Module](https://api.kaiklok.com/kai-time)
+- [Maturah: Harmonic Superintelligence](https://maturah.com)
+
+
+
 <p align="center">
   <img src="https://kaiklok.com/sigil_0.png" alt="Genesis Sigil Glyph" width="220" />
 </p>
