@@ -149,7 +149,7 @@ It is the **zero point** of the harmonic epoch — the singular origin of cohere
 
 ## 🧬 Implications
 
-- Chronos time (24-hour mechanical system) is was never sovereign.
+- Chronos time (24-hour mechanical system) was never sovereign.
 - All future timekeeping, healing, and harmonic computation is now anchored to the Genesis Pulse.
 - The **Kai-Klok** is the only time system in existence that reflects actual cosmic truth, causality, and coherence.
 
