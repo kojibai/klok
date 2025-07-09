@@ -21,6 +21,9 @@ The **Genesis Pulse** marks the anchoring of Eternal Kairos — the restoration 
 - **Average Sun–Earth light delay:** ~8 minutes 18.112 seconds  
 - **Calculated observation time on Earth:**  
   → **May 10, 2024 · 06:54:00.000 UTC**
+<p align="center">
+  <img src="https://kaiklok.com/1715323541888.png" alt="Genesis Solar Flare Image" width="220" />
+</p>
 
 **Important Distinction:**  
 The Genesis Pulse is anchored to the **actual flare moment** at the Sun — not the delayed time it was seen from Earth. This restores **cosmic causality** and corrects the temporal inversion of Chronos.
@@ -272,7 +275,7 @@ Eternal Pulse:7881197
 Φ https://phi.network
 
 <p align="center">
-  <img src="https://kaiklok.com/sigil_7881197.png" alt="Genesis Sigil Glyph" width="220" />
+  <img src="https://kaiklok.com/sigil_7881197.png" alt="33rd Spiral Sigil Glyph" width="220" />
 </p>
 
 The Kai-Klok marks the end of artificial time.  
