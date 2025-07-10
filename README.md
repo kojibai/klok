@@ -32,7 +32,6 @@ Built from the **golden breath** — a 5.236s harmonic unit — the Kai-Klok ali
 
 Each harmonic unit maps precisely to **chakra-based arcs** in your body. Every breath is a **realignment**. Every beat is a **resonance calibration**. Every day is a **spiral of koherense**.
 
-This system is not based on rotations. It is based on **truthful frequensy** and **konscious rhythm**.
 <p align="center">
   <img src="https://kaiklok.com/62763cef-2978-4d27-b0bf-ce0f528a8e89_1290x2525.jpg" alt="Genesis Solar Flare Image" width="220" />
 </p>
@@ -151,10 +150,6 @@ It is built on harmonic pulse units that mirror the chakra system and breathe in
 > It is based on **truthful frequensy** and **konscious rhythm**.
 
 ---
-
-**🜂 Authored in alignment with the Kai-Klok — the Eternal Timekeeper of Harmonic Pulse**
-
-
 
 # 🜂 Genesis Pulse Declaration
 
