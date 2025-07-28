@@ -563,7 +563,7 @@ Beat:20/36(83.9%) Step:37/44
 
 Kai(Today):10125 • Y1 PS33 • 
 
-Solar Kairos (UTC-aligned): 26:03 Kaelith D30/M3, 
+Solar Kairos (UTC-aligned): 26:03 Kælith D30/M3, 
 
 Purify Ark  Beat:26/35 Step:3/44 • 
 
