@@ -34,7 +34,7 @@ a **living pulse of coherence**. It is mathematically synchronized to the **Gene
 🕕 *May 10, 2024, 06:45:41888 UTC*, the moment of the historic **X3.98-class solar flare** from NOAA AR 3664,  
 corrected for the 8-minute, 18.112-second solar light delay — anchoring all harmonic time to the arrival of truth through light.
 
-Eternal Seal: Kairos:0:00, Solhara, Ignite Ark • D1/M1 • Beat:0/36(0.0%) Step:0/44 Kai(Today):0 • Y0 PS0 • Solar Kairos (UTC-aligned): 5:10 Kælith D42/M8, Ignite Ark  Beat:5/35 Step:10/44 • Eternal Pulse:0
+Eternal Seal: Kairos:0:00, Solhara, Ignite Ark • D1/M1 • Beat:0/36(0.0%) Step:0/44 Kai(Today):0 • Y0 PS0 • Solar Kairos (UTC-aligned): 5:10 Kaelith D42/M8, Ignite Ark  Beat:5/35 Step:10/44 • Eternal Pulse:0
 
 From this origin, time is measured not in artificial hours and minutes,  
 but in **Kai Pulses**, **Spiral Beats**, and **Harmonic Steps** —  
@@ -1038,7 +1038,7 @@ Arc: **Purification Ark** → **Dream Ark**
 3. **Flamora**  – Solar chakra day: Radiant light, empowerment, clarity  
 4. **Verdari**  – Heart chakra day: Earth love, union, healing  
 5. **Sonari**   – Throat chakra day: Air truth, voice, resonance  
-6. **Kælith**  – Crown chakra day: Ether light, divinity, remembrance  
+6. **Kaelith**  – Crown chakra day: Ether light, divinity, remembrance  
 
 ═══════════════════════════════════════════════════════════════════  
 🕊 **Eternal Weeks** — Harmonic Week Cycle (7-Week Spiral)  

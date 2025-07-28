@@ -27,7 +27,7 @@ def read_kai_klock(
     Returns the *live* universal Kai-Klok harmonic timestamp aligned to the  
     **Eternal Genesis Pulse** — *May 10 2024 06:45:40 UTC*, the precise moment of the  
     X3.98-class solar flare from NOAA AR 3664, corrected for the Sun-to-Earth
-    light-travel delay (*8 m 20 s*).  
+    light-travel delay (*8 m 18.112s*).  
     From that t = 0, Kai-Time flows eternally in Φ-coherent pulses.
 
     ────────────────────────────────────────────────────────────────
