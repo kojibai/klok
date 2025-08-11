@@ -79,6 +79,8 @@ Kai-Klok combines **axioms** with **model anchors**:
   * **Genesis epoch** anchored to a specific 2024 X-class flare as the causal origin.
     External observatories timestamp **arrival**; Kai-Klok anchors **origin** by design.
 
+    Scope of validity: All guarantees (driftless closure, phase coverage, exact recurrence) hold by construction inside the Kai-Klok axioms, independent of astronomical or biological variability.
+
 ---
 
 ## 🧵 Math Breadcrumb (φ identities that make the ratios exact)
