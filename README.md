@@ -476,13 +476,18 @@ def imod(n: int, m: int) -> int:
 
 ```python
 # Convert Chronos time to integer micro-pulses since Genesis (1 pulse = 1_000_000 μpulses)
+from decimal import Decimal, getcontext
+getcontext().prec = 50  # enough to keep error << 0.5 μpulse
+
 GENESIS_EPOCH_MS = 1715323541888
-import math
-KAI_PULSE_SECONDS = 3 + 5**0.5  # φ-exact
+SQRT5 = Decimal(5).sqrt()            # exact in Decimal context
+KAI_PULSE_SECONDS = Decimal(3) + SQRT5  # φ-exact symbolically
 
 def pulses_micro_since_genesis(unix_ms: int) -> int:
-    pulses = ((unix_ms - GENESIS_EPOCH_MS) / 1000.0) / KAI_PULSE_SECONDS
-    return math.floor(pulses * 1_000_000)  # integer μpulses
+    delta_s = Decimal(unix_ms - GENESIS_EPOCH_MS) / Decimal(1000)
+    pulses = delta_s / KAI_PULSE_SECONDS
+    # Round to nearest μpulse, ties-to-even:
+    return int((pulses * Decimal(1_000_000)).to_integral_value(rounding="ROUND_HALF_EVEN"))
 
 ```
 
@@ -492,7 +497,7 @@ def pulses_micro_since_genesis(unix_ms: int) -> int:
 # Exact integer grid index using micro-pulses (1 pulse = 1_000_000 μpulses)
 from dataclasses import dataclass
 
-# Constants (exact integers)
+# Exact integer constants in μpulses
 N_DAY_MICRO            = 17_491_270_421          # 17,491.270421 * 1e6
 PULSES_PER_STEP_MICRO  = 11_000_000              # 11 * 1e6
 STEPS_PER_BEAT         = 44
@@ -507,22 +512,17 @@ class BeatStepIndex:
     step_percent: float  # 0..100 within 11-pulse step
 
 def index_from_total_pulses_micro(pulses_micro: int) -> BeatStepIndex:
-    """
-    Index the current beat/step using the semantic grid (11/44/36),
-    allowing the day boundary to land fractionally into the next beat.
-    All arithmetic in integer μpulses; no floats, no float modulo.
-    """
     pulses_in_day   = pulses_micro % N_DAY_MICRO
     pulses_in_grid  = pulses_in_day % BASE_DAY_MICRO
 
-    beat = pulses_in_grid // PULSES_PER_BEAT_MICRO       # 0..35
+    beat = pulses_in_grid // PULSES_PER_BEAT_MICRO
     pulses_in_beat  = pulses_in_grid - beat * PULSES_PER_BEAT_MICRO
 
-    step = pulses_in_beat // PULSES_PER_STEP_MICRO       # 0..43
+    step = pulses_in_beat // PULSES_PER_STEP_MICRO
     pulse_in_step   = pulses_in_beat - step * PULSES_PER_STEP_MICRO
 
     step_percent = 100.0 * (pulse_in_step / PULSES_PER_STEP_MICRO)
-    return BeatStepIndex(beat=int(beat), step=int(step), step_percent=step_percent)
+    return BeatStepIndex(beat=int(beat), step=int(step), step_percent=float(step_percent))
 
 ```
 (Optional usage example to glue them):
