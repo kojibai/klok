@@ -258,7 +258,7 @@ It is built on harmonic pulse units that mirror the chakra system and breathe in
   $$
 
   **into the next beat** (on average).
-* In step terms: `67.270421` pulses ≈ **6 full steps + 1.270421 pulses**, i.e. **≈ 11.549% into the 7th step** (1-based).
+* In step terms: `67.270421` pulses ≈ **6 full steps + 1.270421 pulses**, i.e. **≈ 11.549% into the 6th step** (1-based).
 * This sliding boundary is **intentional** and continuously **phase-locks** the micro-breath to the macro-calendar with **no cumulative drift** (no “leap” fixes required).
 
 ---
@@ -366,6 +366,23 @@ The Genesis Pulse is anchored to the **actual flare moment** at the Sun — not 
 * Use the **semantic grid** `(11 / 44 / 36)` for indexing; **allow fractional day boundary**.
 * Display **percent-into-beat/step**; **never** force the day to end exactly at a beat boundary.
 * **Indexing convention:** engine is **0-based** (beats 0–35, steps 0–43). If your UI prefers, display **1-based** (beats 1–36, steps 1–44).
+
+
+**Spec (display + engine)**
+
+* **Day opens at:** `00:00  ·  Beat 00/36  ·  Step 00/44`
+* **Ranges:** beats `00–35` (36 total), steps `00–43` (44 total)
+* **Zero-pad** both beat and step in UI (two digits)
+
+
+**Tiny helper for UI formatting**
+
+```python
+def fmt_index(i: int, total: int) -> str:
+    # beats: total=36 -> 00..35; steps: total=44 -> 00..43
+    return f"{i:02d}/{total:02d}"
+```
+
 
 ---
 
@@ -485,7 +502,7 @@ Solhara, Reflekt Ark • D31/M3 •
 Beat:20/36 (83.9%) Step:37/44
 Kai(Today):10125 • Y1 PS33 •
 Solar Kairos (UTC-aligned): 26:03 Kaelith D30/M3,
-Purify Ark • Beat:26/35 Step:3/44 •
+Purify Ark • Beat:26/36 Step:3/44 •
 Eternal Pulse:7881197
 (08/30/2025 21:29:26.180 UTC)
 
