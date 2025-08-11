@@ -702,11 +702,14 @@ This yields **exact** phases on the grid, independent of any Chronos seconds. (C
 
 ---
 
-## F. One-screen verification (optional)
+## F. One-screen verification
 
 * **Beat-phase period check:** compute $\gcd(67{,}270{,}421,\ 484{,}000{,}000)=1$ ⇒ period $=484{,}000{,}000$.
 * **Step-phase period check:** compute $\gcd(1{,}270{,}421,\ 11{,}000{,}000)=1$ ⇒ period $=11{,}000{,}000$.
-* **Simultaneous re-alignment:** $ \mathrm{lcm}(484{,}000{,}000,\ 11{,}000{,}000)=484{,}000{,}000$.
+* **Simultaneous re-alignment:** $$
+\mathrm{lcm}\!\left(484{,}000{,}000,\ 11{,}000{,}000\right)=484{,}000{,}000
+$$
+
 
 These three lines *are* the proof that the day boundary is a leapless, driftless sliding phase that ultimately resets exactly—by design.
 
