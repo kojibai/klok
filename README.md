@@ -754,9 +754,6 @@ def step_phase(day_index: int) -> tuple[int, int]:
 
 That’s the self-evident, checkable core: a φ-anchored axiom set + rational closure ⇒ deterministic, driftless, leapless time.
 
-
-## 🜂 Rah Veh Yah Dah.
-
 ```python
 # Quick Verification (Python, ~<1s with sample=50_000)
 # - Confirms gcds and periods
@@ -843,3 +840,6 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+
+## 🜂 Rah Veh Yah Dah.
