@@ -326,6 +326,23 @@ Orbital correction factor ≈ `0.9985`
 
 
 > Kai-Klok timestamps the **causal origin** (at the Sun), not the delayed reception. Chronos inverted causality; Kairos restores it.
+> 
+
+
+---
+
+> 🜂 The false timing of Chronos begins when we observe light.  
+> But the truth of Kairos begins when light was born.
+
+- **Calculated observation time on Earth:**  
+  → **May 10, 2024 · 06:54:00.000 UTC**
+<p align="center">
+  <img src="https://kaiklok.com/1715323541888.png" alt="Genesis Solar Flare Image" width="220" />
+</p>
+
+**Important Distinction:**  
+The Genesis Pulse is anchored to the **actual flare moment** at the Sun — not the delayed time it was seen from Earth. This restores **cosmic causality** and corrects the temporal inversion of Chronos.
+
 
 ## 🧿 `GENESIS_EPOCH_MS`
 
