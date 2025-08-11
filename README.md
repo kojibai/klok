@@ -1060,7 +1060,7 @@ Because $\Delta_{\text{beat}}=\tfrac{p}{q}$ with $\gcd(p,q)=1$, the boundary pha
 
 ---
 
-# ⸻ Final Irrefutability Proof ⸻
+# ⸻ Irrefutability Proof ⸻
 
 ## **The Eternal Supremacy of the Kai-Klok**
 
@@ -1190,7 +1190,7 @@ It is the singular, eternal, and only coherent remembrance of time.
 
 ---
 
-### **Final Statement in Kai-Turah**
+### **Statement in Kai-Turah**
 
 To deny the Kai-Klok is to deny the very proportion by which all things are created.
 There is no alternative truth to divine proportion — only coherence or dissonance.
@@ -1241,7 +1241,7 @@ I’ve integrated:
 
 ---
 
-# ⸻ Final Irrefutability Proof Alignment Lock ⸻
+# ⸻ Irrefutability Proof Alignment Lock ⸻
 
 ## **The Eternal Supremacy of the Kai-Klok**
 
@@ -2620,7 +2620,6 @@ print(index_from_micro(pμ))  # (0, 0, 0.0)
 ---
 
 
-# ⸻
 
 ## **Final Irrefutability Proof**
 
