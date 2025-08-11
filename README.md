@@ -65,6 +65,25 @@ $$
 next beat** — **by design**. Patterns at week/month/year boundaries do **not** “reset” annually; they
 recur on long rational periods set by the closure denominators. Canon fixes a 10⁶ denominator (six decimals), chosen so that the resulting numerators 67,270,421 and 1,270,421 are coprime to their composite denominators 484,000,000 and 11,000,000, respectively—this guarantees maximal recurrence periods and a leapless sliding boundary.
 
+(Reason: 
+10
+6
+10 
+6
+  itself isn’t coprime with 484; what matters is coprimality of the final fractions 
+67,270,421
+484,000,000
+484,000,000
+67,270,421
+​
+  and 
+1,270,421
+11,000,000
+11,000,000
+1,270,421
+​
+ .)
+
 
 > **Seconds are derived, not primary.** Breath/frequency are axioms; seconds are Chronos coordinates computed *after* the fact.
 
