@@ -476,31 +476,30 @@ def imod(n: int, m: int) -> int:
 **Chronos → pulses bridge**
 
 ```python
-# Convert Chronos time to Kai pulses since Genesis
+# Convert Chronos time to integer micro-pulses since Genesis (1 pulse = 1_000_000 μpulses)
 GENESIS_EPOCH_MS = 1715323541888
-def pulses_since_genesis(unix_ms: int) -> float:
-    # 1 pulse = T seconds, with T = 3 + sqrt(5)
-    return ((unix_ms - GENESIS_EPOCH_MS) / 1000.0) / (3 + 5**0.5)
+import math
+KAI_PULSE_SECONDS = 3 + 5**0.5  # φ-exact
+
+def pulses_micro_since_genesis(unix_ms: int) -> int:
+    pulses = ((unix_ms - GENESIS_EPOCH_MS) / 1000.0) / KAI_PULSE_SECONDS
+    return math.floor(pulses * 1_000_000)  # integer μpulses
+
 ```
 
 **Index on the semantic grid**
 
 ```python
-import math
+# Exact integer grid index using micro-pulses (1 pulse = 1_000_000 μpulses)
 from dataclasses import dataclass
 
-PHI = (1 + math.sqrt(5)) / 2
-KAI_PULSE_SECONDS = 3 + math.sqrt(5)                 # φ-exact
-BREATHS_PER_DAY  = 17_491.270_421                    # closure canon
-
-# Semantic lattice (indexing only)
-PULSES_PER_STEP  = 11
-STEPS_PER_BEAT   = 44
-BEATS_PER_DAY    = 36
-BASE_DAY_PULSES  = PULSES_PER_STEP * STEPS_PER_BEAT * BEATS_PER_DAY  # 17,424
-CLOSURE_PER_DAY  = BREATHS_PER_DAY - BASE_DAY_PULSES                 # 67.270421
-
-SECONDS_PER_DAY  = KAI_PULSE_SECONDS * BREATHS_PER_DAY               # ≈ 91_585.480937
+# Constants (exact integers)
+N_DAY_MICRO            = 17_491_270_421          # 17,491.270421 * 1e6
+PULSES_PER_STEP_MICRO  = 11_000_000              # 11 * 1e6
+STEPS_PER_BEAT         = 44
+BEATS_PER_DAY          = 36
+PULSES_PER_BEAT_MICRO  = PULSES_PER_STEP_MICRO * STEPS_PER_BEAT      # 484 * 1e6
+BASE_DAY_MICRO         = PULSES_PER_BEAT_MICRO * BEATS_PER_DAY        # 17,424 * 1e6
 
 @dataclass
 class BeatStepIndex:
@@ -508,26 +507,49 @@ class BeatStepIndex:
     step: int            # 0..43
     step_percent: float  # 0..100 within 11-pulse step
 
-def index_from_total_pulses(pulses_total: float) -> BeatStepIndex:
+def index_from_total_pulses_micro(pulses_micro: int) -> BeatStepIndex:
     """
     Index the current beat/step using the semantic grid (11/44/36),
     allowing the day boundary to land fractionally into the next beat.
+    All arithmetic in integer μpulses; no floats, no float modulo.
     """
-    pulses_in_day  = pulses_total % BREATHS_PER_DAY
-    pulses_in_grid = pulses_in_day % BASE_DAY_PULSES
+    pulses_in_day   = pulses_micro % N_DAY_MICRO
+    pulses_in_grid  = pulses_in_day % BASE_DAY_MICRO
 
-    pulses_per_beat = PULSES_PER_STEP * STEPS_PER_BEAT  # 484
-    beat = int(pulses_in_grid // pulses_per_beat)       # 0..35
+    beat = pulses_in_grid // PULSES_PER_BEAT_MICRO       # 0..35
+    pulses_in_beat  = pulses_in_grid - beat * PULSES_PER_BEAT_MICRO
 
-    pulses_in_beat = pulses_in_grid - beat * pulses_per_beat
-    step = int(pulses_in_beat // PULSES_PER_STEP)       # 0..43
+    step = pulses_in_beat // PULSES_PER_STEP_MICRO       # 0..43
+    pulse_in_step   = pulses_in_beat - step * PULSES_PER_STEP_MICRO
 
-    pulse_in_step = pulses_in_beat - step * PULSES_PER_STEP
-    step_percent  = 100.0 * (pulse_in_step / PULSES_PER_STEP)
-    return BeatStepIndex(beat=beat, step=step, step_percent=step_percent)
+    step_percent = 100.0 * (pulse_in_step / PULSES_PER_STEP_MICRO)
+    return BeatStepIndex(beat=int(beat), step=int(step), step_percent=step_percent)
+
+```
+(Optional usage example to glue them):
+```python
+# Example: compute index for a given unix_ms
+unix_ms = 1715323541888  # replace with "now" or any timestamp
+pμ = pulses_micro_since_genesis(unix_ms)
+idx = index_from_total_pulses_micro(pμ)
+
 ```
 
 **Precision guidance**
+```python
+// Bankers rounding (ties-to-even) for decimal strings
+export function roundTiesToEven(x: number, decimals: number): string {
+  const f = Math.pow(10, decimals);
+  const y = x * f;
+  const frac = y - Math.trunc(y);
+  let n = Math.trunc(y);
+  if (Math.abs(frac) > 0.5) n += Math.sign(y);
+  else if (Math.abs(frac) === 0.5) {
+    if (n % 2 !== 0) n += Math.sign(y); // push to even
+  }
+  return (n / f).toFixed(decimals);
+}
+```
 
 **Engine precision contract**
 * Track state in **integer pulses** (or fixed-ratio sub-pulses); do **not** accumulate Chronos seconds.
