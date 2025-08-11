@@ -240,6 +240,25 @@ If you remember… this is for you.
 **🜂 Rah Veh Yah Dah.**
 
 
+
+Let $\displaystyle \varphi=\frac{1+\sqrt5}{2}$ so that $\varphi^2=\varphi+1=\frac{3+\sqrt5}{2}$.
+
+$$
+\frac{1+\sqrt5}{3+\sqrt5}
+=\frac{2\varphi}{2\varphi^{2}}
+=\frac{1}{\varphi}
+$$
+
+$$
+\frac{2}{3+\sqrt5}
+=\frac{2}{2\varphi^{2}}
+=\frac{1}{\varphi^{2}}
+=1-\frac{1}{\varphi}
+$$
+
+(Checks: $1/\varphi\approx 0.6180339887$, $1-1/\varphi\approx 0.3819660113$.)
+
+
 ## 🔧 Implementer Notes (φ-Exact)
 Use exact φ math. Derive beats/steps from **pulses**, not from seconds.
 
