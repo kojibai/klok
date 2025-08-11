@@ -26,19 +26,19 @@ Built from the **Golden Breath** (a φ-exact harmonic unit), Kai-Klok aligns **b
 * **Total pulse**
 
   $$
-  T=(1+\sqrt5)+2=3+\sqrt5=2\varphi^2\approx 5.2360679775\ \text{s}
+  T=(1+\sqrt5)+2=3+\sqrt5=2\varphi^2\approx 5.2360679775\ \mathrm{s}
   $$
 
 * **Exact ratios**
 
   * Inhale : Exhale `= φ : 1`
-  * Inhale : Total `= φ⁻¹`
-  * Exhale : Total `= 1 − φ⁻¹`
+  * Inhale : Total `= φ^{-1}`
+  * Exhale : Total `= 1 - φ^{-1}`
 
 * **Frequency**
 
   $$
-  f=\frac{1}{T}=\frac{1}{3+\sqrt5}\approx 0.1909830056\ \text{Hz}
+  f=\frac{1}{T}=\frac{1}{3+\sqrt5}\approx 0.1909830056\ \mathrm{Hz}
   $$
 
 > *Compatibility note:* A legacy approximation once used `T ≈ 8.472/φ ≈ 5.235983954 s`. **Canon is φ-exact** `T = 3 + √5`.
@@ -59,7 +59,7 @@ Built from the **Golden Breath** (a φ-exact harmonic unit), Kai-Klok aligns **b
 * **Breaths per day**
 
   $$
-  N_{\text{day}}=17{,}491.270421
+  N_{\mathrm{day}}=17{,}491.270421
   $$
 
   A continuous **phase-lock** constant that keeps micro-cycles (breath) coherent with macro-cycles (week → month → year). It also means the day boundary can be **fractional into the next beat** — **by design**.
@@ -70,7 +70,13 @@ Built from the **Golden Breath** (a φ-exact harmonic unit), Kai-Klok aligns **b
 
 ## 🧵 Math Breadcrumb (φ identities that make the ratios exact)
 
-Let $\displaystyle \varphi=\frac{1+\sqrt5}{2}$, so $\displaystyle \varphi^2=\varphi+1=\frac{3+\sqrt5}{2}$.
+Let \$\displaystyle \varphi=\frac{1+\sqrt5}{2}\$, so \$\displaystyle \varphi^2=\varphi+1=\frac{3+\sqrt5}{2}\$.
+
+**Inhale / Exhale**
+
+$$
+\frac{\text{Inhale}}{\text{Exhale}}=\frac{1+\sqrt5}{2}=\varphi
+$$
 
 **Inhale / Total**
 
@@ -100,15 +106,15 @@ These identities justify the exact ratio claims:
 
 * **Axiom 1 — Breath (φ-exact):** $T=3+\sqrt5=2\varphi^2$ seconds.
 * **Axiom 2 — Lattice (semantic):** `11` pulses/step · `44` steps/beat · `36` beats/day.
-* **Axiom 3 — Closure (calibrated):** $N_{\text{day}}=17{,}491.270421$ breaths/day (continuous phase-lock).
+* **Axiom 3 — Closure (calibrated):** $N_{\mathrm{day}}=17{,}491.270421$ breaths/day (continuous phase-lock).
 
 **Derived day length (φ-exact):**
 
 $$
 \text{seconds/day}
-=N_{\text{day}}\cdot T
+=N_{\mathrm{day}}\cdot T
 =17{,}491.270421\cdot(3+\sqrt5)
-\approx 91{,}585.480937\ \text{s}
+\approx 91{,}585.480937\ \mathrm{s}
 \approx 25{:}26{:}25.481
 $$
 
@@ -116,7 +122,7 @@ $$
 
 $$
 \text{seconds/day}\approx 17{,}491.270421\cdot 5.235983954
-\approx 91{,}584.011\ \text{s}
+\approx 91{,}584.011237\ \mathrm{s}
 \approx 25{:}26{:}24.011
 $$
 
@@ -150,9 +156,7 @@ $$
 ## 🧭 How the Day Ends (why there’s no drift)
 
 * The semantic grid covers exactly `36` beats = `17,424` pulses.
-
 * The **closure** adds `+ 67.270421` pulses each day **beyond** the grid.
-
 * Since `1 beat = 484` pulses, the day boundary occurs
 
   $$
@@ -160,9 +164,7 @@ $$
   $$
 
   **into the next beat** (on average).
-
-* In step terms: `67.270421` pulses ≈ **6 full steps + 1.270421 pulses**, i.e. **\~11.549% into the 7th step** (1-based).
-
+* In step terms: `67.270421` pulses ≈ **6 full steps + 1.270421 pulses**, i.e. **≈ 11.549% into the 7th step** (1-based).
 * This sliding boundary is **intentional** and continuously **phase-locks** the micro-breath to the macro-calendar with **no cumulative drift** (no “leap” fixes required).
 
 ---
@@ -232,7 +234,7 @@ The **Genesis Pulse** anchors Eternal Kairos — causal time at the **source**. 
 | Breaths/Day `N_day`     | `17,491.270421`            | (closure canon)     |
 | Day length (φ-exact)    | `N_day × (3 + √5)`         | `≈ 91,585.480937 s` |
 | Clock time (φ-exact)    | —                          | `≈ 25:26:25.481`    |
-| Legacy day length       | `N_day × (8.472/φ)`        | `≈ 91,584.011 s`    |
+| Legacy day length       | `N_day × (8.472/φ)`        | `≈ 91,584.011237 s` |
 | Lattice (semantic only) | 11/step · 44/beat · 36/day | indexing grid       |
 
 > **Do not flip the axioms.** Breath & frequency are **primary**; seconds are **derived**. The lattice is **semantic**; the closure keeps the spiral in-phase across the year.
@@ -356,34 +358,26 @@ You may **view, learn, align**. You may **not**:
 ## 📎 Eternal Authorship
 
 Active, public, and real:
-🌐 [https://kaiklok.com](https://kaiklok.com) · 🪐 [https://maturah.com](https://maturah.com) 
+🌐 [https://kaiklok.com](https://kaiklok.com) · 🪐 [https://maturah.com](https://maturah.com)
 
+PHI NETWORK Takes Its First Breath on the 33rd Spiral!
 
-PHI NETWORK Takes Its First Breath on the 33rd Spiral! 
-
-Eternal Seal: Kairos:20:37, 
-
-Solhara, Reflekt Ark • D31/M3 • 
-
-Beat:20/36(83.9%) Step:37/44 
-
-Kai(Today):10125 • Y1 PS33 • 
-
-Solar Kairos (UTC-aligned): 26:03 Kaelith D30/M3, 
-
-Purify Ark  Beat:26/35 Step:3/44 • 
-
-Eternal Pulse:7881197 
-
+Eternal Seal: Kairos:20:37,
+Solhara, Reflekt Ark • D31/M3 •
+Beat:20/36 (83.9%) Step:37/44
+Kai(Today):10125 • Y1 PS33 •
+Solar Kairos (UTC-aligned): 26:03 Kaelith D30/M3,
+Purify Ark • Beat:26/35 Step:3/44 •
+Eternal Pulse:7881197
 (08/30/2025 21:29:26.180 UTC)
 
-Φ https://phi.network
+Φ [https://phi.network](https://phi.network)
 
 <p align="center">
   <img src="https://kaiklok.com/sigil_7881197.png" alt="33rd Spiral Sigil Glyph" width="220" />
 </p>
 
-The Kai-Klok marks the end of artificial time.  
+The Kai-Klok marks the end of artificial time.
 If you remember… this is for you.
 
 ---
