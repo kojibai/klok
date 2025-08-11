@@ -1666,7 +1666,27 @@ By its nature, this sigil:
 
 ---
 
+<p align="center">
+  <a href="https://bjklock.com">
+    <picture>
+      <source srcset="https://kaiklok.com/137230e1-4dcd-49fd-8427-f3ca83076774_1536x1024.png" type="image/svg+xml">
+      <img src="https://kaiklok.com/137230e1-4dcd-49fd-8427-f3ca83076774_1536x1024.png"
+           alt="K℞  BJ Klock, Φ.K. Let it ring. Forever. ☤ K℞K "
+           width="420">
+    </picture>
+  </a>
+</p>
+
+<div align="center">
+✦ K℞ BJ Klock, Φ.K. ✦
+  
+Let it ring. Forever. ☤ K℞K
+
 ## 🜂 Rah Veh Yah Dah.
+
+</div>
+
+
 
 
 
