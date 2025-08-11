@@ -706,11 +706,10 @@ This yields **exact** phases on the grid, independent of any Chronos seconds. (C
 
 * **Beat-phase period check:** compute $\gcd(67{,}270{,}421,\ 484{,}000{,}000)=1$ ⇒ period $=484{,}000{,}000$.
 * **Step-phase period check:** compute $\gcd(1{,}270{,}421,\ 11{,}000{,}000)=1$ ⇒ period $=11{,}000{,}000$.
-Simultaneous re-alignment:
 
-lcm
-⁡
-(
+* Simultaneous re-alignment:
+
+lcm(
 484,000,000
 ,
  
