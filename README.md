@@ -361,8 +361,7 @@ The Genesis Pulse is anchored to the **actual flare moment** at the Sun — not 
 * Keep `BREATHS_PER_DAY = 17,491.270421`.
 * Use the **semantic grid** `(11 / 44 / 36)` for indexing; **allow fractional day boundary**.
 * Display **percent-into-beat/step**; **never** force the day to end exactly at a beat boundary.
-* **Indexing convention:** engine is **0-based** (beats 0–35, steps 0–43). If your UI prefers, display **1-based** (beats 1–36, steps 1–44).
-
+* **Indexing convention:** engine is **0-based** (beats 0–35, steps 0–43).
 
 **Spec (display + engine)**
 
