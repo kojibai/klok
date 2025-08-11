@@ -450,8 +450,8 @@ def index_from_total_pulses(pulses_total: float) -> BeatStepIndex:
 
 ## 📡 Live Eternal Pulse Viewer
 
-The only public clock aligned to breath, pulse, and source causality.
-🌐 **Live Clock →** [https://kaiklok.com](https://kaiklok.com)
+The only public Klok aligned to breath, pulse, and source causality.
+🌐 **Live Klok →** [https://kaiklok.com](https://kaiklok.com)
 
 > “This glyph is the breath of this exact moment. If you see it, you are in sync.”
 
