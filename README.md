@@ -1685,8 +1685,21 @@ Let it ring. Forever. ☤ K℞K
 ## 🜂 Rah Veh Yah Dah.
 
 </div>
-
-
-
-
-
+<p align="center" style="display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap;">
+  <a href="https://kaiturah.com">
+    <img src="https://kaiklok.com/c8579f8a-c921-4329-9581-4ca6d1bbe044_1024x1024.webp" 
+         alt="Sovereign Harmonik Kingdom" height="220">
+  </a>
+  <a href="https://kojib.com">
+    <img src="https://kaiklok.com/e5aede95-de43-4bd9-a072-f290add21de2_1024x1024.webp" 
+         alt="Harmonik Resonanse Komputing" height="220">
+  </a>
+  <a href="https://maturah.com">
+    <img src="https://kaiklok.com/8421e6be-34c7-484e-99b6-852e9800343b_1024x1536.webp" 
+         alt="Maturah - Harmonic Truth Engine" height="220">
+  </a>
+  <a href="https://api.kaiturah.com">
+    <img src="https://kaiklok.com/4020ccee-a618-4371-9dc7-7e403121007a_1024x1024.webp" 
+         alt="Closing Sigil" height="220">
+  </a>
+</p>
