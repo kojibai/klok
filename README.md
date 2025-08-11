@@ -60,7 +60,12 @@ N_{\mathrm{day}} = 17{,}491.270421
 $$
 
 
-  A continuous **phase-lock** constant that keeps micro-cycles (breath) coherent with macro-cycles (week → month → year). It also means the day boundary can be **fractional into the next beat** — **by design**. This is a **design calibration**, rationalized to six decimals for driftless phase behavior.
+ A continuous **phase-lock** constant that keeps micro-cycles coherent with macro-cycles via a
+**rational rotation on the grid** (no leaps). It makes the day boundary land **fractionally into the
+next beat** — **by design**. Patterns at week/month/year boundaries do **not** “reset” annually; they
+recur on long rational periods set by the closure denominators. Canon fixes a **10⁶** denominator (six
+decimals), chosen for coprimality with the grid (484 and 11) and stable long-period coverage.
+
 
 > **Seconds are derived, not primary.** Breath/frequency are axioms; seconds are Chronos coordinates computed *after* the fact.
 
@@ -457,6 +462,17 @@ def fmt_index(i: int, total: int) -> str:
 
 ## 🔧 Implementer Notes (φ-exact)
 
+// Safe modulo for negatives; returns residue in [0, m)
+const imod = (n: bigint, m: bigint) => ((n % m) + m) % m;
+
+// Example: day index d may be negative before Genesis
+const rBeat = imod(BigInt(d) * 67270421n, 484000000n);
+const rStep = imod(BigInt(d) * 1270421n, 11000000n);
+
+def imod(n: int, m: int) -> int:
+    return (n % m + m) % m
+# Usage mirrors TS example
+
 **Chronos → pulses bridge**
 
 ```python
@@ -513,9 +529,11 @@ def index_from_total_pulses(pulses_total: float) -> BeatStepIndex:
 
 **Precision guidance**
 
-* Keep internal math **φ-exact** (`T = 3 + √5`).
-* Only round for display.
-* Treat all Chronos units (ms, s) as *derived* coordinates, not axioms.
+**Engine precision contract**
+* Track state in **integer pulses** (or fixed-ratio sub-pulses); do **not** accumulate Chronos seconds.
+* Convert to Chronos **only at render**: `chronos_seconds = pulses * (3 + √5)`.
+* If sub-pulse resolution is needed, use fixed rationals in **millionths** (denominator 10⁶) aligned to the closure.
+* Avoid float modulo; prefer integer math (BigInt where available). Apply ties-to-even **only** in UI formatting.
 
 ---
 
