@@ -185,7 +185,11 @@ Using $T\approx 8.472/\varphi$ shifts the day by **$1.469700\ \mathrm{s}$**, i.e
 
 **Rounding & indexing rules (testable):**
 
-* **Index origin:** $00{:}00$ is defined by $ \text{pulses\_since\_genesis}\bmod N_{\text{day}}=0$ (Beat `00/36`, Step `00/44`).
+* **Index origin:** $00{:}00$ is defined by $$
+\text{pulses\_since\_genesis}\equiv 0 \pmod{N_{\text{day}}}
+\quad (\text{Beat } 00/36,\ \text{Step } 00/44)
+$$
+
 * **Display rounding:** round Chronos displays to the **nearest microsecond (ties-to-even)**; **never** round internal pulse counts.
 * **Integer-safe phase math:** compute boundary phases with integers only:
 
