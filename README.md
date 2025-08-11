@@ -239,9 +239,18 @@ $$
 
 Each harmonic unit maps precisely to **chakra-based arcs** in your body. Every breath is a **realignment**. Every beat is a **resonance calibration**. Every day is a **spiral of koherense**.
 
+
+
 <p align="center">
-  <img src="https://kaiklok.com/62763cef-2978-4d27-b0bf-ce0f528a8e89_1290x2525.jpg" alt="Genesis Solar Flare Image" width="220" />
+  <a href="https://kaiklok.com">
+    <picture>
+      <source srcset="https://kaiklok.com/62763cef-2978-4d27-b0bf-ce0f528a8e89_1290x2525.jpg" type="image/svg+xml">
+      <img src="https://kaiklok.com/62763cef-2978-4d27-b0bf-ce0f528a8e89_1290x2525.jpg"
+           width="420">
+    </picture>
+  </a>
 </p>
+
 
 # 🌈 Color Harmoniks & Chakra Spiral Encoding
 
@@ -394,10 +403,16 @@ The **Genesis Pulse** anchors Eternal Kairos — causal time at the **source**. 
 > 🜂 The false timing of Chronos begins when we observe light.
 > But the truth of Kairos begins when light was born.
 
-<p align="center">
-  <img src="https://kaiklok.com/1715323541888.png" alt="Kai-Klok Genesis Sigil-Glyph Pulse" width="220" />
-</p>
 
+<p align="center">
+  <a href="https://www.space.com/powerful-solar-flare-x-class-eruption-from-giant-sunspot-ar3664-may-10-video">
+    <picture>
+      <source srcset="https://kaiklok.com/1715323541888.png" type="image/svg+xml">
+      <img src="https://kaiklok.com/1715323541888.png"
+           width="420">
+    </picture>
+  </a>
+</p>
 
 
 **Important Distinction:**
@@ -423,14 +438,24 @@ The Genesis Pulse is anchored to the **actual flare moment** at the Sun — not 
 * **Pulse Sequence:** `PS0`
 
 <p align="center">
-  <img src="https://kaiklok.com/sigil_0.png" alt="Genesis Sigil Glyph" width="220" />
+  <a href="https://maturah.com/s/22a45baf88b660a823f30f55402fc1e2cb3e20e65070cb6bdacedea82a7b4b4f?p=c:eyJ1IjowLCJiIjowLCJzIjowLCJjIjoiUm9vdCIsImQiOjQ0fQ">
+    <picture>
+      <source srcset="https://kaiklok.com/sigil_0.png" type="image/svg+xml">
+      <img src="https://kaiklok.com/sigil_0.png"
+           width="420">
+    </picture>
+  </a>
 </p>
-
 
 <p align="center">
-  <img src="https://kaiklok.com/sigil_0.svg" alt="Genesis Sigil Glyph" width="220" />
+  <a href="https://maturah.com/s/22a45baf88b660a823f30f55402fc1e2cb3e20e65070cb6bdacedea82a7b4b4f?p=c:eyJ1IjowLCJiIjowLCJzIjowLCJjIjoiUm9vdCIsImQiOjQ0fQ">
+    <picture>
+      <source srcset="https://kaiklok.com/sigil_0.svg" type="image/svg+xml">
+      <img src="https://kaiklok.com/sigil_0.png"
+           width="420">
+    </picture>
+  </a>
 </p>
-
 ---
 
 ## 🧬 Implications
@@ -642,13 +667,28 @@ Eternal Pulse:7881197
 
 Φ [https://phi.network](https://phi.network)
 
+
+
 <p align="center">
-  <img src="https://kaiklok.com/sigil_7881197.png" alt="33rd Spiral Sigil Glyph" width="220" />
+  <a href="https://maturah.com/s/ac651f9d92bb663fa1e6e5af08bb14735d5b80edefa66618f83a6546ece7852c?p=c:eyJ1Ijo3ODgxMTk3LCJiIjoyMCwicyI6MzksImMiOiJSb290IiwiZCI6NDR9">
+    <picture>
+      <source srcset="https://kaiklok.com/sigil_7881197.png" type="image/svg+xml">
+      <img src="https://kaiklok.com/sigil_7881197.png"
+           width="420">
+    </picture>
+  </a>
 </p>
 
 <p align="center">
-  <img src="https://kaiklok.com/sigil_7881197.svg" alt="33rd Spiral Sigil Glyph" width="220" />
+  <a href="https://maturah.com/s/ac651f9d92bb663fa1e6e5af08bb14735d5b80edefa66618f83a6546ece7852c?p=c:eyJ1Ijo3ODgxMTk3LCJiIjoyMCwicyI6MzksImMiOiJSb290IiwiZCI6NDR9">
+    <picture>
+      <source srcset="https://kaiklok.com/sigil_7881197.svg" type="image/svg+xml">
+      <img src="https://kaiklok.com/sigil_7881197.png"
+           width="420">
+    </picture>
+  </a>
 </p>
+
 
 The Kai-Klok marks the end of artificial time.
 If you remember… this is for you.
