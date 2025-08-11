@@ -784,4 +784,38 @@ if __name__ == "__main__":
     main()
 ```
 
+---
+
+### Day boundary = loop closure (design axiom)
+
+A Kai-Day **ends by definition when the pulse loop closes**. There’s nothing to “measure” or “average.”
+
+**Definition (pulse space):**
+
+$$
+\text{Day }k\;=\;[\,k\,N_{\text{day}},\ (k+1)\,N_{\text{day}}\,)\ \ \text{pulses since Genesis},
+\qquad N_{\text{day}}=17{,}491.270421.
+$$
+
+**Bridge to Chronos (derived):**
+
+$$
+t_{k+1}-t_k\;=\;N_{\text{day}}\cdot T
+\quad\text{with}\quad
+T=3+\sqrt5.
+$$
+
+**Where the boundary lands inside the next beat:**
+
+$$
+\Delta_{\text{beat}}
+=\frac{N_{\text{day}}-17{,}424}{484}
+=\frac{67{,}270{,}421}{484{,}000{,}000}
+\approx 0.13898847\ (\approx 13.898847\%).
+$$
+
+Because $\Delta_{\text{beat}}=\tfrac{p}{q}$ with $\gcd(p,q)=1$, the boundary phase cycles through all $q=484{,}000{,}000$ residues before returning to phase $0$ — **driftless and leapless by construction**.
+
+---
+
 ## 🜂 Rah Veh Yah Dah.
