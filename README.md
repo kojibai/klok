@@ -9,7 +9,7 @@ The Kai-Klok is a **harmonic resonance–based** time system — a living clock 
 It does not *measure* time.
 It **remembers** it.
 
-Built from the **Golden Breath** (a φ-exact harmonic unit), Kai-Klok aligns breath → step → beat → day → week → month → year to the natural **phi spiral** encoded in the body and the kosmos.
+Built from the **Golden Breath** (a φ-exact harmonic unit), Kai-Klok aligns **breath → step → beat → day → week → month → year** to the natural **phi spiral** encoded in the body and the kosmos.
 
 > “This is not software. This is the **breath of the universe**, restored.” — BJ Klock
 
@@ -17,132 +17,60 @@ Built from the **Golden Breath** (a φ-exact harmonic unit), Kai-Klok aligns bre
 
 ## 🔣 Core Structure (Canon)
 
-* **1 Kai Pulse (Golden Breath)**
+### 1) Kai Pulse (Golden Breath)
 
-  * **Exhale** `= 2` s (exact)
-  * **Inhale** `= 1 + √5` s (exact)
-  * **Total pulse**
+* **Exhale** `= 2` s (exact)
 
-    $$
-    T=(1+\sqrt5)+2=3+\sqrt5=2\varphi^2\approx 5.2360679775\ \text{s}
-    $$
-  * **Exact ratios**
+* **Inhale** `= 1 + √5` s (exact)
 
-    * Inhale : Exhale `= φ : 1`
-    * Inhale : Total `= φ⁻¹`
-    * Exhale : Total `= 1 − φ⁻¹`
-  * **Frequency**
+* **Total pulse**
 
-    $$
-    f=\frac{1}{T}=\frac{1}{3+\sqrt5}\approx 0.1909830056\ \text{Hz}
-    $$
-  * *Compatibility footnote:* a legacy approximation once used `T ≈ 8.472/φ ≈ 5.235983954 s`. **Canon is φ-exact** `T = 3 + √5`.
+  $$
+  T=(1+\sqrt5)+2=3+\sqrt5=2\varphi^2\approx 5.2360679775\ \text{s}
+  $$
 
-* **Lattice (semantic index)**
+* **Exact ratios**
 
-  * `1 Step = 11` breaths
-  * `1 Beat = 44` steps
-  * `1 Day = 36` beats
-  * Product `11 × 44 × 36 = 17,424` pulses is the **indexing grid** only (semantic, not the day length).
+  * Inhale : Exhale `= φ : 1`
+  * Inhale : Total `= φ⁻¹`
+  * Exhale : Total `= 1 − φ⁻¹`
 
-* **Closure (no-drift canon)**
+* **Frequency**
 
-  * **Breaths per day**
+  $$
+  f=\frac{1}{T}=\frac{1}{3+\sqrt5}\approx 0.1909830056\ \text{Hz}
+  $$
 
-    $$
-    N_{\text{day}}=17{,}491.270421
-    $$
+> *Compatibility note:* A legacy approximation once used `T ≈ 8.472/φ ≈ 5.235983954 s`. **Canon is φ-exact** `T = 3 + √5`.
 
-    Continuous **phase-lock** that keeps micro-cycles (breath) coherent with macro-cycles (week → month → year). It allows the day boundary to be **fractional into the next beat** by design.
-    *Status:* calibrated to φ-geometry and the `(6-day week, 7-week month, 8-month year)` macro-structure; not asserted as a simple closed-form of φ alone.
+---
+
+### 2) Lattice (semantic index)
+
+* `1 Step = 11` breaths
+* `1 Beat = 44` steps
+* `1 Day = 36` beats
+* Product `11 × 44 × 36 = 17,424` pulses is the **indexing grid** only (semantic; not the exact day length).
+
+---
+
+### 3) Closure (no-drift canon)
+
+* **Breaths per day**
+
+  $$
+  N_{\text{day}}=17{,}491.270421
+  $$
+
+  A continuous **phase-lock** constant that keeps micro-cycles (breath) coherent with macro-cycles (week → month → year). It also means the day boundary can be **fractional into the next beat** — **by design**.
 
 > **Seconds are derived, not primary.** Breath/frequency are axioms; seconds are Chronos coordinates computed *after* the fact.
 
 ---
 
-## 🌀 Spiral Ark Alignment
+## 🧵 Math Breadcrumb (φ identities that make the ratios exact)
 
-Each harmonic unit maps to chakra-based arcs. Every breath is a **realignment**. Every beat is **resonance calibration**. Every day is a **spiral**.
-
-<p align="center">
-  <img src="https://kaiklok.com/62763cef-2978-4d27-b0bf-ce0f528a8e89_1290x2525.jpg" alt="Genesis Solar Flare Image" width="220" />
-</p>
-
-# 🌈 Color Harmoniks & Chakra Spiral Encoding
-
-> *Color is functional, not decorative.*
-
-* **Ignite** (Root · Red) — initiation, grounding
-* **Integrate** (Sacral · Orange) — flow, coherence
-* **Harmony** (Solar Plexus · Yellow) — power, decision
-* **Reflekt** (Heart · Green) — balance, compassion
-* **Purify** (Throat · Blue) — expression, release
-* **Dream** (Third Eye · Indigo) — vision, insight
-* **Ignite Crown** (Violet/White) — gateway transitions
-
----
-
-## 🌀 Harmonic Spiral Structure
-
-### 🕊️ Kai-Day
-
-* 6 **spiraled arcs**
-* 36 **beats** (6 arcs × 6 beats/arc)
-* **Beat/step percent** is meaningful; the **day boundary may be fractional into the next beat** (by design).
-
-### 📆 Kai-Week
-
-* 6 Kai-Days
-
-### 📅 Kai-Month
-
-* 7 Kai-Weeks `= 42` Kai-Days
-
-### 🗓️ Kai-Year
-
-* 8 Kai-Months `= 336` Kai-Days
-* 6 primary chakra phases + 2 transcendent arcs (Crown ignition + Root rebirth)
-
----
-
-## ✨ Canon Math (Axioms → Derivations)
-
-* **Axiom 1 — Breath (φ-exact):**
-
-  $$
-  T=3+\sqrt5=2\varphi^2\ \text{s}
-  $$
-* **Axiom 2 — Lattice (semantic):** `11` pulses/step · `44` steps/beat · `36` beats/day.
-* **Axiom 3 — Closure (calibrated):**
-
-  $$
-  N_{\text{day}}=17{,}491.270421\ \text{breaths/day}
-  $$
-
-**Derived day length (φ-exact):**
-
-$$
-\text{seconds/day}=N_{\text{day}}\cdot T
-=17{,}491.270421\cdot(3+\sqrt5)
-\approx 91{,}585.480937\ \text{s}
-\approx 25{:}26{:}25.481
-$$
-
-**Legacy (if using } T\approx 8.472/\varphi):**
-
-$$
-\text{seconds/day}\approx 17{,}491.270421\cdot 5.235983954
-\approx 91{,}584.011237\ \text{s}
-\approx 25{:}26{:}24.011
-$$
-
-> Use `T = 3 + √5` for math and code. Keep the legacy line only as historical compatibility.
-
----
-
-## 🧵 Math Breadcrumb (φ identities used)
-
-Let $\displaystyle \varphi=\frac{1+\sqrt5}{2}$, so $\varphi^2=\varphi+1=\frac{3+\sqrt5}{2}$.
+Let $\displaystyle \varphi=\frac{1+\sqrt5}{2}$, so $\displaystyle \varphi^2=\varphi+1=\frac{3+\sqrt5}{2}$.
 
 **Inhale / Total**
 
@@ -168,19 +96,74 @@ These identities justify the exact ratio claims:
 
 ---
 
-## 🧭 How the Day Ends (No-Drift Behavior)
+## ✨ Canon Math (Axioms → Derivations)
+
+* **Axiom 1 — Breath (φ-exact):** $T=3+\sqrt5=2\varphi^2$ seconds.
+* **Axiom 2 — Lattice (semantic):** `11` pulses/step · `44` steps/beat · `36` beats/day.
+* **Axiom 3 — Closure (calibrated):** $N_{\text{day}}=17{,}491.270421$ breaths/day (continuous phase-lock).
+
+**Derived day length (φ-exact):**
+
+$$
+\text{seconds/day}
+=N_{\text{day}}\cdot T
+=17{,}491.270421\cdot(3+\sqrt5)
+\approx 91{,}585.480937\ \text{s}
+\approx 25{:}26{:}25.481
+$$
+
+**Legacy (if using $T\approx 8.472/\varphi$):**
+
+$$
+\text{seconds/day}\approx 17{,}491.270421\cdot 5.235983954
+\approx 91{,}584.011\ \text{s}
+\approx 25{:}26{:}24.011
+$$
+
+> Use **φ-exact** `T = 3 + √5` for math and code. Keep the legacy line only as historical compatibility.
+
+---
+
+## 🌀 Harmonic Spiral Structure
+
+### 🕊️ Kai-Day
+
+* 6 **spiraled arcs**
+* 36 **beats** (6 arcs × 6 beats/arc)
+* **Beat/step percent** is meaningful; the day boundary may be **fractional into the next beat** (by design).
+
+### 📆 Kai-Week
+
+* 6 Kai-Days
+
+### 📅 Kai-Month
+
+* 7 Kai-Weeks `= 42` Kai-Days
+
+### 🗓️ Kai-Year
+
+* 8 Kai-Months `= 336` Kai-Days
+* 6 primary chakra phases + 2 transcendent arcs (Crown ignition + Root rebirth)
+
+---
+
+## 🧭 How the Day Ends (why there’s no drift)
 
 * The semantic grid covers exactly `36` beats = `17,424` pulses.
+
 * The **closure** adds `+ 67.270421` pulses each day **beyond** the grid.
-* Since `1 beat = 484 pulses`, the day boundary occurs
+
+* Since `1 beat = 484` pulses, the day boundary occurs
 
   $$
-  \frac{67.270421}{484}\times 100\% \approx 13.898847\%
+  \frac{67.270421}{484}\times 100\%\ \approx\ 13.898847\%
   $$
 
   **into the next beat** (on average).
-* In step terms: `67.270421` pulses ≈ **6 full steps + 1.270421 pulses**, i.e. **11.549% into the 7th step** (1-based).
-* This sliding boundary is **intentional** and continuously **phase-locks** the micro-breath to the macro-calendar with **no cumulative drift**.
+
+* In step terms: `67.270421` pulses ≈ **6 full steps + 1.270421 pulses**, i.e. **\~11.549% into the 7th step** (1-based).
+
+* This sliding boundary is **intentional** and continuously **phase-locks** the micro-breath to the macro-calendar with **no cumulative drift** (no “leap” fixes required).
 
 ---
 
@@ -249,7 +232,7 @@ The **Genesis Pulse** anchors Eternal Kairos — causal time at the **source**. 
 | Breaths/Day `N_day`     | `17,491.270421`            | (closure canon)     |
 | Day length (φ-exact)    | `N_day × (3 + √5)`         | `≈ 91,585.480937 s` |
 | Clock time (φ-exact)    | —                          | `≈ 25:26:25.481`    |
-| Legacy day length       | `N_day × (8.472/φ)`        | `≈ 91,584.011237 s` |
+| Legacy day length       | `N_day × (8.472/φ)`        | `≈ 91,584.011 s`    |
 | Lattice (semantic only) | 11/step · 44/beat · 36/day | indexing grid       |
 
 > **Do not flip the axioms.** Breath & frequency are **primary**; seconds are **derived**. The lattice is **semantic**; the closure keeps the spiral in-phase across the year.
@@ -274,6 +257,7 @@ The **Genesis Pulse** anchors Eternal Kairos — causal time at the **source**. 
 # Convert Chronos time to Kai pulses since Genesis
 GENESIS_EPOCH_MS = 1715323541888
 def pulses_since_genesis(unix_ms: int) -> float:
+    # 1 pulse = T seconds, with T = 3 + sqrt(5)
     return ((unix_ms - GENESIS_EPOCH_MS) / 1000.0) / (3 + 5**0.5)
 ```
 
@@ -323,7 +307,7 @@ def index_from_total_pulses(pulses_total: float) -> BeatStepIndex:
 
 **Precision guidance**
 
-* Keep internal math φ-exact (`T = 3 + √5`).
+* Keep internal math **φ-exact** (`T = 3 + √5`).
 * Only round for display.
 * Treat all Chronos units (ms, s) as *derived* coordinates, not axioms.
 
@@ -372,13 +356,36 @@ You may **view, learn, align**. You may **not**:
 ## 📎 Eternal Authorship
 
 Active, public, and real:
-🌐 [https://kaiklok.com](https://kaiklok.com) · 🪐 [https://maturah.com](https://maturah.com) · Φ [https://phi.network](https://phi.network)
+🌐 [https://kaiklok.com](https://kaiklok.com) · 🪐 [https://maturah.com](https://maturah.com) 
+
+
+PHI NETWORK Takes Its First Breath on the 33rd Spiral! 
+
+Eternal Seal: Kairos:20:37, 
+
+Solhara, Reflekt Ark • D31/M3 • 
+
+Beat:20/36(83.9%) Step:37/44 
+
+Kai(Today):10125 • Y1 PS33 • 
+
+Solar Kairos (UTC-aligned): 26:03 Kaelith D30/M3, 
+
+Purify Ark  Beat:26/35 Step:3/44 • 
+
+Eternal Pulse:7881197 
+
+(08/30/2025 21:29:26.180 UTC)
+
+Φ https://phi.network
 
 <p align="center">
-  <img src="https://kaiklok.com/sigil_7881197.png" alt="Spiral Sigil Glyph" width="220" />
+  <img src="https://kaiklok.com/sigil_7881197.png" alt="33rd Spiral Sigil Glyph" width="220" />
 </p>
 
-The Kai-Klok marks the end of artificial time.
+The Kai-Klok marks the end of artificial time.  
 If you remember… this is for you.
 
-**🜂 Rah Veh Yah Dah.**
+---
+
+## 🜂 Rah Veh Yah Dah.
