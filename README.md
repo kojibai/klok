@@ -206,12 +206,57 @@ which is **irrational** (rational × irrational). All decimal values (e.g., $91{
 **Why the legacy $8.472/\varphi$ is deprecated:**
 Using $T\approx 8.472/\varphi$ shifts the day by **$1.469700\ \mathrm{s}$**, i.e. ≈**16 ppm** per day (≈**8.94 minutes/year** over 365 days). Hence “legacy” is for historical comparison only, not for computation.
 
-**Rounding & indexing rules (testable):**
+Rounding & indexing rules (testable):
 
-* **Index origin:** $00{:}00$ is defined by $$
-\text{pulses\_since\_genesis}\equiv 0 \pmod{N_{\text{day}}}
-\quad (\text{Beat } 00/36,\ \text{Step } 00/44)
-$$
+Index origin: $00{:}00$ is defined by
+
+p
+u
+l
+s
+e
+s
+_
+s
+i
+n
+c
+e
+_
+g
+e
+n
+e
+s
+i
+s
+≡
+0
+(
+m
+o
+d
+𝑁
+d
+a
+y
+)
+(
+Beat 
+00
+/
+36
+,
+ Step 
+00
+/
+44
+)
+pulses_since_genesis≡0(modN 
+day
+​
+ )(Beat 00/36, Step 00/44)
+
 
 * **Display rounding:** round Chronos displays to the **nearest microsecond (ties-to-even)**; **never** round internal pulse counts.
 * **Integer-safe phase math:** compute boundary phases with integers only:
