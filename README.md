@@ -628,30 +628,37 @@ These are **exact rationals**, defined by the given six-decimal closure.
 
 Think of the “day boundary inside the next beat” as a rotation on the unit circle by a rational angle.
 
-* **Beat phase rotation per day**
+**Beat-phase rotation per day**
 
-  $$
-  \Delta_{\text{beat}}=\frac{p}{q}
-  =\frac{67{,}270{,}421}{484{,}000{,}000},
-  \quad \gcd(p,q)=1.
-  $$
+$$
+\Delta_{\text{beat}}=\frac{p}{q}=\frac{67{,}270{,}421}{484{,}000{,}000},\qquad \gcd(p,q)=1.
+$$
 
-  Because $p$ and $q$ are **coprime**, the orbit
+Because $p$ and $q$ are coprime, the orbit
 
-  $$
-  \{\,n\Delta_{\text{beat}}\bmod 1\ :\ n=0,1,2,\dots\,\}
-  $$
+$$
+\{\, n\,\Delta_{\text{beat}} \bmod 1 \mid n=0,1,2,\ldots \,\}
+$$
 
-  visits **every** $q$ rational residue **exactly once** and then repeats.
-  **Period:** $q=484{,}000{,}000$ days.
+visits every $q$ rational residue exactly once and then repeats.
+
+$$
+\text{Period}=q=484{,}000{,}000\ \text{days}.
+$$
+
+Meaning: starting from a day boundary on a beat boundary (phase $0$), the boundary is at $\Delta_{\text{beat}}\approx 0.13898847$ (≈13.898847%) on day 1, at $2\Delta_{\text{beat}}\bmod 1\approx 0.27797694$ (≈27.797694%) on day 2, etc. It never locks to any sub-grid and returns **exactly** to phase $0$ after $484{,}000{,}000$ days—driftless and leapless by construction.
+
+**Step-phase rotation per day**
+
+$$
+\Delta_{\text{step}}=\frac{1{,}270{,}421}{11{,}000{,}000},\qquad \gcd(1{,}270{,}421,\,11{,}000{,}000)=1.
+$$
+
+Thus the step phase has period $11{,}000{,}000$ days; both step and beat phases realign simultaneously every $484{,}000{,}000=44\times 11{,}000{,}000$ days.
+
 
   **Meaning:** starting from a day boundary on a beat boundary (phase 0), the boundary slides \~13.898847% into the next beat on day 1, \~27.797694% on day 2, etc. It never locks to any sub-grid and it returns **exactly to phase 0** after **484,000,000 days**. That’s *driftless* and *leapless* by construction.
 
-* **Step phase rotation per day**
-
-  $$
-  \Delta_{\text{step}}=\frac{1{,}270{,}421}{11{,}000{,}000},\quad \gcd(1{,}270{,}421,\ 11{,}000{,}000)=1.
-  $$
 
   **Period:** $11{,}000{,}000$ days **for step phase**.
   Since $484{,}000{,}000=44\times11{,}000{,}000$, the **beat-phase period** is a whole multiple of the **step-phase period**.
