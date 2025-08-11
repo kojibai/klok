@@ -33,9 +33,10 @@ Built from the **Golden Breath** (a φ-exact harmonic unit), Kai-Klok aligns **b
   * Exhale : Total `= 1 - φ^{-1}`
 * **Frequency**
 
-  $$
-  f=\frac{1}{T}=\frac{1}{3+\sqrt5}\approx 0.1909830056\ \mathrm{Hz}
-  $$
+$$
+f=\frac{1}{T}=\frac{1}{3+\sqrt{5}}\approx 0.1909830056\,\mathrm{Hz}
+$$
+
 
 > *Compatibility note:* A legacy approximation once used `T ≈ 8.472/φ ≈ 5.235983954 s`. **Canon is φ-exact** `T = 3 + √5`.
 
@@ -54,9 +55,10 @@ Built from the **Golden Breath** (a φ-exact harmonic unit), Kai-Klok aligns **b
 
 * **Breaths per day**
 
-  $$
-  N_{\mathrm{day}}=17{,}491.270421
-  $$
+$$
+N_{\mathrm{day}} = 17{,}491.270421
+$$
+
 
   A continuous **phase-lock** constant that keeps micro-cycles (breath) coherent with macro-cycles (week → month → year). It also means the day boundary can be **fractional into the next beat** — **by design**. This is a **design calibration**, rationalized to six decimals for driftless phase behavior.
 
