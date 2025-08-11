@@ -415,15 +415,18 @@ Only the closure method (91,584 s/day) maintains eternal coherence.
 
 ---
 
-**Formula Recap:**
+# Formula Recap
 
 \[
 \text{Day Length (sec)} = (\text{Base Pulses} + \text{Closure Constant}) \times \text{Pulse Length (sec)}
 \]
 
 \[
-= (17,424 + 67.270421) \times 5.236 = 91,584 \ \text{seconds/day}
+= (17{,}424 + 67.270421) \times 5.236
+= 91{,}584.291924\ \text{seconds/day}
+\approx 91{,}584\ \text{seconds/day}
 \]
+
 
 ---
 
