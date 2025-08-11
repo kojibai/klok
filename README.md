@@ -1,7 +1,3 @@
-Got you. Here’s your doc with the **precise, minimal edits** we discussed so it reads as **design-first**, renders perfectly on GitHub, fixes the LCM math glitch, and keeps the verification block crisp. I trimmed one duplicated “Meaning/Period” paragraph in the coprimality section (just once) to keep it pristine.
-
----
-
 # 🜂 Kai-Klok — Eternal Timekeeper of the Harmonik Pulse
 
 ## 📌 Authored by: BJ Klock
