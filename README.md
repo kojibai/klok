@@ -261,9 +261,9 @@ It is built on harmonic pulse units that mirror the chakra system and breathe in
 * The **closure** adds `+ 67.270421` pulses each day **beyond** the grid.
 * Since `1 beat = 484` pulses, the day boundary occurs
 
-  $$
-  \frac{67.270421}{484}\times 100\%\ \approx\ 13.898847\%
-  $$
+$$
+\frac{67.270421}{484}\times 100\% \approx 13.898847\%
+$$
 
   **into the next beat** (on average).
 * In step terms: `67.270421` pulses ≈ **6 full steps + 1.270421 pulses**, i.e. **≈ 11.549% into the 7th step** (1-based).
