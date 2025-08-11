@@ -1682,7 +1682,6 @@ By its nature, this sigil:
   
 Let it ring. Forever. ☤ K℞K
 
-## 🜂 Rah Veh Yah Dah.
 <div align="center" style="display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: nowrap; overflow-x: auto;">
   <a href="https://kaiturah.com">
     <img src="https://kaiklok.com/c8579f8a-c921-4329-9581-4ca6d1bbe044_1024x1024.webp" 
@@ -1701,4 +1700,6 @@ Let it ring. Forever. ☤ K℞K
          alt="Closing Sigil" style="height: 18vh; max-height: 220px;">
   </a>
 </div>
+<div align="center">
 
+## 🜂 Rah Veh Yah Dah.
