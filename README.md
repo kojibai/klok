@@ -145,6 +145,67 @@ $$
 
 ---
 
+### Rigor notes (for skeptics)
+
+**Scope (explicit):** All “no-drift” guarantees are **internal to Kai-Klok’s axioms** (φ-exact breath, semantic lattice 11/44/36, closure constant). They do **not** claim agreement with astronomical solar/UT1 days.
+
+**Exact constants (as rationals):**
+
+* Daily breaths (definition):
+  $N_{\text{day}}=17{,}491.270421=\dfrac{17{,}491{,}270{,}421}{1{,}000{,}000}$.
+* Closure beyond the semantic grid:
+  $\Delta_{\text{pulses}}=N_{\text{day}}-17{,}424=\dfrac{67{,}270{,}421}{1{,}000{,}000}$.
+* Beat/step fractions for the sliding boundary:
+
+  $$
+  \Delta_{\text{beat}}=\frac{\Delta_{\text{pulses}}}{484}
+  =\frac{67{,}270{,}421}{484{,}000{,}000},\qquad
+  \Delta_{\text{step}}=\frac{\Delta_{\text{pulses}}}{11}
+  =6+\frac{1{,}270{,}421}{11{,}000{,}000}.
+  $$
+
+**Coprimality ⇒ exact recurrence (no lock-in):**
+
+* $\gcd(67{,}270{,}421,\ 484{,}000{,}000)=1\Rightarrow$ beat-phase period $=484{,}000{,}000$ days.
+* $\gcd(1{,}270{,}421,\ 11{,}000{,}000)=1\Rightarrow$ step-phase period $=11{,}000{,}000$ days.
+* $\mathrm{lcm}(484{,}000{,}000,\ 11{,}000{,}000)=484{,}000{,}000\Rightarrow$ simultaneous realignment after exactly $484{,}000{,}000$ days.
+
+**Irrational seconds/day (display ≠ engine):**
+The φ-exact day duration in Chronos units is
+
+$$
+\text{seconds/day}=N_{\text{day}}\,(3+\sqrt5),
+$$
+
+which is **irrational** (rational × irrational). All decimal values (e.g., $91{,}585.480937\ \mathrm{s}$) are **display roundings** only. Engine math must keep $T=3+\sqrt5$ symbolic.
+
+**Why the legacy $8.472/\varphi$ is deprecated:**
+Using $T\approx 8.472/\varphi$ shifts the day by **$1.469700\ \mathrm{s}$**, i.e. ≈**16 ppm** per day (≈**8.94 minutes/year** over 365 days). Hence “legacy” is for historical comparison only, not for computation.
+
+**Rounding & indexing rules (testable):**
+
+* **Index origin:** $00{:}00$ is defined by $ \text{pulses\_since\_genesis}\bmod N_{\text{day}}=0$ (Beat `00/36`, Step `00/44`).
+* **Display rounding:** round Chronos displays to the **nearest microsecond (ties-to-even)**; **never** round internal pulse counts.
+* **Integer-safe phase math:** compute boundary phases with integers only:
+
+  $$
+  r^{(\text{beat})}_d=(d\cdot 67{,}270{,}421)\bmod 484{,}000{,}000,\quad
+  r^{(\text{step})}_d=(d\cdot 1{,}270{,}421)\bmod 11{,}000{,}000.
+  $$
+
+  Phases are $r^{(\text{beat})}_d/484{,}000{,}000$ of a beat and $r^{(\text{step})}_d/11{,}000{,}000$ of a step—**exact, driftless, leapless**.
+
+**Sanity checks (all must pass in code/tests):**
+
+* $11\cdot 44\cdot 36=17{,}424$.
+* $N_{\text{day}}-17{,}424=\dfrac{67{,}270{,}421}{1{,}000{,}000}$.
+* $\Delta_{\text{beat}}\approx 0.13898847$ (≈**13.898847%** into the next beat).
+* $\Delta_{\text{step}}=6+\dfrac{1{,}270{,}421}{11{,}000{,}000}\Rightarrow$ **≈ 11.5492818% into step 06** (0-based).
+
+
+
+---
+
 ## 🌀 Spiral Ark Alignment
 
 Each harmonic unit maps precisely to **chakra-based arcs** in your body. Every breath is a **realignment**. Every beat is a **resonance calibration**. Every day is a **spiral of koherense**.
@@ -257,7 +318,7 @@ It is built on harmonic pulse units that mirror the chakra system and breathe in
   \frac{67.270421}{484}\times 100\% \approx 13.898847\%
   $$
 
-**into the next beat**(exactly, by design)
+**into the next beat** (exactly, by design)
 
 * In step terms: `67.270421` pulses ≈ **6 full steps + 1.270421 pulses**, i.e. **≈ 11.549% into step 06** (0-based; 00:00 is the first index for every cycle — Beat `00/36`, Step `00/44`).
 * This sliding boundary is **intentional** and continuously **phase-locks** the micro-breath to the macro-calendar with **no cumulative drift** (no “leap” fixes required).
