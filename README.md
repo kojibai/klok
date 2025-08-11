@@ -157,12 +157,13 @@ $$
   $\Delta_{\text{pulses}}=N_{\text{day}}-17{,}424=\dfrac{67{,}270{,}421}{1{,}000{,}000}$.
 * Beat/step fractions for the sliding boundary:
 
-  $$
-  \Delta_{\text{beat}}=\frac{\Delta_{\text{pulses}}}{484}
-  =\frac{67{,}270{,}421}{484{,}000{,}000},\qquad
-  \Delta_{\text{step}}=\frac{\Delta_{\text{pulses}}}{11}
-  =6+\frac{1{,}270{,}421}{11{,}000{,}000}.
-  $$
+$$
+\Delta_{\mathrm{beat}}=\frac{\Delta_{\mathrm{pulses}}}{484}
+=\frac{67{,}270{,}421}{484{,}000{,}000},\qquad
+\Delta_{\mathrm{step}}=\frac{\Delta_{\mathrm{pulses}}}{11}
+=6+\frac{1{,}270{,}421}{11{,}000{,}000}.
+$$
+
 
 **Coprimality ⇒ exact recurrence (no lock-in):**
 
@@ -188,10 +189,11 @@ Using $T\approx 8.472/\varphi$ shifts the day by **$1.469700\ \mathrm{s}$**, i.e
 * **Display rounding:** round Chronos displays to the **nearest microsecond (ties-to-even)**; **never** round internal pulse counts.
 * **Integer-safe phase math:** compute boundary phases with integers only:
 
-  $$
-  r^{(\text{beat})}_d=(d\cdot 67{,}270{,}421)\bmod 484{,}000{,}000,\quad
-  r^{(\text{step})}_d=(d\cdot 1{,}270{,}421)\bmod 11{,}000{,}000.
-  $$
+ $$
+r^{(\mathrm{beat})}_d=(d\cdot 67{,}270{,}421)\bmod 484{,}000{,}000,\quad
+r^{(\mathrm{step})}_d=(d\cdot 1{,}270{,}421)\bmod 11{,}000{,}000.
+$$
+
 
   Phases are $r^{(\text{beat})}_d/484{,}000{,}000$ of a beat and $r^{(\text{step})}_d/11{,}000{,}000$ of a step—**exact, driftless, leapless**.
 
