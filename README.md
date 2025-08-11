@@ -63,8 +63,7 @@ $$
  A continuous **phase-lock** constant that keeps micro-cycles coherent with macro-cycles via a
 **rational rotation on the grid** (no leaps). It makes the day boundary land **fractionally into the
 next beat** — **by design**. Patterns at week/month/year boundaries do **not** “reset” annually; they
-recur on long rational periods set by the closure denominators. Canon fixes a **10⁶** denominator (six
-decimals), chosen for coprimality with the grid (484 and 11) and stable long-period coverage.
+recur on long rational periods set by the closure denominators. Canon fixes a 10⁶ denominator (six decimals), chosen so that the resulting numerators 67,270,421 and 1,270,421 are coprime to their composite denominators 484,000,000 and 11,000,000, respectively—this guarantees maximal recurrence periods and a leapless sliding boundary.
 
 
 > **Seconds are derived, not primary.** Breath/frequency are axioms; seconds are Chronos coordinates computed *after* the fact.
