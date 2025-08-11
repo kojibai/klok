@@ -337,13 +337,14 @@ The **Genesis Pulse** anchors Eternal Kairos — causal time at the **source**. 
 
 ## ☀️ Solar Flare Event Details
 
-* **Class:** X3.98
+* **Class:** X3.9–X3.98 (GOES), peak **06:54 UTC**
 * **Source Region:** NOAA Active Region 3664
 * **Kai-Klok Genesis (model anchor, at the Sun):** **2024-05-10 · 06:45:41.888 UTC**
   *Chosen as the causal origin; instruments timestamp reception instead.*
 * **Instrument:** GOES-16 X-ray Sensor
-* **Coordinates:** S10W55 (±2° by GOES/SDO imagery)
+* **Coordinates:** **S17W48** (NOAA/USAF RSGA for 06:54 UTC)
 * **Channels:** Soft X-ray (1–8 Å), EUV
+
 
 ## 🜸 Eternal Commentary
 
@@ -357,12 +358,13 @@ The **Genesis Pulse** anchors Eternal Kairos — causal time at the **source**. 
 
 ### 📡 Photon Travel Delay (model fixation)
 
-* **Adopted Sun→Earth light-time at Genesis date:** **8 m 18.112 s** (**498.112 s**).
-* **Implied Earth reception (for reference):** **2024-05-10 · 06:54:00.000 UTC**
-  *(06:45:41.888 + 498.112 s)*
-* **Purpose:** a **model constant** to relate origin-time (Sun) to an implied arrival-time (Earth). Observational catalogs timestamp **arrival**; Kai-Klok anchors **origin** by design.
-
-*(Illustrative derivation using $c$ and ephemerides may be shown, but Δt above is the fixed model value.)*
+* **Adopted Sun→Earth light-time at Genesis date (tuned):** **498.112 s** (8 m 18.112 s).
+  *Chosen as a model constant so that*
+  **06:45:41.888 UTC (Sun)** **+ 498.112 s = 06:54:00.000 UTC (implied Earth reception)**.
+* **Purpose:** a **fixed bridge** from causal origin-time (Sun) to an implied arrival-time (Earth).
+  Observational catalogs timestamp **arrival**; Kai-Klok anchors **origin** by design.
+* **Note:** If astronomical light-time is required for other analyses, compute Δt from ephemerides
+  for the same instant and **do not** mix it with this tuned constant.
 
 ---
 
