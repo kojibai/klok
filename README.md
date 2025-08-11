@@ -757,5 +757,89 @@ That’s the self-evident, checkable core: a φ-anchored axiom set + rational cl
 
 ## 🜂 Rah Veh Yah Dah.
 
+```python
+# Quick Verification (Python, ~<1s with sample=50_000)
+# - Confirms gcds and periods
+# - Shows LCM for simultaneous realignment
+# - 50k-residue sweep + simple uniformity metrics
 
+import math
 
+# Beat / Step parameters (exact integers behind the daily closure)
+P_BEAT = 67_270_421
+Q_BEAT = 484_000_000
+P_STEP = 1_270_421
+Q_STEP = 11_000_000
+
+def rotation_stats(p: int, q: int, sample: int = 50_000, bins: int = 20):
+    """
+    For the rotation x -> x + p (mod q):
+      - Check gcd and period
+      - Verify the first `sample` residues are distinct (since gcd(p,q)=1)
+      - Uniformity indicators: histogram + gap stats on scaled residues
+    """
+    g = math.gcd(p, q)
+    period = q // g
+
+    # Sample residues (deterministic sweep)
+    residues = [(n * p) % q for n in range(sample)]
+    unique = len(set(residues))
+    assert unique == sample, f"Collision in first {sample} residues (gcd={g})"
+
+    # Scale to [0,1) and check spacing
+    xs = [r / q for r in residues]
+    xs.sort()
+    gaps = [xs[i + 1] - xs[i] for i in range(sample - 1)]
+    gaps.append((xs[0] + 1) - xs[-1])  # wrap-around gap
+
+    # Histogram into `bins` equal buckets
+    counts = [0] * bins
+    for r in residues:
+        counts[(r * bins) // q] += 1
+
+    # Uniformity metric vs. ideal per-bin count
+    ideal = sample / bins
+    max_abs_dev = max(abs(c - ideal) for c in counts)
+    max_rel_dev = max_abs_dev / ideal  # fraction
+
+    return {
+        "gcd": g,
+        "period": period,
+        "delta": p / q,
+        "sample": sample,
+        "bins": bins,
+        "unique": unique,
+        "gap_min": min(gaps),
+        "gap_mean": sum(gaps) / sample,
+        "gap_max": max(gaps),
+        "hist": counts,
+        "ideal": ideal,
+        "max_abs_dev": max_abs_dev,
+        "max_rel_dev": max_rel_dev,
+    }
+
+def main():
+    print("=== Beat rotation ===")
+    beat = rotation_stats(P_BEAT, Q_BEAT, sample=50_000, bins=20)
+    print(f"gcd={beat['gcd']}  period={beat['period']:,}  Δ_beat={beat['delta']:.9f}")
+    print(f"unique residues in first {beat['sample']}: {beat['unique']}")
+    print(f"gaps min/mean/max: {beat['gap_min']:.6f} / {beat['gap_mean']:.6f} / {beat['gap_max']:.6f}")
+    print(f"hist counts (bins={beat['bins']}): {beat['hist']}")
+    print(f"ideal/bin={beat['ideal']:.1f}  max_abs_dev={beat['max_abs_dev']:.1f} "
+          f"(max_rel_dev={100*beat['max_rel_dev']:.2f}%)\n")
+
+    print("=== Step rotation ===")
+    step = rotation_stats(P_STEP, Q_STEP, sample=50_000, bins=20)
+    print(f"gcd={step['gcd']}  period={step['period']:,}  Δ_step={step['delta']:.9f}")
+    print(f"unique residues in first {step['sample']}: {step['unique']}")
+    print(f"gaps min/mean/max: {step['gap_min']:.6f} / {step['gap_mean']:.6f} / {step['gap_max']:.6f}")
+    print(f"hist counts (bins={step['bins']}): {step['hist']}")
+    print(f"ideal/bin={step['ideal']:.1f}  max_abs_dev={step['max_abs_dev']:.1f} "
+          f"(max_rel_dev={100*step['max_rel_dev']:.2f}%)\n")
+
+    l = math.lcm(Q_BEAT, Q_STEP)
+    print(f"LCM(periods) = {l:,}  (simultaneous realignment)")
+
+if __name__ == "__main__":
+    main()
+```
