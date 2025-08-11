@@ -256,7 +256,7 @@ It is built on harmonic pulse units that mirror the chakra system and breathe in
   $$
 
   **into the next beat** (on average).
-* In step terms: `67.270421` pulses ≈ **6 full steps + 1.270421 pulses**, i.e. **≈ 11.549% into the 6th step** (1-based).
+* In step terms: `67.270421` pulses ≈ **6 full steps + 1.270421 pulses**, i.e. **≈ 11.549% into the 6th step** (0-based).
 * This sliding boundary is **intentional** and continuously **phase-locks** the micro-breath to the macro-calendar with **no cumulative drift** (no “leap” fixes required).
 
 ---
