@@ -3,7 +3,6 @@
 ## 📌 Authored by: BJ Klock
 
 ## 🔷 What is the Kai-Klok?
-
 The Kai-Klok is a **harmonic resonance–based** time system — a living clock that replaces mechanical time (**Chronos**) with **eternal time (Kairos)**.
 
 It does not *measure* time.
