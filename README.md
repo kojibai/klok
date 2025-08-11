@@ -120,13 +120,14 @@ These identities justify the exact ratio claims:
 * **Axiom 1 — Breath (φ-exact):** \$T=3+\sqrt5=2\varphi^2\$ seconds.
 * **Axiom 2 — Lattice (semantic):** `11` pulses/step · `44` steps/beat · `36` beats/day.
 * **Axiom 3 — Closure (calibrated):** \$N\_{\mathrm{day}}=17{,}491.270421\$ breaths/day (continuous phase-lock).
+---
 
 **Derived day length (φ-exact):**
 
 $$
 \text{seconds/day}
-=N_{\mathrm{day}}\cdot T
-=17{,}491.270421\cdot(3+\sqrt5)
+= N_{\mathrm{day}}\cdot T
+= 17{,}491.270421\,(3+\sqrt5)
 \approx 91{,}585.480937\ \mathrm{s}
 \approx 25{:}26{:}25.481
 $$
@@ -134,7 +135,8 @@ $$
 **Legacy (if using \$T\approx 8.472/\varphi\$):**
 
 $$
-\text{seconds/day}\approx 17{,}491.270421\cdot 5.235983954
+\text{seconds/day}
+= N_{\mathrm{day}}\cdot\frac{8.472}{\varphi}
 \approx 91{,}584.011237\ \mathrm{s}
 \approx 25{:}26{:}24.011
 $$
