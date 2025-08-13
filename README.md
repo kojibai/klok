@@ -288,7 +288,7 @@ Each harmonic unit maps precisely to **chakra-based arcs** in your body. Every b
 <p align="center">
   <a href="https://kaiklok.com">
     <picture>
-      <source srcset="https://kaiklok.com/62763cef-2978-4d27-b0bf-ce0f528a8e89_1290x2525.jpg" type="image/svg+xml">
+      <source srcset="https://kaiklok.com/41892F1F-18D9-431D-97F5-6A587D33CE55.jpg" type="image/svg+xml">
       <img src="https://kaiklok.com/62763cef-2978-4d27-b0bf-ce0f528a8e89_1290x2525.jpg"
            width="420">
     </picture>
