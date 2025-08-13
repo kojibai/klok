@@ -7,7 +7,7 @@ from typing import Dict, Optional, Union
 from kai_klock_models import KaiKlockResponse, ChakraStep
 
 from typing import List, Dict
-
+from decimal import Decimal, getcontext
 # ════════════════════════════════════════════════════════════════
 #  Kai-Klock Harmonic Timestamp System  •  v2.4 “Step Resonance”
 #  • Adds chakraStep + chakraStepString  (44 steps / beat, 11 pulses / step)
@@ -15,7 +15,12 @@ from typing import List, Dict
 
 # ── Constants ───────────────────────────────────────────────────
 PHI = (1 + math.sqrt(5)) / 2
-KAI_PULSE_DURATION = 8.472 / PHI                       # seconds / Kai-Pulse
+
+getcontext().prec = 60  # match TS’s ~60-digit precision bridge
+
+KAI_PULSE_DURATION_DEC = Decimal(3) + Decimal(5).sqrt()  # φ-exact
+KAI_PULSE_DURATION = float(KAI_PULSE_DURATION_DEC)       # keep rest of code using floats
+
 ETERNAL_GENESIS_PULSE = datetime(2024, 5, 10, 6, 45, 41).replace(microsecond=888000)
 genesis_sunrise = datetime(2024, 5, 11, 4, 30, 0)  # London sunrise post-flare
 ETERNAL_YEAR_PULSES = 5877066.86146 
