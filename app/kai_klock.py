@@ -388,7 +388,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         "Eternal Seal: "
         f"Kairos:{chakra_step_str}, {harmonic_day}, {eternal_chakra_arc} Ark • D{day_of_month}/M{eternal_month_idx} • Beat:{eternal_beat_idx}/36({percent_to_next}%) Step:{step_idx}/44 Kai(Today):{eternal_kai_pulse_today} • "
         f"Y{harmonic_year_idx} "
-        f"PS{phi_spiral_lvl} • {solar_seal} {solar_harmonic_day} D{solar_day_of_month}/M{solar_month_index}, {solar_chakra_arc} Ark  Beat:{solar_beat_idx}/35 Step:{solar_step_index}/44 • "
+        f"PS{phi_spiral_lvl} • {solar_seal} {solar_harmonic_day} D{solar_day_of_month}/M{solar_month_index}, {solar_chakra_arc} Ark  Beat:{solar_beat_idx}/36 Step:{solar_step_index}/44 • "
         f"Eternal Pulse:{kai_pulse_eternal}"
     )
     seal = f"Day Seal: {chakra_step_str} {percent_into_step}% • D{day_of_month}/M{eternal_month_idx}"
