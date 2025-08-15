@@ -250,7 +250,7 @@ MICRO_CYCLE_PULSES    = 60
 CHAKRA_LOOP_PULSES    = 360
 
 # Use the canonical closure value (coherent with TS) as Decimal
-HARMONIC_DAY_PULSES_DEC = Decimal("17491.270491")
+HARMONIC_DAY_PULSES_DEC = Decimal("17491.270421")
 SOLAR_DAY_PULSES        = float(HARMONIC_DAY_PULSES_DEC)  # keep name as in your code
 HARMONIC_DAY_PULSES     = SOLAR_DAY_PULSES                # compatibility alias
 
