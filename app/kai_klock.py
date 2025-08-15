@@ -27,11 +27,12 @@ KAI_PULSE_DURATION_DEC = Decimal(3) + Decimal(5).sqrt()
 KAI_PULSE_DURATION = float(KAI_PULSE_DURATION_DEC)  # kept for compatibility (not used in core math)
 # Source of truth (ms since Unix epoch, UTC)
 SOLAR_GENESIS_UTC_MS = 1715400806000  # 2024-05-11T04:13:26.000Z
-HARMONIC_DAY_PULSES_DEC = Decimal("17491.270421")
+# HARMONIC_DAY_PULSES_DEC = Decimal("17491.270421")  # (duplicate; canonical value defined later)
 # Genesis anchors (unchanged identifiers)
 ETERNAL_GENESIS_PULSE = datetime(2024, 5, 10, 6, 45, 41, 888000, tzinfo=timezone.utc)
 genesis_sunrise       = datetime(2024, 5, 11, 4, 13, 26, 0, tzinfo=timezone.utc)
-HARMONIC_YEAR_PULSES_DEC = HARMONIC_DAY_PULSES_DEC * Decimal(336) # kept name; used via Decimal
+# HARMONIC_YEAR_PULSES_DEC = HARMONIC_DAY_PULSES_DEC * Decimal(336) # (duplicate; canonical value defined later)
+
 # ── μpulse canon (exact integers; 1 pulse = 1,000,000 μpulses) ─────────────────
 UPULSES_PER_PULSE = 1_000_000
 UPULSES_PER_DAY   = 17_491_270_421  # exact μpulses/day
@@ -369,15 +370,30 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
     eternal_beat_idx_dec = (Decimal(eternal_kai_pulse_today) / CHAKRA_BEAT_PULSES_DEC)
     eternal_beat_idx = int(eternal_beat_idx_dec.to_integral_value(rounding=ROUND_FLOOR))
     eternal_pulse_inbeat_dec = Decimal(eternal_kai_pulse_today) - (Decimal(eternal_beat_idx) * CHAKRA_BEAT_PULSES_DEC)
-    percent_to_next_dec = (eternal_pulse_inbeat_dec / CHAKRA_BEAT_PULSES_DEC) * Decimal(100)
 
+    # μpulse-exact positions for percentages and step index
+    mu_pos_in_day  = mu_into_eternal_day % UPULSES_PER_GRID_DAY
+    mu_pos_in_beat = mu_pos_in_day % UPULSES_PER_GRID_BEAT
+    mu_pos_in_step = mu_pos_in_beat % UPULSES_PER_GRID_STEP
+
+    # μpulse-exact beat and step percentages (no -0E-57%, no ultra-long strings)
+    percent_to_next_dec   = (Decimal(mu_pos_in_beat) / Decimal(UPULSES_PER_GRID_BEAT)) * Decimal(100)
     # ── Chakra Steps (exact) ────────────────────────────────────
-    step_idx_dec = eternal_pulse_inbeat_dec / Decimal(PULSES_PER_STEP)
-    step_idx = int(step_idx_dec.to_integral_value(rounding=ROUND_FLOOR))
+    step_idx = int(mu_pos_in_beat // UPULSES_PER_GRID_STEP)
     step_idx_str = f"{step_idx:02d}"
 
-    step_pulse_prog_dec = eternal_pulse_inbeat_dec - (Decimal(step_idx) * Decimal(PULSES_PER_STEP))
-    percent_into_step_dec = (step_pulse_prog_dec / Decimal(PULSES_PER_STEP)) * Decimal(100)
+    # Progress within current step (μpulse exact)
+    percent_into_step_dec = (Decimal(mu_pos_in_step) / Decimal(UPULSES_PER_GRID_STEP)) * Decimal(100)
+
+    # Clamp tiny negatives / 100.000... edges, then quantize for display neatness
+    if percent_to_next_dec < 0: percent_to_next_dec = Decimal(0)
+    if percent_into_step_dec < 0: percent_into_step_dec = Decimal(0)
+    if percent_to_next_dec >= 100: percent_to_next_dec = Decimal("99.999999")
+    if percent_into_step_dec >= 100: percent_into_step_dec = Decimal("99.999999")
+
+    q = Decimal("0.000001")
+    percent_to_next_dec   = percent_to_next_dec.quantize(q)
+    percent_into_step_dec = percent_into_step_dec.quantize(q)
 
     chakra_step_str = f"{eternal_beat_idx}:{step_idx:02d}"
     chakra_step_obj = ChakraStep(
@@ -386,11 +402,11 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         stepsPerBeat=STEPS_PER_BEAT,
     )
 
-    # Solar-aligned Chakra Step
+    # Solar-aligned Chakra Step (keep Decimal path; quantize percent for readability)
     solar_step_index_dec = solar_pulse_inbeat_dec / Decimal(PULSES_PER_STEP)
     solar_step_index = int(solar_step_index_dec.to_integral_value(rounding=ROUND_FLOOR))
     solar_step_progress_dec = solar_pulse_inbeat_dec - (Decimal(solar_step_index) * Decimal(PULSES_PER_STEP))
-    solar_percent_into_step_dec = (solar_step_progress_dec / Decimal(PULSES_PER_STEP)) * Decimal(100)
+    solar_percent_into_step_dec = ((solar_step_progress_dec / Decimal(PULSES_PER_STEP)) * Decimal(100)).quantize(q)
     solar_step_string = f"{solar_beat_index}:{solar_step_index:02d}"
     solar_step_payload = ChakraStep(
         stepIndex=solar_step_index,
@@ -472,7 +488,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
     pulses_into_week_dec = Decimal(kai_pulse_eternal) % HARMONIC_WEEK_PULSES_DEC
     week_day_idx = int((pulses_into_week_dec / HARMONIC_DAY_PULSES_DEC).to_integral_value(rounding=ROUND_FLOOR)) % len(HARMONIC_DAYS
     )
-    week_day_percent_dec = (pulses_into_week_dec / HARMONIC_WEEK_PULSES_DEC) * Decimal(100)
+    week_day_percent_dec = ((pulses_into_week_dec / HARMONIC_WEEK_PULSES_DEC) * Decimal(100)).quantize(q)
 
     pulses_into_year_dec = Decimal(kai_pulse_eternal) % HARMONIC_YEAR_PULSES_DEC
     year_percent_dec     = (pulses_into_year_dec / HARMONIC_YEAR_PULSES_DEC) * Decimal(100)
