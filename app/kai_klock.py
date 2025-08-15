@@ -27,11 +27,11 @@ KAI_PULSE_DURATION_DEC = Decimal(3) + Decimal(5).sqrt()
 KAI_PULSE_DURATION = float(KAI_PULSE_DURATION_DEC)  # kept for compatibility (not used in core math)
 # Source of truth (ms since Unix epoch, UTC)
 SOLAR_GENESIS_UTC_MS = 1715400806000  # 2024-05-11T04:13:26.000Z
-
+HARMONIC_DAY_PULSES_DEC = Decimal("17491.270421")
 # Genesis anchors (unchanged identifiers)
 ETERNAL_GENESIS_PULSE = datetime(2024, 5, 10, 6, 45, 41).replace(microsecond=888000)
 genesis_sunrise = datetime(2024, 5, 11, 4, 13, 26)
-ETERNAL_YEAR_PULSES = Decimal("5877066.86146")  # kept name; used via Decimal
+HARMONIC_YEAR_PULSES_DEC = HARMONIC_DAY_PULSES_DEC * Decimal(336) # kept name; used via Decimal
 
 # Subdivisions (durations are derived from exact KAI_PULSE_DURATION_DEC)
 SUBDIVISIONS: dict[str, Decimal] = {
@@ -163,7 +163,7 @@ def generate_phi_spiral_epochs(kai_pulse_eternal: int) -> List[Dict]:
     ]
 
     spiral_epochs: List[Dict] = []
-    base = Decimal(ETERNAL_YEAR_PULSES)
+    base = HARMONIC_YEAR_PULSES_DEC
     phi_dec = (Decimal(1) + Decimal(5).sqrt()) / Decimal(2)
     for i, p in enumerate(powers):
         pulses_dec = base * (phi_dec ** Decimal(p))
@@ -250,7 +250,7 @@ MICRO_CYCLE_PULSES    = 60
 CHAKRA_LOOP_PULSES    = 360
 
 # Use the canonical closure value (coherent with TS) as Decimal
-HARMONIC_DAY_PULSES_DEC = Decimal("17491.270421")
+HARMONIC_DAY_PULSES_DEC = Decimal("17491.270491")
 SOLAR_DAY_PULSES        = float(HARMONIC_DAY_PULSES_DEC)  # keep name as in your code
 HARMONIC_DAY_PULSES     = SOLAR_DAY_PULSES                # compatibility alias
 
