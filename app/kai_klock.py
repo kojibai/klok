@@ -271,6 +271,26 @@ def _ordinal(n: int) -> str:
         return "th"
     return {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th")
 
+# NEW: pure-Decimal φ log (no float path)
+def _floor_log_phi(n: int) -> int:
+    """
+    Return floor(log_phi(n)) using Decimal math only (binary search on integer exponents).
+    For n <= 1, returns 0. Uses current Decimal context (prec + ROUND_FLOOR).
+    """
+    if n <= 1:
+        return 0
+    phi_dec = (Decimal(1) + Decimal(5).sqrt()) / Decimal(2)
+    N = Decimal(n)
+    lo, hi = 0, 512  # generous cap; phi**512 >> any practical pulse count
+    while lo < hi:
+        mid = (lo + hi + 1) // 2
+        # Compare phi^mid <= n using Decimal power with integral exponent
+        if (phi_dec ** Decimal(mid)) <= N:
+            lo = mid
+        else:
+            hi = mid - 1
+    return lo
+
 # ════════════════════════════════════════════════════════════════
 #  Main generator (math rewritten to pure Decimal; shape unchanged)
 # ════════════════════════════════════════════════════════════════
@@ -390,8 +410,8 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
     solar_week_name = ETERNAL_WEEK_NAMES[(solar_day_index // 6) % 7]
     solar_week_description = ETERNAL_WEEK_DESCRIPTIONS[solar_week_name]
 
-    # Phi spiral level (keep as int)
-    phi_spiral_lvl = int(math.log(max(kai_pulse_eternal, 1), PHI))
+    # Phi spiral level (keep as int) — PURE DECIMAL, NO FLOAT
+    phi_spiral_lvl = _floor_log_phi(kai_pulse_eternal)
 
     # Cycle positions
     arc_pos    = kai_pulse_eternal % ARC_BEAT_PULSES
