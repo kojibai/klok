@@ -29,9 +29,55 @@ KAI_PULSE_DURATION = float(KAI_PULSE_DURATION_DEC)  # kept for compatibility (no
 SOLAR_GENESIS_UTC_MS = 1715400806000  # 2024-05-11T04:13:26.000Z
 HARMONIC_DAY_PULSES_DEC = Decimal("17491.270421")
 # Genesis anchors (unchanged identifiers)
-ETERNAL_GENESIS_PULSE = datetime(2024, 5, 10, 6, 45, 41).replace(microsecond=888000)
-genesis_sunrise = datetime(2024, 5, 11, 4, 13, 26)
+ETERNAL_GENESIS_PULSE = datetime(2024, 5, 10, 6, 45, 41, 888000, tzinfo=timezone.utc)
+genesis_sunrise       = datetime(2024, 5, 11, 4, 13, 26, 0, tzinfo=timezone.utc)
 HARMONIC_YEAR_PULSES_DEC = HARMONIC_DAY_PULSES_DEC * Decimal(336) # kept name; used via Decimal
+# ── μpulse canon (exact integers; 1 pulse = 1,000,000 μpulses) ─────────────────
+UPULSES_PER_PULSE = 1_000_000
+UPULSES_PER_DAY   = 17_491_270_421  # exact μpulses/day
+
+# 17,424-grid (exact integers)
+GRID_PULSES_PER_STEP = 11
+GRID_STEPS_PER_BEAT  = 44
+GRID_PULSES_PER_BEAT = GRID_PULSES_PER_STEP * GRID_STEPS_PER_BEAT  # 484
+GRID_BEATS_PER_DAY   = 36
+GRID_PULSES_PER_DAY  = GRID_PULSES_PER_BEAT * GRID_BEATS_PER_DAY   # 17,424
+
+UPULSES_PER_GRID_STEP = GRID_PULSES_PER_STEP * UPULSES_PER_PULSE
+UPULSES_PER_GRID_BEAT = GRID_PULSES_PER_BEAT * UPULSES_PER_PULSE
+UPULSES_PER_GRID_DAY  = GRID_PULSES_PER_DAY  * UPULSES_PER_PULSE
+
+def _ensure_utc(dt: datetime) -> datetime:
+    return dt if dt.tzinfo is not None else dt.replace(tzinfo=timezone.utc)
+
+def mu_since_genesis(at: datetime) -> int:
+    """Exact Chronos→μpulses: floor((seconds / (3+√5)) * 1e6)."""
+    at = _ensure_utc(at)
+    delta = at - ETERNAL_GENESIS_PULSE
+    sec_dec = _dec_total_seconds(delta)                       # Decimal seconds
+    pulses_dec = sec_dec / KAI_PULSE_DURATION_DEC             # Decimal pulses
+    mu_dec = pulses_dec * Decimal(UPULSES_PER_PULSE)          # Decimal μpulses
+    return int(mu_dec.to_integral_value(rounding=ROUND_FLOOR))  # exact floor
+
+def mu_at(dt: datetime) -> int:
+    """μpulses at an arbitrary UTC datetime (since genesis)."""
+    return mu_since_genesis(_ensure_utc(dt))
+
+def solar_window_mu(now: datetime) -> tuple[int, int, int, int]:
+    """
+    Return (mu_last, mu_next, mu_now, solar_day_index) for the sunrise-anchored solar day,
+    all in μpulses, using the exact φ-day tiling from the stored genesis_sunrise.
+    """
+    now = _ensure_utc(now)
+    mu_now = mu_since_genesis(now)
+    mu_sunrise0 = mu_at(genesis_sunrise)
+    mu_since_sunrise = mu_now - mu_sunrise0
+
+    # integer division in μpulses gives the solar day index exactly
+    solar_day_index = mu_since_sunrise // UPULSES_PER_DAY
+    mu_last = mu_sunrise0 + solar_day_index * UPULSES_PER_DAY
+    mu_next = mu_last + UPULSES_PER_DAY
+    return mu_last, mu_next, mu_now, int(solar_day_index)
 
 # Subdivisions (durations are derived from exact KAI_PULSE_DURATION_DEC)
 SUBDIVISIONS: dict[str, Decimal] = {
@@ -298,31 +344,19 @@ def _floor_log_phi(n: int) -> int:
 # ════════════════════════════════════════════════════════════════
 def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
     """Return the current harmonic timestamp payload (includes step data)."""
-    now = now or datetime.utcnow()
+    now = _ensure_utc(now or datetime.utcnow())
 
-    # ── Total Kai-Pulses since Genesis (exact) ──────────────────
-    delta_genesis = now - ETERNAL_GENESIS_PULSE
-    total_sec_dec = _dec_total_seconds(delta_genesis)
-    kai_pulse_eternal_dec = total_sec_dec / KAI_PULSE_DURATION_DEC
-    kai_pulse_eternal = int(kai_pulse_eternal_dec.to_integral_value(rounding=ROUND_FLOOR))
+    # ── μpulse state (engine truth) ─────────────────────────────
+    mu_last, mu_next, mu_now, solar_day_index = solar_window_mu(now)
+    mu_span = UPULSES_PER_DAY
+    mu_into_solar_day = mu_now - mu_last
+    mu_days_since_genesis = mu_now // mu_span
+    mu_into_eternal_day = mu_now - mu_days_since_genesis * mu_span
 
-    # 🔁 Solar day alignment from genesis_sunrise using φ-exact day seconds
-    seconds_per_harmonic_day_dec = HARMONIC_DAY_PULSES_DEC * KAI_PULSE_DURATION_DEC
-    seconds_since_sunrise_dec = _dec_total_seconds(now - genesis_sunrise)
-    solar_day_index_dec = seconds_since_sunrise_dec / seconds_per_harmonic_day_dec
-    solar_day_index = int(solar_day_index_dec.to_integral_value(rounding=ROUND_FLOOR))
-
-    # Pulses since last solar sunrise — exact, no datetime reconstruction needed
-    seconds_into_solar_day_dec = seconds_since_sunrise_dec - (Decimal(solar_day_index) * seconds_per_harmonic_day_dec)
-    kai_pulse_today_dec = seconds_into_solar_day_dec / KAI_PULSE_DURATION_DEC
-    kai_pulse_today = int(kai_pulse_today_dec.to_integral_value(rounding=ROUND_FLOOR))
-
-    # Eternal-aligned pulses within current eternal day (exact)
-    days_since_genesis_dec = total_sec_dec / seconds_per_harmonic_day_dec
-    days_since_genesis = int(days_since_genesis_dec.to_integral_value(rounding=ROUND_FLOOR))
-    seconds_into_eternal_day_dec = total_sec_dec - (Decimal(days_since_genesis) * seconds_per_harmonic_day_dec)
-    eternal_kai_pulse_today_dec = seconds_into_eternal_day_dec / KAI_PULSE_DURATION_DEC
-    eternal_kai_pulse_today = int(eternal_kai_pulse_today_dec.to_integral_value(rounding=ROUND_FLOOR))
+    # Whole-pulse counters for API/back-compat (floor by integer division)
+    kai_pulse_eternal        = int(mu_now // UPULSES_PER_PULSE)
+    kai_pulse_today          = int(mu_into_solar_day // UPULSES_PER_PULSE)
+    eternal_kai_pulse_today  = int(mu_into_eternal_day // UPULSES_PER_PULSE)
 
     # ── Chakra Beats (exact) ────────────────────────────────────
     # Solar
