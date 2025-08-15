@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 import math
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Dict, Optional, Union
 from kai_klock_models import KaiKlockResponse, ChakraStep
 
@@ -25,10 +25,12 @@ getcontext().rounding = ROUND_FLOOR  # deterministic floor where integral conver
 # φ-exact breath (pulse duration) — 3 + √5
 KAI_PULSE_DURATION_DEC = Decimal(3) + Decimal(5).sqrt()
 KAI_PULSE_DURATION = float(KAI_PULSE_DURATION_DEC)  # kept for compatibility (not used in core math)
+# Source of truth (ms since Unix epoch, UTC)
+SOLAR_GENESIS_UTC_MS = 1715400806000  # 2024-05-11T04:13:26.000Z
 
 # Genesis anchors (unchanged identifiers)
 ETERNAL_GENESIS_PULSE = datetime(2024, 5, 10, 6, 45, 41).replace(microsecond=888000)
-genesis_sunrise = datetime(2024, 5, 11, 4, 30, 0)
+genesis_sunrise = datetime(2024, 5, 11, 4, 13, 26)
 ETERNAL_YEAR_PULSES = Decimal("5877066.86146")  # kept name; used via Decimal
 
 # Subdivisions (durations are derived from exact KAI_PULSE_DURATION_DEC)
