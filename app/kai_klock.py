@@ -1,43 +1,39 @@
-# kai_klock.py  •  v2.4 “Step Resonance”
+# kai_klock.py  •  v2.4 “Step Resonance”  (KKS v1 grid parity)
 from __future__ import annotations
 
 import math
 from datetime import datetime, timedelta, timezone
-from typing import Dict, Optional, Union
-from kai_klock_models import KaiKlockResponse, ChakraStep
-
-from typing import List, Dict
+from typing import Dict, Optional, Union, List
 from decimal import Decimal, getcontext, ROUND_FLOOR
+
+from kai_klock_models import KaiKlockResponse, ChakraStep
 
 # ════════════════════════════════════════════════════════════════
 #  Kai-Klock Harmonic Timestamp System  •  v2.4 “Step Resonance”
-#  • Adds chakraStep + chakraStepString  (44 steps / beat, 11 pulses / step)
-#  • Math upgraded to φ-coherent Decimal with no rounding in core calculations.
-#  • KKS v1 parity: μpulse lattice used for step/beat indexing (no step 44 edge),
-#    exact φ breath, daily closure, and deterministic floor for integral conversions.
+#  • KKS v1 parity: beat/step indexing & percents on μ-pulse grid:
+#      36 beats/day × 44 steps/beat × 11 pulses/step = 17,424 pulses/day
+#  • Exact φ breath for time (3 + √5) in Decimal; no float rounding in core.
+#  • Deterministic floor for all implicit integer conversions.
 # ════════════════════════════════════════════════════════════════
 
 # ── Constants ───────────────────────────────────────────────────
-PHI = (1 + math.sqrt(5)) / 2  # kept for compatibility where float φ might be referenced
+PHI = (1 + math.sqrt(5)) / 2  # compatibility
 
-# Match TS bridge precision (and then some)
 getcontext().prec = 60
-getcontext().rounding = ROUND_FLOOR  # deterministic floor where integral conversion is implied
+getcontext().rounding = ROUND_FLOOR
 
 # φ-exact breath (pulse duration) — 3 + √5
 KAI_PULSE_DURATION_DEC = Decimal(3) + Decimal(5).sqrt()
-KAI_PULSE_DURATION = float(KAI_PULSE_DURATION_DEC)  # kept for compatibility (not used in core math)
+KAI_PULSE_DURATION = float(KAI_PULSE_DURATION_DEC)  # compatibility only
 
-# Source of truth (ms since Unix epoch, UTC) — sunrise anchor
+# Sunrise anchor
 SOLAR_GENESIS_UTC_MS = 1715400806000  # 2024-05-11T04:13:26.000Z
-
-# Genesis anchors (unchanged identifiers)
 ETERNAL_GENESIS_PULSE = datetime(2024, 5, 10, 6, 45, 41, 888000, tzinfo=timezone.utc)
 genesis_sunrise       = datetime(2024, 5, 11, 4, 13, 26, 0, tzinfo=timezone.utc)
 
-# ── μpulse canon (exact integers; 1 pulse = 1,000,000 μpulses) ─────────────────
+# ── μpulse canon (1 pulse = 1,000,000 μpulses) ──────────────────
 UPULSES_PER_PULSE = 1_000_000
-UPULSES_PER_DAY   = 17_491_270_421  # exact μpulses/day
+UPULSES_PER_DAY   = 17_491_270_421  # exact μpulses/day (φ-exact daily closure)
 
 # 17,424-grid (exact integers)
 GRID_PULSES_PER_STEP = 11
@@ -50,11 +46,24 @@ UPULSES_PER_GRID_STEP = GRID_PULSES_PER_STEP * UPULSES_PER_PULSE
 UPULSES_PER_GRID_BEAT = GRID_PULSES_PER_BEAT * UPULSES_PER_PULSE
 UPULSES_PER_GRID_DAY  = GRID_PULSES_PER_DAY  * UPULSES_PER_PULSE
 
+# φ day and derived periods (Decimal) — used for calendar/epochs/etc (not beats/steps)
+HARMONIC_DAY_PULSES_DEC   = Decimal("17491.270421")
+HARMONIC_MONTH_DAYS       = 42
+HARMONIC_YEAR_DAYS        = 336
+HARMONIC_MONTH_PULSES_DEC = HARMONIC_DAY_PULSES_DEC * Decimal(HARMONIC_MONTH_DAYS)
+HARMONIC_YEAR_PULSES_DEC  = HARMONIC_MONTH_PULSES_DEC * Decimal(8)
+HARMONIC_WEEK_PULSES_DEC  = HARMONIC_DAY_PULSES_DEC * Decimal(6)
+
+# Steps (grid truth)
+PULSES_PER_STEP = GRID_PULSES_PER_STEP    # 11
+STEPS_PER_BEAT  = GRID_STEPS_PER_BEAT     # 44
+CHAKRA_BEATS_PER_DAY = GRID_BEATS_PER_DAY # 36
+
+# ── Helpers ─────────────────────────────────────────────────────
 def _ensure_utc(dt: datetime) -> datetime:
     return dt if dt.tzinfo is not None else dt.replace(tzinfo=timezone.utc)
 
 def _dec_total_seconds(d: timedelta) -> Decimal:
-    """Exact seconds as Decimal (no float)."""
     return (Decimal(d.days) * Decimal(86400)
             + Decimal(d.seconds)
             + (Decimal(d.microseconds) / Decimal(1_000_000)))
@@ -63,13 +72,12 @@ def mu_since_genesis(at: datetime) -> int:
     """Exact Chronos→μpulses: floor((seconds / (3+√5)) * 1e6)."""
     at = _ensure_utc(at)
     delta = at - ETERNAL_GENESIS_PULSE
-    sec_dec = _dec_total_seconds(delta)                       # Decimal seconds
-    pulses_dec = sec_dec / KAI_PULSE_DURATION_DEC             # Decimal pulses
-    mu_dec = pulses_dec * Decimal(UPULSES_PER_PULSE)          # Decimal μpulses
-    return int(mu_dec.to_integral_value(rounding=ROUND_FLOOR))  # exact floor
+    sec_dec = _dec_total_seconds(delta)
+    pulses_dec = sec_dec / KAI_PULSE_DURATION_DEC
+    mu_dec = pulses_dec * Decimal(UPULSES_PER_PULSE)
+    return int(mu_dec.to_integral_value(rounding=ROUND_FLOOR))
 
 def mu_at(dt: datetime) -> int:
-    """μpulses at an arbitrary UTC datetime (since genesis)."""
     return mu_since_genesis(_ensure_utc(dt))
 
 def solar_window_mu(now: datetime) -> tuple[int, int, int, int]:
@@ -81,14 +89,12 @@ def solar_window_mu(now: datetime) -> tuple[int, int, int, int]:
     mu_now = mu_since_genesis(now)
     mu_sunrise0 = mu_at(genesis_sunrise)
     mu_since_sunrise = mu_now - mu_sunrise0
-
-    # integer division in μpulses gives the solar day index exactly
     solar_day_index = mu_since_sunrise // UPULSES_PER_DAY
     mu_last = mu_sunrise0 + solar_day_index * UPULSES_PER_DAY
     mu_next = mu_last + UPULSES_PER_DAY
     return mu_last, mu_next, mu_now, int(solar_day_index)
 
-# Subdivisions (durations are derived from exact KAI_PULSE_DURATION_DEC)
+# ── Subdivisions (derived from φ breath) ────────────────────────
 SUBDIVISIONS: dict[str, Decimal] = {
     "halfPulse":      KAI_PULSE_DURATION_DEC / Decimal(2),
     "chakraSubpulse": KAI_PULSE_DURATION_DEC / Decimal(11),
@@ -102,8 +108,7 @@ SUBDIVISIONS: dict[str, Decimal] = {
     "kaiSingularity": KAI_PULSE_DURATION_DEC / Decimal(987),
     "deepThread":     KAI_PULSE_DURATION_DEC / Decimal(1597),
 }
-
-RESONANT_NAMES: dict[str, str] = {
+RESONANT_NAMES = {
     "halfPulse": "Pulse Divider",
     "chakraSubpulse": "Beat Tuning",
     "ternaryStep": "Tri-Light Step",
@@ -118,52 +123,13 @@ RESONANT_NAMES: dict[str, str] = {
 }
 
 def compute_subdivision_counts(kai_pulse_eternal: int) -> dict[str, dict[str, Decimal]]:
-    """Exact durations and live counts of each subdivision (no rounding)."""
     seconds_elapsed = Decimal(kai_pulse_eternal) * KAI_PULSE_DURATION_DEC
-    results: dict[str, dict[str, Decimal]] = {}
+    out: dict[str, dict[str, Decimal]] = {}
     for name, duration in SUBDIVISIONS.items():
-        count = seconds_elapsed / duration  # exact Decimal
-        results[name] = {
-            "duration": duration,  # exact Decimal seconds
-            "count": count,        # exact Decimal count
-        }
-    return results
-
-def compute_subdivision_metadata(name: str, duration: float, count: float, resonant_name: str):
-    # Keep signature & return shape; compute with Decimal, emit strings for exactness
-    d = Decimal(str(duration))
-    f = Decimal(1) / d
-    wavelength_sound = Decimal(343) / f
-    wavelength_light = Decimal(299_792_458) / f
-    return {
-        "duration": str(d),                 # exact-as-string
-        "count": str(Decimal(str(count))),  # pass-through as string
-        "frequencyHz": str(f),
-        "wavelengthSound_m": str(wavelength_sound),
-        "wavelengthLight_m": str(wavelength_light),
-        "resonantName": resonant_name,
-    }
-
-# (kept for compatibility; not used for the live top-level payload anymore)
-subdivisions_data = {
-    "halfPulse":      compute_subdivision_metadata("halfPulse",      float(SUBDIVISIONS["halfPulse"]),      0, "Pulse Divider"),
-    "chakraSubpulse": compute_subdivision_metadata("chakraSubpulse", float(SUBDIVISIONS["chakraSubpulse"]), 0, "Beat Tuning"),
-    "ternaryStep":    compute_subdivision_metadata("ternaryStep",    float(SUBDIVISIONS["ternaryStep"]),    0, "Tri-Light Step"),
-    "microStep":      compute_subdivision_metadata("microStep",      float(SUBDIVISIONS["microStep"]),      0, "Resonant Breath"),
-    "nanoPulse":      compute_subdivision_metadata("nanoPulse",      float(SUBDIVISIONS["nanoPulse"]),      0, "First Spark"),
-    "nanoStep":       compute_subdivision_metadata("nanoStep",       float(SUBDIVISIONS["nanoStep"]),       0, "Nano Ark"),
-    "phiQuantum":     compute_subdivision_metadata("phiQuantum",     float(SUBDIVISIONS["phiQuantum"]),     0, "Phi Quantum"),
-    "ekaru":          compute_subdivision_metadata("ekaru",          float(SUBDIVISIONS["ekaru"]),          0, "Ekaru Initiation"),
-    "tzaphirimUnit":  compute_subdivision_metadata("tzaphirimUnit",  float(SUBDIVISIONS["tzaphirimUnit"]),  0, "Tzaphirim krystal"),
-    "kaiSingularity": compute_subdivision_metadata("kaiSingularity", float(SUBDIVISIONS["kaiSingularity"]), 0, "Kai Singularity"),
-    "deepThread":     compute_subdivision_metadata("deepThread",     float(SUBDIVISIONS["deepThread"]),     0, "Deep Thread"),
-}
+        out[name] = {"duration": duration, "count": seconds_elapsed / duration}
+    return out
 
 def build_subdivisions_live(kai_pulse_eternal: int) -> Dict[str, Dict[str, Union[float, str]]]:
-    """
-    Top-level subdivisions exactly like the original payloads:
-    numeric durations/frequencies/wavelengths + live count, plus resonantName.
-    """
     seconds_elapsed = Decimal(kai_pulse_eternal) * KAI_PULSE_DURATION_DEC
     out: Dict[str, Dict[str, Union[float, str]]] = {}
     for name, duration_dec in SUBDIVISIONS.items():
@@ -181,7 +147,21 @@ def build_subdivisions_live(kai_pulse_eternal: int) -> Dict[str, Dict[str, Union
         }
     return out
 
-# Each epoch is Eternal Year × Phi^n (labels/descriptions unchanged)
+# ── Epoch scaffolding ───────────────────────────────────────────
+def _floor_log_phi(n: int) -> int:
+    if n <= 1:
+        return 0
+    phi_dec = (Decimal(1) + Decimal(5).sqrt()) / Decimal(2)
+    N = Decimal(n)
+    lo, hi = 0, 512
+    while lo < hi:
+        mid = (lo + hi + 1) // 2
+        if (phi_dec ** Decimal(mid)) <= N:
+            lo = mid
+        else:
+            hi = mid - 1
+    return lo
+
 EPOCHS_PHI = [
     (0, "Eternal Year", "The root of solar-aligned Kairos time (8 months × 7 weeks)"),
     (1, "Phi Epok", "1 Eternal Year × Phi — expansion and identity activation"),
@@ -194,48 +174,28 @@ EPOCHS_PHI = [
 ]
 
 def generate_phi_spiral_epochs(kai_pulse_eternal: int) -> List[Dict]:
-    # Same API; exact Decimal math internally; emit strings to avoid rounding
     powers = [0, 1, 2, 3, 5, 8, 13, 21]
-    labels = [
-        "Eternal Year", "Phi Epok", "Phi Resonanse Epok", "Tri-Spiral Gate",
-        "Great Harmonic Ring", "Kai-Cycle of Return", "Solar Spiral Era", "One Breath of Erah Voh"
-    ]
-    descriptions = [
-        "The root of solar-aligned Kairos time (8 months × 7 weeks)",
-        "1 Eternal Year × Phi — expansion and identity activation",
-        "Harmonic restoration ark across a soul generation",
-        "Completion of harmonic trinity (matter, light, memory)",
-        "Full spirit/DNA re-coherence ark",
-        "Karmic spiral closure and harmonic rebirth point",
-        "Planetary resonance stabilization — used in ancient calendar resets",
-        "Lightbody spiral completion and remembrance of divine origin"
-    ]
-
-    spiral_epochs: List[Dict] = []
+    labels = ["Eternal Year","Phi Epok","Phi Resonanse Epok","Tri-Spiral Gate",
+              "Great Harmonic Ring","Kai-Cycle of Return","Solar Spiral Era","One Breath of Erah Voh"]
+    descriptions = [e[2] for e in EPOCHS_PHI]
     base = HARMONIC_YEAR_PULSES_DEC
     phi_dec = (Decimal(1) + Decimal(5).sqrt()) / Decimal(2)
+    spiral_epochs: List[Dict] = []
     for i, p in enumerate(powers):
         pulses_dec = base * (phi_dec ** Decimal(p))
         pulses_int = int(pulses_dec.to_integral_value(rounding=ROUND_FLOOR))
         kai_until = max(pulses_int - int(kai_pulse_eternal), 0)
-
         approx_days = (Decimal(pulses_int) * KAI_PULSE_DURATION_DEC) / Decimal(86400)
         days_until = (Decimal(kai_until) * KAI_PULSE_DURATION_DEC) / Decimal(86400)
         percent_until = (Decimal(kai_pulse_eternal) / Decimal(pulses_int)) * Decimal(100) if pulses_int else Decimal(0)
-
         spiral_epochs.append({
-            "name": labels[i],
-            "phiPower": p,
-            "kaiPulses": pulses_int,
-            "approxDays": str(approx_days),
-            "description": descriptions[i],
-            "kaiUntil": kai_until,
-            "daysUntil": str(days_until),
-            "percentUntil": str(percent_until),
+            "name": labels[i], "phiPower": p, "kaiPulses": pulses_int,
+            "approxDays": str(approx_days), "description": descriptions[i],
+            "kaiUntil": kai_until, "daysUntil": str(days_until), "percentUntil": str(percent_until),
         })
     return spiral_epochs
 
-# Names/descriptions unchanged
+# ── Calendar text ───────────────────────────────────────────────
 HARMONIC_DAYS = ["Solhara", "Aquaris", "Flamora", "Verdari", "Sonari", "Kaelith"]
 HARMONIC_DAY_DESCRIPTIONS = {
     "Solhara": "First Day of the Week — the Root Spiral day. Kolor: deep krimson. Element: Earth and primal fire. Geometry: square foundation. This is the day of stability, ankoring, and sakred will. Solhara ignites the base of the spine and the foundation of purpose. It is a day of grounding divine intent into physikal motion. You stand tall in the presense of gravity — not as weight, but as remembranse. This is where your spine bekomes the axis mundi, and every step affirms: I am here, and I align to act.",
@@ -293,191 +253,121 @@ KAI_TURAH_PHRASES = [
     "Ehlum Torai Zhak", "Zho Veh Lah Kurei", "Tuul Ka Yesh Aum", "Sha Vehl Dorrah",
 ]
 
-# ── Cycle durations (Kai-Pulses) — keep identifiers, compute with Decimal ─────
+# ── Cycle durations (Kai-Pulses) ────────────────────────────────
 ARC_BEAT_PULSES       = 6
 MICRO_CYCLE_PULSES    = 60
 CHAKRA_LOOP_PULSES    = 360
 
-# Use the canonical closure value (coherent with TS) as Decimal
-HARMONIC_DAY_PULSES_DEC = Decimal("17491.270421")
-SOLAR_DAY_PULSES        = float(HARMONIC_DAY_PULSES_DEC)  # keep name as in your code
-HARMONIC_DAY_PULSES     = SOLAR_DAY_PULSES                # compatibility alias
-
-HARMONIC_MONTH_DAYS   = 42
-HARMONIC_YEAR_DAYS    = 336
-HARMONIC_MONTH_PULSES_DEC = HARMONIC_DAY_PULSES_DEC * Decimal(HARMONIC_MONTH_DAYS)
-HARMONIC_YEAR_PULSES_DEC  = HARMONIC_MONTH_PULSES_DEC * Decimal(8)
-HARMONIC_WEEK_PULSES_DEC  = HARMONIC_DAY_PULSES_DEC * Decimal(6)
-
-CHAKRA_BEATS_PER_DAY = 36
-CHAKRA_BEAT_PULSES_DEC = HARMONIC_DAY_PULSES_DEC / Decimal(CHAKRA_BEATS_PER_DAY)
-
-# Steps: 11 pulses/step, 44 steps/beat (exact integers)
-PULSES_PER_STEP = 11
-STEPS_PER_BEAT  = int((CHAKRA_BEAT_PULSES_DEC // Decimal(PULSES_PER_STEP)))
-
-# ── Helper ──────────────────────────────────────────────────────
+# ── Utility ─────────────────────────────────────────────────────
 def _ordinal(n: int) -> str:
     if 11 <= n % 100 <= 13:
         return "th"
     return {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th")
 
-# NEW: pure-Decimal φ log (no float path)
-def _floor_log_phi(n: int) -> int:
-    """
-    Return floor(log_phi(n)) using Decimal math only (binary search on integer exponents).
-    For n <= 1, returns 0. Uses current Decimal context (prec + ROUND_FLOOR).
-    """
-    if n <= 1:
-        return 0
-    phi_dec = (Decimal(1) + Decimal(5).sqrt()) / Decimal(2)
-    N = Decimal(n)
-    lo, hi = 0, 512  # generous cap; phi**512 >> any practical pulse count
-    while lo < hi:
-        mid = (lo + hi + 1) // 2
-        # Compare phi^mid <= n using Decimal power with integral exponent
-        if (phi_dec ** Decimal(mid)) <= N:
-            lo = mid
-        else:
-            hi = mid - 1
-    return lo
-
 # ════════════════════════════════════════════════════════════════
-#  Main generator (math rewritten to pure Decimal; shape unchanged)
+#  Main generator (KKS v1 grid parity for beats/steps)
 # ════════════════════════════════════════════════════════════════
 def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
-    """Return the current harmonic timestamp payload (includes step data)."""
     now = _ensure_utc(now or datetime.utcnow())
 
-    # ── μpulse state (engine truth) ─────────────────────────────
+    # μpulse windowing
     mu_last, mu_next, mu_now, solar_day_index = solar_window_mu(now)
     mu_span = UPULSES_PER_DAY
-    mu_into_solar_day = mu_now - mu_last
+    mu_into_solar_day   = mu_now - mu_last
     mu_days_since_genesis = mu_now // mu_span
     mu_into_eternal_day = mu_now - mu_days_since_genesis * mu_span
 
-    # Whole-pulse counters for API/back-compat (floor by integer division)
-    kai_pulse_eternal        = int(mu_now // UPULSES_PER_PULSE)
-    kai_pulse_today          = int(mu_into_solar_day // UPULSES_PER_PULSE)
-    eternal_kai_pulse_today  = int(mu_into_eternal_day // UPULSES_PER_PULSE)
+    # Whole-pulse counters
+    kai_pulse_eternal       = int(mu_now // UPULSES_PER_PULSE)
+    kai_pulse_today         = int(mu_into_solar_day // UPULSES_PER_PULSE)
+    eternal_kai_pulse_today = int(mu_into_eternal_day // UPULSES_PER_PULSE)
 
-    # ── Chakra Beats (exact) ────────────────────────────────────
-    # Solar
-    solar_beat_idx_dec = (Decimal(kai_pulse_today) / CHAKRA_BEAT_PULSES_DEC)
-    solar_beat_idx = int(solar_beat_idx_dec.to_integral_value(rounding=ROUND_FLOOR))
-    solar_beat_index = solar_beat_idx  # kept duplicate naming
-    solar_pulse_inbeat_dec = Decimal(kai_pulse_today) - (Decimal(solar_beat_idx) * CHAKRA_BEAT_PULSES_DEC)
+    # ── GRID (KKS v1) beat + step indexing (μ-pulse lattice) ────
+    # Eternal grid (eternal day lattice)
+    mu_pos_in_day_eternal  = mu_into_eternal_day % UPULSES_PER_GRID_DAY
+    mu_pos_in_beat_eternal = mu_pos_in_day_eternal % UPULSES_PER_GRID_BEAT
+    mu_pos_in_step_eternal = mu_pos_in_beat_eternal % UPULSES_PER_GRID_STEP
 
-    # Eternal
-    eternal_beat_idx_dec = (Decimal(eternal_kai_pulse_today) / CHAKRA_BEAT_PULSES_DEC)
-    eternal_beat_idx = int(eternal_beat_idx_dec.to_integral_value(rounding=ROUND_FLOOR))
-    eternal_pulse_inbeat_dec = Decimal(eternal_kai_pulse_today) - (Decimal(eternal_beat_idx) * CHAKRA_BEAT_PULSES_DEC)
+    eternal_beat_idx = int(mu_pos_in_day_eternal // UPULSES_PER_GRID_BEAT)      # 0..35
+    eternal_step_idx = int(mu_pos_in_beat_eternal // UPULSES_PER_GRID_STEP)     # 0..43
 
-    # μpulse-exact positions for percentages and step index (Eternal lattice)
-    mu_pos_in_day  = mu_into_eternal_day % UPULSES_PER_GRID_DAY
-    mu_pos_in_beat = mu_pos_in_day % UPULSES_PER_GRID_BEAT
-    mu_pos_in_step = mu_pos_in_beat % UPULSES_PER_GRID_STEP
+    eternal_grid_pulses_into_beat_dec = (Decimal(mu_pos_in_beat_eternal) / Decimal(UPULSES_PER_PULSE))  # 0..484
+    eternal_percent_into_step_dec     = (Decimal(mu_pos_in_step_eternal) / Decimal(UPULSES_PER_GRID_STEP)) * Decimal(100)
+    eternal_percent_of_beat_dec       = (Decimal(mu_pos_in_beat_eternal) / Decimal(UPULSES_PER_GRID_BEAT)) * Decimal(100)
 
-    # μpulse-exact positions for Solar lattice (prevents step 44 edge)
+    # Solar grid (sunrise-anchored lattice)
     mu_pos_in_day_solar  = mu_into_solar_day % UPULSES_PER_GRID_DAY
     mu_pos_in_beat_solar = mu_pos_in_day_solar % UPULSES_PER_GRID_BEAT
     mu_pos_in_step_solar = mu_pos_in_beat_solar % UPULSES_PER_GRID_STEP
 
-    # μpulse-exact beat and step percentages (no -0E-57%, no ultra-long strings)
-    percent_to_next_dec   = (Decimal(mu_pos_in_beat) / Decimal(UPULSES_PER_GRID_BEAT)) * Decimal(100)
+    solar_beat_idx = int(mu_pos_in_day_solar // UPULSES_PER_GRID_BEAT)         # 0..35
+    solar_step_idx = int(mu_pos_in_beat_solar // UPULSES_PER_GRID_STEP)        # 0..43
 
-    # ── Chakra Steps (exact, Eternal lattice) ───────────────────
-    step_idx = int(mu_pos_in_beat // UPULSES_PER_GRID_STEP)
-    step_idx_str = f"{step_idx:02d}"
+    solar_grid_pulses_into_beat_dec = (Decimal(mu_pos_in_beat_solar) / Decimal(UPULSES_PER_PULSE))      # 0..484
+    solar_percent_into_step_dec     = (Decimal(mu_pos_in_step_solar) / Decimal(UPULSES_PER_GRID_STEP)) * Decimal(100)
+    solar_percent_of_beat_dec       = (Decimal(mu_pos_in_beat_solar) / Decimal(UPULSES_PER_GRID_BEAT)) * Decimal(100)
 
-    # Progress within current step (μpulse exact)
-    percent_into_step_dec = (Decimal(mu_pos_in_step) / Decimal(UPULSES_PER_GRID_STEP)) * Decimal(100)
-
-    # Clamp tiny negatives / 100.000... edges, then quantize for display neatness
-    if percent_to_next_dec < 0: percent_to_next_dec = Decimal(0)
-    if percent_into_step_dec < 0: percent_into_step_dec = Decimal(0)
-    if percent_to_next_dec >= 100: percent_to_next_dec = Decimal("99.999999")
-    if percent_into_step_dec >= 100: percent_into_step_dec = Decimal("99.999999")
-
+    # Clamp + tidy percentages
     q = Decimal("0.000001")
-    percent_to_next_dec   = percent_to_next_dec.quantize(q)
-    percent_into_step_dec = percent_into_step_dec.quantize(q)
+    eternal_percent_into_step_dec = min(Decimal("99.999999"), max(Decimal(0), eternal_percent_into_step_dec)).quantize(q)
+    eternal_percent_of_beat_dec   = min(Decimal("99.999999"), max(Decimal(0), eternal_percent_of_beat_dec)).quantize(q)
+    solar_percent_into_step_dec   = min(Decimal("99.999999"), max(Decimal(0), solar_percent_into_step_dec)).quantize(q)
+    solar_percent_of_beat_dec     = min(Decimal("99.999999"), max(Decimal(0), solar_percent_of_beat_dec)).quantize(q)
 
-    chakra_step_str = f"{eternal_beat_idx}:{step_idx:02d}"
+    # Strings / objects
+    chakra_step_str   = f"{eternal_beat_idx}:{eternal_step_idx:02d}"
+    solar_step_string = f"{solar_beat_idx}:{solar_step_idx:02d}"
+
     chakra_step_obj = ChakraStep(
-        stepIndex=step_idx,
-        percentIntoStep=str(percent_into_step_dec),  # exact-as-string
+        stepIndex=eternal_step_idx,
+        percentIntoStep=str(eternal_percent_into_step_dec),
         stepsPerBeat=STEPS_PER_BEAT,
     )
-
-    # Solar-aligned Chakra Step (μpulse lattice to avoid index 44)
-    solar_step_index = int(mu_pos_in_beat_solar // UPULSES_PER_GRID_STEP)
-    solar_percent_into_step_dec = ((Decimal(mu_pos_in_step_solar) / Decimal(UPULSES_PER_GRID_STEP)) * Decimal(100)).quantize(q)
-    solar_step_string = f"{solar_beat_index}:{solar_step_index:02d}"
     solar_step_payload = ChakraStep(
-        stepIndex=solar_step_index,
+        stepIndex=solar_step_idx,
         percentIntoStep=str(solar_percent_into_step_dec),
         stepsPerBeat=STEPS_PER_BEAT,
     )
 
-    # ---------- (rest: identical structure; math switched to Decimal) ---------- #
-    kai_pulse_eternal_dec_mod_month = Decimal(kai_pulse_eternal) % HARMONIC_MONTH_PULSES_DEC
+    # ── Calendrics (φ durations; independent of grid) ───────────
     harmonic_day_count_dec = Decimal(kai_pulse_eternal) / HARMONIC_DAY_PULSES_DEC
-    harmonic_day_count = int(harmonic_day_count_dec.to_integral_value(rounding=ROUND_FLOOR))
+    harmonic_day_count     = int(harmonic_day_count_dec.to_integral_value(rounding=ROUND_FLOOR))
+    harmonic_year_idx      = int((Decimal(kai_pulse_eternal) / HARMONIC_YEAR_PULSES_DEC).to_integral_value(rounding=ROUND_FLOOR))
+    harmonic_month_raw     = int((Decimal(kai_pulse_eternal) / HARMONIC_MONTH_PULSES_DEC).to_integral_value(rounding=ROUND_FLOOR))
 
-    harmonic_year_idx_dec = Decimal(kai_pulse_eternal) / HARMONIC_YEAR_PULSES_DEC
-    harmonic_year_idx = int(harmonic_year_idx_dec.to_integral_value(rounding=ROUND_FLOOR))
-
-    harmonic_month_raw_dec = Decimal(kai_pulse_eternal) / HARMONIC_MONTH_PULSES_DEC
-    harmonic_month_raw = int(harmonic_month_raw_dec.to_integral_value(rounding=ROUND_FLOOR))
-
-    eternal_year_name = (
-        "Year of Eternal Restoration" if harmonic_year_idx == 0
-        else "Year of Harmonik Embodiment" if harmonic_year_idx == 1
-        else f"Year {harmonic_year_idx + 1}"
-    )
-    kai_turah_phrase = KAI_TURAH_PHRASES[harmonic_year_idx % len(KAI_TURAH_PHRASES)]
+    eternal_year_name = ("Year of Eternal Restoration" if harmonic_year_idx == 0
+                         else "Year of Harmonik Embodiment" if harmonic_year_idx == 1
+                         else f"Year {harmonic_year_idx + 1}")
+    kai_turah_phrase  = KAI_TURAH_PHRASES[harmonic_year_idx % len(KAI_TURAH_PHRASES)]
 
     eternal_month_idx = (harmonic_month_raw % 8) + 1
     eternal_month     = ETERNAL_MONTH_NAMES[eternal_month_idx - 1]
     harmonic_day      = HARMONIC_DAYS[harmonic_day_count % len(HARMONIC_DAYS)]
 
-    # Arcs (exact)
     arc_div_dec = HARMONIC_DAY_PULSES_DEC / Decimal(6)
-    arc_idx = int((Decimal(kai_pulse_today) / arc_div_dec).to_integral_value(rounding=ROUND_FLOOR))
-    arc_idx = min(5, arc_idx)
-    chakra_arc = CHAKRA_ARCS[arc_idx]
-
+    arc_idx         = int((Decimal(kai_pulse_today)         / arc_div_dec).to_integral_value(rounding=ROUND_FLOOR))
     eternal_arc_idx = int((Decimal(eternal_kai_pulse_today) / arc_div_dec).to_integral_value(rounding=ROUND_FLOOR))
-    eternal_arc_idx = min(5, eternal_arc_idx)
-    eternal_chakra_arc = CHAKRA_ARCS[eternal_arc_idx]
+    arc_idx = min(5, arc_idx); eternal_arc_idx = min(5, eternal_arc_idx)
+    chakra_arc        = CHAKRA_ARCS[arc_idx]
+    eternal_chakra_arc= CHAKRA_ARCS[eternal_arc_idx]
+    solar_chakra_arc  = chakra_arc
 
-    solar_arc_idx = int((Decimal(kai_pulse_today) / arc_div_dec).to_integral_value(rounding=ROUND_FLOOR))
-    solar_arc_idx = min(5, solar_arc_idx)
-    solar_chakra_arc = CHAKRA_ARCS[solar_arc_idx]
-
-    # Solar calendar pieces (unchanged names)
-    solar_day_of_month = (solar_day_index % HARMONIC_MONTH_DAYS) + 1
-    solar_month_index = ((solar_day_index // HARMONIC_MONTH_DAYS) % 8) + 1
-    solar_month_name = ETERNAL_MONTH_NAMES[solar_month_index - 1]
-    solar_day_name = HARMONIC_DAYS[solar_day_index % len(HARMONIC_DAYS)]
+    # Solar calendar pieces
+    solar_day_of_month      = (solar_day_index % HARMONIC_MONTH_DAYS) + 1
+    solar_month_index       = ((solar_day_index // HARMONIC_MONTH_DAYS) % 8) + 1
+    solar_month_name        = ETERNAL_MONTH_NAMES[solar_month_index - 1]
+    solar_day_name          = HARMONIC_DAYS[solar_day_index % len(HARMONIC_DAYS)]
     solar_month_description = ETERNAL_MONTH_DESCRIPTIONS[solar_month_name]
-    solar_day_description = HARMONIC_DAY_DESCRIPTIONS[solar_day_name]
-    solar_harmonic_day = HARMONIC_DAYS[solar_day_index % len(HARMONIC_DAYS)]
-    solar_week_index = ((solar_day_index // 6) % 7) + 1
-    solar_week_name = ETERNAL_WEEK_NAMES[(solar_day_index // 6) % 7]
-    solar_week_description = ETERNAL_WEEK_DESCRIPTIONS[solar_week_name]
+    solar_day_description   = HARMONIC_DAY_DESCRIPTIONS[solar_day_name]
+    solar_harmonic_day      = HARMONIC_DAYS[solar_day_index % len(HARMONIC_DAYS)]
+    solar_week_index        = ((solar_day_index // 6) % 7) + 1
+    solar_week_name         = ETERNAL_WEEK_NAMES[(solar_day_index // 6) % 7]
+    solar_week_description  = ETERNAL_WEEK_DESCRIPTIONS[solar_week_name]
 
-    # Phi spiral level (keep as int) — PURE DECIMAL, NO FLOAT
+    # Phi spiral level
     phi_spiral_lvl = _floor_log_phi(kai_pulse_eternal)
 
-    # Cycle positions
-    arc_pos    = kai_pulse_eternal % ARC_BEAT_PULSES
-    micro_pos  = kai_pulse_eternal % MICRO_CYCLE_PULSES
-    chakra_pos = kai_pulse_eternal % CHAKRA_LOOP_PULSES
-    day_pos    = eternal_kai_pulse_today  # use exact within-day pulses (no float mod)
-
-    # Month/day progress (exact)
+    # Month/day progress (φ durations)
     pulses_into_month_dec = Decimal(kai_pulse_eternal) % HARMONIC_MONTH_PULSES_DEC
     days_elapsed_dec = pulses_into_month_dec / HARMONIC_DAY_PULSES_DEC
     days_elapsed = int(days_elapsed_dec.to_integral_value(rounding=ROUND_FLOOR))
@@ -499,20 +389,19 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
     year_percent_dec     = (pulses_into_year_dec / HARMONIC_YEAR_PULSES_DEC) * Decimal(100)
     days_into_year       = harmonic_day_count % HARMONIC_YEAR_DAYS
 
+    # Seals / strings (grid beats)
     solar_seal = f"Solar Kairos (UTC-aligned): {solar_step_string}"
-    percent_whole = str(percent_to_next_dec)  # exact-as-string
-
     eternal_seal = (
         "Eternal Seal: "
         f"Kairos:{chakra_step_str}, {harmonic_day}, {eternal_chakra_arc} Ark • D{day_of_month}/M{eternal_month_idx} • "
-        f"Beat:{eternal_beat_idx}/36({str(percent_to_next_dec)}%) Step:{step_idx}/44 "
+        f"Beat:{eternal_beat_idx}/36({str(eternal_percent_of_beat_dec)}%) Step:{eternal_step_idx}/44 "
         f"Kai(Today):{eternal_kai_pulse_today} • "
         f"Y{harmonic_year_idx} PS{phi_spiral_lvl} • {solar_seal} {solar_harmonic_day} "
         f"D{solar_day_of_month}/M{solar_month_index}, {solar_chakra_arc} Ark  "
-        f"Beat:{solar_beat_idx}/36 Step:{solar_step_index}/44 • "
+        f"Beat:{solar_beat_idx}/36 Step:{solar_step_idx}/44 • "
         f"Eternal Pulse:{kai_pulse_eternal}"
     )
-    seal = f"Day Seal: {chakra_step_str} {str(percent_into_step_dec)}% • D{day_of_month}/M{eternal_month_idx}"
+    seal = f"Day Seal: {chakra_step_str} {str(eternal_percent_into_step_dec)}% • D{day_of_month}/M{eternal_month_idx}"
     kairos = f"Kairos: {chakra_step_str}"
 
     timestamp = (
@@ -527,15 +416,16 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         f"In this moment of the Kai-Klock’s dual-day resonance, we are held within the sacred ark of {eternal_chakra_arc}, "
         f"rooted through the harmonic foundation of {harmonic_day}.\n\n"
         f"☀️ Solar Alignment: The living field synchronizes at Kai-Pulse {kai_pulse_today}, placing us in Spiral Beat {solar_beat_idx}, "
-        f"guided by the rhythm of Earth’s breath and solar koherense.\n\n"
-        f"🌕 Eternal Alignment: At once, the timeless stream flows through Kai-Pulse {eternal_kai_pulse_today}, entering Spiral Beat {eternal_beat_idx}, "
-        f"{str(percent_to_next_dec)}% complete — approaching the gateway of harmonic culmination.\n\n"
+        f"guided by Earth’s breath and solar koherense.\n\n"
+        f"🌕 Eternal Alignment: The timeless stream flows through Kai-Pulse {eternal_kai_pulse_today}, entering Spiral Beat {eternal_beat_idx}, "
+        f"{str(eternal_percent_of_beat_dec)}% complete — approaching the gateway of harmonic culmination.\n\n"
         f"{eternal_seal}"
     )
+
     compressed_summary = (
-        f"{harmonic_day:<9} • Kairos:{eternal_beat_idx:>2}:{step_idx:<2} "
-        f"• D{day_of_month:>2}/M{eternal_month_idx:<1} "
-        f"• Step {step_idx:>2}/44 – {str(percent_into_step_dec):>s}% "
+        f"{harmonic_day:<9} • Kairos:{eternal_beat_idx:02d}:{eternal_step_idx:02d} "
+        f"• D{day_of_month:>2}/M{eternal_month_idx} "
+        f"• Step {eternal_step_idx:>2}/44 – {str(eternal_percent_into_step_dec)}% "
         f"• Y{harmonic_year_idx:<2} • Kai-Pulse {eternal_kai_pulse_today}"
     )
 
@@ -544,31 +434,29 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         f"It is the {day_of_month}{_ordinal(day_of_month)} Day of {eternal_month}, "
         f"{ETERNAL_MONTH_DESCRIPTIONS[eternal_month]} We are in Week {week_idx}, "
         f"{week_name}. {ETERNAL_WEEK_DESCRIPTIONS[week_name]} The Eternal Spiral Beat is {eternal_beat_idx} ("
-        f"{eternal_chakra_arc} ark) and we are {str(percent_to_next_dec)}% through it. This korresponds "
-        f"to Step {step_idx} of {STEPS_PER_BEAT} (~{str(percent_into_step_dec)}% "
-        f"into the step). This is the "
-        f"{eternal_year_name.lower()}, resonating at Phi Spiral Level {phi_spiral_lvl}. "
+        f"{eternal_chakra_arc} ark) and we are {str(eternal_percent_of_beat_dec)}% through it. This korresponds "
+        f"to Step {eternal_step_idx} of 44 (~{str(eternal_percent_into_step_dec)}% into the step). "
+        f"This is the {eternal_year_name.lower()}, resonating at Phi Spiral Level {phi_spiral_lvl}. "
         f"{eternal_seal}"
     )
 
     kai_moment = (
-        f"↳ {seal} • "
-        f"Kai-Pulse {eternal_kai_pulse_today}, Beat {eternal_beat_idx}, Step {step_idx} "
-        f"{harmonic_day} Day, Month of {eternal_month}, Week of "
-        f"{week_name.split()[-1]}, Spiral Level {phi_spiral_lvl}."
+        f"↳ {seal} • Kai-Pulse {eternal_kai_pulse_today}, Beat {eternal_beat_idx}, Step {eternal_step_idx} "
+        f"{harmonic_day} Day, Month of {eternal_month}, Week of {week_name.split()[-1]}, Spiral Level {phi_spiral_lvl}."
     )
 
-    kairos_seal_day_month = f"{eternal_beat_idx:>2}:{step_idx_str:<2} • D{day_of_month:>2}/M{eternal_month_idx}"
-    kairos_seal_day_month_percent = f"{eternal_beat_idx:>2}:{step_idx_str:<2} - {str(percent_into_step_dec)}% • D{day_of_month:>2}/M{eternal_month_idx}"
-    kairos_seal = f"{eternal_beat_idx:>2}:{step_idx_str:<2} "
-    kairos_seal_solar = f"{solar_beat_idx:>2}:{solar_step_index:<2} "
-    kairos_seal_solar_day_month = f"{solar_beat_idx:>2}:{solar_step_index:<2} D{solar_day_of_month:>2}/M{solar_month_index}"
-    kairos_seal_solar_day_month_percent = f"{solar_beat_idx:>2}:{solar_step_index:<2} - {str(solar_percent_into_step_dec)}% D{solar_day_of_month:>2}/M{solar_month_index}"
-    kairos_seal_percent_step_solar = f"{solar_beat_idx:>2}:{solar_step_index:<2} - {str(solar_percent_into_step_dec)}% "
-    kairos_seal_percent_step = f"{eternal_beat_idx:>2}:{step_idx_str:<2} - {str(percent_into_step_dec)}% "
+    # ── OUTPUT (grid beats for beat/step; φ for calendar) ───────
+    kairos_seal_day_month = f"{eternal_beat_idx:02d}:{eternal_step_idx:02d} • D{day_of_month:02d}/M{eternal_month_idx}"
+    kairos_seal_day_month_percent = f"{eternal_beat_idx:02d}:{eternal_step_idx:02d} - {str(eternal_percent_into_step_dec)}% • D{day_of_month:02d}/M{eternal_month_idx}"
+    kairos_seal = f"{eternal_beat_idx:02d}:{eternal_step_idx:02d}"
+    kairos_seal_solar = f"{solar_beat_idx:02d}:{solar_step_idx:02d}"
+    kairos_seal_solar_day_month = f"{solar_beat_idx:02d}:{solar_step_idx:02d} D{solar_day_of_month:02d}/M{solar_month_index}"
+    kairos_seal_solar_day_month_percent = f"{solar_beat_idx:02d}:{solar_step_idx:02d} - {str(solar_percent_into_step_dec)}% D{solar_day_of_month:02d}/M{solar_month_index}"
+    kairos_seal_percent_step_solar = f"{solar_beat_idx:02d}:{solar_step_idx:02d} - {str(solar_percent_into_step_dec)}%"
+    kairos_seal_percent_step = f"{eternal_beat_idx:02d}:{eternal_step_idx:02d} - {str(eternal_percent_into_step_dec)}%"
 
     payload = KaiKlockResponse(
-        # 1. ⟐ SEALS & NARRATIVE
+        # 1) Seals & narrative
         kairos_seal_day_month=kairos_seal_day_month,
         kairos_seal_day_month_percent=kairos_seal_day_month_percent,
         kairos_seal=kairos_seal,
@@ -581,7 +469,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         seal=seal,
         harmonicNarrative=narrative,
 
-        # 2. ⟐ ETERNAL CALENDAR (Kairos-Aligned)
+        # 2) Eternal calendar (φ durations)
         eternalMonth=eternal_month,
         eternalMonthIndex=eternal_month_idx,
         eternalMonthDescription=ETERNAL_MONTH_DESCRIPTIONS[eternal_month],
@@ -596,7 +484,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
             "percent": str(month_percent_dec),
         },
 
-        # 3. ⟐ SOLAR CALENDAR (Sunrise-Aligned Earth View)
+        # 3) Solar calendar (φ durations)
         kaiPulseToday=kai_pulse_today,
         solarChakraArc=solar_chakra_arc,
         solarDayOfMonth=solar_day_of_month,
@@ -610,7 +498,7 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
         solar_day_name=solar_day_name,
         solar_day_description=solar_day_description,
 
-        # 4. ⟐ HARMONIC DAY / WEEK STRUCTURE
+        # 4) Harmonic day/week structure
         harmonicDay=harmonic_day,
         harmonicDayDescription=HARMONIC_DAY_DESCRIPTIONS[harmonic_day],
         weekIndex=week_idx,
@@ -623,66 +511,66 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
             "percent": str(week_day_percent_dec),
         },
 
-        # 5. ⟐ RESONANCE STRUCTURE (Beats, Steps, Arc)
+        # 5) Resonance structure (GRID beats/steps ONLY)
         chakraArc=chakra_arc,
         chakraArcDescription=CHAKRA_ARC_DESCRIPTIONS.get(CHAKRA_ARC_NAME_MAP.get(chakra_arc, ""), ""),
         chakraBeat={
             "beatIndex": solar_beat_idx,
-            "pulsesIntoBeat": str(solar_pulse_inbeat_dec),
-            "beatPulseCount": str(CHAKRA_BEAT_PULSES_DEC),
-            "totalBeats": CHAKRA_BEATS_PER_DAY,
+            "pulsesIntoBeat": str(solar_grid_pulses_into_beat_dec),  # 0..484 (grid pulses)
+            "beatPulseCount": str(GRID_PULSES_PER_BEAT),             # "484"
+            "totalBeats": CHAKRA_BEATS_PER_DAY,                      # 36
         },
         eternalChakraBeat={
             "beatIndex": eternal_beat_idx,
-            "pulsesIntoBeat": str(eternal_pulse_inbeat_dec),
-            "percentToNext": str(percent_to_next_dec),
-            "beatPulseCount": str(CHAKRA_BEAT_PULSES_DEC),
-            "totalBeats": CHAKRA_BEATS_PER_DAY,
+            "pulsesIntoBeat": str(eternal_grid_pulses_into_beat_dec),# 0..484 (grid pulses)
+            "percentToNext": str(eternal_percent_of_beat_dec),       # beat % on grid
+            "beatPulseCount": str(GRID_PULSES_PER_BEAT),             # "484"
+            "totalBeats": CHAKRA_BEATS_PER_DAY,                      # 36
         },
         chakraStep=chakra_step_obj,
         chakraStepString=chakra_step_str,
         solarChakraStep=solar_step_payload,
         solarChakraStepString=solar_step_string,
 
-        # 6. ⟐ PHI IDENTITY / SPIRAL LANGUAGE
+        # 6) Phi identity / spiral language
         phiSpiralLevel=phi_spiral_lvl,
         kaiTurahPhrase=kai_turah_phrase,
         phiSpiralEpochs=generate_phi_spiral_epochs(kai_pulse_eternal),
-        subdivisions=build_subdivisions_live(kai_pulse_eternal),  # <— LIVE COUNTS + METADATA (numeric)
+        subdivisions=build_subdivisions_live(kai_pulse_eternal),
 
-        # 7. ⟐ RESONANCE CYCLES (Arc, Micro, Day)
+        # 7) Resonance cycles (φ day progress for these aggregates is fine)
         harmonicLevels={
-            "subdivisions": compute_subdivision_counts(kai_pulse_eternal),  # <— precise Decimals per-cycle
+            "subdivisions": compute_subdivision_counts(kai_pulse_eternal),
             "arcBeat": {
-                "pulseInCycle": arc_pos,
+                "pulseInCycle": kai_pulse_eternal % ARC_BEAT_PULSES,
                 "cycleLength": ARC_BEAT_PULSES,
-                "percent": str((Decimal(arc_pos) / Decimal(ARC_BEAT_PULSES)) * Decimal(100)),
+                "percent": str((Decimal(kai_pulse_eternal % ARC_BEAT_PULSES) / Decimal(ARC_BEAT_PULSES)) * Decimal(100)),
             },
             "microCycle": {
-                "pulseInCycle": micro_pos,
+                "pulseInCycle": kai_pulse_eternal % MICRO_CYCLE_PULSES,
                 "cycleLength": MICRO_CYCLE_PULSES,
-                "percent": str((Decimal(micro_pos) / Decimal(MICRO_CYCLE_PULSES)) * Decimal(100)),
+                "percent": str((Decimal(kai_pulse_eternal % MICRO_CYCLE_PULSES) / Decimal(MICRO_CYCLE_PULSES)) * Decimal(100)),
             },
             "chakraLoop": {
-                "pulseInCycle": chakra_pos,
+                "pulseInCycle": kai_pulse_eternal % CHAKRA_LOOP_PULSES,
                 "cycleLength": CHAKRA_LOOP_PULSES,
-                "percent": str((Decimal(chakra_pos) / Decimal(CHAKRA_LOOP_PULSES)) * Decimal(100)),
+                "percent": str((Decimal(kai_pulse_eternal % CHAKRA_LOOP_PULSES) / Decimal(CHAKRA_LOOP_PULSES)) * Decimal(100)),
             },
             "harmonicDay": {
-                "pulseInCycle": day_pos,
-                "cycleLength": float(HARMONIC_DAY_PULSES_DEC),  # shape compatibility
-                "percent": str((Decimal(day_pos) / HARMONIC_DAY_PULSES_DEC) * Decimal(100)),
+                "pulseInCycle": eternal_kai_pulse_today,
+                "cycleLength": float(HARMONIC_DAY_PULSES_DEC),
+                "percent": str((Decimal(eternal_kai_pulse_today) / HARMONIC_DAY_PULSES_DEC) * Decimal(100)),
             },
         },
 
-        # 8. ⟐ HARMONIC YEAR PROGRESS
+        # 8) Harmonic year progress
         harmonicYearProgress={
             "daysElapsed": days_into_year,
             "daysRemaining": HARMONIC_YEAR_DAYS - days_into_year,
             "percent": str(year_percent_dec),
         },
 
-        # 9. ⟐ COMPOSITE OUTPUTS (Display)
+        # 9) Composite outputs (display)
         timestamp=timestamp,
         harmonicTimestampDescription=harmonic_ts_desc,
         kaiMomentSummary=kai_moment,
