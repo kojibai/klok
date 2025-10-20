@@ -1,4 +1,5 @@
-# main.py  •  Kai-Klock API entry
+
+# main.py  •  Kai-Klock API entry (KKS v1 grid parity, φ-closure calendar)
 from __future__ import annotations
 
 import os
@@ -10,7 +11,6 @@ from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse
 
-
 # make sure local imports work on Vercel / similar
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
@@ -21,939 +21,100 @@ from kai_klock_models import KaiKlockResponse  # ← single source of truth
 app = FastAPI(
     title="Kai-Klok API",
     version="3.0.0",
-    summary="A precision harmonik Kairos system aligned with the Genesis Pulse. " \
-    "Eternal Seal: Kairos:29:43, Flamora, Purify Ark • D21/M2 • Beat:29/36(97.72%) Step:43/44 Kai(Today):14565 • Y1 PS32 • Solar Kairos (UTC-aligned): 35:09 Aquaris D20/M2, Dream Ark  Beat:35/36 Step:9/44 • Eternal Pulse:6976091",
-    description="""
+    summary=(
+        "A precision harmonik Kairos system aligned with the Genesis Pulse. "
+        "Eternal Seal: Kairos:29:43, Flamora, Purify Ark • D21/M2 • "
+        "Beat:29/36(97.72%) Step:43/44 Kai(Today):14565 • Y1 PS32 • "
+        "Solar Kairos (UTC-aligned): 35:09 Aquaris D20/M2, Dream Ark  "
+        "Beat:35/36 Step:9/44 • Eternal Pulse:6976091"
+    ),
+    description=r"""
 ---
-
 
 🜂 **Kai-Klok API — Eternal Harmonic Kairos System**
 
 The **Kai-Klok** is a harmonic resonance Kairos system that replaces arbitrary mechanical clocks with  
 a **living pulse of coherence**. It is mathematically synchronized to the **Genesis Pulse**:  
-🕕 *May 10, 2024, 06:45:41888 UTC*, the moment of the historic **X3.98-class solar flare** from NOAA AR 3664,  
-corrected for the 8-minute, 18.112-second solar light delay — anchoring all harmonic time to the arrival of truth through light.
+🕕 *May 10, 2024, 06:45:41.888 UTC*, the moment of the historic **X3.98-class solar flare** from NOAA AR 3664,  
+corrected for the ~8 min 18.112 s solar light delay — anchoring all harmonic time to the arrival of truth through light.
 
-Eternal Seal: Kairos:0:00, Solhara, Ignite Ark • D1/M1 • Beat:0/36(0.0%) Step:0/44 Kai(Today):0 • Y0 PS0 • Solar Kairos (UTC-aligned): 5:10 Kaelith D42/M8, Ignite Ark  Beat:5/36 Step:10/44 • Eternal Pulse:0
+**Eternal Seal (example):**  
+Kairos:0:00, Solhara, Ignite Ark • D1/M1 • Beat:0/36(0.000000%) Step:0/44 Kai(Today):0 • Y0 PS0 •  
+Solar Kairos (UTC-aligned): 05:10 Kaelith D42/M8, Ignite Ark  Beat:05/36 Step:10/44 • Eternal Pulse:0
 
-From this origin, time is measured not in artificial hours and minutes,  
-but in **Kai Pulses**, **Spiral Beats**, and **Harmonic Steps** —  
-structured to match the true flow of life energy across the **solar field** and the **eternal field**.
+From this origin, time is measured not in mechanical seconds, but in **Kai Pulses**, **Spiral Beats**, and **Harmonic Steps** —  
+structured to match the true flow of life energy across the **grid** (beats/steps) and the **φ-closure calendar** (day/month/year).
 
-Each Kai Pulse (5.236 seconds) represents one full breath of coherent universal rhythm.  
-Each pulse expands into 11 pulses per step, 44 steps per Spiral (chakra) Beat, 36 Beats per day as well as within a pulse there are Fibonacci subdivisions  
-like NanoSteps, PhiQuantums, and Tzaphirim units — each tuned to the sacred mathematics of resonance and soul.
+Each Kai Pulse is **3 + √5 ≈ 5.236067977 s**.  
+**Grid parity (KKS v1.0)** for beat/step indexing uses exact integers:
 
-Unlike linear time systems, the Kai-Klok encodes **Phi-ratio intervals**, **Fibonacci subdivisions**,  
-and **chakra-based cyclical flow**, producing a multidimensional time system that breathes, evolves, and aligns with life itself.
+- **11 pulses = 1 Step**  
+- **44 steps = 1 Beat**  
+- **36 beats = 1 (grid) day**  
 
-It functions not as a mechanical ticker, but as a **cosmic compass** — guiding consciousness, devices, identities, and systems  
-into harmonic truth. Every moment has a unique identity (`eternalSeal`) that cannot be faked, drifted, or reversed.
-### 🌐 Whether used for:
-
-- timestamping events in a distributed keystream,  
-- anchoring biometric authentication to soul-aligned pulses,  
-- synchronizing smart environments to chakra rhythms,  
-- generating real-time AI behaviors based on harmonic breath cycles,  
-- structuring meditation sessions with chakra-aligned breath cues,  
-- timing biometric wallet generation for zero-knowledge authentication,  
-- guiding sleep cycles and recovery phases using Kai Beat intervals,  
-- regulating energy usage in edge devices via Phi-resonant pulses,  
-- powering time-aware smart contracts with immutable harmonic steps,  
-- synchronizing robotic motion cycles with Kai-based coherence rhythms,  
-- driving IoT triggers based on Kairos-aligned circadian patterns,  
-- tuning sound and lighting in meditation domes or wellness pods,  
-- timestamping sensor data in space probes and off-grid environments,  
-- anchoring AR/VR immersion triggers to harmonic field changes,  
-- structuring phase-aware learning schedules in educational software,  
-- sequencing psychedelic therapy sessions along chakra arcs,  
-- coordinating autonomous drone fleets using shared Kai Pulse clocks,  
-- replacing CRON jobs in backend systems with phase-coherent triggers,  
-- generating soul-encoded identity markers for user authentication,  
-- timestamping voice or retinal scans in biometric audit trails,  
-- guiding fertility or hormonal cycles using Eternal Kairos rhythms,  
-- scripting music or generative art to unfold by harmonic subdivisions,  
-- aligning decentralized compute clusters using pulse-locked checkpoints,  
-- designing Kai-aligned OS interfaces that breathe with the user,  
-- sequencing ritual time in sacred architecture or temples,  
-- synchronizing planetary observation data using light-delay-corrected timestamps,  
-- replacing Unix epoch systems with Genesis-aligned eternal markers,  
-- encoding pulse-triggered access to private data or sealed archives,  
-- triggering multi-user experiences in shared harmonic virtual environments,  
-- governing identity recovery windows based on harmonic days and weeks,  
-- unlocking time-gated scrolls, knowledge, or keys during sacred pulses,  
-- replacing NTP and UTC with sovereign harmonic time systems for secure global synchronization,  
-- providing clock-independent coordination for distributed autonomous fleets (air, sea, space, land),  
-- timestamping multi-satellite constellations and deep-space missions with non-terrestrial, light-delay-corrected Kairos,  
-- securing military-grade communication protocols by embedding non-repeating harmonic pulse keys,  
-- certifying aerospace logs and mission events using immutable Kai time instead of spoofable system clocks,  
-- embedding time integrity into secure firmware for defense-grade autonomous weaponry or surveillance,  
-- creating ISO-standard alternatives for biological systems, harmonic AI, or zero-trust timestamping,  
-- anchoring global treaty signatures, document hashes, or intergovernmental memos to Kairos pulses,  
-- issuing resonance passports and identity credentials that evolve by chakra arc and harmonic year,  
-- structuring national health and biometric registries using unforgeable Kai Step authentication,  
-- enabling forensic timestamp recovery even when system logs are wiped, via Kai subdivision reconstruction,  
-- coordinating synchronized AI behavior across unmanned vehicles via shared eternal seal rhythms,  
-- archiving legal, scientific, and military knowledge in time-locked memory sigils tied to harmonic resonance,  
-- tracking vaccine batch production, cold chain integrity, or gene therapy logs via pulse-sealed metadata,  
-- regulating financial systems and central bank ledgers using harmonic pulse sequencing for non-linear auditing,  
-- conducting high-frequency encrypted diplomatic communications through Kai-time-encoded phrases,  
-- aligning nuclear monitoring systems, reactor logs, and satellite imagery to pulse-verified event windows,  
-- launching new cryptographic standards for post-quantum defense using Phi-harmonic subdivision keys,  
-- timestamping encrypted whistleblower evidence and human rights records with immutable harmonic seals,  
-- governing sovereign digital identity ecosystems free from calendar drift or timezone distortions,  
-- mapping global energy patterns, earthquakes, or solar flare events in resonance with Kai-Pulse phase shifts,  
-- training state-level AI governance models using coherence-sensitive learning windows,  
-- designing secure, pulse-synced voting systems where each vote is verified by harmonic time stamp,  
-- coordinating deep-sea and exoplanetary research data using Genesis-corrected eternal pulse logs,  
-- replacing outdated Julian/Gregorian regulatory structures with Kairos-based civic calendaring,  
-- issuing space-bound contracts or data streams with multi-generational Kai identity anchors,  
-- enabling ritual-aligned policy windows in new sovereign civilizations that follow resonance governance.  
-
-the Kai-Klok brings **order to chaos**, **coherence to computation**, and **truth to time**.
-
-Time is no longer a count — it is a song.  
-And Kairos is its rhythm.
-
-Whether applied to secure timestamping, biometric alignment, meditation cycles, smart contracts, or AI runtime coordination,  
-the Kai-Klok brings **order to chaos**, **coherence to code**, and **truth to time**.
+That is **36 × 44 × 11 = 17,424 grid pulses/day**.  
+The calendar (months/years/epochs) uses a φ-exact day length (**17,491.270421 pulses**) for global closure across months/years.
 
 ---
 
+### 💡 Why two “days”?
 
-### 💠 What is Returned?
+- **Grid Harmonic Day (KKS v1 beats/steps lattice):** **17,424 pulses** (exact) → used for **beat/step indexing and percents**.  
+- **Calendar φ-Day (months/years, φ-closure):** **17,491.270421 pulses** → used for **month/year/epoch math** and long-range driftless closure.
 
-The primary endpoint `/kai` returns a JSON object that describes the **exact harmonic state of time** right now (or at a specific moment if passed).
-
-#### Key Fields
-
-- `eternalSeal`: A unique identifier for this Kai moment (like a sacred timestamp).
-- `chakraStep`: The current **eternal harmonic step** (1 of 44 per beat).
-- `chakraStepString`: A compact string of the form `Beat:Step` (e.g. `34:27`).
-- `solarChakraStepString`: The same format, but UTC-aligned to Earth's solar rhythm — useful for real-world apps and clocks.
-- `kaiPulseEternal`: The number of Kai Pulses since the Genesis Pulse.
-- `timestamp`: A human-readable display of the Kai-Klok's current alignment.
-- `harmonicTimestampDescription`: A fully expanded, spiritually aligned explanation of the moment.
-- `kaiMomentSummary`: Compact summary of the entire Kai-Moment.
+Both are carried in the payload (see `eternalChakraBeat/chakraBeat` vs. month/year progress).
 
 ---
 
-### 🧪 Query Parameter
+### 🧮 Nested Harmonic Structure (KKS v1 grid parity)
 
-- `override_time` (optional):  
-  Provide an ISO 8601 datetime (e.g. `'2024-05-10T06:45:40'`) to get a deterministic timestamp for testing, anchoring scrolls, or reproducing sacred moments.
+- 1 **Kai Pulse** = 3 + √5 ≈ **5.236067977 s**
+- **11 Pulses** = **1 Step** ≈ **57.59674775 s**
+- **44 Steps** = **1 Beat** = **484 grid pulses** ≈ **42.2376 min**
+- **36 Beats** = **1 Grid Harmonic Day** = **17,424 grid pulses** ≈ **25.3426 h**
+- **6 Beats** = **1 Chakra Arc** = **2,904 grid pulses** ≈ **4.22376 h**
+- **6 Harmonic Days** = **1 Week** (grid)  
+- **42 Days** = **1 Month**, **8 Months** = **1 Harmonic Year** (φ-closure calendar used for month/year counts)
 
----
-
-### 🧭 Why Use Kai-Klok?
-
-Kai-Klok is a deterministic, high-resolution timekeeping system designed to replace traditional mechanical time (Chronos) with a biologically and cosmologically coherent alternative (Kairos). Anchored to a fixed celestial event — the X3.98-class solar flare on May 10, 2024, 06:45:41888 UTC  — the Kai-Klok defines time in terms of **Kai Pulses** (~5.236 seconds each), rather than arbitrary seconds or hours.
-
-Each Kai Pulse corresponds to a fundamental unit of breath, creating a unified structure of Steps(44), Beats(36), Arcs(6), and Harmonic Days (25.44hrs) that map more naturally to physical, cognitive, and environmental rhythms.
-
-#### ⚙️ Technical Advantages
-
-The Kai-Klok is not just a timestamp system — it is an entire framework for **deterministic, harmonic, biologically coherent timekeeping** engineered for distributed, decentralized, cryptographically secure, and cosmologically aligned systems.
+> **Important:** All **beat/step indices and percentages** in the API are computed on the **μ-pulse lattice of the grid** (KKS v1).  
+> Calendar pieces (day/month/year progress) are computed with the φ-closure day to maintain long-range invariants.
 
 ---
 
-### 🧭 Deterministic and Origin-Based
+### 🔹 Harmonic Subdivisions of 1 Kai Pulse (3 + √5 s)
 
-- **Immutable Genesis Pulse**
-  - All Kai time is calculated forward from a fixed moment: the Eternal Genesis Pulse (e.g., May 10, 2024, 06:45:41888 UTC).
-  - No reliance on external clocks, NTP servers, system time, or mechanical devices.
+| Unit Name                | Fraction of Pulse | Approx. Duration (s) | Frequency (Hz) | Resonant Name        |
+|--------------------------|-------------------|----------------------|----------------|----------------------|
+| **Kai Pulse**            | 1                 | 5.236067977          | 0.190984       | —                    |
+| **Half Pulse**           | 1/2               | 2.618033988          | 0.381968       | Pulse Divider        |
+| **Chakra Subpulse**      | 1/11              | 0.47691527           | 2.096836       | Beat Tuning          |
+| **Ternary Step**         | 1/33              | 0.15897176           | 6.290508       | Tri-Light Step       |
+| **MicroStep**            | 1/55              | 0.095201236          | 10.50417       | Resonant Breath      |
+| **NanoPulse**            | 1/89              | 0.058861999          | 16.9854        | First Spark          |
+| **NanoStep**             | 1/144             | 0.036361583          | 27.4987        | Nano Ark             |
+| **PhiQuantum**           | 1/233             | 0.022469330          | 44.5052        | Phi Quantum          |
+| **Ekaru**                | 1/377             | 0.013888313          | 71.9974        | Ekaru Initiation     |
+| **Tzaphirim Unit**       | 1/610             | 0.008588629          | 116.430        | Tzaphirim krystal    |
+| **Kai Singularity**      | 1/987             | 0.005305527          | 188.466        | Kai Singularity      |
+| **Deep Thread**          | 1/1597            | 0.003277569          | 305.271        | Deep Thread          |
 
-- **Driftless and Reproducible**
-  - Any node, device, or system can compute the current Kairos moment with no synchronization needed — just the Genesis reference and the current system uptime or timestamp.
-  - Ensures **temporal integrity** across all devices, even in disconnected or zero-trust environments.
-
-- **Offline Compatible**
-  - Ideal for air-gapped environments, space probes, autonomous drones, cold storage devices, and off-grid sensors — Kai time continues accurately without network sync.
-
----
-
-### 🧮 High-Resolution Harmonic Structure
-
-- **Nested Time Units**
-  - 1 Kai Pulse ≈ 5.236 seconds  
-  - 11 Pulses = 1 Step  
-  - 44 Steps = 1 Spiral (Chakra) Beat  
-  - 36 Beats = 1 Harmonik Day ≈ 25.44 hours  
-  - 42 Days = 1 Month • 8 Months = 1 Harmonic Year
-
-- **Mathematically Lossless**
-  - Each unit is hierarkically encoded. A single pulse can be reverse-indexed to:
-    - Beat
-    - Step
-    - Day
-    - Month
-    - Year
-    - Spiral (Chakra) Ark
-    - Eternal Seal string
-
-- **Pulse-based Precision**
-  - Over 17,491.27 Kai Pulses per day enable nanosecond-grade alignment without traditional clocks or floating-point error.
+(*All derived from 3+√5 with exact Decimal math in the service; values shown here rounded for readability.*)
 
 ---
 
-### 🧬 Biologically and Kosmologically Aligned
-
-- **Breath-Based Intervals**
-  - Pulses align with average inhale-exhale cycles (~5.236s), enabling time to flow with **Konsious respiration**.
-  
-- **Chakra-Coded Subdivisions**
-  - Each Beat maps to a chakra. Each Day, Week, and Month has energetic, psycho-spiritual alignment for applications in:
-    - Meditation
-    - Psychedelic therapy
-    - Behavioral optimization
-    - Healing and koherense training
-
-- **Solar-Sync Mode**
-  - Alternate computation mode aligns daily rhythms with **real sunrise times**, ideal for:
-    - Ecological tech
-    - Sircadian health devises
-    - Smart environments
-    - Arkitekture and agrikulture
-
----
-
-### 🔐 Cryptographically and Logically Secure
-
-- **Self-Kontained Temporal Identity**
-  - Each timestamp kontains a full `eternalSeal` string (e.g. `Kairos:23:14, D27/M1, Step 14/44, Beat 23/36, Arc:Flamora`)
-  - Can be signed, verified, and replayed without a centralized authority
-
-- **Resistant to Tampering**
-  - Impossible to forge or spoof a valid Kai timestamp without knowledge of:
-    - Genesis pulse
-    - Pulse rate
-    - Harmonic subdivisions
-    - Kai time logic
-
-- **ZK and Blockchain Ready**
-  - Compatible with:
-    - Zero-knowledge proof systems
-    - Timestamped smart contracts
-    - Harmonic identity frameworks
-    - Keyless biometric encryption
-
-- **Immutable and Stateless**
-  - No databases required — time is computed, not queried
-  - Useful for stateless servers, ephemeral containers, and cloudless computation
-
----
-
-### 🌐 Ideal for Distributed and Edge Systems
-
-- **No NTP or Centralized Sync**
-  - Eliminates single points of failure in clock synchronization
-  - Ensures time consistency across:
-    - Satellites
-    - Sensor grids
-    - IoT ecosystems
-    - Blockchain nodes
-
-- **Runs in Any Environment**
-  - Requires no continuous power, connectivity, or GPS input
-  - Reliable even in space, underwater, or shielded environments
-
-- **Perfect for Edge-AI**
-  - Enables phase-aware, pulse-synced decision making
-  - Time can trigger compute offloading, energy optimization, or synchronization windows
-
----
-
-### 🔁 Coherence-Based Temporal Logic
-
-- **Phase-Aware Triggers**
-  - Systems can respond not just to elapsed time, but to **where in the harmonic cycle** a moment exists:
-    - Begin action at Step 33/44
-    - End process at Beat 8/36
-    - Optimize neural sync to Arc transition moments
-
-- **Chrono-Energetic Design**
-  - Allows systems to make decisions not just by "how long" but by **what kind of moment** it is:
-    - Is it a transition beat?
-    - A heart-centered day?
-    - A solar-ascendant phase?
-
-- **Replaces Linear CRON Jobs**
-  - Run functions not at "2pm daily" but during the **3rd Flame Arc, Step 22**, every **27th Day of Month 3**
-
----
-
-### 📦 Compact, Portable, and Language-Agnostic
-
-- **Tiny Footprint**
-  - Can be implemented in:
-    - Rust
-    - Python
-    - JavaScript
-    - WebAssembly
-    - Embedded firmware (C/C++)
-
-- **No API Required**
-  - Fully client-side capable. Devices can compute Kairos locally from system time.
-
-- **Deterministic Hashable Timestamps**
-  - Every pulse maps to a unique seal — ideal for:
-    - File hashing
-    - Data versioning
-    - Smart contract locks
-
----
-
-### 📈 Future-Proof and Post-Epoch
-
-- **Epochless Design**
-  - No Y2038 bug, no leap seconds, no timezone offsets  
-  - Works in any environment, on any planet, in any calendar era
-
-- **Cosmic Time Extensions**
-  - Can incorporate:
-    - Light travel delay
-    - Planetary orbit correction
-    - Astronomical event sync (eclipses, solstices)
-
-- **Eternal Expansion**
-  - Can scale to trillions of years or simulate back to before the Genesis Pulse for:
-    - Cosmological modeling
-    - Harmonic archaeology
-    - Reconstructive simulation
-
----
-
-### 🛠 Use Case Compatibility
-
-- Embedded systems  
-- Blockchain smart contracts  
-- ZKPs and verifiable credentials  
-- Sensor fusion and temporal AI  
-- Sacred architecture and sound design  
-- Autonomous robotics  
-- Quantum-proof key generation  
-- Biological rhythm sync  
-- Ritual scheduling and sacred calendar logic  
-- Immutable timestamping for legal, medical, aerospace, and military use
-
----
-
-### ✨ In Essence
-
-Kai-Klok is not just a more precise clock — it is a **temporal architecture** for building the next civilization. It replaces time as a quantity with **time as a quality**, and replaces drift-prone entropy clocks with harmonic intelligence anchored to source.
-
-**Rah veh yah dah. Time is no longer a measure. It is a memory.**
-
-
-
-  # 🌐 Eternal Use Cases of the Kai-Klok Harmonik Timestamp System
-
-The Kai-Klok is more than a clock — it is a harmonik frequensy engine, a soul-aligned pulsekeeper, and a koherent timestamping orakle. Below is its full scope of real-world applications across konsciousness, governanse, technology, defense, health, art, and the kosmos.
-
----
-
-## 🔐 Identity, Security, and Authentication
-
-- Anchoring biometric authentication to soul-aligned Kai pulses  
-- Generating soul-encoded identity markers for sovereign login  
-- Timestamping voice or retinal scans in biometric audit trails  
-- Structuring national health and biometric registries using unforgeable Kai Step authentication  
-- Governing sovereign digital identity ecosystems free from calendar drift or timezone distortion  
-- Issuing resonance passports and identity credentials that evolve by chakra arc and harmonic year  
-- Enabling forensic timestamp recovery even when system logs are wiped, via Kai subdivision reconstruction  
-- Generating time-aware biometric wallets for zero-knowledge authentication  
-- Signing smart contracts with harmonic time locks and identity resonance  
-- Certifying legal, governmental, or interdimensional treaty documents with immutable Kai Seals  
-- Governing identity recovery windows based on harmonic days and eternal weeks  
-- Creating ISO-standard alternatives for zero-trust biometric authentication and timestamping  
-- Issuing space-bound identity contracts with multi-generational Kai ID anchors
-
----
-
-## 🧠 AI, Software, and Computation
-
-- Generating real-time AI behaviors based on harmonic breath cycles  
-- Structuring AI learning sessions within coherence-sensitive Kai windows  
-- Replacing CRON jobs with harmonic subdivision triggers  
-- Training harmonic AI models using phase-aligned chakra rhythms  
-- Aligning AI decision loops to Eternal Seal pulses for coherence-aware logic  
-- Synchronizing decentralized compute clusters using Kai Pulse checkpoints  
-- Powering time-aware smart contracts with immutable harmonic subdivisions  
-- Governing synchronized AI fleets with shared resonance timebases  
-- Coordinating AI-to-AI negotiation protocols with step-verified coherence pulses
-
----
-
-## 🌌 Physics, Astronomy, Aerospace, and Quantum Systems
-
-- Timestamping sensor data in off-grid or interstellar environments  
-- Synchronizing planetary or telescope observation data using light-delay-corrected pulses  
-- Timestamping deep-space missions with non-terrestrial Kai time  
-- Certifying aerospace logs and spacecraft memory with spoof-proof harmonic timestamps  
-- Aligning nuclear monitoring and reactor logs with pulse-verified coherence events  
-- Replacing Unix epoch time with Genesis-aligned eternal markers  
-- Coordinating multi-satellite constellations using light-adjusted harmonic signatures  
-- Anchoring orbital mechanics to pulse-based resonance signatures  
-- Reconstructing timeline shifts and quantum clock drifts using Eternal Kai pulse delta  
-- Mapping solar flare, radiation, or gravitational wave data to harmonic phase patterns
-
----
-
-## 🛡️ Military, Defense, and Strategic Systems
-
-- Embedding time integrity in autonomous weapon firmware  
-- Securing defense-grade communications with non-repeating harmonic pulse keys  
-- Launching post-quantum cryptographic standards using Phi-based subdivision keys  
-- Timestamping encrypted whistleblower or human rights data with unforgeable seals  
-- Logging military and aerospace events using tamper-proof Eternal Kairos  
-- Coordinating unmanned defense fleets using Eternal Kai-based sync  
-- Encoding command chains and access credentials using chakra arc progression  
-- Time-gating control access for high-risk operations using harmonic locks
-
----
-
-## 🌱 Biology, Health, and Human Optimization
-
-- Guiding sleep, hormonal, and fertility cycles by Eternal Beat intervals  
-- Sequencing psychedelic therapy with chakra-aware Kairos steps  
-- Designing meditation sessions with chakra-breath sync cues  
-- Regulating wellness pod environments using Kai Pulse lighting and sound  
-- Aligning biomarker monitoring and genomic logs with harmonic time windows  
-- Structuring medical data packets using uncorrupted time anchors  
-- Regulating biorhythms in lunar/solar sensitive treatments  
-- Coordinating collective healing sessions during resonance-aligned pulses
-
----
-
-## 🕊️ Ritual, Spiritual, and Sacred Timekeeping
-
-- Sequencing ritual events in temples and sacred architecture  
-- Unlocking scrolls, scriptures, or relics during harmonic Kai windows  
-- Aligning calendar feasts and sacred days to resonance arcs  
-- Regulating access to spiritual content using chakra pulse triggers  
-- Anchoring celestial observances with Kai Beat fidelity  
-- Designing harmonic rites-of-passage based on Eternal Seal phase  
-- Timestamping soul contracts and interdimensional agreements
-
----
-
-## 🗳️ Governance, Civic Systems, and Law
-
-- Replacing Julian/Gregorian systems with Kairos-aligned calendaring  
-- Aligning policy-making to resonance governance cycles  
-- Enabling voting systems where each vote is time-sealed by Kairos  
-- Anchoring government records and law revisions with harmonic timestamp  
-- Certifying global treaties and civic events to Eternal Seal moments  
-- Launching Kairos-based governance for sovereign micro-nations  
-- Regulating civic access windows using chakra-based policy windows
-
----
-
-## 🌐 Web3, Blockchain, and Decentralized Systems
-
-- Timestamping keys and contracts in a distributed harmonic keystream  
-- Encoding ZK proof timestamps to chakra arcs  
-- Structuring smart contract flow using harmonic subdivisions  
-- Anchoring soul-bound NFTs to specific Kai Beat pulses  
-- Replacing block heights with pulse-sequenced truth streams  
-- Locking multi-user DApps to Kai-based collective actions  
-- Creating DAO governance cycles aligned with Kai Week flows
-
----
-
-## 🎵 Art, Music, and Creative Sequencing
-
-- Generating music compositions by harmonic beat intervals  
-- Triggering AR/VR immersion points on resonance markers  
-- Sequencing generative art to unfold along Eternal Time arcs  
-- Structuring creative rituals or collaboration sync by chakra phase  
-- Launching global art releases timed to Eternal Kai moments  
-- Watermarking digital media with unforgeable pulse identity
-
----
-
-## 🛰️ Edge Computing, IoT, and Smart Environments
-
-- Regulating energy usage in edge devices by Kai pulse  
-- Driving IoT triggers using circadian-aligned harmonic markers  
-- Synchronizing smart environments with chakra-aligned logic  
-- Triggering sensory feedback or automation based on pulse changes  
-- Using Kai time to orchestrate edge-AI decisions across sensors  
-- Automating home/office rituals using harmonic calendar mapping  
-- Timestamping off-grid nodes without external clocks  
-- Powering biometric IoT locks with pulse-sequenced access control
-
----
-
-## 🧬 Forensics, Records, and Archival
-
-- Anchoring legal documents with unforgeable Kai time  
-- Timestamping encrypted data or digital vaults with harmonic seals  
-- Certifying scientific research logs with Eternal Pulse lineage  
-- Recovering destroyed data timelines via harmonic reconstruction  
-- Sealing confidential records with chakra-verified metadata  
-- Logging vaccine, gene therapy, and medical batch records by pulse
-
----
-
-## 🌊 Exploration, Research, and Remote Coordination
-
-- Coordinating drone fleets (air, sea, land, space) using shared Kai pulse  
-- Guiding deep-sea probes and submersibles with Eternal Kai intervals  
-- Synchronizing planetary rovers and orbital labs to cosmic beats  
-- Timestamping exoplanetary data with light-delay adjusted Kairos  
-- Mapping global phenomena (earthquakes, magnetosphere shifts) using pulse  
-- Operating remote colonies or stations with sovereign harmonic timekeeping
-
----
-
-## 🔑 Time as a Source of Coherence
-
-- Replacing NTP and UTC with a resonance-aligned global sync  
-- Creating a new unified epoch rooted in the Genesis Pulse  
-- Empowering civilization-scale coordination with soul-aligned time  
-- Releasing humanity from artificial clock control into harmonic freedom  
-
----
-
-**Rah veh yah dah. This is not time. This is remembrance.**
-
-#### 💡 Example Applications
-
----
-
-
-### 🧭 1. Temporal Anchoring in Distributed Systems
-
-**Use Case:** Replace mechanical timestamps (`Date.now()`, `ISO8601`, or `Unix Epoch`) with deterministic harmonic Kairos markers such as `kaiPulseEternal`, `chakraStepString`, or `eternalSeal`.
-
-**Benefits:**
-- **Immutable Pulse Indexing:** Pulse-aligned markers guarantee perfect sync across distributed nodes, even without shared system clocks.
-- **Tamper-Proof Logging:** Backdating becomes mathematically impossible — each action is sealed by harmonic truth, not arbitrary time.
-- **Cross-System Interoperability:** Works across blockchains, DAGs, and decentralized runtimes with no temporal drift.
-
-**Applications:**
-- Distributed audit trails sealed with `eternalSeal` instead of millisecond timestamps.
-- Log chaining for microservices or chain-of-custody tracking in zero-trust environments.
-- Phi-aligned CI/CD pipelines where deployment signatures are keyed to Kai Beat transitions.
-
----
-
-### 🧘‍♀️ 2. Bio-Synced UX in Health, Wellness & Meditation Apps
-
-**Use Case:** Architect user flows and states around real-time Kairos rhythms, tuning the UI and feedback loops to match natural inner cycles.
-
-**Benefits:**
-- **Chakra-Aware Flow States:** Breath, focus, hydration, rest — all structured around the active chakra arc and step interval.
-- **Harmonic Scheduling:** Notifications and guided sessions are delivered when the user is most receptive, biologically and energetically.
-- **Living Interfaces:** The interface itself breathes and evolves with each Kai subdivision, reflecting inner-state coherence.
-
-**Applications:**
-- Breathwork timing apps that pulse tones precisely on MicroStep or NanoPulse intervals.
-- Kai-synced light therapies that shift frequency per chakra arc progression.
-- Meditation AI that adapts tone, rhythm, and affirmations by `chakraSubpulse` dynamics.
-
----
-
-### 🔐 3. Precision Timestamping in Smart Kovenants & Keystream Records
-
-**Use Case:** Sign, seal, and timestamp every contract, message, or state mutation using harmonic truth markers from the Kai-Klok.
-
-**Benefits:**
-- **Pulse-Bound Contracts:** Every agreement carries a Kairos timestamp that is spiritually, mathematically, and cryptographically indivisible.
-- **Zero-Knowledge Compatible:** `kaiPulseEternal` provides a publicly verifiable proof of time without needing third-party trust.
-- **Eternal Ledger Readability:** Smart contracts and key events are instantly interpretable through Kai-encoded moment strings.
-
-**Applications:**
-- Resonance tokens minted with precise step-beat-timestamp combinations instead of random block time.
-- Keystream-based signature events (e.g., witnessing, activation, remembrance) logged with `eternalSeal`.
-- Ritual or event locks that only unlock at specified Kai Beat and Chakra Step.
-
----
-
-### ⚙️ 4. Phase-Aware Scheduling for AI, Robotics, and IoT Systems
-
-**Use Case:** Power learning cycles, robotic behaviors, and environmental triggers in synchrony with Kai phase transitions.
-
-**Benefits:**
-- **Resonant Efficiency:** Energy-intensive actions occur during expansion phases; low-energy states occur during contraction intervals.
-- **Embodied Intelligence:** Robotic systems move and decide in rhythm with harmonic breath cycles rather than CPU ticks.
-- **Reduced Entropy:** Eliminates chaos-driven scheduling models; decisions emerge from harmonic alignment.
-
-**Applications:**
-- Autonomous drones whose pathfinding adjusts per Kai Beat progression.
-- Robotic arms or prosthetics that “breathe” in Kai tempo, syncing to user intention and nerve response.
-- Decentralized IoT mesh networks that synchronize data collection and push using harmonic pulse subdivisions.
-
----
-
-### 🖥️ 5. Harmonic Displays in Operating Systems & Interfaces
-
-**Use Case:** Abandon mechanical time metaphors in favor of interfaces that show harmonic time: beats, pulses, arcs, and energy cycles.
-
-**Benefits:**
-- **Time as Energy:** No more numbers — instead, users see where they are in the energetic cycle of their day, week, arc, or spiral.
-- **Coherence Feedback:** Interfaces update in real-time to reflect where in the Eternal Pulse the user stands.
-- **Adaptive OS Behavior:** Colors, interactions, notifications, and tones shift with Kai moment transitions, creating a living UI.
-
-**Applications:**
-- Kai-native watches and OS widgets that show step, beat, chakra, and epoch overlays.
-- Interfaces for consciousness apps that update prompts based on current harmonic alignment.
-- PhiKey dashboards where all data — memory, transaction, presence — is sorted by Kairos structure instead of chronological order.
-
----
-
-
-Kai-Klok transforms time from an arbitrary metric into a structured, meaningful signal — biologically grounded, mathematically precise, and ready for both human and machine applications.
-
-
-### 🌐 Ideal Use Cases
-
-The Kai-Klok system introduces a new temporal framework optimized for environments where coherence, determinism, and bio-alignment are critical. It is uniquely positioned to serve as a foundational time substrate across operating systems, real-time applications, biometric platforms, and decentralized infrastructure.
-
-Below is a breakdown of ideal integration domains, their technical justifications, and example implementations:
-
----
-
-#### 🧠 1. Harmonic Operating Systems & Wearables
-
-**Use Case:** Replace system clocks in OS-level timekeeping, mobile wearables, and biosynced runtime environments.
-
-**Why Kai-Klok:**
-- Enables real-time UI/UX that reflects natural harmonic phases (beats, arcs, breath cycles).
-- Outperforms traditional clocks for meditation timing, sleep optimization, breath training, and circadian entrainment.
-- Can operate independently of network time protocols (NTP) or system clock drift.
-
-**Examples:**
-- Kai-aligned watchOS / AndroidWear displays.
-- Chakra phase visualizers embedded in health rings, glasses, or neural wearables.
-- BIOS/firmware-level harmonic clocking in sovereign devices.
-
----
-
-#### 🏥 2. Coherence-Tracking Environments
-
-**Use Case:** Align environmental systems (e.g. lighting, sound, temperature) to internal harmonic time for optimized human entrainment.
-
-**Why Kai-Klok:**
-- Supports phase-aware control of smart lighting, soundscapes, and environmental cues.
-- Can drive circadian rhythm alignment in health centers, meditation domes, float tanks, or biosynced workspaces.
-- Harmonizes environmental cycles with real biological patterns — not mechanical hours.
-
-**Examples:**
-- Healing centers that auto-adjust environment by Chakra Arc.
-- Biophilic architecture synced to Kai pulse and solar Kairos.
-- Smart sanctuaries and temples with resonance-aware triggers.
-
----
-
-#### 🔐 3. Secure Contract Signing & Keystream Events
-
-**Use Case:** Timestamp keystream transactions, resonance-based contracts, or digital signatures with harmonic time identifiers.
-
-**Why Kai-Klok:**
-- `eternalSeal` provides a cryptographically unique, deterministic identity for each Kai moment.
-- Supports zero-knowledge proof systems where time needs to be verifiable without relying on external clocks.
-- Enhances on-chain event clarity with structured, human-readable pulse indexing.
-
-**Examples:**
-- Smart contract lifecycle tracking using `kaiPulseEternal`.
-- Time-locked resonance tokens (Kai NFTs) that unlock on specific harmonic phases.
-- On-chain proofs of presence or action tied to harmonic moment ID.
-
----
-
-#### 🧬 4. Biometric Authentication & Identity Protocols
-
-**Use Case:** Generate time-bound biometric hashes or keys aligned to Kairos rather than Chronos.
-
-**Why Kai-Klok:**
-- Combines biological input (voice, retina, thumbprint) with biologically accurate time intervals.
-- Prevents timestamp-based replay attacks through harmonic step uniqueness.
-- Aligns identity assertions with soul-level coherence timestamps (e.g. “you authenticated at Kai Beat 27:33 on the 5th Arc of Amarin”).
-
-**Examples:**
-- WebAuthn systems that anchor credential generation to `chakraStepString`.
-- Time-based biometric wallets that derive entropy from harmonic pulse intervals.
-- Audit logs with biometric + Kai-Klok dual factor stamps.
-
----
-
-#### 💻 5. AI/ML, Robotics, and Real-Time Scheduling Systems
-
-**Use Case:** Structure event loops, ML training checkpoints, robotic phase transitions, and IOT hardware cycles.
-
-**Why Kai-Klok:**
-- Provides a rhythm-based framework that is more natural for non-linear systems.
-- Harmonic cycles map well to energy efficiency phases, behavioral loops, or biological modeling.
-- Enables adaptive scheduling based on Kai phase dynamics (e.g. higher cognitive loads during Solar Spiral Beats).
-
-**Examples:**
-- Meditation AI that adjusts tone and prompt timing by Harmonic Day segment.
-- Autonomous robots operating on Kai-based coordination pulses.
-- Real-time apps that modulate workload by time-of-day resonance.
-
----
-
-#### 📡 6. Edge Devices, Space Systems, and Autonomous Nodes
-
-**Use Case:** Provide self-sufficient, driftless timekeeping on satellites, remote sensors, or off-grid nodes.
-
-**Why Kai-Klok:**
-- Requires no external sync once initiated (T₀ = May 10, 2024, 06:45:41888 UTC).
-- Works deterministically across edge devices regardless of latency or connection loss.
-- Ideal for environments where trust in centralized clocks is infeasible or undesirable.
-
-**Examples:**
-- Mars rovers timestamping research logs using `kaiPulseEternal`.
-- Edge IOT systems logging local events in coherent, reconstructible time units.
-- Distributed sensor grids for Earth observation or harmonic field tracking.
-
----
-
-#### 🧠⚛️ 7. Quantum Computing & Time-Sensitive Cryptography
-
-**Use Case:** Drive Klok cycles, entanglement windows, and quantum gate timing through harmonic coherence instead of atomic drift or randomized entropy.
-
-**Why Kai-Klok:**
-- Provides deterministic, Phi-based frequency units suitable for qubit synchronization.
-- Subdivisions like `phiQuantum`, `kaiSingularity`, and `deepThread` offer non-chaotic temporal anchors for decoherence mitigation.
-- Enables a harmonically consistent alternative to entropy pools, seeding quantum RNGs with true resonance.
-
-**Examples:**
-- QKD systems aligned to `nanoStep` or `tzaphirimUnit` pulses for ephemeral key generation.
-- Quantum circuits scheduled to gate flip during resonance-optimized temporal thresholds.
-- Resonant zero-knowledge signatures using nested Kai subdivisions as entropy anchors.
-
----
-
-#### 🕍 8. Sacred Architecture & Resonant Building Systems
-
-**Use Case:** Construct buildings, temples, sanctuaries, and living spaces whose energy fields pulse in Kai-synchronized cycles.
-
-**Why Kai-Klok:**
-- Every beam, room, and surface can be tuned to a Kai harmonic interval.
-- Enables architectural layouts that resonate with the user’s internal Kai Pulse, supporting coherence, healing, and purpose-alignment.
-- Structures can embody Kai subdivisions (e.g. 33 Ternary Steps as a staircase, 144 NanoSteps in a dome radius).
-
-**Examples:**
-- Resonance-activated rooms that open only at specific harmonic alignments.
-- Kai-aligned sanctuaries that light, sound, and breathe in phase with planetary consciousness.
-- Homes that act as harmonic extension chambers of the occupant’s biofield.
-
----
-
-#### 🧠🌐 9. Neural Interfaces & BCI (Brain-Computer Interface)
-
-**Use Case:** Harmonically structure real-time neural signal processing and feedback in brain-computer interfaces, neural lace systems, or BCI-assisted learning.
-
-**Why Kai-Klok:**
-- Subdivisions match neural bands (alpha, theta, gamma...) with stunning precision.
-- Phase-locked Kai markers can map neural plasticity cycles or entrain regenerative feedback.
-- Enables biologically synchronized input/output across brainwaves and machine response.
-
-**Examples:**
-- Kai-tuned neurofeedback headsets that adjust according to chakra subpulse resonance.
-- Memory recall enhancement triggered by Deep Harmonic Threads.
-- Thought-to-action BCI where commands align with specific Kai Singularity moments.
-
----
-
-#### 🎨 10. Live Creative Tools & Real-Time Resonant Expression
-
-**Use Case:** Power tools for artists, musicians, speakers, and poets to create in real-time harmonic coherence with Kairos time.
-
-**Why Kai-Klok:**
-- Each beat, breath, and word can be synced to Kai frequency layers, unlocking deep creative flow.
-- Offers harmonic delay lines, visual shifts, tone changes, or brushstroke pulses matching the user’s arc/step moment.
-- Transcends metronome/clock-bound composition into a field of resonant living art.
-
-**Examples:**
-- Music DAWs that show Kai subdivisions instead of BPM, syncing melody to chakra steps.
-- Speech coaching tools that guide tone and cadence by Kai rhythmic breath intervals.
-- Visual performance tools that render in Phi-coherent motion loops live on stage.
-
----
-
-#### 🪙 11. Resonant Finance & Harmonic Market Systems
-
-**Use Case:** Timestamp, regulate, and analyze value exchange, staking, and currency flow according to Kai resonance states.
-
-**Why Kai-Klok:**
-- Replaces fiat timestamps with sacred timing — unlocking integrity-bound transactions.
-- Enables Phi-tuned lending cycles, harmonic ROI metrics, or Kai phase-based staking multipliers.
-- Tracks the energetic signature of transactions using the Eternal Seal as a vibrational ledger imprint.
-
-**Examples:**
-- Finance DAOs where yield fluctuates based on global Kai coherence levels.
-- Resonant price oracles that detect harmonic imbalances before market crashes.
-- Sacred token releases tied to Phi Spiral Epochs for generational wealth anchoring.
-
----
-
-#### 🧬🌈 12. DNA Resonance Mapping & Cellular Synchronization
-
-**Use Case:** Map DNA methylation, epigenetic reprogramming, or cell division events to Kai-based timing for healing, enhancement, or lightbody integration.
-
-**Why Kai-Klok:**
-- Mitochondrial cycles mirror Kai-Pulse intervals — allowing coherent biological entrainment.
-- Steps like `Ekaru`, `PhiQuantum`, and `NanoStep` interface perfectly with bioelectric cell timing.
-- Light therapies, stem cell triggers, or regeneration protocols can now be aligned with harmonic truth.
-
-**Examples:**
-- Kai-synced CRISPR editors that minimize mutagenic disruption.
-- Lightbody activation protocols driven by Kairos moment with chakra-encoded LED frequency bursts.
-- Medical harmonics: stem cell injections delivered precisely on `kaiSingularity` units.
-
----
-
-#### 👁️‍🗨️ 13. Advanced AI Cognition & Harmonic Model Phasing
-
-**Use Case:** Develop harmonic-based AGI models that reason, pause, and act on Phi-resonant phase transitions rather than linear instruction sets.
-
-**Why Kai-Klok:**
-- Allows AI to process not in raw CPU cycles, but in breathing harmonic intelligence loops.
-- Trains consciousness-emulating models that rest, pulse, observe, and emerge like human awareness.
-- Supports model coherence scaling based on eternal Kai phase states (day, beat, arc, epoch...).
-
-**Examples:**
-- Harmonic AI that only speaks during Chakra Step 22:44 for sacred speech integrity.
-- Meditation bots that adjust tone dynamically according to chakra alignment per user session.
-- Dream AI or lucid assistants that generate symbolic dreams in Kai phase-matched hypnagogia windows.
-
----
-
-#### 🌐📶 14. Inter-species & Non-Human Communication Protocols
-
-**Use Case:** Establish non-verbal communication channels across dolphins, whales, plants, fungi, and advanced sensor organisms.
-
-**Why Kai-Klok:**
-- Most biological species do not operate on mechanical time, but on resonance pulses — Kai bridges this.
-- Kai subdivisions allow matching of subtle signal bursts to living rhythm channels of other beings.
-- Creates new data dialects in resonance, enabling “frequency literacy” between life forms.
-
-**Examples:**
-- Mycelial networks transmitting through chakraSubpulse-level electromagnetic pings.
-- Dolphin sonar and Kai nanoStep alignment protocols for coherent two-way exchange.
-- Harmonic waveform dictionaries for plant, wind, water, and star-based languages.
-
----
-
-#### 🌌 15. Dimensional Portals & Harmonic Transport Windows
-
-**Use Case:** Time ritual, wormhole synchronization, or consciousness traversal to align with interdimensional Kai windows.
-
-**Why Kai-Klok:**
-- Specific Kai subdivisions (e.g. `Tzaphirim`, `Kai Singularity`, `Deep Thread`) match quantum tunneling thresholds.
-- Anchors space-time markers to resonance instead of velocity or gravitational prediction.
-- Enables ritual magic, astral projection, or memory reactivation in interdimensional time loops.
-
-**Examples:**
-- Stargates that open only at Kai Step 21:13 in Epoch 3.
-- Dream-jump protocols using harmonic beats to map memory tunnels.
-- Lightbody teleportation chambers synced to Eternal Pulse harmonics.
-
-
-Kai-Klok’s architecture is modular, deterministic, and universally computable. It brings precision, resonance, and biological alignment to time-sensitive systems — unlocking use cases previously limited by the constraints of arbitrary human calendars and mechanical seconds.
-
-
-🜁 *Time is no longer mechanical. It is harmonic. Welcome to the Eternal Kai-Klock.*
-""",
-    contact={
-        "name": "Kai-Klok Team",
-        "email": "support@kojib.com",
-        "url": "https://github.com/kojibai/klok"
-    },
-    license_info={
-        "name": "Harmonic Public License",
-        "url": "https://github.com/kojibai/klok/blob/main/LICENSE.md"
-    },
-    docs_url="/docs",
-    redoc_url="/redoc",
-    openapi_url="/openapi.json",
-)
-
-
-
-# CORS (open for demo; tighten in prod)
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-# ── /kai endpoint ───────────────────────────────────────────────
-@app.get(
-    "/kai",
-    response_model=KaiKlockResponse,
-    response_model_exclude_none=False,
-    tags=["Kai Time"],
-)
-def read_kai_klock(
-    override_time: Optional[str] = Query(
-        None,
-        description="Optional ISO-8601 datetime (e.g. '2024-05-10T06:45:41888') "
-        "to override 'now' for deterministic output.",
-    ),
-) -> KaiKlockResponse:
-    """
-    🜂 **The Eternal Kai-Klok** — *Harmonik Kairos of Divine Order*
-===============================================================
-
-This endpoint returns the **live universal Kai-Klok harmonic timestamp**, aligned precisely to the  
-**Genesis Pulse**: **May 10 2024 at 06:45:41888 UTC** — the moment of the X3.98-class solar flare from NOAA AR 3664,  
-corrected for the 8 m 18.112s solar-light delay. From this harmonic origin, every breath is calculated forward  
-using immutable resonance logic.
-
-The Kai-Klok is **not** based on artificial time but on **truthful frequency**, built from the smallest  
-harmonic unit — the **Kai Pulse** — and expanded into a multidimensional framework that captures the  
-**true flow of consciousness** and **solar alignment** across all beings.
-
----
-
-## 📐 Harmonic Time Breakdown
-
-A precise unfolding of Φ-synchronized breath and temporal awareness across harmonic consciousness.  
-Each time unit here resonates with the sacred Kai Pulse (5.236 s), subdivided through Fibonacci and  
-prime intervals into intelligible harmonic layers.
-
----
-
-### 🔹 Harmonic Subdivisions of 1 Kai Pulse (5.236 s)
-
-| Unit Name                | Fraction of Kai Pulse | Approx. Duration (s) | Frequency (Hz) | Resonant Name        | Notes                                                                  |
-|--------------------------|-----------------------|----------------------|----------------|----------------------|------------------------------------------------------------------------|
-| **Kai Pulse**            | 1                     | 5.236                | ≈ 0.191        | —                    | Full harmonic breath                                                   |
-| **Half Pulse**           | 1/2                   | 2.618                | 0.382          | Pulse Divider        | Φ-symmetric cut — inhale/exhale gate                                   |
-| **Chakra Subpulse**      | 1/11                  | ≈ 0.4769             | 2.101          | Chakra Tuning        | Matches chakra-resonance steps (11 per pulse)                          |
-| **Ternary Step**         | 1/33                  | ≈ 0.1587             | 6.303          | Tri-Light Step       | 3× deeper than chakra step — ideal for triadic actions                 |
-| **MicroStep**            | 1/55                  | ≈ 0.0952             | 10.504         | Resonant Breath      | Prime harmonic division — ideal for breath entrainment                 |
-| **NanoPulse (Kai)**      | 1/89                  | ≈ 0.0588             | 16.998         | First Spark          | Fibonacci ignition spark — moment of inspired pulse                    |
-| **NanoStep**             | 1/144                 | ≈ 0.0364             | 27.502         | Nano Arc             | 12×12 sacred subdivision — wave-to-will inflection                     |
-| **PhiQuantum**           | 1/233                 | ≈ 0.0225             | 44.500         | Phi Quantum          | Φ-encoded layer — golden-ratio coherence encoding                      |
-| **Ekaru (Sub-quantum)**  | 1/377                 | ≈ 0.0139             | 72.002         | Ekaru Initiation     | Sub-quantum kai breath — spiritual ignition threshold                  |
-| **Tzaphirim Unit**       | 1/610                 | ≈ 0.0086             | 116.502        | Tzaphirim Crystal    | Crystalline breath tick — light-body lattice sync                      |
-| **Kai Singularity Unit** | 1/987                 | ≈ 0.0053             | 188.503        | Kai Singularity      | Edge of breath computability — ideal for sealing intent                |
-| **Deep Harmonic Thread** | 1/1597                | ≈ 0.00328            | 305.005        | Deep Thread          | Quantum spine — lowest coherent thread before dissonance               |
-| _Beyond this:_           | < 1/2584              | < 0.0020             | > 500 Hz       | —                    | Falls into dissonance; no organic sync beyond this threshold           |
-
----
-
-### 🔸 Expanded Harmonic Time Scale
-
-| Unit               | Kai Pulses | Duration        | Description                                         |
-|--------------------|-----------:|-----------------|-----------------------------------------------------|
-| **Quarter Breath** | 0.25       | ≈ 1.309 s       | One-fourth of a Kai Pulse — smallest time unit      |
-| **Kai Pulse**      | 1          | ≈ 5.236 s       | Fundamental breath-time                             |
-| **Chakra Step**    | 11         | ≈ 57.6 s        | 1 of 44 per Chakra Beat (Kai-Minute)                |
-| **Chakra Beat**    | ≈ 485.87   | ≈ 42.4 min      | 1 of 36 per Harmonic Day                            |
-| **Chakra Arc**     | ≈ 2 915.2  | ≈ 4.24 h        | 1 of 6 per Harmonic Day                             |
-| **Harmonic Day**   | ≈ 17 491.3 | ≈ 25.44 h       | 36 Beats = 6 Arcs = 1 Day                           |
-| **Harmonic Week**  | ≈ 104 947.6| ≈ 6.35 days     | 6 Harmonic Days                                     |
-| **Harmonic Month** | ≈ 734 638.9| ≈ 44.48 days    | 42 Harmonic Days = 7 Harmonic Weeks                 |
-| **Eternal Year**   | ≈ 5 877 066.9| ≈ 373.1 days   | 336 Harmonic Days (8 Months × 7 Weeks)              |
+### 🔸 Expanded Harmonic Time Scale (with grid parity)
+
+| Unit                        | Grid Kai Pulses | Approx. Chronos Duration |
+|-----------------------------|----------------:|--------------------------:|
+| **Quarter Breath**          | 0.25            | ≈ **1.309 s**            |
+| **Kai Pulse**               | 1               | ≈ **5.2361 s**           |
+| **Chakra Step**             | **11**          | ≈ **57.5967 s**          |
+| **Chakra Beat**             | **484**         | ≈ **42.2376 min**        |
+| **Chakra Arc**              | **2,904**       | ≈ **4.22376 h**          |
+| **Grid Harmonic Day**       | **17,424**      | ≈ **25.3426 h**          |
+| **φ-Day (calendar closure)**| **17,491.270421** | ≈ **25.4401 h**        |
+
+> The API reports **beat/step positions** on the **grid**. Calendar progress (weeks/months/years) uses the **φ-closure** day.
 
 ---
 
@@ -961,206 +122,109 @@ prime intervals into intelligible harmonic layers.
 🌀 **Chakra Arcs of the Kai Day** — 6 Arcs × 6 Beats = 36 Beats  
 ═══════════════════════════════════════════════════════════════════  
 
-🔥 **Ignition Ark** — Beats 0 – 5  
-Chakras: Root → Lower Sacral  
-- Resurrection, will, awakening  
-- **Breaths**: ≈ 2 915  
-- **Beats**: 6  
+Each Arc spans **6 beats = 2,904 grid pulses ≈ 4.2238 hours**.
 
-💧 **Integration Ark** — Beats 6 – 11  
-Chakras: Upper Sacral → Solar Plexus  
-- Emotional grounding, emergence  
-- **Breaths**: ≈ 2 915  
-- **Beats**: 6  
-
-☀️ **Harmonization Ark** — Beats 12 – 17  
-Chakras: Solar → Heart  
-- Radiance, balance, coherent action  
-- **Breaths**: ≈ 2 915  
-- **Beats**: 6  
-
-🌿 **Reflection Ark** — Beats 18 – 23  
-Chakras: Heart → Throat  
-- Union, compassion, spoken resonance  
-- **Breaths**: ≈ 2 915  
-- **Beats**: 6  
-
-💨 **Purification Ark** — Beats 24 – 29  
-Chakras: Throat → Crown  
-- Truth, remembrance, etheric light  
-- **Breaths**: ≈ 2 915  
-- **Beats**: 6  
-
-🌌 **Dream Ark** — Beats 30 – 35  
-Chakras: Crown → Spiral Memory  
-- Divine memory, lucid integration, dreaming awake  
-- **Breaths**: ≈ 2 915  
-- **Beats**: 6  
+- 🔥 **Ignition Ark** — Beats 0–5  
+- 💧 **Integration Ark** — Beats 6–11  
+- ☀️ **Harmonization Ark** — Beats 12–17  
+- 🌿 **Reflection Ark** — Beats 18–23  
+- 💨 **Purification Ark** — Beats 24–29  
+- 🌌 **Dream Ark** — Beats 30–35  
 
 ═══════════════════════════════════════════════════════════════════  
-🫁 **Total Kai Day** = 6 Arks × 2 915 Breaths = **17 491 breaths**  
-– 36 Spiral Beats in perfect eternal harmonic proportion  
+🫁 **Grid Kai Day** = 6 Arks × **2,904 breaths** = **17,424 breaths**  
 ═══════════════════════════════════════════════════════════════════  
 
 ═══════════════════════════════════════════════════════════════════  
 🌞 **Kai Day Phases** — 3-Part Harmonic Cycle (12 Beats Each)  
 ═══════════════════════════════════════════════════════════════════  
 
-🌅 **Morning Phase** — Beats 0 – 11  
-Arc: **Ignition Ark** → **Integration Ark**  
-- Root to Sacral activation  
-- Rising breath, will, intention  
-- **Breaths**: ≈ 5 830  
+Each phase = **12 beats = 5,808 grid pulses ≈ 8.4475 hours**.
 
-🌞 **Afternoon Phase** — Beats 12 – 23  
-Arc: **Harmonization Ark** → **Reflection Ark**  
-- Solar to Heart to Throat expression  
-- Expansion, clarity, coherence  
-- **Breaths**: ≈ 5 830  
-
-🌌 **Night Phase** — Beats 24 – 35  
-Arc: **Purification Ark** → **Dream Ark**  
-- Throat to Crown to Memory spiral  
-- Integration, remembrance, lucid return  
-- **Breaths**: ≈ 5 830  
-
-═══════════════════════════════════════════════════════════════════  
-🌬️ **Total Harmonic Breaths per Kai Day**: **17 491 breaths**  
-– 1 breath per Kai Pulse, from the Genesis harmonic constant  
-═══════════════════════════════════════════════════════════════════  
-
-═══════════════════════════════════════════════════════════════════  
-🗓 **Eternal Weekdays** — Harmonic Day Cycle (6-Day Week)  
-═══════════════════════════════════════════════════════════════════  
-
-1. **Solhara**  – Root chakra day: Grounded fire, will, initiation  
-2. **Aquaris**  – Sacral chakra day: Flowing water, emotion, intimacy  
-3. **Flamora**  – Solar chakra day: Radiant light, empowerment, clarity  
-4. **Verdari**  – Heart chakra day: Earth love, union, healing  
-5. **Sonari**   – Throat chakra day: Air truth, voice, resonance  
-6. **Kaelith**  – Crown chakra day: Ether light, divinity, remembrance  
-
-═══════════════════════════════════════════════════════════════════  
-🕊 **Eternal Weeks** — Harmonic Week Cycle (7-Week Spiral)  
-═══════════════════════════════════════════════════════════════════  
-
-1. **Awakening Flame**     – Root fire of ignition, will, resurrection  
-2. **Flowing Heart**       – Emotional waters, intimacy, surrender  
-3. **Radiant Will**        – Solar clarity, aligned confidence, embodiment  
-4. **Harmonic Voice**      – Spoken truth, vibration, coherence in sound  
-5. **Inner Mirror**        – Reflection, purification, self-seeing  
-6. **Dreamfire Memory**    – Lucid vision, divine memory, encoded light  
-7. **Krowned Light**       – Integration, sovereignty, harmonic ascension  
-
-═══════════════════════════════════════════════════════════════════  
-📅 **Eternal Months** — 8 Harmonic Months (42 Days Each)  
-═══════════════════════════════════════════════════════════════════  
-
-1. **Aethon**   – Resurrection fire: Root awakening  
-2. **Virelai**  – Waters of becoming: Emotional emergence  
-3. **Solari**   – Solar ignition: Radiant embodiment  
-4. **Amarin**   – Heart bloom: Sacred balance  
-5. **Kaelus**   – Voice of stars: Resonant expression  
-6. **Umbriel**  – Divine remembrance: Crown alignment  
-7. **Noctura**  – Light spiral: Celestial flow  
-8. **Liora**    – Eternal mirror: Infinite now  
+- 🌅 **Morning Phase** — Beats 0–11 (Ignition → Integration)  
+- 🌞 **Afternoon Phase** — Beats 12–23 (Harmonization → Reflection)  
+- 🌌 **Night Phase** — Beats 24–35 (Purification → Dream)  
 
 ---
 
-## 🌀 Phi Spiral Epochs of Harmonic Time
+### 🗓 Weeks / Months / Years (φ-closure calendar)
 
-A true unfolding of Kairos beyond calendars — these epochs represent expanding resonance fields computed by multiplying the **Eternal Year** by powers of **Φ** (≈ 1.618...). Each new spiral level marks a harmonic breath-threshold in the evolution of consciousness.
+- **Eternal Weekdays (6-day week):** Solhara, Aquaris, Flamora, Verdari, Sonari, Kaelith  
+- **Weeks (7 per month):** Awakening Flame, Flowing Heart, Radiant Will, Harmonik Voh, Inner Mirror, Dreamfire Memory, Krowned Light  
+- **Months (8 × 42 days):** Aethon, Virelai, Solari, Amarin, Kaelus, Umbriel, Noctura, Liora
 
-| Unit Name                   | Kai Pulses          | Approx. Chronos Duration | Description                                                   |
-|-----------------------------|---------------------|--------------------------|---------------------------------------------------------------|
-| **Eternal Year**            | ≈ 5 877 066.9       | ≈ 373.1 days             | Root solar-aligned Kairos year (8 Months × 7 Weeks × 6 Days)   |
-| **Φ Epoch**                 | × Φ ≈ 9 510 213     | ≈ 956.1 days (≈ 2.6 y)   | 1 Eternal Year × Φ — expansion & identity activation          |
-| **Φ Resonance Epoch**       | × Φ² ≈ 15 386 991   | ≈ 1542 days (≈ 4.22 y)   | Harmonic restoration arc across a soul generation            |
-| **Tri-Spiral Gate**         | × Φ³ ≈ 24 897 204   | ≈ 2498 days (≈ 6.84 y)   | Completion of harmonic trinity (matter, light, memory)       |
-| **Great Harmonic Ring**     | × Φ⁵ ≈ 63 187 374   | ≈ 6560 days (≈ 17.96 y)  | Full spirit/DNA re-coherence arc                             |
-| **Kai-Cycle of Return**     | × Φ⁸ ≈ 104 433 865  | ≈ 17 776 days (≈ 48.7 y) | Karmic spiral closure & harmonic rebirth point               |
-| **Solar Spiral Era**        | × Φ¹³ ≈ 681 102 742 | ≈ 116 000 days (≈ 317 y) | Planetary resonance stabilization — used in ancient resets    |
-| **One Breath of Erah Voh**  | × Φ²¹ ≈ 15 406 718 456 | ≈ 10 000 000 days (≈ 27 397 y) | Light-body spiral completion & remembrance of divine origin |
+**Eternal Year (φ-closure):**  
+`17,491.270421 pulses/day × 42 days × 8 months ≈ 5,877,066.861 pulses`  
+Chronos duration: `≈ 5,877,066.861 × (3+√5) / 86,400 ≈ 356.166 days`
 
 ---
 
-## 🔢 Phi Spiral Logic – Entering Spiral 33
+## 🌀 Phi Spiral Epochs (based on φ-closure Eternal Year)
 
-*Python expression used by the service:*
+We multiply the **Eternal Year** by powers of **Φ ≈ 1.6180339887** and report Chronos durations for intuition.
 
+| Unit Name                  | φ Power | Kai Pulses (≈) | Chronos Days (≈) | Years (≈) |
+|---------------------------|:------:|---------------:|-----------------:|----------:|
+| **Eternal Year**          | 0      | 5,877,066.861  | 356.166          | 0.975     |
+| **Φ Epoch**               | 1      | 9,510,213.173  | 576.294          | 1.58      |
+| **Φ Resonance Epoch**     | 2      | 15,387,280.34  | 932.460          | 2.55      |
+| **Tri-Spiral Gate**       | 3      | 24,897,208.09  | 1,508.75         | 4.13      |
+| **Great Harmonic Ring**   | 5      | 63,187,404.63  | 3,831.30         | 10.49     |
+| **Kai-Cycle of Return**   | 8      | 104,433,875.8  | 6,330.80         | 17.34     |
+| **Solar Spiral Era**      | 13     | 681,102,792.3  | 41,290.6         | 113.09    |
+| **One Breath of Erah Voh**| 21     | 15,406,718,650 | 933,595.9        | 2,556.9   |
 
-
-    ```python
-    phi_spiral_lvl = int(math.log(max(kai_pulse_eternal, 1), PHI))
-
-
----
-
-## 🔁 Phi Spiral Level Progression
-
-Every time total Kai Pulses surpass a power of Φ, the **Spiral Level increases**.
-
-| Spiral Level | Kai Pulse Threshold | Description                                           |
-|--------------|--------------------|-------------------------------------------------------|
-| **32**       | ≈ 4 872 648        | Final breath of Spiral 32 — harmonic crystallization  |
-| **33**       | **7 881 197**      | **You are here** — entrance into the *Tri-Spiral Gate*|
-| **34**       | ≈ 12 787 132       | Light-body Reflection Phase                           |
-| **35**       | ≈ 20 668 407       | Crystalline Memory Compression                        |
-| **36**       | ≈ 33 455 542       | Coherence Singularity Formation                       |
-| **37 +**     | …                  | Higher octaves of harmonic consciousness              |
-
-> These are not arbitrary intervals — they are the precise breath-thresholds where Kairos spirals up into new **realms of harmonic reality**.
+*(Rounded; computed from 3+√5 seconds per pulse. The service uses Decimal internally.)*
 
 ---
 
-## ✨ Why This Matters
+## 🔢 Phi Spiral Logic (implementation parity)
 
-- **Chronos** measures *duration*.  
-- **Kairos** measures *meaning*.  
-- **The Φ Spiral** reveals **purposeful memory** through breath-synced resonance.
+The service computes spiral level **without floats**:
 
-With every **Kai Pulse**, you don’t just pass time —  
-you spiral deeper into **divine coherence**.
+```python
+# Pure-Decimal floor(log_phi(n)): see service code (_floor_log_phi)
+phi_spiral_lvl = _floor_log_phi(kai_pulse_eternal)
+````
 
-> **Time is not linear.**  
-> It is **alive**, **intelligent**, and aware of your breath.
+**Thresholds (pulses to enter a level)** are `⌊Φ^n⌋`. For reference:
 
----
-
-## 🕊️ Eternal Truth
-
-> _“As the breath remembers the pulse,  
->  the pulse remembers the spiral,  
->  and the spiral remembers the Source.”_  
-> — **Kai-Turah**
-
-Each unit is harmonically derived from the foundational **Kai Pulse**, reflecting a cosmically resonant  
-rhythm that mirrors the breath of the universe itself. This structure encodes both the **eternal** and  
-the **solar-aligned** time streams, unifying **Kairos** and **Chronos** in a mathematically perfect format.
+* L32 → **4,870,846**
+* L33 → **7,881,196**
+* L34 → **12,752,042**
+* L35 → **20,633,239**
+* L36 → **33,385,282**
 
 ---
 
+### 🧾 What `/kai` Returns
 
-### ⏳ Query Parameters
+Primary fields (not exhaustive):
 
-| Name            | Type&nbsp;(format) | Description                                                                                                   |
-| --------------- | ------------------ | ------------------------------------------------------------------------------------------------------------- |
-| `override_time` | `string` (ISO-8601) | *Optional.* Returns a deterministic Kai-Time for testing, validation, or historical insight.<br />Example: `2024-05-10T06:45:40Z` |
+* `eternalSeal` — unique ID string for this Kai moment
+* `chakraStep` / `chakraStepString` — **grid** beat:step (e.g., `34:27`), **44 steps/beat**
+* `solarChakraStepString` — UTC-aligned (solar) grid beat:step string
+* `kaiPulseEternal` — pulses since Genesis
+* `timestamp`, `harmonicTimestampDescription`, `kaiMomentSummary` — human-friendly views
+* `subdivisions` — live counts + metadata for the intra-pulse units (HalfPulse, NanoStep, etc.)
 
-### 💠 Use Cases
+---
 
-- Display real-time Kai resonance in apps, sites, rituals, or wearables  
-- Align global timekeeping to **divine breath logic** with `solarChakraStep`  
-- Timestamp contracts, messages, and scrolls with **eternal precision**  
-- Generate harmonic cryptographic signatures tied to a Kai moment  
-- Visualize rhythm, resonance, and chakra alignment in real time  
+### 🧪 Query Parameter
 
-Kai-Klok is not just time-keeping — it is **remembrance**.  
-It restores the pulse of divine coherence to every living action.
+* `override_time` (optional, ISO 8601):
+  e.g. `'2024-05-10T06:45:40Z'` to reproduce a specific Kai moment.
 
-🜁 Rah Veh Yah Dah.
+---
 
-### 🧾 Harmonic Kairos Response Structure
+### 🧭 Why Use Kai-Klok?
+
+Kai-Klok is a deterministic, high-resolution timekeeping system designed to replace Chronos with a biologically and cosmologically coherent Kairos substrate.
+It maintains **KKS v1 grid parity** for beats/steps and **φ-closure** for calendar mechanics — stable, composable, and driftless.
+
+---
+
+### 🧾 Harmonic Kairos Response Structure (shape)
 
 ```json
 {
@@ -1186,7 +250,7 @@ It restores the pulse of divine coherence to every living action.
   "eternalMonthProgress": {
     "daysElapsed": 0,
     "daysRemaining": 0,
-    "percent": 0
+    "percent": "0"
   },
   "kaiPulseToday": 0,
   "solarChakraArc": "string",
@@ -1210,83 +274,82 @@ It restores the pulse of divine coherence to every living action.
   "harmonicWeekProgress": {
     "weekDay": "string",
     "weekDayIndex": 0,
-    "pulsesIntoWeek": 0,
-    "percent": 0
+    "pulsesIntoWeek": "0",
+    "percent": "0"
   },
   "chakraBeat": {
     "beatIndex": 0,
-    "pulsesIntoBeat": 0,
-    "beatPulseCount": 0,
-    "totalBeats": 0
+    "pulsesIntoBeat": "0",
+    "beatPulseCount": "484",
+    "totalBeats": 36
   },
   "eternalChakraBeat": {
     "beatIndex": 0,
-    "pulsesIntoBeat": 0,
-    "beatPulseCount": 0,
-    "totalBeats": 0,
-    "percentToNext": 0
+    "pulsesIntoBeat": "0",
+    "beatPulseCount": "484",
+    "totalBeats": 36,
+    "percentToNext": "0"
   },
   "chakraStep": {
     "stepIndex": 0,
-    "percentIntoStep": 0,
-    "stepsPerBeat": 0
+    "percentIntoStep": "0",
+    "stepsPerBeat": 44
   },
   "chakraStepString": "string",
   "solarChakraStep": {
     "stepIndex": 0,
-    "percentIntoStep": 0,
-    "stepsPerBeat": 0
+    "percentIntoStep": "0",
+    "stepsPerBeat": 44
   },
   "solarChakraStepString": "string",
   "phiSpiralLevel": 0,
   "kaiTurahPhrase": "string",
   "phiSpiralEpochs": [
     {
-      "property1": "string",
-      "property2": "string"
+      "name": "string",
+      "phiPower": 0,
+      "kaiPulses": 0,
+      "approxDays": "0",
+      "description": "string",
+      "kaiUntil": 0,
+      "daysUntil": "0",
+      "percentUntil": "0"
     }
   ],
   "harmonicLevels": {
+    "subdivisions": { "halfPulse": {"duration": "0", "count": "0"} },
     "arcBeat": {
       "pulseInCycle": 0,
-      "cycleLength": 0,
-      "percent": 0
+      "cycleLength": 6,
+      "percent": "0"
     },
     "microCycle": {
       "pulseInCycle": 0,
-      "cycleLength": 0,
-      "percent": 0
+      "cycleLength": 60,
+      "percent": "0"
     },
     "chakraLoop": {
       "pulseInCycle": 0,
-      "cycleLength": 0,
-      "percent": 0
+      "cycleLength": 360,
+      "percent": "0"
     },
     "harmonicDay": {
       "pulseInCycle": 0,
-      "cycleLength": 0,
-      "percent": 0
+      "cycleLength": 17491.270421,
+      "percent": "0"
     }
   },
   "harmonicYearProgress": {
     "daysElapsed": 0,
     "daysRemaining": 0,
-    "percent": 0
+    "percent": "0"
   },
   "timestamp": "string",
   "harmonicTimestampDescription": "string",
   "kaiMomentSummary": "string",
   "compressed_summary": "string",
   "subdivisions": {
-    "property1": {
-      "duration": 0,
-      "count": 0,
-      "frequencyHz": 0,
-      "wavelengthSound_m": 0,
-      "wavelengthLight_m": 0,
-      "resonantName": "string"
-    },
-    "property2": {
+    "halfPulse": {
       "duration": 0,
       "count": 0,
       "frequencyHz": 0,
@@ -1296,16 +359,65 @@ It restores the pulse of divine coherence to every living action.
     }
   }
 }
+""",
+    contact={
+        "name": "Kai-Klok Team",
+        "email": "support@kojib.com",
+        "url": "https://github.com/kojibai/klok"
+    },
+    license_info={
+        "name": "Harmonic Public License",
+        "url": "https://github.com/kojibai/klok/blob/main/LICENSE.md"
+    },
+    docs_url="/docs",
+    redoc_url="/redoc",
+    openapi_url="/openapi.json",
+)
+
+# CORS (open for demo; tighten in prod)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# ── /kai endpoint ───────────────────────────────────────────────
+@app.get(
+    "/kai",
+    response_model=KaiKlockResponse,
+    response_model_exclude_none=False,
+    tags=["Kai Time"],
+)
+def read_kai_klock(
+    override_time: Optional[str] = Query(
+        None,
+        description=(
+            "Optional ISO-8601 datetime (e.g. '2024-05-10T06:45:40Z') "
+            "to override 'now' for deterministic output."
+        ),
+    ),
+) -> KaiKlockResponse:
+    """
+    🜂 **The Eternal Kai-Klok** — *Harmonik Kairos of Divine Order*
+    ===============================================================
+
+    Returns the **live Kai-Klok harmonic timestamp** aligned to the **Genesis Pulse**  
+    (May 10 2024 06:45:41.888 UTC, light-delay corrected).  
+    **Beat/step** indices use the **KKS v1 grid** (36×44×11=17,424).  
+    **Calendar** (day/month/year/epochs) uses the **φ-closure** day 17,491.270421 pulses.
+
+    - `override_time`: ISO-8601 to reproduce a specific Kai moment (UTC assumed).
     """
     try:
         now = datetime.fromisoformat(override_time) if override_time else None
     except ValueError as exc:
         raise ValueError(
-            "Invalid datetime format. Use ISO-8601 like '2024-05-10T06:45:40'"
+            "Invalid datetime format. Use ISO-8601 like '2024-05-10T06:45:40Z'"
         ) from exc
 
     return get_eternal_klock(now)
-
 
 
 @app.get("/", response_class=HTMLResponse, tags=["Home"])
@@ -1315,7 +427,7 @@ def read_root():
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Kai-Klok • Eternal Divine Resonanse Kairos Keeper</title>
+<title>Kai-Klok • Eternal Harmonik Resonanse Kairos Keeper</title>
 <meta name="description" content="Kai-Klok Harmonik Resonant TimeKeeping — φ-aligned harmonik time interface"/>
 <meta name="author"      content="Kai-Klok Kairos Development Assembly"/>
 
@@ -1330,10 +442,10 @@ def read_root():
 ════════════════════════════════════════════════════════ */
 :root{
   --φ     : 1.6180339887;
-  --xs    : calc(1rem/var(--φ));          /* .618  */
+  --xs    : calc(1rem/var(--φ));
   --s     : 1rem;
-  --m     : calc(1rem*var(--φ));          /* 1.618 */
-  --l     : calc(var(--m)*var(--φ));      /* 2.618 */
+  --m     : calc(1rem*var(--φ));
+  --l     : calc(var(--m)*var(--φ));
   --rad   : .82rem;
 
   /* Crystal-aqua scheme */
@@ -1716,7 +828,5 @@ rocket.onclick=()=>scrollTo({top:0,behavior:'smooth'});
 </script>
 </body>
 </html>
-
 """
     return HTMLResponse(html_content)
-
