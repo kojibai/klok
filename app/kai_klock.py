@@ -14,7 +14,6 @@ from kai_klock_models import KaiKlockResponse, ChakraStep
 #      36 beats/day × 44 steps/beat × 11 pulses/step = 17,424 pulses/day
 #  • Exact φ breath for time (3 + √5) in Decimal; no float rounding in core.
 #  • Deterministic floor for all implicit integer conversions.
-#  • FIX: project φ-day μpulses → 17,424-grid before beat/step math (TS parity)
 # ════════════════════════════════════════════════════════════════
 
 # ── Constants ───────────────────────────────────────────────────
@@ -29,7 +28,7 @@ KAI_PULSE_DURATION = float(KAI_PULSE_DURATION_DEC)  # compatibility only
 
 # Sunrise anchor
 SOLAR_GENESIS_UTC_MS = 1715400806000  # 2024-05-11T04:13:26.000Z
-ETERNAL_GENESIS_PULSE = datetime(2024, 5, 10, 6, 45, 41, 888000, tzinfo=timezone.utc)  # 1715323541888 ms
+ETERNAL_GENESIS_PULSE = datetime(2024, 5, 10, 6, 45, 41, 888000, tzinfo=timezone.utc)
 genesis_sunrise       = datetime(2024, 5, 11, 4, 13, 26, 0, tzinfo=timezone.utc)
 
 # ── μpulse canon (1 pulse = 1,000,000 μpulses) ──────────────────
@@ -265,15 +264,6 @@ def _ordinal(n: int) -> str:
         return "th"
     return {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th")
 
-# ── Grid projection helper (φ-day μ → 17,424-grid μ; exact integer math) ─────
-def _mu_project_to_grid(mu_in_phi_day: int) -> int:
-    """
-    Project μpulses within a φ-day (length = UPULSES_PER_DAY) onto the semantic
-    17,424-grid (length = UPULSES_PER_GRID_DAY) exactly, matching SovereignSolar.ts:
-        muGrid = (muInto * MU_PER_GRID_DAY) / MU_PER_DAY
-    """
-    return (mu_in_phi_day * UPULSES_PER_GRID_DAY) // UPULSES_PER_DAY
-
 # ════════════════════════════════════════════════════════════════
 #  Main generator (KKS v1 grid parity for beats/steps)
 # ════════════════════════════════════════════════════════════════
@@ -292,30 +282,30 @@ def get_eternal_klock(now: Optional[datetime] = None) -> KaiKlockResponse:
     kai_pulse_today         = int(mu_into_solar_day // UPULSES_PER_PULSE)
     eternal_kai_pulse_today = int(mu_into_eternal_day // UPULSES_PER_PULSE)
 
-    # ── GRID (KKS v1) beat + step indexing (μ-pulse lattice with projection) ───
-    # Eternal grid (project φ-day μ → 17,424-grid μ, then index)
-    mu_grid_eternal    = _mu_project_to_grid(mu_into_eternal_day)
-    mu_in_beat_eternal = mu_grid_eternal % UPULSES_PER_GRID_BEAT
-    mu_in_step_eternal = mu_in_beat_eternal % UPULSES_PER_GRID_STEP
+    # ── GRID (KKS v1) beat + step indexing (μ-pulse lattice) ────
+    # Eternal grid (eternal day lattice)
+    mu_pos_in_day_eternal  = mu_into_eternal_day % UPULSES_PER_GRID_DAY
+    mu_pos_in_beat_eternal = mu_pos_in_day_eternal % UPULSES_PER_GRID_BEAT
+    mu_pos_in_step_eternal = mu_pos_in_beat_eternal % UPULSES_PER_GRID_STEP
 
-    eternal_beat_idx = int(mu_grid_eternal // UPULSES_PER_GRID_BEAT)          # 0..35
-    eternal_step_idx = int(mu_in_beat_eternal // UPULSES_PER_GRID_STEP)       # 0..43
+    eternal_beat_idx = int(mu_pos_in_day_eternal // UPULSES_PER_GRID_BEAT)      # 0..35
+    eternal_step_idx = int(mu_pos_in_beat_eternal // UPULSES_PER_GRID_STEP)     # 0..43
 
-    eternal_grid_pulses_into_beat_dec = Decimal(mu_in_beat_eternal) / Decimal(UPULSES_PER_PULSE)  # 0..484
-    eternal_percent_into_step_dec     = (Decimal(mu_in_step_eternal) / Decimal(UPULSES_PER_GRID_STEP)) * Decimal(100)
-    eternal_percent_of_beat_dec       = (Decimal(mu_in_beat_eternal) / Decimal(UPULSES_PER_GRID_BEAT)) * Decimal(100)
+    eternal_grid_pulses_into_beat_dec = (Decimal(mu_pos_in_beat_eternal) / Decimal(UPULSES_PER_PULSE))  # 0..484
+    eternal_percent_into_step_dec     = (Decimal(mu_pos_in_step_eternal) / Decimal(UPULSES_PER_GRID_STEP)) * Decimal(100)
+    eternal_percent_of_beat_dec       = (Decimal(mu_pos_in_beat_eternal) / Decimal(UPULSES_PER_GRID_BEAT)) * Decimal(100)
 
-    # Solar grid (sunrise-anchored lattice; same projection)
-    mu_grid_solar    = _mu_project_to_grid(mu_into_solar_day)
-    mu_in_beat_solar = mu_grid_solar % UPULSES_PER_GRID_BEAT
-    mu_in_step_solar = mu_in_beat_solar % UPULSES_PER_GRID_STEP
+    # Solar grid (sunrise-anchored lattice)
+    mu_pos_in_day_solar  = mu_into_solar_day % UPULSES_PER_GRID_DAY
+    mu_pos_in_beat_solar = mu_pos_in_day_solar % UPULSES_PER_GRID_BEAT
+    mu_pos_in_step_solar = mu_pos_in_beat_solar % UPULSES_PER_GRID_STEP
 
-    solar_beat_idx = int(mu_grid_solar // UPULSES_PER_GRID_BEAT)              # 0..35
-    solar_step_idx = int(mu_in_beat_solar // UPULUSES_PER_GRID_STEP)          # 0..43
+    solar_beat_idx = int(mu_pos_in_day_solar // UPULSES_PER_GRID_BEAT)         # 0..35
+    solar_step_idx = int(mu_pos_in_beat_solar // UPULSES_PER_GRID_STEP)        # 0..43
 
-    solar_grid_pulses_into_beat_dec = Decimal(mu_in_beat_solar) / Decimal(UPULSES_PER_PULSE)      # 0..484
-    solar_percent_into_step_dec     = (Decimal(mu_in_step_solar) / Decimal(UPULSES_PER_GRID_STEP)) * Decimal(100)
-    solar_percent_of_beat_dec       = (Decimal(mu_in_beat_solar) / Decimal(UPULSES_PER_GRID_BEAT)) * Decimal(100)
+    solar_grid_pulses_into_beat_dec = (Decimal(mu_pos_in_beat_solar) / Decimal(UPULSES_PER_PULSE))      # 0..484
+    solar_percent_into_step_dec     = (Decimal(mu_pos_in_step_solar) / Decimal(UPULSES_PER_GRID_STEP)) * Decimal(100)
+    solar_percent_of_beat_dec       = (Decimal(mu_pos_in_beat_solar) / Decimal(UPULSES_PER_GRID_BEAT)) * Decimal(100)
 
     # Clamp + tidy percentages
     q = Decimal("0.000001")
