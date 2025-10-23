@@ -87,7 +87,7 @@ Both are carried in the payload (see `eternalChakraBeat/chakraBeat` vs. month/ye
 |--------------------------|-------------------|----------------------|----------------|----------------------|
 | **Kai Pulse**            | 1                 | 5.236067977          | 0.190984       | —                    |
 | **Half Pulse**           | 1/2               | 2.618033988          | 0.381968       | Pulse Divider        |
-| **Chakra Subpulse**      | 1/11              | 0.47691527           | 2.096836       | Beat Tuning          |
+| **Subpulse**             | 1/11              | 0.47691527           | 2.096836       | Beat Tuning          |
 | **Ternary Step**         | 1/33              | 0.15897176           | 6.290508       | Tri-Light Step       |
 | **MicroStep**            | 1/55              | 0.095201236          | 10.50417       | Resonant Breath      |
 | **NanoPulse**            | 1/89              | 0.058861999          | 16.9854        | First Spark          |
