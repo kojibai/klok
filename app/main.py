@@ -72,7 +72,7 @@ Both are carried in the payload (see `eternalChakraBeat/chakraBeat` vs. month/ye
 - **11 Pulses** = **1 Step** ≈ **57.59674775 s**
 - **44 Steps** = **1 Beat** = **484 grid pulses** ≈ **42.2376 min**
 - **36 Beats** = **1 Grid Harmonic Day** = **17,424 grid pulses** ≈ **25.3426 h**
-- **6 Beats** = **1 Chakra Arc** = **2,904 grid pulses** ≈ **4.22376 h**
+- **6 Beats** = **1 Ark** = **2,904 grid pulses** ≈ **4.22376 h**
 - **6 Harmonik Days** = **1 Week** (grid)  
 - **42 Days** = **1 Month**, **8 Months** = **1 Harmonic Year** (φ-closure calendar used for month/year counts)
 
