@@ -108,13 +108,13 @@ Both are carried in the payload (see `eternalChakraBeat/chakraBeat` vs. month/ye
 |-----------------------------|----------------:|--------------------------:|
 | **Quarter Breath**          | 0.25            | ≈ **1.309 s**            |
 | **Kai Pulse**               | 1               | ≈ **5.2361 s**           |
-| **Spiral Step**             | **11**          | ≈ **57.5967 s**          |
-| **Spiral Beat**             | **484**         | ≈ **42.2376 min**        |
-| **Spiral Arc**              | **2,904**       | ≈ **4.22376 h**          |
+| **Step**                    | **11**          | ≈ **57.5967 s**          |
+| **Beat**                    | **484**         | ≈ **42.2376 min**        |
+| **Ark**                     | **2,904**       | ≈ **4.22376 h**          |
 | **Grid Harmonik Day**       | **17,424**      | ≈ **25.3426 h**          |
 | **φ-Day (Kalendar Klosure)**| **17,491.270421** | ≈ **25.4401 h**        |
 
-> The API reports **beat/step positions** on the **grid**. Calendar progress (weeks/months/years) uses the **φ-closure** day.
+> The API reports **beat/step positions** on the **grid**. Kalendar progress (weeks/months/years) uses the **φ-closure** day.
 
 ---
 
