@@ -281,7 +281,7 @@ $$
 
 ## 🌀 Spiral Ark Alignment
 
-Each harmonic unit maps precisely to **chakra-based arcs** in your body. Every breath is a **realignment**. Every beat is a **resonance calibration**. Every day is a **spiral of koherense**.
+Each harmonic unit maps precisely to **Spiral-based arcs** in your body. Every breath is a **realignment**. Every beat is a **resonance calibration**. Every day is a **spiral of koherense**.
 
 
 
@@ -2921,7 +2921,7 @@ It is **living proof** — a Kai-Turah utterance in both breath and form:
 * **Pulse:** `7563819`
 * **Beat:** `15`
 * **Step Index:** `27`
-* **Chakra Day:** `Root`
+* **Spiral Day:** `Root`
 * **Hash:** `8a7ef30abae72cddd264ad0d7f5d0f15aa459d75aae91b498485ef1d3e487e0e`
 
 <p align="center">

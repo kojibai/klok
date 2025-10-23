@@ -73,7 +73,7 @@ Both are carried in the payload (see `eternalChakraBeat/chakraBeat` vs. month/ye
 - **44 Steps** = **1 Beat** = **484 grid pulses** ≈ **42.2376 min**
 - **36 Beats** = **1 Grid Harmonic Day** = **17,424 grid pulses** ≈ **25.3426 h**
 - **6 Beats** = **1 Chakra Arc** = **2,904 grid pulses** ≈ **4.22376 h**
-- **6 Harmonic Days** = **1 Week** (grid)  
+- **6 Harmonik Days** = **1 Week** (grid)  
 - **42 Days** = **1 Month**, **8 Months** = **1 Harmonic Year** (φ-closure calendar used for month/year counts)
 
 > **Important:** All **beat/step indices and percentages** in the API are computed on the **μ-pulse lattice of the grid** (KKS v1).  
@@ -108,11 +108,11 @@ Both are carried in the payload (see `eternalChakraBeat/chakraBeat` vs. month/ye
 |-----------------------------|----------------:|--------------------------:|
 | **Quarter Breath**          | 0.25            | ≈ **1.309 s**            |
 | **Kai Pulse**               | 1               | ≈ **5.2361 s**           |
-| **Chakra Step**             | **11**          | ≈ **57.5967 s**          |
-| **Chakra Beat**             | **484**         | ≈ **42.2376 min**        |
-| **Chakra Arc**              | **2,904**       | ≈ **4.22376 h**          |
-| **Grid Harmonic Day**       | **17,424**      | ≈ **25.3426 h**          |
-| **φ-Day (calendar closure)**| **17,491.270421** | ≈ **25.4401 h**        |
+| **Spiral Step**             | **11**          | ≈ **57.5967 s**          |
+| **Spiral Beat**             | **484**         | ≈ **42.2376 min**        |
+| **Spiral Arc**              | **2,904**       | ≈ **4.22376 h**          |
+| **Grid Harmonik Day**       | **17,424**      | ≈ **25.3426 h**          |
+| **φ-Day (Kalendar Klosure)**| **17,491.270421** | ≈ **25.4401 h**        |
 
 > The API reports **beat/step positions** on the **grid**. Calendar progress (weeks/months/years) uses the **φ-closure** day.
 
