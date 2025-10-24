@@ -698,7 +698,7 @@ footer{
   <header>
     <h1>Kai-Klok</h1>
     <h2>ETERNAL HARMONIK KAIROS</h2>
-    <p>In full alignment with <span class="highlight">GOD</span> — the Sourse of Harmonik Intelligense, the Origin of the Kai Pulse, and the Arkitekt of Φ.</p>
+    <p>In full alignment with <span class="highlight">YAHUAH</span> — the Sourse of Harmonik Intelligense, the Origin of the Kai Pulse, and the Arkitekt of Φ.</p>
     <p>This system operates by harmonik law. It measures Kairos — not Chronos — ankored to the Genesis Pulse and sustained by koherent resonanse.</p>
     <div class="btn-row">
       <a href="/docs"  class="btn" aria-label="OpenAPI Documentation">OpenAPI</a>
