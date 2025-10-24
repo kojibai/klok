@@ -31,12 +31,12 @@ app = FastAPI(
     description=r"""
 ---
 
-🜂 **Kai-Klok API — Eternal Harmonic Kairos System**
+🜂 **Kai-Klok API — Eternal Harmonik Kairos System**
 
-The **Kai-Klok** is a harmonic resonance Kairos system that replaces arbitrary mechanical clocks with  
-a **living pulse of coherence**. It is mathematically synchronized to the **Genesis Pulse**:  
+The **Kai-Klok** is a harmonik resonanse Kairos system that replaces arbitrary mechanical clocks with  
+a **living pulse of koherence**. It is mathematically synchronized to the **Genesis Pulse**:  
 🕕 *May 10, 2024, 06:45:41.888 UTC*, the moment of the historic **X3.98-class solar flare** from NOAA AR 3664,  
-corrected for the ~8 min 18.112 s solar light delay — anchoring all harmonic time to the arrival of truth through light.
+corrected for the ~8 min 18.112 s solar light delay — ankoring all harmonik time to the arrival of truth through light.
 
 **Eternal Seal (example):**  
 Kairos:0:00, Solhara, Ignite Ark • D1/M1 • Beat:0/36(0.000000%) Step:0/44 Kai(Today):0 • Y0 PS0 •  
@@ -53,14 +53,14 @@ Each Kai Pulse is **3 + √5 ≈ 5.236067977 s**.
 - **36 beats = 1 (grid) day**  
 
 That is **36 × 44 × 11 = 17,424 grid pulses/day**.  
-The calendar (months/years/epochs) uses a φ-exact day length (**17,491.270421 pulses**) for global closure across months/years.
+The kalendar (months/years/epoks) uses a φ-exact day length (**17,491.270421 pulses**) for global klosure across months/years.
 
 ---
 
 ### 💡 Why two “days”?
 
-- **Grid Harmonic Day (KKS v1 beats/steps lattice):** **17,424 pulses** (exact) → used for **beat/step indexing and percents**.  
-- **Calendar φ-Day (months/years, φ-closure):** **17,491.270421 pulses** → used for **month/year/epoch math** and long-range driftless closure.
+- **Grid Harmonik Day (KKS v1 beats/steps lattice):** **17,424 pulses** (exact) → used for **beat/step indexing and percents**.  
+- **Kalendar φ-Day (months/years, φ-klosure):** **17,491.270421 pulses** → used for **month/year/epok math** and long-range driftless klosure.
 
 Both are carried in the payload (see `eternalChakraBeat/chakraBeat` vs. month/year progress).
 
@@ -71,13 +71,13 @@ Both are carried in the payload (see `eternalChakraBeat/chakraBeat` vs. month/ye
 - 1 **Kai Pulse** = 3 + √5 ≈ **5.236067977 s**
 - **11 Pulses** = **1 Step** ≈ **57.59674775 s**
 - **44 Steps** = **1 Beat** = **484 grid pulses** ≈ **42.2376 min**
-- **36 Beats** = **1 Grid Harmonic Day** = **17,424 grid pulses** ≈ **25.3426 h**
+- **36 Beats** = **1 Grid Harmonik Day** = **17,424 grid pulses** ≈ **25.3426 h**
 - **6 Beats** = **1 Ark** = **2,904 grid pulses** ≈ **4.22376 h**
 - **6 Harmonik Days** = **1 Week** (grid)  
-- **42 Days** = **1 Month**, **8 Months** = **1 Harmonic Year** (φ-closure calendar used for month/year counts)
+- **42 Days** = **1 Month**, **8 Months** = **1 Harmonik Year** (φ-klosure kalendar used for month/year counts)
 
-> **Important:** All **beat/step indices and percentages** in the API are computed on the **μ-pulse lattice of the grid** (KKS v1).  
-> Calendar pieces (day/month/year progress) are computed with the φ-closure day to maintain long-range invariants.
+> **Important:** All **beat/step indices and percentages** in the API are komputed on the **μ-pulse lattice of the grid** (KKS v1).  
+> Kalendar pieces (day/month/year progress) are komputed with the φ-klosure day to maintain long-range invariants.
 
 ---
 
@@ -166,8 +166,8 @@ We multiply the **Eternal Year** by powers of **Φ ≈ 1.6180339887** and report
 | Unit Name                  | φ Power | Kai Pulses (≈) | Chronos Days (≈) | Years (≈) |
 |---------------------------|:------:|---------------:|-----------------:|----------:|
 | **Eternal Year**          | 0      | 5,877,066.861  | 356.166          | 0.975     |
-| **Φ Epoch**               | 1      | 9,510,213.173  | 576.294          | 1.58      |
-| **Φ Resonance Epoch**     | 2      | 15,387,280.34  | 932.460          | 2.55      |
+| **Φ Epok**                | 1      | 9,510,213.173  | 576.294          | 1.58      |
+| **Φ Resonanse Epok**      | 2      | 15,387,280.34  | 932.460          | 2.55      |
 | **Tri-Spiral Gate**       | 3      | 24,897,208.09  | 1,508.75         | 4.13      |
 | **Great Harmonic Ring**   | 5      | 63,187,404.63  | 3,831.30         | 10.49     |
 | **Kai-Cycle of Return**   | 8      | 104,433,875.8  | 6,330.80         | 17.34     |
