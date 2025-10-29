@@ -195,8 +195,8 @@ Each phase = **12 beats = 5,808 grid pulses ≈ 8.4475 hours**.
 ---
 
 **Eternal Year (φ-klosure):**  
-`17,491.270421 pulses/day × 42 days × 8 months ≈ 5,877,066.861 pulses`  
-Chronos duration: `≈ 5,877,066.861 × (3+√5) / 86,400 ≈ 356.166 days`
+`17,491.270421 pulses/day × 42 days × 8 months ≈ 5,877,066.861 pulses = 336 Kairos Days`  
+Chronos duration: `≈ 5,877,066.861 × (3+√5) / 86,400 ≈ 356.166 chronos days`
 
 ---
 
