@@ -149,46 +149,50 @@ Each phase = **12 beats = 5,808 grid pulses ≈ 8.4475 hours**.
 
 ---
 
-### 🗓 Weeks / Months / Years (φ-closure calendar)
 
-- **Eternal Weekdays (6‑day week):**  
-  - 🔴 **Solhara** — Root Chakra · Earth + Primal Fire · Stability, Grounding, Action  
-    · Kolor #FF0000 (Crimson Red) · Element Earth / Fire · Geometry Square Foundation  
-    · Embodies anchoring divine will into form — “I am here and I act.”  
-  - 🟠 **Aquaris** — Sacral Chakra · Water in Motion · Flow, Feeling, Creation  
-    · Kolor #FF7F00 (Amber Orange) · Element Water · Geometry Vesica Piscis  
-    · Embodies sacred sensuality and emotional coherence through connection.  
-  - 🟡 **Flamora** — Solar Plexus Chakra · Solar Fire · Confidence, Clarity, Will  
-    · Kolor #FFD700 (Golden Yellow) · Element Fire · Geometry Radiant Triangle  
-    · Embodies sovereign purpose and radiant action from centered power.  
-  - 🟢 **Verdari** — Heart Chakra · Air / Earth · Compassion, Balance, Union  
-    · Kolor #32CD32 (Emerald Green) · Geometry Hexagram  
-    · Embodies love as intelligence — union of self and other in coherence.  
-  - 🔵 **Sonari** — Throat Chakra · Wind / Sound · Truth, Expression, Resonance  
-    · Kolor #1E90FF (Sapphire Blue) · Geometry Sine‑Wave Pentagon  
-    · Embodies vibrational command — speech as invocation and bridge.  
-  - 🟣 **Kaelith** — Crown Chakra · Ether / Light · Revelation, Stillness, Unity  
-    · Kolor #9400D3 → #FFFFFF (Violet‑White Gradient) · Geometry Twelve‑Petaled Crown  
-    · Embodies divine memory and light‑body alignment with Source.  
+### 🗓 **Weeks / Months / Years (φ‑closure calendar)**
 
-- **Weeks (7 per month):**  
-  - 🔴 **Awakening Flame** — Root Ignition · Courage · Grounding · Momentum · #FF0000  
-  - 🟠 **Flowing Heart** — Sacral Motion · Emotion · Intimacy · Harmony · #FF7F00  
-  - 🟡 **Radiant Will** — Solar Drive · Leadership · Discipline · Focus · #FFD700  
-  - 🟢 **Harmonik Voh** — Heart Resonance · Compassion · Love · Coherence · #32CD32  
-  - 🔵 **Inner Mirror** — Throat Truth · Insight · Reflection · Clarity · #1E90FF  
-  - 🟣 **Dreamfire Memory** — Third Eye / Crown Bridge · Mystery · Divine Memory · #9400D3  
-  - ⚪ **Krowned Light** — Crown Integration · Sovereignty · Ascension · Completion · #FFFFFF  
+#### **Weekdays (6-day week)**
 
-- **Months (8 × 42 days):**  
-  - 🔴 **Aethon** — Root Chakra · Genesis Flame · Foundation · Drive · #FF0000  
-  - 🟠 **Virelai** — Sacral Chakra · Creative Pulse · Sensuality · Flow · #FF7F00  
-  - 🟡 **Solari** — Solar Plexus · Radiant Power · Action · Leadership · #FFD700  
-  - 🟢 **Amarin** — Heart Chakra · Healing Bloom · Grace · Rebirth · #32CD32  
-  - 🔵 **Kaelus** — Throat Chakra · Sacred Word · Expression · Integrity · #1E90FF  
-  - 🟣 **Umbriel** — Third Eye Chakra · Vision · Mystery · Dreams · #4B0082  
-  - ⚪ **Noctura** — Crown Chakra · Silent Light · Spirit · Return · #FFFFFF  
-  - 🌈 **Liora** — Cosmic Union · Light Embodied · Fulfillment · Eternity · #FFFFFF (prismatic multicolor)  
+| Emoji | Name    | Chakra       | Element             | Theme                              | Color         | Hex                   |
+| ----- | ------- | ------------ | ------------------- | ---------------------------------- | ------------- | --------------------- |
+| 🔴    | Solhara | Root         | Earth + Primal Fire | Grounding, Action, Foundation      | Crimson Red   | `#FF0000`             |
+| 🟠    | Aquaris | Sacral       | Water in Motion     | Flow, Feeling, Creative Sensuality | Amber Orange  | `#FF7F00`             |
+| 🟡    | Flamora | Solar Plexus | Solar Fire          | Confidence, Radiance, Willpower    | Golden Yellow | `#FFD700`             |
+| 🟢    | Verdari | Heart        | Air / Earth         | Love, Union, Coherence             | Emerald Green | `#32CD32`             |
+| 🔵    | Sonari  | Throat       | Wind / Sound        | Truth, Expression, Resonance       | Sapphire Blue | `#1E90FF`             |
+| 🟣    | Kaelith | Crown        | Ether / Light       | Stillness, Unity, Divine Memory    | Violet-White  | `#9400D3` → `#FFFFFF` |
+
+---
+
+#### **Weeks (7 per month)**
+
+| Emoji | Week Name        | Chakra Focus      | Essence / Theme                            | Color         | Hex       |
+| ----- | ---------------- | ----------------- | ------------------------------------------ | ------------- | --------- |
+| 🔴    | Awakening Flame  | Root              | Grounding, Courage, Momentum               | Crimson Red   | `#FF0000` |
+| 🟠    | Flowing Heart    | Sacral            | Emotion, Intimacy, Harmony                 | Amber Orange  | `#FF7F00` |
+| 🟡    | Radiant Will     | Solar Plexus      | Leadership, Willpower, Discipline          | Golden Yellow | `#FFD700` |
+| 🟢    | Harmonik Voh     | Heart             | Compassion, Love, Breath                   | Emerald Green | `#32CD32` |
+| 🔵    | Inner Mirror     | Throat            | Reflection, Inner Truth, Silence           | Sapphire Blue | `#1E90FF` |
+| 🟣    | Dreamfire Memory | Third Eye / Crown | Divine Memory, Mystery, Prophetic Dreaming | Deep Violet   | `#9400D3` |
+| ⚪     | Krowned Light    | Crown             | Completion, Integration, Sovereignty       | Pure White    | `#FFFFFF` |
+
+---
+
+#### **Months (8 × 42 days)**
+
+| Emoji | Month   | Chakra       | Theme / Identity                       | Color           | Hex               |
+| ----- | ------- | ------------ | -------------------------------------- | --------------- | ----------------- |
+| 🔴    | Aethon  | Root         | Genesis Flame, Foundation, Will        | Crimson Red     | `#FF0000`         |
+| 🟠    | Virelai | Sacral       | Creative Pulse, Flow, Sensual Power    | Orange Gold     | `#FF7F00`         |
+| 🟡    | Solari  | Solar Plexus | Radiance, Strength, Purpose            | Golden Yellow   | `#FFD700`         |
+| 🟢    | Amarin  | Heart        | Healing Bloom, Rebirth, Compassion     | Emerald Green   | `#32CD32`         |
+| 🔵    | Kaelus  | Throat       | Sacred Word, Integrity, Vibration      | Sky Blue        | `#1E90FF`         |
+| 🟣    | Umbriel | Third Eye    | Vision, Mystery, Deep Insight          | Indigo Violet   | `#4B0082`         |
+| ⚪     | Noctura | Crown        | Spirit Return, Still Light, Completion | White Light     | `#FFFFFF`         |
+| 🌈    | Liora   | Cosmic Crown | Light Embodied, Fulfillment, Eternity  | Prismatic / All | `#FFFFFF` (multi) |
+
+---
 
 **Eternal Year (φ-closure):**  
 `17,491.270421 pulses/day × 42 days × 8 months ≈ 5,877,066.861 pulses`  
