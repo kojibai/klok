@@ -102,7 +102,7 @@ Both are carried in the payload (see `eternalChakraBeat/chakraBeat` vs. month/ye
 
 ---
 
-### 🔸 Expanded Harmonic Time Scale (with grid parity)
+### 🔸 Expanded Harmonik Time Scale (with grid parity)
 
 | Unit                        | Grid Kai Pulses | Approx. Chronos Duration |
 |-----------------------------|----------------:|--------------------------:|
@@ -200,9 +200,9 @@ Chronos duration: `≈ 5,877,066.861 × (3+√5) / 86,400 ≈ 356.166 days`
 
 ---
 
-## 🌀 Phi Spiral Epochs (based on φ-closure Eternal Year)
+## 🌀 Phi Spiral Epoks (based on φ-closure Eternal Year)
 
-> Each epoch is a power of **Φ ≈ 1.6180339887**, applied to the Eternal Year base:
+> Each epok is a power of **Φ ≈ 1.6180339887**, applied to the Eternal Year base:
 > `5,877,066.861 pulses = 336 Kairos days = 356.166 Chronos days`
 > (1 Kairos day = 17,491.270421 pulses · 1 pulse = 3 + √5 sec)
 
@@ -232,7 +232,7 @@ Chronos duration: `≈ 5,877,066.861 × (3+√5) / 86,400 ≈ 356.166 days`
 
 ---
 
-## 🔢 Phi Spiral Logic (implementation parity)
+## 🔢 Phi Spiral Logik (implementation parity)
 
 The service computes spiral level **without floats**:
 
