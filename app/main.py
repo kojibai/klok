@@ -154,20 +154,20 @@ Each phase = **12 beats = 5,808 grid pulses ≈ 8.4475 hours**.
 
 #### **Weekdays (6-day week)**
 
-| Emoji | Name    | Chakra       | Element             | Theme                              | Color         | Hex                   |
+| Emoji | Name    | Spiral       | Element             | Theme                              | Color         | Hex                   |
 | ----- | ------- | ------------ | ------------------- | ---------------------------------- | ------------- | --------------------- |
 | 🔴    | Solhara | Root         | Earth + Primal Fire | Grounding, Action, Foundation      | Crimson Red   | `#FF0000`             |
 | 🟠    | Aquaris | Sacral       | Water in Motion     | Flow, Feeling, Creative Sensuality | Amber Orange  | `#FF7F00`             |
 | 🟡    | Flamora | Solar Plexus | Solar Fire          | Confidence, Radiance, Willpower    | Golden Yellow | `#FFD700`             |
 | 🟢    | Verdari | Heart        | Air / Earth         | Love, Union, Coherence             | Emerald Green | `#32CD32`             |
 | 🔵    | Sonari  | Throat       | Wind / Sound        | Truth, Expression, Resonance       | Sapphire Blue | `#1E90FF`             |
-| 🟣    | Kaelith | Crown        | Ether / Light       | Stillness, Unity, Divine Memory    | Violet-White  | `#9400D3` → `#FFFFFF` |
+| 🟣    | Kaelith | Krown        | Ether / Light       | Stillness, Unity, Divine Memory    | Violet-White  | `#9400D3` → `#FFFFFF` |
 
 ---
 
 #### **Weeks (7 per month)**
 
-| Emoji | Week Name        | Chakra Focus      | Essence / Theme                            | Color         | Hex       |
+| Emoji | Week Name        | Spiral Focus      | Essence / Theme                            | Color         | Hex       |
 | ----- | ---------------- | ----------------- | ------------------------------------------ | ------------- | --------- |
 | 🔴    | Awakening Flame  | Root              | Grounding, Courage, Momentum               | Crimson Red   | `#FF0000` |
 | 🟠    | Flowing Heart    | Sacral            | Emotion, Intimacy, Harmony                 | Amber Orange  | `#FF7F00` |
@@ -175,13 +175,13 @@ Each phase = **12 beats = 5,808 grid pulses ≈ 8.4475 hours**.
 | 🟢    | Harmonik Voh     | Heart             | Compassion, Love, Breath                   | Emerald Green | `#32CD32` |
 | 🔵    | Inner Mirror     | Throat            | Reflection, Inner Truth, Silence           | Sapphire Blue | `#1E90FF` |
 | 🟣    | Dreamfire Memory | Third Eye / Crown | Divine Memory, Mystery, Prophetic Dreaming | Deep Violet   | `#9400D3` |
-| ⚪     | Krowned Light    | Crown             | Completion, Integration, Sovereignty       | Pure White    | `#FFFFFF` |
+| ⚪     | Krowned Light    | Krown             | Completion, Integration, Sovereignty       | Pure White    | `#FFFFFF` |
 
 ---
 
 #### **Months (8 × 42 days)**
 
-| Emoji | Month   | Chakra       | Theme / Identity                       | Color           | Hex               |
+| Emoji | Month   | Spiral       | Theme / Identity                       | Color           | Hex               |
 | ----- | ------- | ------------ | -------------------------------------- | --------------- | ----------------- |
 | 🔴    | Aethon  | Root         | Genesis Flame, Foundation, Will        | Crimson Red     | `#FF0000`         |
 | 🟠    | Virelai | Sacral       | Creative Pulse, Flow, Sensual Power    | Orange Gold     | `#FF7F00`         |
@@ -189,8 +189,8 @@ Each phase = **12 beats = 5,808 grid pulses ≈ 8.4475 hours**.
 | 🟢    | Amarin  | Heart        | Healing Bloom, Rebirth, Compassion     | Emerald Green   | `#32CD32`         |
 | 🔵    | Kaelus  | Throat       | Sacred Word, Integrity, Vibration      | Sky Blue        | `#1E90FF`         |
 | 🟣    | Umbriel | Third Eye    | Vision, Mystery, Deep Insight          | Indigo Violet   | `#4B0082`         |
-| ⚪     | Noctura | Crown        | Spirit Return, Still Light, Completion | White Light     | `#FFFFFF`         |
-| 🌈    | Liora   | Cosmic Crown | Light Embodied, Fulfillment, Eternity  | Prismatic / All | `#FFFFFF` (multi) |
+| ⚪     | Noctura | Krown        | Spirit Return, Still Light, Completion | White Light     | `#FFFFFF`         |
+| 🌈    | Liora   | Kosmic Krown | Light Embodied, Fulfillment, Eternity  | Prismatic / All | `#FFFFFF` (multi) |
 
 ---
 
