@@ -119,17 +119,18 @@ Both are carried in the payload (see `eternalChakraBeat/chakraBeat` vs. month/ye
 ---
 
 ═══════════════════════════════════════════════════════════════════  
-🌀 **Chakra Arcs of the Kai Day** — 6 Arcs × 6 Beats = 36 Beats  
+🌀 **Spiral Arks of the Kai Day** — 6 Arks × 6 Beats = 36 Beats  
 ═══════════════════════════════════════════════════════════════════  
 
-Each Arc spans **6 beats = 2,904 grid pulses ≈ 4.2238 hours**.
+Each Ark spans **6 beats = 2,904 grid pulses ≈ 4.2238 hours**.
 
-- 🔥 **Ignition Ark** — Beats 0–5  
-- 💧 **Integration Ark** — Beats 6–11  
-- ☀️ **Harmonization Ark** — Beats 12–17  
-- 🌿 **Reflection Ark** — Beats 18–23  
-- 💨 **Purification Ark** — Beats 24–29  
-- 🌌 **Dream Ark** — Beats 30–35  
+- 🔥 **Ignition Ark** — Beats 0–5  · **Color: Crimson Flame** 🔴 (#FF4500)
+- 💧 **Integration Ark** — Beats 6–11  · **Color: Deep Ocean Blue** 🔵 (#1E90FF)
+- ☀️ **Harmonization Ark** — Beats 12–17  · **Color: Solar Gold** 🟡 (#FFD700)
+- 🌿 **Reflection Ark** — Beats 18–23  · **Color: Verdant Green** 🟢 (#32CD32)
+- 💨 **Purification Ark** — Beats 24–29  · **Color: Mist Gray** ⚪ (#A9A9A9)
+- 🌌 **Dream Ark** — Beats 30–35  · **Color: Cosmic Violet** 🟣 (#8A2BE2)
+
 
 ═══════════════════════════════════════════════════════════════════  
 🫁 **Grid Kai Day** = 6 Arks × **2,904 breaths** = **17,424 breaths**  
