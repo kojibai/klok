@@ -124,12 +124,13 @@ Both are carried in the payload (see `eternalChakraBeat/chakraBeat` vs. month/ye
 
 Each Ark spans **6 beats = 2,904 grid pulses ≈ 4.2238 hours**.
 
-- 🔥 **Ignition Ark** — Beats 0–5  · **Color: Crimson Flame** 🔴 (#FF4500)
-- 💧 **Integration Ark** — Beats 6–11  · **Color: Deep Ocean Blue** 🔵 (#1E90FF)
-- ☀️ **Harmonization Ark** — Beats 12–17  · **Color: Solar Gold** 🟡 (#FFD700)
-- 🌿 **Reflection Ark** — Beats 18–23  · **Color: Verdant Green** 🟢 (#32CD32)
-- 💨 **Purification Ark** — Beats 24–29  · **Color: Mist Gray** ⚪ (#A9A9A9)
-- 🌌 **Dream Ark** — Beats 30–35  · **Color: Cosmic Violet** 🟣 (#8A2BE2)
+- 🔴 **Ignition Ark** — Beats 0–5  · **Color: Root Red** 🔥 (#FF0000)
+- 🟠 **Integration Ark** — Beats 6–11  · **Color: Ember Orange** 💧 (#FF7F00)
+- 🟡 **Harmonization Ark** — Beats 12–17  · **Color: Solar Gold** ☀️ (#FFD700)
+- 🟢 **Reflection Ark** — Beats 18–23  · **Color: Verdant Green** 🌿 (#32CD32)
+- 🔵 **Purification Ark** — Beats 24–29  · **Color: Deep Ocean Blue** 💨 (#1E90FF)
+- 🟣 **Dream Ark** — Beats 30–35  · **Color: Cosmic Violet** 🌌 (#8A2BE2)
+
 
 
 ═══════════════════════════════════════════════════════════════════  
