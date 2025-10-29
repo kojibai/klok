@@ -179,7 +179,7 @@ Each phase = **12 beats = 5,808 grid pulses ≈ 8.4475 hours**.
 
 ---
 
-#### **Months (8 × 42 days)**
+#### **Months (8 × 42 days = 336 Days)**
 
 | Emoji | Month   | Spiral       | Theme / Identity                       | Color           | Hex               |
 | ----- | ------- | ------------ | -------------------------------------- | --------------- | ----------------- |
