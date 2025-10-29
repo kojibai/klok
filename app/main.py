@@ -201,7 +201,6 @@ Chronos duration: `≈ 5,877,066.861 × (3+√5) / 86,400 ≈ 356.166 chronos da
 ---
 
 ## 🌀 Phi Spiral Epoks (based on φ-klosure Eternal Year)
-
 > Each epok is a power of **Φ ≈ 1.6180339887**, applied to the Eternal Year base:
 > `5,877,066.861 pulses = 336 Kairos days = 356.166 Chronos days`
 > (1 Kairos day = 17,491.270421 pulses · 1 pulse = 3 + √5 sec)
