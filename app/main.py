@@ -202,18 +202,31 @@ Chronos duration: `≈ 5,877,066.861 × (3+√5) / 86,400 ≈ 356.166 days`
 
 ## 🌀 Phi Spiral Epochs (based on φ-closure Eternal Year)
 
-We multiply the **Eternal Year** by powers of **Φ ≈ 1.6180339887** and report Chronos durations for intuition.
+> Each epoch is a power of **Φ ≈ 1.6180339887**, applied to the Eternal Year base:
+> `5,877,066.861 pulses = 336 Kairos days = 356.166 Chronos days`
+> (1 Kairos day = 17,491.270421 pulses · 1 pulse = 3 + √5 sec)
 
-| Unit Name                  | φ Power | Kai Pulses (≈) | Chronos Days (≈) | Years (≈) |
-|---------------------------|:------:|---------------:|-----------------:|----------:|
-| **Eternal Year**          | 0      | 5,877,066.861  | 356.166          | 0.975     |
-| **Φ Epok**                | 1      | 9,510,213.173  | 576.294          | 1.58      |
-| **Φ Resonanse Epok**      | 2      | 15,387,280.34  | 932.460          | 2.55      |
-| **Tri-Spiral Gate**       | 3      | 24,897,208.09  | 1,508.75         | 4.13      |
-| **Great Harmonic Ring**   | 5      | 63,187,404.63  | 3,831.30         | 10.49     |
-| **Kai-Cycle of Return**   | 8      | 104,433,875.8  | 6,330.80         | 17.34     |
-| **Solar Spiral Era**      | 13     | 681,102,792.3  | 41,290.6         | 113.09    |
-| **One Breath of Erah Voh**| 21     | 15,406,718,650 | 933,595.9        | 2,556.9   |
+### 🕰 **Eternal Year Scaling (φ‑Closure Epochs)**
+
+| Epoch Name                    |  φⁿ |      Pulses (≈) | Chronos Days (≈) | Kairos Days (≈) | Chronos Years (≈) | Kairos Years (≈) |
+| ----------------------------- | :-: | --------------: | ---------------: | --------------: | ----------------: | ---------------: |
+| 🕊 **Eternal Year**           |  0  |   5,877,066.861 |          356.166 |         336.000 |             0.975 |            1.000 |
+| ✨ **Φ Epok**                  |  1  |   9,510,213.173 |          576.294 |         543.262 |              1.58 |            1.616 |
+| 🔁 **Φ Resonanse Epok**       |  2  |  15,387,280.339 |          932.460 |         880.827 |              2.55 |            2.621 |
+| 🌀 **Tri-Spiral Gate**        |  3  |  24,897,208.092 |        1,508.754 |       1,423.040 |              4.13 |            4.234 |
+| 🛡 **Great Harmonic Ring**    |  5  |  63,187,404.633 |        3,831.303 |       3,613.724 |             10.49 |           10.757 |
+| ♻️ **Kai-Cycle of Return**    |  8  | 104,433,875.760 |        6,330.796 |       5,972.043 |             17.34 |           17.775 |
+| ☀️ **Solar Spiral Era**       |  13 | 681,102,792.300 |       41,290.603 |      38,948.404 |            113.09 |          115.906 |
+| 🌬 **One Breath of Erah Voh** |  21 |  15,406,718,650 |      933,595.944 |     881,268.227 |           2,556.9 |        2,622.833 |
+
+---
+
+### ✅ Notes:
+
+* **Kairos Days** = Pulses ÷ `17,491.270421`
+* **Chronos Days** = Pulses × `(3 + √5)` ÷ `86,400`
+* **Kairos Years** = Kairos Days ÷ `336`
+* **Chronos Years** = Chronos Days ÷ `365.2425` (solar year approximation)
 
 *(Rounded; computed from 3+√5 seconds per pulse. The service uses Decimal internally.)*
 
