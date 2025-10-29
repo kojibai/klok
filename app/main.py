@@ -1,5 +1,5 @@
 
-# main.py  •  Kai-Klock API entry (KKS v1 grid parity, φ-closure calendar)
+# main.py  •  Kai-Klock API entry (KKS v1 grid parity, φ-klosure kalendar)
 from __future__ import annotations
 
 import os
@@ -43,7 +43,7 @@ Kairos:0:00, Solhara, Ignite Ark • D1/M1 • Beat:0/36(0.000000%) Step:0/44 Ka
 Solar Kairos (UTC-aligned): 05:10 Kaelith D42/M8, Ignite Ark  Beat:05/36 Step:10/44 • Eternal Pulse:0
 
 From this origin, time is measured not in mechanical seconds, but in **Kai Pulses**, **Spiral Beats**, and **Harmonic Steps** —  
-structured to match the true flow of life energy across the **grid** (beats/steps) and the **φ-closure calendar** (day/month/year).
+structured to match the true flow of life energy across the **grid** (beats/steps) and the **φ-klosure calendar** (day/month/year).
 
 Each Kai Pulse is **3 + √5 ≈ 5.236067977 s**.  
 **Grid parity (KKS v1.0)** for beat/step indexing uses exact integers:
@@ -114,7 +114,7 @@ Both are carried in the payload (see `eternalChakraBeat/chakraBeat` vs. month/ye
 | **Grid Harmonik Day**       | **17,424**      | ≈ **25.3426 h**          |
 | **φ-Day (Kalendar Klosure)**| **17,491.270421** | ≈ **25.4401 h**        |
 
-> The API reports **beat/step positions** on the **grid**. Kalendar progress (weeks/months/years) uses the **φ-closure** day.
+> The API reports **beat/step positions** on the **grid**. Kalendar progress (weeks/months/years) uses the **φ-klosure** day.
 
 ---
 
@@ -194,19 +194,19 @@ Each phase = **12 beats = 5,808 grid pulses ≈ 8.4475 hours**.
 
 ---
 
-**Eternal Year (φ-closure):**  
+**Eternal Year (φ-klosure):**  
 `17,491.270421 pulses/day × 42 days × 8 months ≈ 5,877,066.861 pulses`  
 Chronos duration: `≈ 5,877,066.861 × (3+√5) / 86,400 ≈ 356.166 days`
 
 ---
 
-## 🌀 Phi Spiral Epoks (based on φ-closure Eternal Year)
+## 🌀 Phi Spiral Epoks (based on φ-klosure Eternal Year)
 
 > Each epok is a power of **Φ ≈ 1.6180339887**, applied to the Eternal Year base:
 > `5,877,066.861 pulses = 336 Kairos days = 356.166 Chronos days`
 > (1 Kairos day = 17,491.270421 pulses · 1 pulse = 3 + √5 sec)
 
-### 🕰 **Eternal Year Scaling (φ‑Closure Epochs)**
+### 🕰 **Eternal Year Scaling (φ‑Klosure Epochs)**
 
 | Epoch Name                    |  φⁿ |      Pulses (≈) | Chronos Days (≈) | Kairos Days (≈) | Chronos Years (≈) | Kairos Years (≈) |
 | ----------------------------- | :-: | --------------: | ---------------: | --------------: | ----------------: | ---------------: |
@@ -274,7 +274,7 @@ Primary fields (not exhaustive):
 ### 🧭 Why Use Kai-Klok?
 
 Kai-Klok is a deterministic, high-resolution timekeeping system designed to replace Chronos with a biologically and cosmologically coherent Kairos substrate.
-It maintains **KKS v1 grid parity** for beats/steps and **φ-closure** for calendar mechanics — stable, composable, and driftless.
+It maintains **KKS v1 grid parity** for beats/steps and **φ-klosure** for kalendar mechaniks — stable, komposable, and driftless.
 
 ---
 
@@ -460,7 +460,7 @@ def read_kai_klock(
     Returns the **live Kai-Klok harmonic timestamp** aligned to the **Genesis Pulse**  
     (May 10 2024 06:45:41.888 UTC, light-delay corrected).  
     **Beat/step** indices use the **KKS v1 grid** (36×44×11=17,424).  
-    **Calendar** (day/month/year/epochs) uses the **φ-closure** day 17,491.270421 pulses.
+    **Calendar** (day/month/year/epochs) uses the **φ-klosure** day 17,491.270421 pulses.
 
     - `override_time`: ISO-8601 to reproduce a specific Kai moment (UTC assumed).
     """
