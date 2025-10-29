@@ -77,7 +77,7 @@ Both are carried in the payload (see `eternalChakraBeat/chakraBeat` vs. month/ye
 - **42 Days** = **1 Month**, **8 Months** = **1 Harmonik Year** (φ-klosure kalendar used for month/year counts)
 
 > **Important:** All **beat/step indices and percentages** in the API are komputed on the **μ-pulse lattice of the grid** (KKS v1).  
-> Kalendar pieces (day/month/year progress) are komputed with the φ-klosure day to maintain long-range invariants.
+> Kalendar Segments (day/month/year progress) are komputed with the φ-klosure day (17491.270421 Pulses) to maintain long-range invariants.
 
 ---
 
