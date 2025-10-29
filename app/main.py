@@ -154,7 +154,7 @@ Each phase = **12 beats = 5,808 grid pulses ≈ 8.4475 hours**.
 
 #### **Weekdays (6-day week)**
 
-| Emoji | Name    | Spiral       | Element             | Theme                              | Color         | Hex                   |
+| Emoji | Name    | Spiral       | Element             | Resonance                          | Color         | Hex                   |
 | ----- | ------- | ------------ | ------------------- | ---------------------------------- | ------------- | --------------------- |
 | 🔴    | Solhara | Root         | Earth + Primal Fire | Grounding, Action, Foundation      | Crimson Red   | `#FF0000`             |
 | 🟠    | Aquaris | Sacral       | Water in Motion     | Flow, Feeling, Creative Sensuality | Amber Orange  | `#FF7F00`             |
@@ -167,7 +167,7 @@ Each phase = **12 beats = 5,808 grid pulses ≈ 8.4475 hours**.
 
 #### **Weeks (7 per month)**
 
-| Emoji | Week Name        | Spiral Focus      | Essence / Theme                            | Color         | Hex       |
+| Emoji | Week Name        | Spiral Focus      | Essence                                    | Color         | Hex       |
 | ----- | ---------------- | ----------------- | ------------------------------------------ | ------------- | --------- |
 | 🔴    | Awakening Flame  | Root              | Grounding, Courage, Momentum               | Crimson Red   | `#FF0000` |
 | 🟠    | Flowing Heart    | Sacral            | Emotion, Intimacy, Harmony                 | Amber Orange  | `#FF7F00` |
@@ -181,7 +181,7 @@ Each phase = **12 beats = 5,808 grid pulses ≈ 8.4475 hours**.
 
 #### **Months (8 × 42 days = 336 Days)**
 
-| Emoji | Month   | Spiral       | Theme / Identity                       | Color           | Hex               |
+| Emoji | Month   | Spiral       | Identity                               | Color           | Hex               |
 | ----- | ------- | ------------ | -------------------------------------- | --------------- | ----------------- |
 | 🔴    | Aethon  | Root         | Genesis Flame, Foundation, Will        | Crimson Red     | `#FF0000`         |
 | 🟠    | Virelai | Sacral       | Creative Pulse, Flow, Sensual Power    | Orange Gold     | `#FF7F00`         |
